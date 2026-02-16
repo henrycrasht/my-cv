@@ -1,5 +1,5 @@
 /* 
-   TESSAN THEME - v3.0 (Fixed Specificity & Layout)
+   TESSAN THEME - v4.0 (Polished UI & Mobile Fixes)
 */
 
 :root {
@@ -18,6 +18,9 @@
   --card: #FEF9DE;         /* Card Background */
   --stroke: rgba(15, 53, 45, 0.12);
   --shadow: 0 22px 60px rgba(15, 53, 45, 0.08);
+  
+  --r-lg: 28px;            /* Large Radius */
+  --r-md: 18px;            /* Medium Radius */
 }
 
 /* 1. FORCE PAGE BACKGROUND */
@@ -28,10 +31,15 @@ body {
     radial-gradient(900px 700px at 80% 15%, rgba(15, 53, 45, .03), transparent 55%) !important;
 }
 
-/* 2. FIX TOPBAR OVERLAP (Targeting the actual HTML structure) */
-/* This overrides the base.css grid layout */
-.topbar-inner, 
-.topbar-inner-centered {
+/* 2. TOPBAR (Fixed Layout) */
+.topbar {
+  background: rgba(251, 250, 244, 0.95) !important; /* Slight transparency */
+  backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid var(--stroke) !important;
+  z-index: 100 !important; /* Ensure below modal (modal is z-1000) */
+}
+
+.topbar-inner {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -39,79 +47,93 @@ body {
   max-width: var(--container) !important;
   margin: 0 auto !important;
   padding: 14px 24px !important;
-  grid-template-columns: none !important; /* Reset any grid */
+  position: relative !important;
 }
 
 /* Brand (Left) */
 .brand {
-  flex: 0 0 auto !important;
-  min-width: max-content !important;
-  margin-right: auto !important;
+  flex: 1 !important;
+  min-width: 0 !important; /* Allow shrink */
+  white-space: nowrap !important;
 }
 
-/* Company Badge (Center) - Absolute Positioning */
-.company-badge,
-.company-badge-center {
+/* Company Badge (Center - Absolute) */
+.company-badge {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
   z-index: 10 !important;
-  background: rgba(255, 255, 255, 0.9) !important;
+  background: #FFFFFF !important;
   border: 1px solid var(--stroke) !important;
-  backdrop-filter: blur(10px) !important;
+  padding: 6px 16px !important;
+  border-radius: 999px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
   white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 /* Navigation (Right) */
 .nav {
-  flex: 0 0 auto !important;
-  min-width: max-content !important;
-  margin-left: auto !important;
-  gap: 12px !important;
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
 }
 
-/* Mobile Fix for Topbar */
+/* MOBILE TOPBAR FIX */
 @media (max-width: 900px) {
-  .company-badge,
-  .company-badge-center {
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
-    order: 2 !important;
-    margin: 10px auto !important;
-  }
-  
-  .topbar-inner, 
-  .topbar-inner-centered {
+  .topbar-inner {
     flex-direction: column !important;
+    padding: 12px 16px !important;
+    gap: 12px !important;
     height: auto !important;
-    padding-bottom: 16px !important;
   }
   
-  .brand { margin-right: 0 !important; order: 1 !important; }
-  .nav { margin-left: 0 !important; order: 3 !important; }
+  .company-badge {
+    position: static !important;
+    transform: none !important;
+    order: 2 !important; /* Between name and buttons */
+    width: fit-content !important;
+    margin: 0 auto !important;
+  }
+  
+  .brand {
+    order: 1 !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  
+  .nav {
+    order: 3 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+  
+  /* Make buttons smaller on mobile to save space */
+  .btn {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
 }
 
-/* 3. HERO SECTION (Dark Green Background) */
+/* 3. HERO SECTION (Dark Green + Rounded Corners) */
 .hero {
   background-color: var(--primary) !important;
   color: #F1F2F2 !important;
-  margin-top: -1px !important; /* Fix any gap */
-  padding-bottom: 60px !important;
+  margin: 20px auto !important; /* Add margin for floating look */
+  max-width: var(--container) !important;
+  border-radius: var(--r-lg) !important; /* Restore rounded corners */
+  padding: 60px 40px !important;
+  position: relative !important;
+  overflow: hidden !important; /* Clip corners */
+  box-shadow: var(--shadow) !important;
 }
 
-/* Reset panel styles inside hero */
-.hero .panel {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-}
-.hero .panel::before { display: none !important; }
-
-/* Force White Text in Hero */
+/* Fix Hero Text Colors */
 .hero h1, 
 .hero .subhead,
 .hero .headline-grad {
@@ -120,52 +142,96 @@ body {
   -webkit-text-fill-color: #F1F2F2 !important;
 }
 
+/* KICKER (Availability Badge) - High Contrast */
+.kicker {
+  background: #FBFAF5 !important; /* Light Cream */
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  color: var(--primary) !important; /* Dark Green Text */
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+}
+.kicker i { color: var(--primary) !important; }
+
+/* PILLS (Tools) - High Contrast */
 .hero .pill {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
+  background: #FEF9DE !important; /* Pale Yellow */
+  border: 1px solid rgba(255, 238, 127, 0.4) !important;
+  color: var(--primary) !important; /* Dark Green Text */
+  font-weight: 600 !important;
+}
+.hero .pill i { color: var(--primary) !important; }
+
+/* 4. SKILLS SECTION (Unified Card) */
+/* Wrapper for the skills section */
+#skills {
+  background: var(--accent-light) !important; /* Main Card Background */
+  border-radius: var(--r-lg) !important;
+  padding: 30px !important;
+  border: 1px solid var(--stroke) !important;
+  margin-top: 40px !important;
+  box-shadow: var(--shadow2) !important;
+}
+
+/* Title inside skills card */
+#skills h2 {
+  color: var(--primary) !important;
+  margin-bottom: 24px !important;
+  border-bottom: 1px solid rgba(15, 53, 45, 0.1) !important;
+  padding-bottom: 12px !important;
+}
+
+/* Sub-cards (Info Grid items) */
+.info-grid .info {
+  background: #FFFFFF !important; /* White sub-cards for contrast */
+  border: 1px solid rgba(15, 53, 45, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(15, 53, 45, 0.03) !important;
+  border-radius: var(--r-md) !important;
+}
+
+/* 5. MODAL (Dark Header) */
+.modal {
+  z-index: 2000 !important; /* Ensure mostly on top */
+}
+
+.modal-box {
+  background-color: var(--bg0) !important;
+  border-radius: var(--r-lg) !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.modal-head {
+  background-color: var(--primary) !important; /* Dark Green Header */
+  color: #F1F2F2 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 24px 30px !important;
+}
+
+.modal-title, .modal-sub {
   color: #F1F2F2 !important;
 }
-.hero .pill i { color: var(--accent) !important; }
 
-/* 4. CARDS (Pale Yellow Background) */
-/* Target specific classes used in base.css */
-.info, 
-.reveal, 
-.timeline-content,
-.panel:not(.hero .panel) { /* Exclude hero panel */
+.modal-close {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #F1F2F2 !important;
+  border: none !important;
+}
+.modal-close:hover {
+  background: var(--accent) !important;
+  color: var(--primary) !important;
+}
+
+/* 6. OTHER CARDS (Experience) */
+.timeline-content {
   background-color: var(--accent-light) !important;
   border: 1px solid var(--stroke) !important;
+  box-shadow: var(--shadow2) !important;
 }
 
-/* Fix timeline arrows color */
+/* Timeline Arrows */
 .timeline-item.left .timeline-content::before {
-  border-right-color: transparent !important;
-  border-left-color: var(--accent-light) !important; /* Should be right border for left arrow? No, CSS borders are tricky. */
-  border-color: transparent transparent transparent var(--accent-light) !important;
+  border-left-color: var(--accent-light) !important;
 }
-
 .timeline-item.right .timeline-content::before {
-  border-color: transparent var(--accent-light) transparent transparent !important;
-}
-
-/* 5. BUTTONS */
-.btn-primary {
-  background-color: var(--accent) !important;
-  color: var(--primary) !important;
-  box-shadow: 0 4px 12px rgba(255, 238, 127, 0.4) !important;
-}
-
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.9) !important; /* More visible on dark hero */
-  color: var(--primary) !important;
-}
-
-/* 6. TIMELINE & DECORATION */
-.timeline-date {
-  background: var(--primary) !important;
-  color: #F1F2F2 !important;
-}
-
-.timeline::before {
-  background: linear-gradient(180deg, transparent, var(--accent) 5%, var(--primary) 50%, var(--accent) 95%, transparent) !important;
+  border-right-color: var(--accent-light) !important;
 }
