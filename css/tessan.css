@@ -180,6 +180,19 @@ body {
 .modal-head {
   background: var(--primary) !important;
   color: #FFFFFF !important;
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+}
+
+/* 7. BULLET */
+.bullet {
+    display: flex;
+    gap: 12px !important;
+    align-items: flex-start !important;
+    padding: 14px 14px !important;
+    border-radius: 14px !important;
+    background: rgba(255, 238, 127, .12) !important;
+    border: 1px solid rgba(16, 53, 45, 1) !important;
 }
 .modal-title, .modal-sub { color: #FFFFFF !important; }
 .modal-close { background: rgba(255,255,255,0.2) !important; color: white !important; }
