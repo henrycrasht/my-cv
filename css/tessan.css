@@ -1,246 +1,253 @@
-/* Tessan Brand Theme */
+/* 
+   TESSAN THEME - v2.0
+   Matched to brand identity:
+   - Page Background: #FBFAF5
+   - Hero Background: #0F352D
+   - Hero Text: #F1F2F2
+   - Info/Exp Cards: #FEF9DE
+*/
+
 :root {
-  --bg0: #F7F7ED;          /* Tessan light background */
-  --bg1: #FCF5CC;          /* Tessan cream background */
-  --ink: #113632;          /* Tessan dark green for text */
-  --muted: #4a5b56;        /* Muted text */
-  --card: rgba(255, 255, 255, .92);
-  --stroke: rgba(17, 54, 50, .12);
-  --shadow: 0 22px 60px rgba(17, 54, 50, .08);
-  --shadow2: 0 12px 30px rgba(17, 54, 50, .06);
-
-  --primary: #10352D;      /* Tessan primary dark green */
-  --accent: #FFEE7F;       /* Tessan yellow accent */
-  --accent-dark: #FCF5CC;  /* Tessan cream for hover */
-  --good: #16a34a;
-
+  /* Core Palette */
+  --bg0: #FBFAF5;          /* Requested Page Background */
+  --bg1: #F7F7ED;          /* Slightly darker shade for gradients */
+  
+  --primary: #0F352D;      /* Tessan Dark Green */
+  --ink: #113632;          /* Text Color (Dark Green) */
+  --muted: #4a5b56;        /* Muted Text */
+  
+  --accent: #FFEE7F;       /* Tessan Yellow (Buttons/Highlights) */
+  --accent-light: #FEF9DE; /* Requested Card Background */
+  --accent-dark: #FCE855;  /* Hover state for yellow */
+  
+  /* UI Elements */
+  --card: #FEF9DE;         /* Info & Exp Cards Background */
+  --stroke: rgba(15, 53, 45, 0.12);
+  --shadow: 0 22px 60px rgba(15, 53, 45, 0.08);
+  --shadow2: 0 12px 30px rgba(15, 53, 45, 0.06);
+  
   --r-lg: 28px;
   --r-md: 18px;
   --r-sm: 14px;
   --container: 1120px;
 }
 
-/* Update background gradients with Tessan colors */
+/* 1. Page Background */
 body {
-  background:
-    radial-gradient(1200px 800px at 15% 10%, rgba(255, 238, 127, .15), transparent 60%),
-    radial-gradient(900px 700px at 80% 15%, rgba(16, 53, 45, .08), transparent 55%),
-    radial-gradient(900px 700px at 70% 85%, rgba(252, 245, 204, .20), transparent 55%),
-    linear-gradient(180deg, #F7F7ED, #FCF5CC) !important;
+  background-color: var(--bg0);
+  background-image: 
+    radial-gradient(1200px 800px at 15% 10%, rgba(255, 238, 127, .05), transparent 60%),
+    radial-gradient(900px 700px at 80% 15%, rgba(15, 53, 45, .03), transparent 55%);
 }
 
-/* Profile photo border - Tessan primary color */
-.profile-photo {
-  border-color: #10352D;
-  box-shadow: 0 8px 20px rgba(16, 53, 45, .30);
-}
-
-/* Brand badge gradient */
-.brand-badge {
-  background: linear-gradient(135deg, #10352D, #113632) !important;
-}
-
-/* Company badge with Tessan colors */
-.company-badge {
-  background: rgba(252, 245, 204, 0.80);
-  border-color: rgba(16, 53, 45, .15);
-}
-
-/* Topbar background */
-.topbar {
-  background: rgba(247, 247, 237, .90) !important;
-  border-bottom: 1px solid rgba(17, 54, 50, .12);
-}
-
-/* Button hover states */
-.btn-primary:hover {
-  background: #FCF5CC !important;
-  box-shadow: 0 22px 50px rgba(255, 238, 127, .45) !important;
-}
-
-/* Timeline elements */
-.timeline-date {
-  background: #10352D !important;
-  box-shadow: 0 8px 24px rgba(16, 53, 45, .40) !important;
-}
-
-.timeline-node {
-  background: #10352D !important;
-  border-color: #FFEE7F !important;
-  box-shadow: 0 0 0 8px rgba(255, 238, 127, .20) !important;
-}
-
-.timeline-logo-wrapper {
-  border-color: #10352D !important;
-  box-shadow: 0 8px 24px rgba(16, 53, 45, .30) !important;
-}
-
-/* Timeline vertical line */
-.timeline::before {
-  background: linear-gradient(180deg, 
-    transparent, 
-    #FFEE7F 5%, 
-    #10352D 50%, 
-    #FCF5CC 95%, 
-    transparent
-  ) !important;
-}
-
-/* Modals */
-.modal {
-  background: rgba(17, 54, 50, .35) !important;
-}
-
-.modal-box {
-  background: rgba(247, 247, 237, .98) !important;
-  border-color: rgba(255, 238, 127, .30) !important;
-}
-
-.modal-head {
-  background: rgba(247, 247, 237, .95) !important;
-}
-
-/* Kicker badge */
-.kicker {
-  background: rgba(255, 238, 127, .30);
-  border: 1px solid rgba(255, 238, 127, .50);
-}
-
-/* Pills */
-.pill {
-  background: rgba(16, 53, 45, .08);
-  border: 1px solid rgba(16, 53, 45, .15);
-}
-
-/* Info cards */
-.info {
-  background: rgba(255, 255, 255, .92);
-}
-
-/* Bullets in modals */
-.bullet {
-  background: rgba(252, 245, 204, .40);
-  border: 1px solid rgba(252, 245, 204, .60);
-}
-
-/* Tags */
-.tag {
-  background: rgba(252, 245, 204, .50);
-  border: 1px solid rgba(252, 245, 204, .70);
-}
-
-/* Contact card */
-.contact-card::before {
-  background: radial-gradient(900px 280px at 15% 15%, rgba(255, 238, 127, .15), transparent 60%),
-              radial-gradient(700px 260px at 80% 10%, rgba(16, 53, 45, .08), transparent 55%),
-              radial-gradient(700px 260px at 70% 90%, rgba(252, 245, 204, .15), transparent 55%);
-}
-
-/* Panel backgrounds */
-.panel::before {
-  background: radial-gradient(900px 280px at 15% 15%, rgba(255, 238, 127, .15), transparent 60%),
-              radial-gradient(700px 260px at 80% 10%, rgba(16, 53, 45, .08), transparent 55%),
-              radial-gradient(700px 260px at 70% 90%, rgba(252, 245, 204, .15), transparent 55%);
-}
-/* Centered topbar layout */
+/* 2. Fixed Topbar Layout (Flexbox) */
 .topbar-inner-centered {
   max-width: var(--container);
   margin: 0 auto;
   padding: 14px 24px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex; /* Switched to flex for better control */
   align-items: center;
+  justify-content: space-between; /* Pushes content to edges */
   gap: 20px;
+  position: relative;
 }
 
-/* Left section: Your brand */
+/* Left: Personal Brand */
 .topbar-inner-centered .brand {
-  justify-self: start;
+  flex: 1; /* Takes available space */
+  min-width: 0; /* Allows shrinking */
+  white-space: nowrap;
 }
 
-/* Center section: Company logo with @ */
+/* Center: Company Badge (Absolute center) */
 .company-badge-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.90);
   border-radius: 14px;
   border: 1px solid var(--stroke);
   backdrop-filter: blur(10px);
   box-shadow: 0 6px 16px rgba(16, 53, 45, .10);
-  justify-self: center;
+  z-index: 10;
 }
 
 .at-symbol {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--primary);
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .company-logo-center {
-  height: 28px;
-  max-width: 120px;
+  height: 24px;
+  width: auto;
   object-fit: contain;
 }
 
-/* Right section: Navigation */
+/* Right: Navigation */
 .topbar-inner-centered .nav {
-  justify-self: end;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-/* Mobile responsive */
-@media (max-width: 1024px) {
+/* Responsive Topbar */
+@media (max-width: 900px) {
   .topbar-inner-centered {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    text-align: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
   }
-
-  .topbar-inner-centered .brand {
-    justify-self: center;
-  }
-
-  .topbar-inner-centered .nav {
-    justify-self: center;
-  }
-
+  
   .company-badge-center {
-    order: -1; /* Move logo to top on mobile */
-  }
-}
-
-@media (max-width: 768px) {
-  .company-logo-center {
-    height: 24px;
-  }
-
-  .at-symbol {
-    font-size: 16px;
-  }
-
-  .company-badge-center {
-    padding: 6px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .brand div {
-    font-size: 14px;
-  }
-
-  .brand small {
-    font-size: 11px;
-  }
-
-  .nav {
+    position: relative; /* Removes absolute positioning */
+    left: auto;
+    top: auto;
+    transform: none;
+    order: 2; /* Moves below name */
     width: 100%;
     justify-content: center;
   }
-
-  .btn {
-    padding: 8px 10px;
-    font-size: 12px;
+  
+  .topbar-inner-centered .brand {
+    order: 1;
+    width: 100%;
+    justify-content: center;
   }
+  
+  .topbar-inner-centered .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* 3. Hero Section (Dark Green) */
+.hero {
+  background-color: var(--primary);
+  margin-top: 0; /* Remove gap if any */
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero .panel {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.hero .panel::before { display: none; } /* Remove panel gradient */
+
+/* Hero Typography override */
+.hero h1 {
+  color: #F1F2F2; /* Off-white text */
+}
+.hero .headline-grad {
+  background: none;
+  -webkit-text-fill-color: #F1F2F2;
+  color: #F1F2F2;
+}
+.hero .subhead {
+  color: rgba(241, 242, 242, 0.85); /* Transparent off-white */
+}
+.hero .kicker {
+  background: rgba(255, 238, 127, 0.15);
+  border: 1px solid rgba(255, 238, 127, 0.3);
+  color: var(--accent);
+}
+.hero .kicker i { color: var(--accent); }
+.hero .pill {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #F1F2F2;
+}
+.hero .pill i { color: var(--accent); }
+
+/* 4. Info Cards & Reveal (Pale Yellow) */
+.info, 
+.reveal {
+  background-color: var(--accent-light) !important;
+  border: 1px solid var(--stroke);
+}
+.info:hover {
+  box-shadow: 0 20px 40px rgba(15, 53, 45, .12);
+  transform: translateY(-4px);
+}
+
+/* 5. Experience Cards (Timeline Content) */
+.timeline-content {
+  background-color: var(--accent-light) !important;
+  border: 1px solid var(--stroke);
+}
+
+/* Adjust timeline arrows to match pale yellow */
+.timeline-item.left .timeline-content::before {
+  border-color: transparent transparent transparent var(--accent-light);
+}
+.timeline-item.right .timeline-content::before {
+  border-color: transparent var(--accent-light) transparent transparent;
+}
+
+/* 6. Buttons */
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--primary);
+  border: none;
+}
+.btn-primary:hover {
+  background-color: var(--accent-dark);
+  box-shadow: 0 12px 30px rgba(255, 238, 127, 0.4);
+}
+.btn:not(.btn-primary) {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--stroke);
+  color: var(--primary);
+}
+
+/* 7. Timeline Visuals */
+.timeline::before {
+  background: linear-gradient(180deg, 
+    transparent, 
+    var(--accent) 5%, 
+    var(--primary) 50%, 
+    var(--accent) 95%, 
+    transparent
+  ) !important;
+}
+.timeline-date {
+  background-color: var(--primary) !important;
+  color: #F1F2F2 !important;
+  box-shadow: 0 8px 24px rgba(15, 53, 45, 0.3) !important;
+}
+.timeline-node {
+  background-color: var(--primary) !important;
+  border-color: var(--accent) !important;
+}
+
+/* 8. Modals */
+.modal-box {
+  background-color: var(--bg0) !important;
+}
+.modal-head {
+  background-color: var(--bg0) !important;
+  border-bottom: 1px solid var(--stroke);
+}
+.bullet {
+  background-color: var(--accent-light);
+  border: 1px solid rgba(15, 53, 45, 0.08);
+}
+
+/* 9. Contact Section */
+.contact-card {
+  background-color: #FFFFFF !important; /* Keep clean white for contrast */
+  border: 1px solid var(--stroke);
 }
