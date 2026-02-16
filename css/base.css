@@ -812,3 +812,119 @@ footer{
   html{ scroll-behavior:auto; }
   .btn, .timeline-content, .reveal, .modal-box, .timeline-item, .info{ transition:none !important; animation:none !important; }
 }
+
+/* Profile photo styling */
+.profile-photo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 auto;
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 20px rgba(16, 53, 45, .25);
+  background: white;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Topbar right container */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Company logo badge */
+.company-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(16, 53, 45, .08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.company-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 53, 45, .12);
+}
+
+.company-badge span {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.company-logo {
+  height: 26px;
+  max-width: 100px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+  .topbar-right {
+    gap: 12px;
+  }
+  
+  .company-badge {
+    padding: 5px 12px;
+  }
+  
+  .company-logo {
+    height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .company-badge span {
+    display: none; /* Hide "FOR" text on mobile */
+  }
+  
+  .company-logo {
+    height: 24px;
+  }
+  
+  .profile-photo {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 6px;
+  }
+  
+  .btn {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .btn i {
+    display: none; /* Hide icons on very small screens */
+  }
+}
