@@ -26,6 +26,8 @@ a{ color:inherit; text-decoration:none; }
   background: rgba(251, 250, 244, .85);
   border-bottom: 1px solid var(--stroke);
 }
+
+/* Original topbar-inner (for non-centered layouts) */
 .topbar-inner{
   max-width:var(--container);
   margin:0 auto;
@@ -35,13 +37,29 @@ a{ color:inherit; text-decoration:none; }
   justify-content:space-between;
   gap:12px;
 }
+
+/* Centered topbar layout (for company-specific pages) */
+.topbar-inner-centered {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+}
+
 .brand{
   display:flex;
   align-items:center;
   gap:10px;
   font-weight:800;
   letter-spacing:-.02em;
+  flex: 0 0 auto;
+  min-width: 240px;
 }
+
 .brand-badge{
   width:38px;height:38px;border-radius:14px;
   background: linear-gradient(135deg, var(--primary), #1a4d3f);
@@ -50,6 +68,7 @@ a{ color:inherit; text-decoration:none; }
   color:var(--accent);
   flex:0 0 auto;
 }
+
 .brand small{
   display:block;
   font-weight:600;
@@ -64,6 +83,13 @@ a{ color:inherit; text-decoration:none; }
   gap:10px;
   flex-wrap:wrap;
   justify-content:flex-end;
+}
+
+/* For centered layout */
+.topbar-inner-centered .nav {
+  flex: 0 0 auto;
+  min-width: 240px;
+  justify-content: flex-end;
 }
 
 /* Buttons (rounded pills) */
@@ -832,80 +858,77 @@ footer{
   display: block;
 }
 
-/* Topbar right container */
-.topbar-right {
+/* Company logo badge - CENTERED VERSION */
+.company-badge-center {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-/* Company logo badge */
-.company-badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding: 6px 14px;
   background: rgba(255, 255, 255, 0.75);
   border-radius: 12px;
   border: 1px solid var(--stroke);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(16, 53, 45, .08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.company-badge:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(16, 53, 45, .12);
+.at-symbol {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.6;
 }
 
-.company-badge span {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.company-logo {
-  height: 26px;
-  max-width: 100px;
+.company-logo-center {
+  height: 22px;
+  max-width: 90px;
   object-fit: contain;
-  opacity: 0.9;
 }
 
-/* Mobile adjustments */
+/* Mobile responsive for centered layout */
 @media (max-width: 1024px) {
-  .topbar-right {
-    gap: 12px;
+  .topbar-inner-centered {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  
-  .company-badge {
-    padding: 5px 12px;
+
+  .topbar-inner-centered .brand {
+    min-width: auto;
+    order: 2;
   }
-  
-  .company-logo {
-    height: 22px;
+
+  .company-badge-center {
+    position: static;
+    transform: none;
+    order: 1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .topbar-inner-centered .nav {
+    order: 3;
+    min-width: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .topbar-inner {
-    flex-wrap: wrap;
+  .topbar-inner-centered {
+    flex-direction: column;
     gap: 12px;
   }
-  
-  .topbar-right {
-    width: 100%;
-    justify-content: space-between;
+
+  .company-logo-center {
+    height: 20px;
   }
-  
-  .company-badge span {
-    display: none; /* Hide "FOR" text on mobile */
+
+  .at-symbol {
+    font-size: 14px;
   }
-  
-  .company-logo {
-    height: 24px;
+
+  .company-badge-center {
+    padding: 5px 12px;
   }
   
   .profile-photo {
@@ -915,16 +938,34 @@ footer{
 }
 
 @media (max-width: 480px) {
+  .topbar-inner-centered .brand {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .brand div {
+    font-size: 14px;
+  }
+
+  .brand small {
+    font-size: 11px;
+  }
+
   .nav {
     gap: 6px;
   }
-  
+
   .btn {
     padding: 10px 12px;
     font-size: 13px;
   }
-  
+
   .btn i {
-    display: none; /* Hide icons on very small screens */
+    display: none;
+  }
+
+  .company-logo-center {
+    height: 18px;
   }
 }
