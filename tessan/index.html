@@ -16,36 +16,36 @@
 
 <body>
   <!-- TESSAN-SPECIFIC HEADER -->
-  <div class="topbar">
-    <div class="topbar-inner-centered">
-      <!-- Left: Your photo + name -->
-      <div class="brand">
-        <div class="profile-photo">
-          <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" 
-               alt="Josselin Raguenet de Saint Albin">
-        </div>
-        <div>
-          Josselin Raguenet de Saint Albin
-          <small>Application for Chief Operating Officer</small>
-        </div>
+<nav class="topbar">
+  <!-- Use standard class, CSS handles the layout now -->
+  <div class="topbar-inner">
+    
+    <!-- 1. Brand (Left) -->
+    <a href="/" class="brand">
+      <div class="profile-photo">
+        <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" alt="Josselin">
       </div>
-
-      <!-- Center: Company logo with @ -->
-      <div class="company-badge-center">
-        <span class="at-symbol">@</span>
-        <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/tessan-logo.png" 
-             alt="Tessan" 
-             class="company-logo-center">
+      <div>
+        Josselin R. de Saint Albin
+        <small>Application for Chief Operating Officer</small>
       </div>
+    </a>
 
-      <!-- Right: Navigation -->
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
-        <a class="btn btn-ghost" href="#skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</a>
-        <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
-      </nav>
+    <!-- 2. Company Badge (Absolute Center) -->
+    <div class="company-badge">
+      <span class="at-symbol">@</span>
+      <img src="https://www.tessan.io/assets/images/logo-tessan.svg" alt="Tessan" class="company-logo">
     </div>
+
+    <!-- 3. Navigation (Right) -->
+    <div class="nav">
+      <a href="#experience" class="btn"><i class="ph-briefcase"></i> Experience</a>
+      <a href="#skills" class="btn"><i class="ph-magic-wand"></i> Skills</a>
+      <a href="#contact" class="btn btn-primary"><i class="ph-paper-plane-tilt"></i> Contact</a>
+    </div>
+
   </div>
+</nav>
 
   <!-- SHARED CONTENT LOADED HERE -->
   <div id="app">Loading...</div>
