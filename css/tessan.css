@@ -1,33 +1,144 @@
-/* Tessan theme - Blue & Orange */
+/* Tessan Brand Theme */
 :root {
-  --bg0: #F8FAFC;
-  --bg1: #F1F5F9;
-  --ink: #0F172A;
-  --muted: #475569;
-  --card: rgba(255,255,255,.90);
-  --stroke: rgba(15, 23, 42, .12);
-  --shadow: 0 22px 60px rgba(15, 23, 42, .08);
-  --shadow2: 0 12px 30px rgba(15, 23, 42, .06);
-  
-  --primary: #0066CC;        /* Tessan Blue */
-  --accent: #FF6B00;         /* Tessan Orange */
-  --accent-dark: #E55D00;
-  --accent-fade: rgba(255, 107, 0, .12);
-  --primary-fade: rgba(0, 102, 204, .08);
-  
+  --bg0: #F7F7ED;          /* Tessan light background */
+  --bg1: #FCF5CC;          /* Tessan cream background */
+  --ink: #113632;          /* Tessan dark green for text */
+  --muted: #4a5b56;        /* Muted text */
+  --card: rgba(255, 255, 255, .92);
+  --stroke: rgba(17, 54, 50, .12);
+  --shadow: 0 22px 60px rgba(17, 54, 50, .08);
+  --shadow2: 0 12px 30px rgba(17, 54, 50, .06);
+
+  --primary: #10352D;      /* Tessan primary dark green */
+  --accent: #FFEE7F;       /* Tessan yellow accent */
+  --accent-dark: #FCF5CC;  /* Tessan cream for hover */
   --good: #16a34a;
+
   --r-lg: 28px;
   --r-md: 18px;
   --r-sm: 14px;
   --container: 1120px;
 }
 
-/* Additional Tessan-specific overrides */
+/* Update background gradients with Tessan colors */
+body {
+  background:
+    radial-gradient(1200px 800px at 15% 10%, rgba(255, 238, 127, .15), transparent 60%),
+    radial-gradient(900px 700px at 80% 15%, rgba(16, 53, 45, .08), transparent 55%),
+    radial-gradient(900px 700px at 70% 85%, rgba(252, 245, 204, .20), transparent 55%),
+    linear-gradient(180deg, #F7F7ED, #FCF5CC) !important;
+}
+
+/* Profile photo border - Tessan primary color */
+.profile-photo {
+  border-color: #10352D;
+  box-shadow: 0 8px 20px rgba(16, 53, 45, .30);
+}
+
+/* Brand badge gradient */
 .brand-badge {
-  background: linear-gradient(135deg, #0066CC, #004C99) !important;
+  background: linear-gradient(135deg, #10352D, #113632) !important;
+}
+
+/* Company badge with Tessan colors */
+.company-badge {
+  background: rgba(252, 245, 204, 0.80);
+  border-color: rgba(16, 53, 45, .15);
+}
+
+/* Topbar background */
+.topbar {
+  background: rgba(247, 247, 237, .90) !important;
+  border-bottom: 1px solid rgba(17, 54, 50, .12);
+}
+
+/* Button hover states */
+.btn-primary:hover {
+  background: #FCF5CC !important;
+  box-shadow: 0 22px 50px rgba(255, 238, 127, .45) !important;
+}
+
+/* Timeline elements */
+.timeline-date {
+  background: #10352D !important;
+  box-shadow: 0 8px 24px rgba(16, 53, 45, .40) !important;
+}
+
+.timeline-node {
+  background: #10352D !important;
+  border-color: #FFEE7F !important;
+  box-shadow: 0 0 0 8px rgba(255, 238, 127, .20) !important;
 }
 
 .timeline-logo-wrapper {
-  border-color: #0066CC !important;
+  border-color: #10352D !important;
+  box-shadow: 0 8px 24px rgba(16, 53, 45, .30) !important;
 }
 
+/* Timeline vertical line */
+.timeline::before {
+  background: linear-gradient(180deg, 
+    transparent, 
+    #FFEE7F 5%, 
+    #10352D 50%, 
+    #FCF5CC 95%, 
+    transparent
+  ) !important;
+}
+
+/* Modals */
+.modal {
+  background: rgba(17, 54, 50, .35) !important;
+}
+
+.modal-box {
+  background: rgba(247, 247, 237, .98) !important;
+  border-color: rgba(255, 238, 127, .30) !important;
+}
+
+.modal-head {
+  background: rgba(247, 247, 237, .95) !important;
+}
+
+/* Kicker badge */
+.kicker {
+  background: rgba(255, 238, 127, .30);
+  border: 1px solid rgba(255, 238, 127, .50);
+}
+
+/* Pills */
+.pill {
+  background: rgba(16, 53, 45, .08);
+  border: 1px solid rgba(16, 53, 45, .15);
+}
+
+/* Info cards */
+.info {
+  background: rgba(255, 255, 255, .92);
+}
+
+/* Bullets in modals */
+.bullet {
+  background: rgba(252, 245, 204, .40);
+  border: 1px solid rgba(252, 245, 204, .60);
+}
+
+/* Tags */
+.tag {
+  background: rgba(252, 245, 204, .50);
+  border: 1px solid rgba(252, 245, 204, .70);
+}
+
+/* Contact card */
+.contact-card::before {
+  background: radial-gradient(900px 280px at 15% 15%, rgba(255, 238, 127, .15), transparent 60%),
+              radial-gradient(700px 260px at 80% 10%, rgba(16, 53, 45, .08), transparent 55%),
+              radial-gradient(700px 260px at 70% 90%, rgba(252, 245, 204, .15), transparent 55%);
+}
+
+/* Panel backgrounds */
+.panel::before {
+  background: radial-gradient(900px 280px at 15% 15%, rgba(255, 238, 127, .15), transparent 60%),
+              radial-gradient(700px 260px at 80% 10%, rgba(16, 53, 45, .08), transparent 55%),
+              radial-gradient(700px 260px at 70% 90%, rgba(252, 245, 204, .15), transparent 55%);
+}
