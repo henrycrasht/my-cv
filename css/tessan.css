@@ -1,265 +1,158 @@
 /* 
-   TESSAN THEME - v4.0 (Polished UI & Mobile Fixes)
+   TESSAN THEME - v5.0 (Hero Fix)
 */
 
 :root {
   /* Core Palette */
   --bg0: #FBFAF5;          /* Page Background */
-  --bg1: #F7F7ED;          /* Gradient Secondary */
-  
   --primary: #0F352D;      /* Dark Green */
-  --ink: #113632;          /* Text */
-  --muted: #4a5b56;        /* Muted Text */
-  
   --accent: #FFEE7F;       /* Yellow Accent */
   --accent-light: #FEF9DE; /* Pale Yellow Cards */
-  --accent-dark: #FCE855;  /* Hover Yellow */
-  
-  --card: #FEF9DE;         /* Card Background */
   --stroke: rgba(15, 53, 45, 0.12);
-  --shadow: 0 22px 60px rgba(15, 53, 45, 0.08);
-  
-  --r-lg: 28px;            /* Large Radius */
-  --r-md: 18px;            /* Medium Radius */
+  --r-lg: 28px;
+  --container: 1120px;
 }
 
 /* 1. FORCE PAGE BACKGROUND */
 body {
   background: var(--bg0) !important;
-  background-image: 
-    radial-gradient(1200px 800px at 15% 10%, rgba(255, 238, 127, .05), transparent 60%),
-    radial-gradient(900px 700px at 80% 15%, rgba(15, 53, 45, .03), transparent 55%) !important;
 }
 
-/* 2. TOPBAR (Fixed Layout) */
+/* 2. TOPBAR (Fixed) */
 .topbar {
-  background: rgba(251, 250, 244, 0.95) !important; /* Slight transparency */
+  background: rgba(251, 250, 244, 0.95) !important;
   backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--stroke) !important;
-  z-index: 100 !important; /* Ensure below modal (modal is z-1000) */
 }
 
 .topbar-inner {
   display: flex !important;
-  align-items: center !important;
   justify-content: space-between !important;
-  gap: 20px !important;
+  align-items: center !important;
   max-width: var(--container) !important;
   margin: 0 auto !important;
   padding: 14px 24px !important;
-  position: relative !important;
 }
 
-/* Brand (Left) */
-.brand {
-  flex: 1 !important;
-  min-width: 0 !important; /* Allow shrink */
-  white-space: nowrap !important;
-}
-
-/* Company Badge (Center - Absolute) */
 .company-badge {
   position: absolute !important;
   left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  z-index: 10 !important;
+  transform: translateX(-50%) !important;
   background: #FFFFFF !important;
-  border: 1px solid var(--stroke) !important;
   padding: 6px 16px !important;
   border-radius: 999px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
-  white-space: nowrap !important;
+  border: 1px solid var(--stroke) !important;
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
 }
 
-/* Navigation (Right) */
-.nav {
-  flex: 1 !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-  gap: 10px !important;
-}
-
-/* MOBILE TOPBAR FIX */
-@media (max-width: 900px) {
-  .topbar-inner {
-    flex-direction: column !important;
-    padding: 12px 16px !important;
-    gap: 12px !important;
-    height: auto !important;
-  }
-  
-  .company-badge {
-    position: static !important;
-    transform: none !important;
-    order: 2 !important; /* Between name and buttons */
-    width: fit-content !important;
-    margin: 0 auto !important;
-  }
-  
-  .brand {
-    order: 1 !important;
-    width: 100% !important;
-    justify-content: center !important;
-  }
-  
-  .nav {
-    order: 3 !important;
-    width: 100% !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-  }
-  
-  /* Make buttons smaller on mobile to save space */
-  .btn {
-    padding: 8px 12px !important;
-    font-size: 13px !important;
-  }
-}
-
-/* 3. HERO SECTION (Dark Green + Rounded Corners) */
+/* 3. HERO SECTION (CRITICAL FIXES) */
 .hero {
+  /* The main container is Dark Green */
   background-color: var(--primary) !important;
-  color: #F1F2F2 !important;
-  margin: 20px auto !important; /* Add margin for floating look */
+  margin: 40px auto !important;
   max-width: var(--container) !important;
-  border-radius: var(--r-lg) !important; /* Restore rounded corners */
-  padding: 60px 40px !important;
+  border-radius: var(--r-lg) !important;
+  padding: 60px 50px !important;
   position: relative !important;
-  overflow: hidden !important; /* Clip corners */
-  box-shadow: var(--shadow) !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
-/* Fix Hero Text Colors */
-.hero h1, 
-.hero .subhead,
+/* REMOVE THE INNER CARD BACKGROUND */
+/* This was causing the "frame within a frame" look */
+.hero .panel {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.hero .panel::before { display: none !important; }
+
+/* HERO TEXT COLORS - Force White */
+.hero h1 {
+  color: #FFFFFF !important;
+  font-size: 48px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 24px !important;
+}
+
+/* Gradient Headline Override - Make it Solid White */
 .hero .headline-grad {
-  color: #F1F2F2 !important;
   background: none !important;
-  -webkit-text-fill-color: #F1F2F2 !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
-/* KICKER (Availability Badge) - High Contrast */
+.hero .subhead {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 18px !important;
+  max-width: 700px !important;
+}
+
+/* KICKER (Availability Badge) */
 .kicker {
-  background: #FBFAF5 !important; /* Light Cream */
-  border: 1px solid rgba(255, 255, 255, 0.4) !important;
-  color: var(--primary) !important; /* Dark Green Text */
+  background: #FBFAF5 !important;
+  border: none !important;
+  color: var(--primary) !important;
   font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+  padding: 8px 16px !important;
+  margin-bottom: 24px !important;
+  display: inline-flex !important;
 }
 .kicker i { color: var(--primary) !important; }
 
-/* PILLS (Tools) - High Contrast */
+/* PILLS (Tools) */
 .hero .pill {
-  background: #FEF9DE !important; /* Pale Yellow */
-  border: 1px solid rgba(255, 238, 127, 0.4) !important;
-  color: var(--primary) !important; /* Dark Green Text */
-  font-weight: 600 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
 }
-.hero .pill i { color: var(--primary) !important; }
+.hero .pill i { color: var(--accent) !important; }
 
-/* 4. SKILLS SECTION (Unified Card) */
-/* Wrapper for the skills section */
-#skills {
-  background: var(--accent-light) !important; /* Main Card Background */
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
-  border: 1px solid var(--stroke) !important;
-  margin-top: 40px !important;
-  box-shadow: var(--shadow2) !important;
-}
-
-/* Title inside skills card */
-#skills h2 {
+/* HERO BUTTONS */
+.hero .btn {
+  background: #FBFAF5 !important;
   color: var(--primary) !important;
-  margin-bottom: 24px !important;
-  border-bottom: 1px solid rgba(15, 53, 45, 0.1) !important;
-  padding-bottom: 12px !important;
-}
-
-/* Sub-cards (Info Grid items) */
-.info-grid .info {
-  background: #FFFFFF !important; /* White sub-cards for contrast */
-  border: 1px solid rgba(15, 53, 45, 0.08) !important;
-  box-shadow: 0 4px 12px rgba(15, 53, 45, 0.03) !important;
-  border-radius: var(--r-md) !important;
-}
-
-/* skills cards wrapped in Skill section */
-.skills-card-wrapper {
-  background: var(--accent-light) !important;
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
-  border: 1px solid var(--stroke) !important;
-  box-shadow: var(--shadow2) !important;
-}
-
-.skills-header {
-  margin-bottom: 24px !important;
-  border-bottom: 1px solid rgba(15, 53, 45, 0.1) !important;
-  padding-bottom: 16px !important;
-}
-
-.skills-header h2 {
-  color: var(--primary) !important;
-  margin-bottom: 8px !important;
-}
-
-/* Ensure sub-cards are white inside the pale yellow wrapper */
-.skills-card-wrapper .info {
-  background: #FFFFFF !important;
-  border: 1px solid rgba(15, 53, 45, 0.08) !important;
-  box-shadow: 0 4px 12px rgba(15, 53, 45, 0.03) !important;
-}
-
-
-/* 5. MODAL (Dark Header) */
-.modal {
-  z-index: 2000 !important; /* Ensure mostly on top */
-}
-
-.modal-box {
-  background-color: var(--bg0) !important;
-  border-radius: var(--r-lg) !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-.modal-head {
-  background-color: var(--primary) !important; /* Dark Green Header */
-  color: #F1F2F2 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding: 24px 30px !important;
-}
-
-.modal-title, .modal-sub {
-  color: #F1F2F2 !important;
-}
-
-.modal-close {
-  background: rgba(255, 255, 255, 0.15) !important;
-  color: #F1F2F2 !important;
   border: none !important;
+  font-weight: 700 !important;
 }
-.modal-close:hover {
+.hero .btn:hover {
+  background: var(--accent) !important;
+  transform: translateY(-2px) !important;
+}
+
+.hero .btn-primary {
   background: var(--accent) !important;
   color: var(--primary) !important;
 }
 
-/* 6. OTHER CARDS (Experience) */
-.timeline-content {
-  background-color: var(--accent-light) !important;
+/* 4. UNIFIED SKILLS CARD */
+#skills, .skills-card-wrapper {
+  background: var(--accent-light) !important;
+  border-radius: var(--r-lg) !important;
+  padding: 30px !important;
   border: 1px solid var(--stroke) !important;
-  box-shadow: var(--shadow2) !important;
+  margin-top: 40px !important;
 }
 
-/* Timeline Arrows */
-.timeline-item.left .timeline-content::before {
-  border-left-color: var(--accent-light) !important;
+#skills h2 { color: var(--primary) !important; }
+.skills-card-wrapper .info {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(15, 53, 45, 0.08) !important;
 }
-.timeline-item.right .timeline-content::before {
-  border-right-color: var(--accent-light) !important;
+
+/* 5. EXPERIENCE CARDS */
+.timeline-content {
+  background: var(--accent-light) !important;
+  border: 1px solid var(--stroke) !important;
 }
+
+/* 6. MODAL */
+.modal-head {
+  background: var(--primary) !important;
+  color: #FFFFFF !important;
+}
+.modal-title, .modal-sub { color: #FFFFFF !important; }
+.modal-close { background: rgba(255,255,255,0.2) !important; color: white !important; }
