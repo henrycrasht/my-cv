@@ -112,25 +112,42 @@ body {
 }
 .hero .pill i { color: var(--accent) !important; }
 
-/* HERO BUTTONS */
+/* HERO BUTTONS - High Contrast Pop */
+
+/* 1. Base Button Style (Secondary: Browse Skills / Get in Touch) */
 .hero .btn {
-  background: var(--accent-light)!important;
-  color: var(--primary) !important;
-  border: none !important;
+  background: var(--accent-light) !important; /* Pale Cream */
+  color: var(--primary) !important;           /* Dark Green Text */
+  border: 1px solid transparent !important;   /* No border initially */
   font-weight: 700 !important;
-}
-.hero .btn:hover {
-  background: var(--accent) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; /* Subtle shadow on dark bg */
+  transition: all 0.2s ease !important;
 }
 
-.hero .btn-primary {
-  background: var(--accent) !important;
+/* Secondary Hover: Brighten to Accent Yellow */
+.hero .btn:hover {
+  background: var(--accent) !important;       /* Bright Yellow */
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
   color: var(--primary) !important;
 }
+
+/* 2. Primary Button Style (Explore Experiences / Download CV) */
+.hero .btn-primary {
+  background: var(--accent) !important;       /* Bright Yellow */
+  color: var(--primary) !important;           /* Dark Green Text */
+  border: 1px solid rgba(255,255,255,0.2) !important; /* Slight inner border for definition */
+  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25) !important; /* Yellowish glow */
+}
+
+/* Primary Hover: Turn to White/Cream for max contrast interaction */
 .hero .btn-primary:hover {
-  background: var(--accent-light) !important;
+  background: #FFFFFF !important;             /* Pure White Pop */
+  color: var(--primary) !important;
   transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important; /* White glow */
+}
+
    
 /* 4. UNIFIED SKILLS CARD */
 #skills, .skills-card-wrapper {
