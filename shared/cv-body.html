@@ -1,213 +1,251 @@
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="brand-badge" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-        <div>
-          Josselin Raguenet de Saint Albin
-          <small>Global Ops • Customer Success & Support • GM</small>
+<!-- No topbar here - each company has its own -->
+
+<main class="container">
+	<!-- start HERO section -->
+     <section class="hero">
+       <div class="panel reveal">
+         <div class="kicker"><i class="fa-solid fa-circle-check"></i> Available for leadership roles (Ops / CS / GM)</div>
+
+         <h1>
+           Dynamic <span class="headline-grad">Global Operations Leader</span><br/>
+           scaling teams, processes & P&L.
+         </h1>
+
+         <p class="subhead">
+           Director / COO / General Manager profile with strong track record across tech scale-ups and multi-country operations.
+           I build resilient operating models, lead distributed teams, and deliver measurable outcomes (cost, quality, growth).
+         </p>
+
+         <div class="pill-row" aria-label="Quick highlights">
+           <div class="pill"><i class="fa-solid fa-users"></i> Leadership across 20+ countries</div>
+           <div class="pill"><i class="fa-solid fa-euro-sign"></i> P&L & cost optimization</div>
+           <div class="pill"><i class="fa-solid fa-chart-line"></i> Data & dashboards</div>
+           <div class="pill"><i class="fa-solid fa-cog"></i> Tools implementation</div>
+         </div>
+
+         <div class="hero-actions">
+           <a class="btn" href="#skills"><i class="fa-solid fa-arrow-down"></i> Browse skills</a>
+           <a class="btn btn-primary" href="#experience"><i class="fa-solid fa-arrow-down"></i> Explore experiences</a>
+           <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
+           <a class="btn btn-primary" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin-cv-2026.pdf" download>
+             <i class="fa-solid fa-download"></i> Download CV (PDF)
+           </a>
+         </div>
+       </div>
+     </section>
+	 <!-- end HERO section -->
+
+	 <!-- start SKILLS section -->
+  <section class="section" id="skills">
+    <h2 class="reveal">What I bring</h2>
+    <p class="hint">💡 Click each card to see detailed examples from real experiences.</p>
+
+    <div class="info-grid">
+      <div class="info reveal" data-modal="m_leadership" role="button" tabindex="0">
+        <h3><i class="fa-solid fa-trophy"></i> Core leadership strengths</h3>
+        <div class="tags">
+          <span class="tag"><i class="fa-solid fa-users"></i> Distributed team leadership</span>
+          <span class="tag"><i class="fa-solid fa-coins"></i> P&L ownership</span>
+          <span class="tag"><i class="fa-solid fa-gear"></i> Process design & scale</span>
+          <span class="tag"><i class="fa-solid fa-handshake"></i> Cross-functional alignment</span>
+          <span class="tag"><i class="fa-solid fa-shield"></i> Compliance & security</span>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-briefcase"></i> Experiences</a>
-        <a class="btn btn-ghost" href="#skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</a>
-        <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
-      </nav>
+      <div class="info reveal" data-modal="m_tools" role="button" tabindex="0">
+        <h3><i class="fa-solid fa-laptop-code"></i> Tools & analytics</h3>
+        <div class="tags">
+          <span class="tag"><i class="fa-solid fa-bolt"></i> Automation & AI</span>
+          <span class="tag"><i class="fa-solid fa-cloud"></i> CRM ownership</span>
+          <span class="tag"><i class="fa-solid fa-chart-simple"></i> BI & Data dashboards</span>
+          <span class="tag"><i class="fa-solid fa-phone"></i> Vendor management</span>
+          <span class="tag"><i class="fa-solid fa-language"></i> Training, Knowledge base</span>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- end SKILLS section -->
+  
+<!-- start TIMELINE section -->
+  <section class="section" id="experience">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h2 class="reveal" style="margin: 0;">Career timeline</h2>
+      <button class="timeline-toggle" id="toggleTimeline">
+        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+        <span id="toggleText">Earliest → Latest</span>
+      </button>
+    </div>
+    <div class="hint">
+      💡 click on cards for detailed insights.
+    </div>
+    <div class="timeline" id="timelineContainer">
+          <!-- 1. Bits of Apples (RIGHT) -->
+          <div class="timeline-item right" data-modal="m_boa">
+            <div class="timeline-date">2010 — 2013</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-brands fa-apple"></i> Entrepreneurship</div>
+              <div class="timeline-role">Founder</div>
+              <div class="timeline-company">Bits of Apples • Paris</div>
+              <p class="timeline-teaser">Apple products and software implementation & support | hands-on client delivery and operations.</p>
+            </div>
+          </div>
+        
+          <!-- 2. Manbow Group (LEFT) -->
+          <div class="timeline-item left" data-modal="m_manbow">
+            <div class="timeline-date">2011 — 2013</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Retail & Project Management</div>
+              <div class="timeline-role">Sales Lead & Project Manager</div>
+              <div class="timeline-company">Manbow Group • Paris</div>
+              <p class="timeline-teaser">New store opening.</p>
+            </div>
+          </div>
+
+          <!-- 3. Teleperformance SPM (RIGHT) -->
+          <div class="timeline-item right" data-modal="m_tp_spm">
+            <div class="timeline-date">Sep 2013 — Oct 2014</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-diagram-project"></i> Business Setup</div>
+              <div class="timeline-role">Senior Project Manager Africa</div>
+              <div class="timeline-company">Teleperformance (TLScontact) • Cape Town</div>
+              <p class="timeline-teaser">Launched 15 new entities | managed €20.1M rollout budget | 10.300 sqm fitted | 410 staff hired & trained.</p>
+            </div>
+          </div>
+
+          <!-- 4. Teleperformance RM (LEFT) -->
+          <div class="timeline-item right" data-modal="m_tp_rm">
+            <div class="timeline-date">Nov 2014 — Apr 2017</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-globe-africa"></i> General Management</div>
+              <div class="timeline-role">Regional Manager Africa</div>
+              <div class="timeline-company">Teleperformance (TLScontact) • Lagos</div>
+              <p class="timeline-teaser">structuring ops for 300+ staff across 17 countries | €7M OPEX | +19% net sales | +6 new offices.</p>
+            </div>
+          </div>
+
+          <!-- 5. Consultant (RIGHT) -->
+          <div class="timeline-item left" data-modal="m_consult">
+            <div class="timeline-date">May 2017 — Apr 2018</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-compass-drafting"></i> Consulting</div>
+              <div class="timeline-role">Casa2Cape Consulting</div>
+              <div class="timeline-company">Freelance Consultant • Africa</div>
+              <p class="timeline-teaser">Accompany businesses in their investments in African markets | design and deploy transformative operations.</p>
+            </div>
+          </div>
+
+          <!-- 6. Meero CS (LEFT) -->
+          <div class="timeline-item right" data-modal="m_meero_cs">
+            <div class="timeline-date">May 2018 — Oct 2019</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-chart-line"></i> Hypergrowth Scaling</div>
+              <div class="timeline-role">Head of Customer Service</div>
+              <div class="timeline-company">Meero • Paris</div>
+              <p class="timeline-teaser">Built 70+ FTE across 4 offices | defined CS strategy, tools & KPIs | +400% activity in 18 months.</p>
+            </div>
+          </div>
+
+          <!-- 7. Meero Ops (RIGHT) -->
+          <div class="timeline-item right" data-modal="m_meero_ops">
+            <div class="timeline-date">Nov 2019 — Feb 2022</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-coins"></i> Ops P&L improvements</div>
+              <div class="timeline-role">Global Head of Support Operations</div>
+              <div class="timeline-company">Meero • Paris</div>
+              <p class="timeline-teaser">-80% cost reduction | offshoring to Bangalore for 24/7 multilingual chat coverage | outsourcing calls to BPO.</p>
+            </div>
+          </div>
+
+          <!-- 8. Malt (LEFT) -->
+          <div class="timeline-item left" data-modal="m_malt">
+            <div class="timeline-date">Mar 2022 — May 2023</div>
+            <div class="timeline-node"></div>
+            <div class="timeline-content" role="button" tabindex="0">
+              <div class="timeline-badge"><i class="fa-solid fa-users"></i> Marketplace / Scale-up</div>
+              <div class="timeline-role">Global Director — Community Success & Care</div>
+              <div class="timeline-company">Malt • Paris</div>
+              <p class="timeline-teaser">Built Acquisition→Activation→Retention→Support ops from scratch | structured teams across 7 EU countries.</p>
+            </div>
+          </div>
+
+          <!-- 9. Gadimat (RIGHT) -->
+          <div class="timeline-item right" data-modal="m_gadimat">
+          <div class="timeline-date">Jan 2024 — Present</div>
+            <div class="timeline-node"></div>
+          <div class="timeline-content" role="button" tabindex="0">
+          <div class="timeline-badge"><i class="fa-solid fa-industry"></i> Manufacturing / Logistics</div>
+      <div class="timeline-role">Deputy to the CEO</div>
+      <div class="timeline-company">Gadimat • Agadir</div>
+      <p class="timeline-teaser">P&L management for new furniture factory | process design & digitization | 20-truck fleet ops.</p>
     </div>
   </div>
+  </div>
+  <div class="hero-actions" style="justify-content: center;">
+        <a class="btn btn-primary" href="#skills"><i class="fa-solid fa-arrow-up"></i> Back to skills</a>
+  </div>
+  </section>
+<!-- end TIMELINE section -->
+  
+  
+<!-- start CONTACT section -->
+  <section class="contact-section" id="contact">
+    <div class="contact-card reveal">
+      <h2 class="lead-title">Let's Connect — Request My Executive CV Pack</h2>
+      <p class="lead-desc">
+        Get a detailed intro + CV PDF + key leadership wins. This form opens a pre-filled email for easy contact.
+      </p>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="panel reveal">
-        <div class="kicker"><i class="fa-solid fa-circle-check"></i> Available for leadership roles (Ops / CS / GM)</div>
-
-        <h1>
-          Dynamic <span class="headline-grad">Global Operations Leader</span><br/>
-          scaling teams, processes & P&L.
-        </h1>
-
-        <p class="subhead">
-          Director / COO / General Manager profile with strong track record across tech scale-ups and multi-country operations.
-          I build resilient operating models, lead distributed teams, and deliver measurable outcomes (cost, quality, growth).
-        </p>
-
-        <div class="pill-row" aria-label="Quick highlights">
-          <div class="pill"><i class="fa-solid fa-users"></i> Leadership across 20+ countries</div>
-          <div class="pill"><i class="fa-solid fa-euro-sign"></i> P&L & cost optimization</div>
-          <div class="pill"><i class="fa-solid fa-chart-line"></i> Data & dashboards</div>
-          <div class="pill"><i class="fa-solid fa-cog"></i> Tools implementation</div>
+      <form class="form" id="leadForm">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" autocomplete="name" placeholder="Jane Doe" required />
         </div>
 
-        <div class="hero-actions">
-          <a class="btn" href="#skills"><i class="fa-solid fa-arrow-down"></i> Browse skills</a>
-          <a class="btn btn-primary" href="#experience"><i class="fa-solid fa-arrow-down"></i> Explore experiences</a>
-          <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
-          <a class="btn btn-primary" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin-cv-2026.pdf" download>
-            <i class="fa-solid fa-download"></i> Download CV (PDF)
-          </a>
+        <div class="field">
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
+        </div>
+
+        <div class="field">
+          <label for="role">Role / context</label>
+          <textarea id="role" name="role" placeholder="e.g., Head of Operations — EU expansion, 80-200 FTE"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Send request
+        </button>
+
+       
+      </form>
+
+      <div class="contact-info">
+        <div class="hint">
+          <strong style="color:#10352D">Location:</strong> Agadir, Morocco // Paris, France // Remote friendly •
+          <strong style="color:#10352D">Languages:</strong> English, French, (rusty) German
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+<!-- end CONTACT section -->
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <h2 class="reveal">What I bring</h2>
-      <p class="hint">💡 Click each card to see detailed examples from real experiences.</p>
-
-      <div class="info-grid">
-        <div class="info reveal" data-modal="m_leadership" role="button" tabindex="0">
-          <h3><i class="fa-solid fa-trophy"></i> Core leadership strengths</h3>
-          <div class="tags">
-            <span class="tag"><i class="fa-solid fa-users"></i> Distributed team leadership</span>
-            <span class="tag"><i class="fa-solid fa-coins"></i> P&L ownership</span>
-            <span class="tag"><i class="fa-solid fa-gear"></i> Process design & scale</span>
-            <span class="tag"><i class="fa-solid fa-handshake"></i> Cross-functional alignment</span>
-            <span class="tag"><i class="fa-solid fa-shield"></i> Compliance & security</span>
-          </div>
-        </div>
-
-        <div class="info reveal" data-modal="m_tools" role="button" tabindex="0">
-          <h3><i class="fa-solid fa-laptop-code"></i> Tools & analytics</h3>
-          <div class="tags">
-            <span class="tag"><i class="fa-solid fa-bolt"></i> Automation & AI</span>
-            <span class="tag"><i class="fa-solid fa-cloud"></i> CRM ownership</span>
-            <span class="tag"><i class="fa-solid fa-chart-simple"></i> BI & Data dashboards</span>
-            <span class="tag"><i class="fa-solid fa-phone"></i> Vendor management</span>
-            <span class="tag"><i class="fa-solid fa-language"></i> Training, Knowledge base</span>
-          </div>
-        </div>
-      </div>
-    </section>
+</main>
 
 
-<!-- EXPERIENCE TIMELINE -->
-<section class="section" id="experience">
-  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-    <h2 class="reveal" style="margin: 0;">Career timeline</h2>
-    <button class="timeline-toggle" id="toggleTimeline">
-      <i class="fa-solid fa-arrow-down-up-across-line"></i>
-      <span id="toggleText">Earliest → Latest</span>
-    </button>
-  </div>
-  <div class="hint">
-    💡 click on cards for detailed insights.
-  </div>
-  <div class="timeline" id="timelineContainer">
-        <!-- 1. Bits of Apples (RIGHT) -->
-        <div class="timeline-item right" data-modal="m_boa">
-          <div class="timeline-date">2010 — 2013</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-brands fa-apple"></i> Entrepreneurship</div>
-            <div class="timeline-role">Founder</div>
-            <div class="timeline-company">Bits of Apples • Paris</div>
-            <p class="timeline-teaser">Apple products and software implementation & support | hands-on client delivery and operations.</p>
-          </div>
-        </div>
-        
-        <!-- 2. Manbow Group (LEFT) -->
-        <div class="timeline-item left" data-modal="m_manbow">
-          <div class="timeline-date">2011 — 2013</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Retail & Project Management</div>
-            <div class="timeline-role">Sales Lead & Project Manager</div>
-            <div class="timeline-company">Manbow Group • Paris</div>
-            <p class="timeline-teaser">New store opening.</p>
-          </div>
-        </div>
-
-        <!-- 3. Teleperformance SPM (RIGHT) -->
-        <div class="timeline-item right" data-modal="m_tp_spm">
-          <div class="timeline-date">Sep 2013 — Oct 2014</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-diagram-project"></i> Business Setup</div>
-            <div class="timeline-role">Senior Project Manager Africa</div>
-            <div class="timeline-company">Teleperformance (TLScontact) • Cape Town</div>
-            <p class="timeline-teaser">Launched 15 new entities | managed €20.1M rollout budget | 10.300 sqm fitted | 410 staff hired & trained.</p>
-          </div>
-        </div>
-
-        <!-- 4. Teleperformance RM (LEFT) -->
-        <div class="timeline-item right" data-modal="m_tp_rm">
-          <div class="timeline-date">Nov 2014 — Apr 2017</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-globe-africa"></i> General Management</div>
-            <div class="timeline-role">Regional Manager Africa</div>
-            <div class="timeline-company">Teleperformance (TLScontact) • Lagos</div>
-            <p class="timeline-teaser">structuring ops for 300+ staff across 17 countries | €7M OPEX | +19% net sales | +6 new offices.</p>
-          </div>
-        </div>
-
-        <!-- 5. Consultant (RIGHT) -->
-        <div class="timeline-item left" data-modal="m_consult">
-          <div class="timeline-date">May 2017 — Apr 2018</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-compass-drafting"></i> Consulting</div>
-            <div class="timeline-role">Casa2Cape Consulting</div>
-            <div class="timeline-company">Freelance Consultant • Africa</div>
-            <p class="timeline-teaser">Accompany businesses in their investments in African markets | design and deploy transformative operations.</p>
-          </div>
-        </div>
-
-        <!-- 6. Meero CS (LEFT) -->
-        <div class="timeline-item right" data-modal="m_meero_cs">
-          <div class="timeline-date">May 2018 — Oct 2019</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-chart-line"></i> Hypergrowth Scaling</div>
-            <div class="timeline-role">Head of Customer Service</div>
-            <div class="timeline-company">Meero • Paris</div>
-            <p class="timeline-teaser">Built 70+ FTE across 4 offices | defined CS strategy, tools & KPIs | +400% activity in 18 months.</p>
-          </div>
-        </div>
-
-        <!-- 7. Meero Ops (RIGHT) -->
-        <div class="timeline-item right" data-modal="m_meero_ops">
-          <div class="timeline-date">Nov 2019 — Feb 2022</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-coins"></i> Ops P&L improvements</div>
-            <div class="timeline-role">Global Head of Support Operations</div>
-            <div class="timeline-company">Meero • Paris</div>
-            <p class="timeline-teaser">-80% cost reduction | offshoring to Bangalore for 24/7 multilingual chat coverage | outsourcing calls to BPO.</p>
-          </div>
-        </div>
-
-        <!-- 8. Malt (LEFT) -->
-        <div class="timeline-item left" data-modal="m_malt">
-          <div class="timeline-date">Mar 2022 — May 2023</div>
-          <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-users"></i> Marketplace / Scale-up</div>
-            <div class="timeline-role">Global Director — Community Success & Care</div>
-            <div class="timeline-company">Malt • Paris</div>
-            <p class="timeline-teaser">Built Acquisition→Activation→Retention→Support ops from scratch | structured teams across 7 EU countries.</p>
-          </div>
-        </div>
-
-        <!-- 9. Gadimat (RIGHT) -->
-        <div class="timeline-item right" data-modal="m_gadimat">
-        <div class="timeline-date">Jan 2024 — Present</div>
-          <div class="timeline-node"></div>
-        <div class="timeline-content" role="button" tabindex="0">
-        <div class="timeline-badge"><i class="fa-solid fa-industry"></i> Manufacturing / Logistics</div>
-    <div class="timeline-role">Deputy to the CEO</div>
-    <div class="timeline-company">Gadimat • Agadir</div>
-    <p class="timeline-teaser">P&L management for new furniture factory | process design & digitization | 20-truck fleet ops.</p>
-  </div>
-</div>
-      </div>
-    </section>
+<footer>
+  ©<span id="year"></span> • Josselin Raguenet de Saint Albin • Press ESC to close pop-ups
+</footer>
 
 
- 
-  <!-- MODALS FOR EXPERIENCES -->
-  <!-- Gadimat -->
+<!-- start ALL MODALS section -->
+  <!-- start MODALS FOR EXPERIENCES -->
+  <!-- Gadimat MODAL -->
   <section class="modal" id="m_gadimat" aria-hidden="true" aria-label="Gadimat modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -231,7 +269,7 @@
     </div>
   </section>
 
-  <!-- Malt -->
+  <!-- Malt MODAL -->
   <section class="modal" id="m_malt" aria-hidden="true" aria-label="Malt modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -255,7 +293,7 @@
     </div>
   </section>
 
-  <!-- Meero Ops -->
+  <!-- Meero Ops MODAL -->
   <section class="modal" id="m_meero_ops" aria-hidden="true" aria-label="Meero Support Ops modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -280,7 +318,7 @@
     </div>
   </section>
 
-  <!-- Meero CS -->
+  <!-- Meero CS MODAL -->
   <section class="modal" id="m_meero_cs" aria-hidden="true" aria-label="Meero Customer Service modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -304,7 +342,7 @@
     </div>
   </section>
 
-  <!-- Teleperformance RM -->
+  <!-- Teleperformance RM MODAL -->
   <section class="modal" id="m_tp_rm" aria-hidden="true" aria-label="Teleperformance Regional Manager modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -329,7 +367,7 @@
     </div>
   </section>
 
-  <!-- Teleperformance SPM -->
+  <!-- Teleperformance SPM MODAL -->
   <section class="modal" id="m_tp_spm" aria-hidden="true" aria-label="Teleperformance Senior Project Manager modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -353,7 +391,7 @@
     </div>
   </section>
 
-  <!-- Casa2Cape Consulting -->
+  <!-- Casa2Cape Consulting MODAL -->
   <section class="modal" id="m_consult" aria-hidden="true" aria-label="Consulting modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -374,7 +412,7 @@
     </div>
   </section>
 
-  <!-- Bits of Apples -->
+  <!-- Bits of Apples MODAL -->
   <section class="modal" id="m_boa" aria-hidden="true" aria-label="Bits of Apples modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -395,7 +433,7 @@
     </div>
   </section>
 
-  <!-- Manbow Group -->
+  <!-- Manbow Group MODAL -->
   <section class="modal" id="m_manbow" aria-hidden="true" aria-label="Manbow Group modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -415,9 +453,10 @@
       </div>
     </div>
   </section>
+  <!-- end MODALS FOR EXPERIENCES section -->
 
-  <!-- MODALS FOR SKILLS -->
-  <!-- Leadership Skills Modal -->
+  <!-- start MODALS FOR SKILLS section -->
+  	<!-- Leadership Skills Modal -->
   <section class="modal" id="m_leadership" aria-hidden="true" aria-label="Leadership skills modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -475,7 +514,7 @@
     </div>
   </section>
 
-  <!-- Tools & Analytics Modal -->
+  	<!-- Tools & Analytics Modal -->
   <section class="modal" id="m_tools" aria-hidden="true" aria-label="Tools and analytics modal" role="dialog">
     <div class="modal-box" role="document">
       <header class="modal-head">
@@ -530,54 +569,6 @@
       </div>
     </div>
   </section>
- 
-
-
-    <div class="hero-actions" style="justify-content: center;">
-          <a class="btn btn-primary" href="#skills"><i class="fa-solid fa-arrow-up"></i> Back to skills</a>
-    </div>
-
-     <!-- CONTACT / LEAD MAGNET - Now at bottom -->
-    <section class="contact-section" id="contact">
-      <div class="contact-card reveal">
-        <h2 class="lead-title">Let's Connect — Request My Executive CV Pack</h2>
-        <p class="lead-desc">
-          Get a detailed intro + CV PDF + key leadership wins. This form opens a pre-filled email for easy contact.
-        </p>
-
-        <form class="form" id="leadForm">
-          <div class="field">
-            <label for="name">Your name</label>
-            <input id="name" name="name" autocomplete="name" placeholder="Jane Doe" required />
-          </div>
-
-          <div class="field">
-            <label for="email">Your email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@company.com" required />
-          </div>
-
-          <div class="field">
-            <label for="role">Role / context</label>
-            <textarea id="role" name="role" placeholder="e.g., Head of Operations — EU expansion, 80-200 FTE"></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">
-            <i class="fa-solid fa-paper-plane"></i> Send request
-          </button>
-
-         
-        </form>
-
-        <div class="contact-info">
-          <div class="hint">
-            <strong style="color:#10352D">Location:</strong> Agadir, Morocco // Paris, France // Remote friendly •
-            <strong style="color:#10352D">Languages:</strong> English, French, (rusty) German
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> • Josselin Raguenet de Saint Albin • Press ESC to close pop-ups
-    </footer>
-  </main>
+   <!-- end MODALS FOR SKILLS section -->
+   
+<!-- end ALL MODALS section ... -->
