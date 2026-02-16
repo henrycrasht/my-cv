@@ -1,1 +1,33 @@
+/* Tessan theme - Blue & Orange */
+:root {
+  --bg0: #F8FAFC;
+  --bg1: #F1F5F9;
+  --ink: #0F172A;
+  --muted: #475569;
+  --card: rgba(255,255,255,.90);
+  --stroke: rgba(15, 23, 42, .12);
+  --shadow: 0 22px 60px rgba(15, 23, 42, .08);
+  --shadow2: 0 12px 30px rgba(15, 23, 42, .06);
+  
+  --primary: #0066CC;        /* Tessan Blue */
+  --accent: #FF6B00;         /* Tessan Orange */
+  --accent-dark: #E55D00;
+  --accent-fade: rgba(255, 107, 0, .12);
+  --primary-fade: rgba(0, 102, 204, .08);
+  
+  --good: #16a34a;
+  --r-lg: 28px;
+  --r-md: 18px;
+  --r-sm: 14px;
+  --container: 1120px;
+}
+
+/* Additional Tessan-specific overrides */
+.brand-badge {
+  background: linear-gradient(135deg, #0066CC, #004C99) !important;
+}
+
+.timeline-logo-wrapper {
+  border-color: #0066CC !important;
+}
 
