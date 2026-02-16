@@ -1,253 +1,171 @@
 /* 
-   TESSAN THEME - v2.0
-   Matched to brand identity:
-   - Page Background: #FBFAF5
-   - Hero Background: #0F352D
-   - Hero Text: #F1F2F2
-   - Info/Exp Cards: #FEF9DE
+   TESSAN THEME - v3.0 (Fixed Specificity & Layout)
 */
 
 :root {
   /* Core Palette */
-  --bg0: #FBFAF5;          /* Requested Page Background */
-  --bg1: #F7F7ED;          /* Slightly darker shade for gradients */
+  --bg0: #FBFAF5;          /* Page Background */
+  --bg1: #F7F7ED;          /* Gradient Secondary */
   
-  --primary: #0F352D;      /* Tessan Dark Green */
-  --ink: #113632;          /* Text Color (Dark Green) */
+  --primary: #0F352D;      /* Dark Green */
+  --ink: #113632;          /* Text */
   --muted: #4a5b56;        /* Muted Text */
   
-  --accent: #FFEE7F;       /* Tessan Yellow (Buttons/Highlights) */
-  --accent-light: #FEF9DE; /* Requested Card Background */
-  --accent-dark: #FCE855;  /* Hover state for yellow */
+  --accent: #FFEE7F;       /* Yellow Accent */
+  --accent-light: #FEF9DE; /* Pale Yellow Cards */
+  --accent-dark: #FCE855;  /* Hover Yellow */
   
-  /* UI Elements */
-  --card: #FEF9DE;         /* Info & Exp Cards Background */
+  --card: #FEF9DE;         /* Card Background */
   --stroke: rgba(15, 53, 45, 0.12);
   --shadow: 0 22px 60px rgba(15, 53, 45, 0.08);
-  --shadow2: 0 12px 30px rgba(15, 53, 45, 0.06);
-  
-  --r-lg: 28px;
-  --r-md: 18px;
-  --r-sm: 14px;
-  --container: 1120px;
 }
 
-/* 1. Page Background */
+/* 1. FORCE PAGE BACKGROUND */
 body {
-  background-color: var(--bg0);
+  background: var(--bg0) !important;
   background-image: 
     radial-gradient(1200px 800px at 15% 10%, rgba(255, 238, 127, .05), transparent 60%),
-    radial-gradient(900px 700px at 80% 15%, rgba(15, 53, 45, .03), transparent 55%);
+    radial-gradient(900px 700px at 80% 15%, rgba(15, 53, 45, .03), transparent 55%) !important;
 }
 
-/* 2. Fixed Topbar Layout (Flexbox) */
+/* 2. FIX TOPBAR OVERLAP (Targeting the actual HTML structure) */
+/* This overrides the base.css grid layout */
+.topbar-inner, 
 .topbar-inner-centered {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 14px 24px;
-  display: flex; /* Switched to flex for better control */
-  align-items: center;
-  justify-content: space-between; /* Pushes content to edges */
-  gap: 20px;
-  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  max-width: var(--container) !important;
+  margin: 0 auto !important;
+  padding: 14px 24px !important;
+  grid-template-columns: none !important; /* Reset any grid */
 }
 
-/* Left: Personal Brand */
-.topbar-inner-centered .brand {
-  flex: 1; /* Takes available space */
-  min-width: 0; /* Allows shrinking */
-  white-space: nowrap;
+/* Brand (Left) */
+.brand {
+  flex: 0 0 auto !important;
+  min-width: max-content !important;
+  margin-right: auto !important;
 }
 
-/* Center: Company Badge (Absolute center) */
+/* Company Badge (Center) - Absolute Positioning */
+.company-badge,
 .company-badge-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.90);
-  border-radius: 14px;
-  border: 1px solid var(--stroke);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 16px rgba(16, 53, 45, .10);
-  z-index: 10;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid var(--stroke) !important;
+  backdrop-filter: blur(10px) !important;
+  white-space: nowrap !important;
 }
 
-.at-symbol {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary);
-  opacity: 0.6;
+/* Navigation (Right) */
+.nav {
+  flex: 0 0 auto !important;
+  min-width: max-content !important;
+  margin-left: auto !important;
+  gap: 12px !important;
 }
 
-.company-logo-center {
-  height: 24px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Right: Navigation */
-.topbar-inner-centered .nav {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-/* Responsive Topbar */
+/* Mobile Fix for Topbar */
 @media (max-width: 900px) {
-  .topbar-inner-centered {
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-  }
-  
+  .company-badge,
   .company-badge-center {
-    position: relative; /* Removes absolute positioning */
-    left: auto;
-    top: auto;
-    transform: none;
-    order: 2; /* Moves below name */
-    width: 100%;
-    justify-content: center;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    order: 2 !important;
+    margin: 10px auto !important;
   }
   
-  .topbar-inner-centered .brand {
-    order: 1;
-    width: 100%;
-    justify-content: center;
+  .topbar-inner, 
+  .topbar-inner-centered {
+    flex-direction: column !important;
+    height: auto !important;
+    padding-bottom: 16px !important;
   }
   
-  .topbar-inner-centered .nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .brand { margin-right: 0 !important; order: 1 !important; }
+  .nav { margin-left: 0 !important; order: 3 !important; }
 }
 
-/* 3. Hero Section (Dark Green) */
+/* 3. HERO SECTION (Dark Green Background) */
 .hero {
-  background-color: var(--primary);
-  margin-top: 0; /* Remove gap if any */
-  padding-bottom: 60px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.hero .panel {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-
-.hero .panel::before { display: none; } /* Remove panel gradient */
-
-/* Hero Typography override */
-.hero h1 {
-  color: #F1F2F2; /* Off-white text */
-}
-.hero .headline-grad {
-  background: none;
-  -webkit-text-fill-color: #F1F2F2;
-  color: #F1F2F2;
-}
-.hero .subhead {
-  color: rgba(241, 242, 242, 0.85); /* Transparent off-white */
-}
-.hero .kicker {
-  background: rgba(255, 238, 127, 0.15);
-  border: 1px solid rgba(255, 238, 127, 0.3);
-  color: var(--accent);
-}
-.hero .kicker i { color: var(--accent); }
-.hero .pill {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #F1F2F2;
-}
-.hero .pill i { color: var(--accent); }
-
-/* 4. Info Cards & Reveal (Pale Yellow) */
-.info, 
-.reveal {
-  background-color: var(--accent-light) !important;
-  border: 1px solid var(--stroke);
-}
-.info:hover {
-  box-shadow: 0 20px 40px rgba(15, 53, 45, .12);
-  transform: translateY(-4px);
-}
-
-/* 5. Experience Cards (Timeline Content) */
-.timeline-content {
-  background-color: var(--accent-light) !important;
-  border: 1px solid var(--stroke);
-}
-
-/* Adjust timeline arrows to match pale yellow */
-.timeline-item.left .timeline-content::before {
-  border-color: transparent transparent transparent var(--accent-light);
-}
-.timeline-item.right .timeline-content::before {
-  border-color: transparent var(--accent-light) transparent transparent;
-}
-
-/* 6. Buttons */
-.btn-primary {
-  background-color: var(--accent);
-  color: var(--primary);
-  border: none;
-}
-.btn-primary:hover {
-  background-color: var(--accent-dark);
-  box-shadow: 0 12px 30px rgba(255, 238, 127, 0.4);
-}
-.btn:not(.btn-primary) {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid var(--stroke);
-  color: var(--primary);
-}
-
-/* 7. Timeline Visuals */
-.timeline::before {
-  background: linear-gradient(180deg, 
-    transparent, 
-    var(--accent) 5%, 
-    var(--primary) 50%, 
-    var(--accent) 95%, 
-    transparent
-  ) !important;
-}
-.timeline-date {
   background-color: var(--primary) !important;
   color: #F1F2F2 !important;
-  box-shadow: 0 8px 24px rgba(15, 53, 45, 0.3) !important;
-}
-.timeline-node {
-  background-color: var(--primary) !important;
-  border-color: var(--accent) !important;
+  margin-top: -1px !important; /* Fix any gap */
+  padding-bottom: 60px !important;
 }
 
-/* 8. Modals */
-.modal-box {
-  background-color: var(--bg0) !important;
+/* Reset panel styles inside hero */
+.hero .panel {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
-.modal-head {
-  background-color: var(--bg0) !important;
-  border-bottom: 1px solid var(--stroke);
-}
-.bullet {
-  background-color: var(--accent-light);
-  border: 1px solid rgba(15, 53, 45, 0.08);
+.hero .panel::before { display: none !important; }
+
+/* Force White Text in Hero */
+.hero h1, 
+.hero .subhead,
+.hero .headline-grad {
+  color: #F1F2F2 !important;
+  background: none !important;
+  -webkit-text-fill-color: #F1F2F2 !important;
 }
 
-/* 9. Contact Section */
-.contact-card {
-  background-color: #FFFFFF !important; /* Keep clean white for contrast */
-  border: 1px solid var(--stroke);
+.hero .pill {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #F1F2F2 !important;
+}
+.hero .pill i { color: var(--accent) !important; }
+
+/* 4. CARDS (Pale Yellow Background) */
+/* Target specific classes used in base.css */
+.info, 
+.reveal, 
+.timeline-content,
+.panel:not(.hero .panel) { /* Exclude hero panel */
+  background-color: var(--accent-light) !important;
+  border: 1px solid var(--stroke) !important;
+}
+
+/* Fix timeline arrows color */
+.timeline-item.left .timeline-content::before {
+  border-right-color: transparent !important;
+  border-left-color: var(--accent-light) !important; /* Should be right border for left arrow? No, CSS borders are tricky. */
+  border-color: transparent transparent transparent var(--accent-light) !important;
+}
+
+.timeline-item.right .timeline-content::before {
+  border-color: transparent var(--accent-light) transparent transparent !important;
+}
+
+/* 5. BUTTONS */
+.btn-primary {
+  background-color: var(--accent) !important;
+  color: var(--primary) !important;
+  box-shadow: 0 4px 12px rgba(255, 238, 127, 0.4) !important;
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.9) !important; /* More visible on dark hero */
+  color: var(--primary) !important;
+}
+
+/* 6. TIMELINE & DECORATION */
+.timeline-date {
+  background: var(--primary) !important;
+  color: #F1F2F2 !important;
+}
+
+.timeline::before {
+  background: linear-gradient(180deg, transparent, var(--accent) 5%, var(--primary) 50%, var(--accent) 95%, transparent) !important;
 }
