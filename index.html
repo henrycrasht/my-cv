@@ -338,7 +338,7 @@
     /* Timeline */
     .timeline{
       position: relative;
-      max-width: 1000px;
+      max-width: 1120px;
       margin: 50px auto 0;
       padding: 40px 20px;
     }
@@ -442,7 +442,7 @@
     /* Content card - alternating left/right */
     .timeline-content{
       position: relative;
-      width: 45%;
+      width: 43%;
       padding: 24px;
       background: rgba(255,255,255,.90);
       border-radius: 22px;
@@ -456,6 +456,60 @@
     .timeline-content:hover{
       transform: translateY(-6px);
       box-shadow: 0 24px 50px rgba(16, 53, 45, .14);
+    }
+
+    /* Logo positioned on the timeline line */
+    .timeline-logo-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--primary);
+      box-shadow: 0 8px 24px rgba(16, 53, 45, .25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .timeline-item:hover .timeline-logo-wrapper {
+      transform: translate(-50%, -50%) scale(1.15);
+      box-shadow: 0 12px 32px rgba(16, 53, 45, .35);
+    }
+    
+    .timeline-logo {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    /* Hide the old node when logo exists */
+    .timeline-item.has-logo .timeline-node {
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .timeline-logo-wrapper {
+        left: 30px;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+      }
+      
+      .timeline-logo {
+        width: 38px;
+        height: 38px;
+      }
+      
+      .timeline-item:hover .timeline-logo-wrapper {
+        transform: translate(-50%, -50%) scale(1.15);
+      }
     }
 
     /* Arrow pointing to timeline */
@@ -849,7 +903,7 @@
           <a class="btn" href="#skills"><i class="fa-solid fa-arrow-down"></i> Browse skills</a>
           <a class="btn btn-primary" href="#experience"><i class="fa-solid fa-arrow-down"></i> Explore experiences</a>
           <a class="btn" href="#contact"><i class="fa-solid fa-paper-plane"></i> Get in touch</a>
-          <a class="btn btn-primary" href="./Josselin Raguenet de Saint Albin_CV 2026 - EN_lite.pdf" download>
+          <a class="btn btn-primary" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/Josselin Raguenet de Saint Albin_CV 2026 - EN_lite.pdf" download>
             <i class="fa-solid fa-download"></i> Download CV (PDF)
           </a>
         </div>
@@ -998,15 +1052,15 @@
 
         <!-- 9. Gadimat (RIGHT) -->
         <div class="timeline-item right" data-modal="m_gadimat">
-          <div class="timeline-date">Jan 2024 — Present</div>
+        <div class="timeline-date">Jan 2024 — Present</div>
           <div class="timeline-node"></div>
-          <div class="timeline-content" role="button" tabindex="0">
-            <div class="timeline-badge"><i class="fa-solid fa-industry"></i> Manufacturing / Logistics</div>
-            <div class="timeline-role">Deputy to the CEO</div>
-            <div class="timeline-company">Gadimat • Agadir</div>
-            <p class="timeline-teaser">P&L management for new furniture factory | process design | digitization | 20-truck fleet ops.</p>
-          </div>
-        </div>
+        <div class="timeline-content" role="button" tabindex="0">
+        <div class="timeline-badge"><i class="fa-solid fa-industry"></i> Manufacturing / Logistics</div>
+    <div class="timeline-role">Deputy to the CEO</div>
+    <div class="timeline-company">Gadimat • Agadir</div>
+    <p class="timeline-teaser">P&L management for new furniture factory | process design & digitization | 20-truck fleet ops.</p>
+  </div>
+</div>
       </div>
     </section>
 
