@@ -1,1 +1,23 @@
-
+/* Default theme - Your original green/yellow */
+:root {
+  --bg0: #FBFAF4;
+  --bg1: #f5f4ea;
+  --ink: #10352D;
+  --muted: #4a5b56;
+  --card: rgba(255,255,255,.88);
+  --stroke: rgba(16, 53, 45, .12);
+  --shadow: 0 22px 60px rgba(16, 53, 45, .08);
+  --shadow2: 0 12px 30px rgba(16, 53, 45, .06);
+  
+  --primary: #10352D;
+  --accent: #FFEE7F;
+  --accent-dark: #f5e26b;
+  --accent-fade: rgba(255, 238, 127, .12);
+  --primary-fade: rgba(16, 53, 45, .08);
+  
+  --good: #16a34a;
+  --r-lg: 28px;
+  --r-md: 18px;
+  --r-sm: 14px;
+  --container: 1120px;
+}
