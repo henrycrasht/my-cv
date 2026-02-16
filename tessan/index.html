@@ -5,37 +5,49 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Josselin & Tessan</title>
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   
-  <!-- Base + Theme CSS -->
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/tessan.css">
 </head>
 
 <body>
-  <!-- Content loaded via JavaScript -->
+  <!-- TESSAN-SPECIFIC HEADER -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+        <div>
+          Josselin Raguenet de Saint Albin
+          <small>application for Chief Operating Officer @Tessan</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+        <a class="btn btn-ghost" href="#skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</a>
+        <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- SHARED CONTENT LOADED HERE -->
   <div id="app">Loading...</div>
 
   <script>
-    // Load shared HTML content
     fetch('/shared/cv-body.html')
       .then(response => response.text())
       .then(html => {
         document.getElementById('app').innerHTML = html;
-        
-        // Load main JavaScript after content is loaded
         const script = document.createElement('script');
         script.src = '/js/main.js';
         document.body.appendChild(script);
       })
       .catch(err => {
-        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content. Please refresh.</p>';
+        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content.</p>';
       });
   </script>
 </body>
