@@ -685,8 +685,8 @@ input:focus, textarea:focus{
   top: 0;
   background: rgba(251, 250, 244, .95);
   backdrop-filter: blur(10px);
-  border-top-left-radius: 26px;
-  border-top-right-radius: 26px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
   z-index: 2;
 }
 .modal-title{
