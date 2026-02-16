@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Josselin & Tessan</title>
+  <title>Josselin Raguenet de Saint Albin — CV for Tessan</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,27 +16,37 @@
 
 <body>
   <!-- TESSAN-SPECIFIC HEADER -->
-<div class="topbar">
-  <div class="topbar-inner">
-    <div class="brand">
-      <div class="brand-badge" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
-      <div>
-        Josselin R. de Saint Albin
-        <small>Application for Tessan • Operations Director</small>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <!-- Your photo instead of icon -->
+        <div class="profile-photo">
+          <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" 
+               alt="Josselin Raguenet de Saint Albin">
+        </div>
+        <div>
+          Josselin R. de Saint Albin
+          <small>Application for Tessan</small>
+        </div>
       </div>
-      
-      <!-- Company logo after name -->
-      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/tessan-logo.png" 
-           alt="Tessan logo" 
-           style="height: 32px; margin-left: 16px; object-fit: contain;">
+
+      <div class="topbar-right">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="btn btn-ghost" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+          <a class="btn btn-ghost" href="#skills"><i class="fa-solid fa-wand-magic-sparkles"></i> Skills</a>
+          <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+        </nav>
+        
+        <!-- Company logo badge -->
+        <div class="company-badge">
+          <span>FOR</span>
+          <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/tessan-logo.png" 
+               alt="Tessan" 
+               class="company-logo">
+        </div>
+      </div>
     </div>
-
-    <nav class="nav">
-      <!-- ... -->
-    </nav>
   </div>
-</div>
-
 
   <!-- SHARED CONTENT LOADED HERE -->
   <div id="app">Loading...</div>
@@ -51,7 +61,7 @@
         document.body.appendChild(script);
       })
       .catch(err => {
-        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content.</p>';
+        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content. Please refresh.</p>';
       });
   </script>
 </body>
