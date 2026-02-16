@@ -142,3 +142,105 @@ body {
               radial-gradient(700px 260px at 80% 10%, rgba(16, 53, 45, .08), transparent 55%),
               radial-gradient(700px 260px at 70% 90%, rgba(252, 245, 204, .15), transparent 55%);
 }
+/* Centered topbar layout */
+.topbar-inner-centered {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Left section: Your brand */
+.topbar-inner-centered .brand {
+  justify-self: start;
+}
+
+/* Center section: Company logo with @ */
+.company-badge-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.80);
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 16px rgba(16, 53, 45, .10);
+  justify-self: center;
+}
+
+.at-symbol {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.company-logo-center {
+  height: 28px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+/* Right section: Navigation */
+.topbar-inner-centered .nav {
+  justify-self: end;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .topbar-inner-centered {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .topbar-inner-centered .brand {
+    justify-self: center;
+  }
+
+  .topbar-inner-centered .nav {
+    justify-self: center;
+  }
+
+  .company-badge-center {
+    order: -1; /* Move logo to top on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .company-logo-center {
+    height: 24px;
+  }
+
+  .at-symbol {
+    font-size: 16px;
+  }
+
+  .company-badge-center {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand div {
+    font-size: 14px;
+  }
+
+  .brand small {
+    font-size: 11px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
