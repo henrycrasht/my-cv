@@ -1,56 +1,50 @@
-/* 
-   TESSAN THEME - v6.0 (Typography Update)
-*/
+/* TESSAN THEME v7.0 */
 
-/* IMPORT FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.cdnfonts.com/css/recoleta'); /* Recoleta from CDNFonts */
+@import url('https://fonts.cdnfonts.com/css/recoleta');
 
 :root {
   /* Core Palette */
-  --bg0: #FBFAF5;          /* Page Background */
-  --primary: #0F352D;      /* Dark Green */
-  --primary-light: #1D5C4D; /* Lighter Green */
-  --accent: #FFEE7F;       /* Yellow Accent */
-  --accent-light: rgba(234, 251, 175); /* Pale Lime Accent*/
-  --accent-superlight: #FEF9DE; /* Pale Yellow Cards */
+  --bg0: #FBFAF5;
+  --primary: #0F352D;
+  --primary-light: #1D5C4D;
+  --accent: #FFEE7F;
+  --accent-light: #EAFBAF;
+  --accent-superlight: #FEF9DE;
   --stroke: rgba(15, 53, 45, 0.12);
   --r-lg: 28px;
   --container: 1120px;
-}
-
- /* TYPOGRAPHY */
+  
+  /* Typography */
   --font-heading: 'Recoleta', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Timeline */
+  --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
+  
+  /* Topbar */
+  --topbar-bg: rgba(234, 251, 175, 0.85);
+  --surface: #FFFFFF;
+  --card-bg: var(--surface);
 }
 
-
-/* APPLY FONTS GLOBALLY */
-
+/* Typography */
 html {
-  font-size: 16px !important; /* Forces base size to 16px */
+  font-size: 16px !important;
 }
 
 body {
   font-family: var(--font-body) !important;
-  font-size: 1rem !important; /* Equals 16px */
-  line-height: 1.6;           /* Better readability for 16px text */
+  font-size: 1rem !important;
+  line-height: 1.6;
+  background: var(--bg0) !important;
 }
 
-/* HEADINGS -> Recoleta */
 h1, h2, h3, .brand {
   font-family: var(--font-heading) !important;
   font-weight: 700 !important;
 }
 
-/* SPECIAL ELEMENTS -> Plus Jakarta Sans */
-/* Buttons, pills, kickers, and body text need the clean sans-serif */
-p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
-  font-family: var(--font-body) !important;
-}
-
-/* Specific Recoleta Styling Tweaks */
-/* Recoleta often looks better with slightly tighter letter-spacing */
 h1 {
   letter-spacing: -0.03em !important;
 }
@@ -59,35 +53,17 @@ h2 {
   letter-spacing: -0.02em !important;
 }
 
-/* Ensure Paragraphs & Lists inherit correctly */
-p, li, span, div {
-  font-size: 1rem;
+p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
+  font-family: var(--font-body) !important;
 }
 
-/* Scale up small text slightly so it's not tiny */
 small, .text-sm {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem;
 }
 
-
-/* 1. FORCE PAGE BACKGROUND */
-body {
-  background: var(--bg0) !important;
-}
-
-.headline-grad {
-  background: var(
-    --headline-gradient,
-    linear-gradient(135deg, #000, #555)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* TOPBAR THEME OVERRIDES */
+/* Topbar */
 .topbar {
-  background: var(--accent-light) !important; /* Pale Lime Glass */
+  background: var(--topbar-bg) !important;
   border-bottom-color: rgba(15, 53, 45, 0.1) !important;
 }
 
@@ -96,22 +72,23 @@ body {
   box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
 }
 
-/* Brand Text Colors */
-.brand strong { color: var(--primary) !important; }
-.brand small { color: var(--primary) !important; opacity: 0.7; }
-.at-symbol { color: var(--primary) !important; opacity: 0.5; }
+.brand-text-main,
+.brand-text-sub {
+  color: var(--primary) !important;
+}
 
+.at-symbol {
+  color: var(--primary) !important;
+  opacity: 0.5;
+}
 
-/* 3. HERO SECTION (CRITICAL FIXES) */
+/* Hero Section */
 .hero {
-  /* The main container is Dark Green */
   background-color: var(--primary) !important;
   margin: 40px auto !important;
   max-width: var(--container) !important;
   border-radius: var(--r-lg) !important;
   padding: 60px 50px !important;
-  position: relative !important;
-  overflow: hidden !important;
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
@@ -121,17 +98,16 @@ body {
   box-shadow: none !important;
   padding: 0 !important;
 }
-.hero .panel::before { display: none !important; }
 
-/* HERO TEXT COLORS - Force White */
-.hero h1 {
-  color: #FFFFFF !important;
-  font-size: 48px !important;
-  line-height: 1.1 !important;
-  margin-bottom: 24px !important;
+.hero .panel::before {
+  display: none !important;
 }
 
-/* Gradient Headline Override - Make it Solid White */
+.hero h1 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}
+
 .hero .headline-grad {
   background: none !important;
   -webkit-text-fill-color: #FFFFFF !important;
@@ -140,129 +116,69 @@ body {
 
 .hero .subhead {
   color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 18px !important;
-  max-width: 700px !important;
 }
 
-/* KICKER (Availability Badge) */
 .kicker {
   background: #FBFAF5 !important;
   border: none !important;
   color: var(--primary) !important;
-  font-weight: 700 !important;
-  padding: 8px 16px !important;
-  margin-bottom: 24px !important;
-  display: inline-flex !important;
 }
-.kicker i { color: var(--primary) !important; }
 
-/* PILLS (Tools) */
 .hero .pill {
   background: rgba(255, 255, 255, 0.1) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: #FFFFFF !important;
 }
-.hero .pill i { color: var(--accent) !important; }
 
+.hero .pill i {
+  color: var(--accent) !important;
+}
 
-/* =========================================
-   TESSAN BUTTON SYSTEM
-   ========================================= */
-
-/* 1. GLOBAL SHAPE & TYPOGRAPHY */
-/* Applies to ALL buttons everywhere */
+/* Buttons */
 .btn {
-  /* Shape & Text */
   border-radius: 14px;
   padding: 12px 28px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  
-  /* Reset Default Borders/Backgrounds */
-  border: 1px solid transparent;
-  background: transparent;
-  
-  /* Animation */
-  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Hover Lift Effect (Universal) */
-.btn:hover {
-  transform: translateY(-2px);
-  cursor: pointer;
-}
-
-/* Active Click Effect */
-.btn:active {
-  transform: translateY(0px);
-}
-
-
-/* =========================================
-   2. BUTTON VARIANTS (Context-Based)
-   ========================================= */
-
-/* VARIANT A: DARK BUTTON
-   Use on: Light backgrounds (White, Pale Yellow, Beige)
-   Example: Hero Primary Button (if hero is light), or Contact Button */
 .btn-dark {
-  background-color: var(--primary); /* Deep Green #0F352D */
-  color: var(--accent-light);       /* Pale Cream text */
-  box-shadow: 0 4px 14px rgba(15, 53, 45, 0.25); /* Greenish shadow */
+  background-color: var(--primary);
+  color: var(--accent-light);
+  box-shadow: 0 4px 14px rgba(15, 53, 45, 0.25);
 }
 
 .btn-dark:hover {
-  background-color: #0a251f;        /* Slightly darker green */
-  color: #FFFFFF;                   /* White text */
+  background-color: #0a251f;
+  color: #FFFFFF;
   box-shadow: 0 6px 20px rgba(15, 53, 45, 0.35);
 }
 
-
-/* VARIANT B: LIGHT BUTTON
-   Use on: Dark backgrounds (Deep Green sections)
-   Example: "Download CV" inside a dark footer or dark hero */
 .btn-light {
-  background-color: var(--accent-light); /* Pale Cream #FEF9DE */
-  color: var(--primary);                 /* Deep Green text */
+  background-color: var(--accent-light);
+  color: var(--primary);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .btn-light:hover {
-  background-color: #FFFFFF;        /* Pure White */
-  color: var(--primary);            /* Deep Green text */
+  background-color: #FFFFFF;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* VARIANT C: ACCENT BUTTON
-   Use on: Medium/Complex backgrounds where you need a "Pop"
-   Example: Primary Call-to-Action (The "Yellow" Button) */
 .btn-accent {
-  background-color: var(--accent);  /* Bright Yellow #EAFBAF */
-  color: var(--primary);            /* Deep Green text */
-  border: 1px solid rgba(255,255,255,0.4); /* Inner border for definition */
-  box-shadow: 0 6px 16px rgba(234, 251, 175, 0.35); /* Yellow glow */
+  background-color: var(--accent);
+  color: var(--primary);
+  box-shadow: 0 6px 16px rgba(234, 251, 175, 0.35);
 }
 
 .btn-accent:hover {
-  background-color: #dcf585;        /* Slightly darker yellow/green */
-  color: var(--primary);
+  background-color: #dcf585;
   box-shadow: 0 10px 24px rgba(234, 251, 175, 0.5);
-  border-color: transparent;
 }
 
-
-/* VARIANT D: GHOST BUTTON (Outline)
-   Use for: Secondary actions ("Learn More", "Browse Skills") */
-
-/* Default Ghost (Dark Text) - For Light Backgrounds */
 .btn-ghost {
   background: transparent;
   color: var(--primary);
-  border: 1px solid rgba(15, 53, 45, 0.15); /* Subtle Green Border */
+  border: 1px solid rgba(15, 53, 45, 0.15);
 }
 
 .btn-ghost:hover {
@@ -270,7 +186,6 @@ body {
   border-color: var(--primary);
 }
 
-/* Ghost for Dark Backgrounds (Add .light class) */
 .btn-ghost.light {
   color: var(--accent-light);
   border: 1px solid rgba(254, 249, 222, 0.2);
@@ -282,149 +197,69 @@ body {
   border-color: #FFFFFF;
 }
 
-
-   
-/* 4. UNIFIED SKILLS CARD */
-#skills, .skills-card-wrapper {
-  background: var(--accent-light) !important;
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
-  border: 1px solid var(--stroke) !important;
-  margin-top: 40px !important;
+/* Timeline Colors */
+.timeline::before {
+  background: var(--timeline-line) !important;
 }
 
-#skills h2 { color: var(--primary) !important; }
-.skills-card-wrapper .info {
-  background: var(--bg0) !important;
-  border: 1px solid rgba(15, 53, 45, 0.08) !important;
-}
-
-.skills-card-wrapper .info {
-  background: var(--bg0) !important;
-  border: 1px solid rgba(15, 53, 45, 0.08) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-.skills-card-wrapper .info:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 15px 30px rgba(15, 53, 45, 0.12) !important;
-  border-color: var(--accent) !important;
-}
-
-.tag {
-   border-radius: 6px !important;
-   border: 0px !important;
-   background: var(--accent) !important;
-
-/* Ensure Hero has padding now that panel is gone */
-.hero {
-  padding: 60px 40px !important;
-}
-
-/* Ensure Hero Text is White */
-.hero h1 {
-  color: #FFFFFF !important;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
-}
-
-
-/* 5. EXPERIENCE CARDS */
 .timeline-content {
   background: var(--accent-superlight) !important;
-  border: 1px solid var(--stroke) !important;
-}
-
-/* 6. MODAL */
-.modal-head {
-  background: var(--primary) !important;
-  color: var(--bg0) !important;
-  border-top-left-radius: 14px !important;
-  border-top-right-radius: 14px !important;
-}
-.modal-title { 
-   color: var(--bg0) !important; 
-}
-.modal-sub {
-   color: var(--bg0) !important;
-}
-.modal-close { 
-   background: rgba(255,255,255,0.2) !important; color: white !important;
-}
-
-.chip {
-   background: var(--primary);
-   color: var(--accent);
-   border-radius: 999px !important;
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    background: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent) !important
-    transform: translateX(-50%);
-}
-   
-.timeline-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: var(--accent);
-    border: 1px solid rgba(16, 53, 45, .15);
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 12px;
-    margin-bottom: 12px;
 }
 
 .timeline-date {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    background: var(--primary);
-    color: var(--bg0);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 14px;
-    white-space: nowrap;
-    box-shadow: 0 8px 24px rgba(255, 238, 127, .40);
-    border: 0px solid var(--primary);
-    z-index: 2;
-}
-   
-/* 7. BULLET */
-.bullet {
-    display: flex;
-    gap: 12px !important;
-    align-items: flex-start !important;
-    padding: 14px 14px !important;
-    border-radius: 14px !important;
-    background: rgba(255, 238, 127, .12) !important;
-    border: 1px solid rgba(16, 53, 45, 1) !important;
+  background: var(--primary);
+  color: var(--bg0);
+  box-shadow: 0 8px 24px rgba(255, 238, 127, 0.4);
 }
 
+.timeline-badge {
+  background: var(--accent);
+  border: 1px solid rgba(16, 53, 45, 0.15);
+  color: var(--primary);
+}
+
+/* Skills */
+#skills {
+  background: var(--accent-light) !important;
+  border-radius: var(--r-lg) !important;
+  padding: 30px !important;
+}
+
+.tag {
+  border-radius: 6px !important;
+  border: none !important;
+  background: var(--accent) !important;
+  color: var(--primary) !important;
+}
+
+/* Modal */
+.modal-head {
+  background: var(--primary) !important;
+}
+
+.modal-title,
+.modal-sub {
+  color: var(--bg0) !important;
+}
+
+.modal-close {
+  background: rgba(255,255,255,0.2) !important;
+  color: white !important;
+}
+
+.chip {
+  background: var(--primary);
+  color: var(--accent);
+}
+
+.bullet {
+  background: rgba(255, 238, 127, 0.12) !important;
+  border: 1px solid rgba(16, 53, 45, 1) !important;
+}
 
 .timeline-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 4px;
-    border: 2px solid var(--primary);
-    background: var(--accent-light);
-    color: var(--primary);
-    font-weight: 700;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(255, 238, 127, .30);
-    white-space: nowrap;
+  border: 2px solid var(--primary);
+  background: var(--accent-light);
+  color: var(--primary);
+  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
 }
