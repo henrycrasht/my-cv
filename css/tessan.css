@@ -149,40 +149,45 @@ body {
 }
 .hero .pill i { color: var(--accent) !important; }
 
-/* HERO BUTTONS - High Contrast Pop */
+/* HERO BUTTONS - FIXED & POPPING */
 
-/* 1. Base Button Style (Secondary: Browse Skills / Get in Touch) */
-.hero .btn {
+/* 1. SECONDARY BUTTONS (Browse Skills / Get in Touch) */
+/* Targeted explicitly to exclude primary buttons to avoid conflicts */
+.hero .btn:not(.btn-primary) {
   background: var(--accent-light) !important; /* Pale Cream */
   color: var(--primary) !important;           /* Dark Green Text */
-  border: 1px solid transparent !important;   /* No border initially */
+  border: 1px solid transparent !important;   
   font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important; /* Subtle shadow on dark bg */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
   transition: all 0.2s ease !important;
 }
 
-/* Secondary Hover: Brighten to Accent Yellow */
-.hero .btn:hover {
+/* Secondary Hover */
+.hero .btn:not(.btn-primary):hover {
   background: var(--accent) !important;       /* Bright Yellow */
+  color: var(--primary) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
-  color: var(--primary) !important;
 }
 
-/* 2. Primary Button Style (Explore Experiences / Download CV) */
-.hero .btn-primary {
+/* 2. PRIMARY BUTTONS (Explore Experiences / Download CV) */
+/* Specificity boosted to ensure it wins */
+.hero .btn.btn-primary { 
   background: var(--accent) !important;       /* Bright Yellow */
   color: var(--primary) !important;           /* Dark Green Text */
-  border: 1px solid rgba(255,255,255,0.2) !important; /* Slight inner border for definition */
-  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25) !important; /* Yellowish glow */
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25) !important;
+  transition: all 0.2s ease !important;
 }
 
-/* Primary Hover: Turn to White/Cream for max contrast interaction */
-.hero .btn-primary:hover {
-  background: var(--accent-light) !important;             /* Pure White Pop */
+/* Primary Hover */
+.hero .btn.btn-primary:hover {
+  background: #FFFFFF !important;             /* Pure White Pop */
   color: var(--primary) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important; /* White glow */
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important;
+  border-color: #FFFFFF !important;
 }
 
    
