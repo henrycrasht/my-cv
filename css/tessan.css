@@ -75,6 +75,15 @@ body {
   background: var(--bg0) !important;
 }
 
+.headline-grad {
+  background: var(
+    --headline-gradient,
+    linear-gradient(135deg, #000, #555)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 /* TOPBAR THEME OVERRIDES */
 .topbar {
