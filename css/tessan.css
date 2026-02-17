@@ -106,8 +106,6 @@ body {
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
-/* REMOVE THE INNER CARD BACKGROUND */
-/* This was causing the "frame within a frame" look */
 .hero .panel {
   background: transparent !important;
   border: none !important;
@@ -166,7 +164,7 @@ body {
 /* Applies to ALL buttons everywhere */
 .btn {
   /* Shape & Text */
-  border-radius: 50px;
+  border-radius: 14px;
   padding: 12px 28px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
@@ -288,14 +286,12 @@ body {
 
 #skills h2 { color: var(--primary) !important; }
 .skills-card-wrapper .info {
-  background: #FFFFFF !important;
+  background: var(--bg0) !important;
   border: 1px solid rgba(15, 53, 45, 0.08) !important;
 }
 
-
-/* RESTORE SKILLS CARD HOVER EFFECT */
 .skills-card-wrapper .info {
-  background: #FFFFFF !important;
+  background: var(--bg0) !important;
   border: 1px solid rgba(15, 53, 45, 0.08) !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   cursor: pointer !important;
@@ -306,6 +302,11 @@ body {
   box-shadow: 0 15px 30px rgba(15, 53, 45, 0.12) !important;
   border-color: var(--accent) !important;
 }
+
+.tag {
+   border-radius: 6px !important;
+   border: 0px !important;
+   background: var(--accent) !important;
 
 /* Ensure Hero has padding now that panel is gone */
 .hero {
@@ -328,21 +329,67 @@ body {
 /* 6. MODAL */
 .modal-head {
   background: var(--primary) !important;
-  color: #FFFFFF !important;
+  color: var(--bg0) !important;
   border-top-left-radius: 14px !important;
   border-top-right-radius: 14px !important;
 }
-.modal-title, .modal-sub { 
-   color: #FFFFFF !important; 
+.modal-title { 
+   color: var(--bg0) !important; 
+}
+.modal-sub {
+   color: var(--bg0) !important;
 }
 .modal-close { 
    background: rgba(255,255,255,0.2) !important; color: white !important;
 }
 
 .chip {
-   background: var(--primary-light);
+   background: var(--primary);
    color: var(--accent);
+   border-radius: 999px !important;
 
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent) !important
+    transform: translateX(-50%);
+}
+   
+.timeline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: var(--accent);
+    border: 1px solid rgba(16, 53, 45, .15);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: var(--bg0);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(255, 238, 127, .40);
+    border: 0px solid var(--primary);
+    z-index: 2;
+}
+   
 /* 7. BULLET */
 .bullet {
     display: flex;
@@ -352,4 +399,23 @@ body {
     border-radius: 14px !important;
     background: rgba(255, 238, 127, .12) !important;
     border: 1px solid rgba(16, 53, 45, 1) !important;
+}
+
+
+.timeline-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 2px solid var(--primary);
+    background: var(--accent-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 238, 127, .30);
+    white-space: nowrap;
 }
