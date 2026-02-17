@@ -5,35 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Josselin & Tessan</title>
   
+  <!-- FONTS: Plus Jakarta Sans & Recoleta -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-  <!-- FONTS: Plus Jakarta Sans & Recoleta -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.cdnfonts.com/css/recoleta" rel="stylesheet">
-
-<style>
-  /* Force Fonts Override */
-  :root {
-    --font-heading: 'Recoleta', serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-  }
-  
-  body, p, a, span, div, li, small {
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-  }
-  
-  h1, h2, h3, .brand {
-    font-family: 'Recoleta', serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em;
-  }
-</style>
-
   
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/tessan.css">
@@ -41,30 +19,33 @@
 
 <body>
 <nav class="topbar">
-  <!-- Use standard class, CSS handles the layout now -->
   <div class="topbar-inner-centered">
     
     <!-- 1. Brand (Left) -->
-    <a class="brand">
+    <a href="#" class="brand">
       <div class="profile-photo">
         <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" alt="Josselin">
       </div>
-      <div>
-        Josselin Raguenet de Saint Albin
-        <small>Application for Chief Operating Officer</small>
+      <div class="brand-text">
+        <div class="brand-text-main">Josselin Raguenet de Saint Albin</div>
+        <div class="brand-text-sub">Application for Chief Operating Officer</div>
       </div>
     </a>
 
     <!-- 2. Company Badge (Absolute Center) -->
     <div class="company-badge-center">
       <span class="at-symbol">@</span>
-      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/tessan-logo.png" alt="Tessan" class="company-logo">
+      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/tessan-logo.png" alt="Tessan" class="company-logo-center">
     </div>
 
     <!-- 3. Navigation (Right) -->
     <div class="nav">
-      <a href="https://www.linkedin.com/in/jossrsa/" target="_blank" rel="noopener noreferrer" class="btn btn-light"><i class="ph-briefcase"></i> LinkedIn</a>
-      <a href="#contact" class="btn btn-dark"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+      <a href="https://www.linkedin.com/in/jossrsa/" target="_blank" rel="noopener noreferrer" class="btn btn-light">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-dark">
+        <i class="fa-solid fa-paper-plane"></i> Contact
+      </a>
     </div>
 
   </div>
