@@ -10,7 +10,7 @@
   /* Core Palette */
   --bg0: #FBFAF5;          /* Page Background */
   --primary: #0F352D;      /* Dark Green */
-  --primary-light: #0F352D; /* Lighter Green */
+  --primary-light: #1D5C4D; /* Lighter Green */
   --accent: #FFEE7F;       /* Yellow Accent */
   --accent-light: rgba(234, 251, 175); /* Pale Lime Accent*/
   --accent-superlight: #FEF9DE; /* Pale Yellow Cards */
@@ -321,7 +321,7 @@ body {
 
 /* 5. EXPERIENCE CARDS */
 .timeline-content {
-  background: var(--accent-light) !important;
+  background: var(--accent-superlight) !important;
   border: 1px solid var(--stroke) !important;
 }
 
@@ -332,6 +332,16 @@ body {
   border-top-left-radius: 14px !important;
   border-top-right-radius: 14px !important;
 }
+.modal-title, .modal-sub { 
+   color: #FFFFFF !important; 
+}
+.modal-close { 
+   background: rgba(255,255,255,0.2) !important; color: white !important;
+}
+
+.chip {
+   background: var(--primary-light);
+   color: var(--accent);
 
 /* 7. BULLET */
 .bullet {
@@ -343,5 +353,3 @@ body {
     background: rgba(255, 238, 127, .12) !important;
     border: 1px solid rgba(16, 53, 45, 1) !important;
 }
-.modal-title, .modal-sub { color: #FFFFFF !important; }
-.modal-close { background: rgba(255,255,255,0.2) !important; color: white !important; }
