@@ -149,63 +149,144 @@ body {
 }
 .hero .pill i { color: var(--accent) !important; }
 
-/* css/tessan.css */
 
-/* --- GLOBAL BUTTON SYSTEM --- */
+/* =========================================
+   TESSAN BUTTON SYSTEM
+   ========================================= */
 
-/* 1. Base Shape & Typography (Applies to Topbar & Hero) */
+/* 1. GLOBAL SHAPE & TYPOGRAPHY */
+/* Applies to ALL buttons everywhere */
 .btn {
-  padding: 12px 24px;
-  border-radius: 50px; /* Full Pill Shape */
+  /* Shape & Text */
+  border-radius: 50px;
+  padding: 12px 28px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
   font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  
+  /* Reset Default Borders/Backgrounds */
+  border: 1px solid transparent;
+  background: transparent;
+  
+  /* Animation */
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* 2. Default Buttons (Topbar: Experience, Skills, Contact) */
-/* We give them a clean "Ghost" look that mimics a modern nav */
-.btn {
-  color: var(--primary);      /* Dark Green */
-  background: transparent;    /* Clean look */
-  border: 1px solid rgba(0,0,0,0.05); /* Very subtle border */
-}
-
+/* Hover Lift Effect (Universal) */
 .btn:hover {
-  background: rgba(0,0,0,0.03); /* Subtle grey hover */
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  cursor: pointer;
 }
 
-/* --- HERO BUTTONS SPECIFIC --- */
+/* Active Click Effect */
+.btn:active {
+  transform: translateY(0px);
+}
 
-/* 3. Hero Secondary (Browse Skills / Get in Touch) */
-/* We override the default .btn specifically inside .hero */
-.hero .btn:not(.btn-primary) {
-  background: var(--accent-light); /* Pale Cream */
+
+/* =========================================
+   2. BUTTON VARIANTS (Context-Based)
+   ========================================= */
+
+/* VARIANT A: DARK BUTTON
+   Use on: Light backgrounds (White, Pale Yellow, Beige)
+   Example: Hero Primary Button (if hero is light), or Contact Button */
+.btn-dark {
+  background-color: var(--primary); /* Deep Green #0F352D */
+  color: var(--accent-light);       /* Pale Cream text */
+  box-shadow: 0 4px 14px rgba(15, 53, 45, 0.25); /* Greenish shadow */
+}
+
+.btn-dark:hover {
+  background-color: #0a251f;        /* Slightly darker green */
+  color: #FFFFFF;                   /* White text */
+  box-shadow: 0 6px 20px rgba(15, 53, 45, 0.35);
+}
+
+
+/* VARIANT B: LIGHT BUTTON
+   Use on: Dark backgrounds (Deep Green sections)
+   Example: "Download CV" inside a dark footer or dark hero */
+.btn-light {
+  background-color: var(--accent-light); /* Pale Cream #FEF9DE */
+  color: var(--primary);                 /* Deep Green text */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.btn-light:hover {
+  background-color: #FFFFFF;        /* Pure White */
+  color: var(--primary);            /* Deep Green text */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* VARIANT C: ACCENT BUTTON
+   Use on: Medium/Complex backgrounds where you need a "Pop"
+   Example: Primary Call-to-Action (The "Yellow" Button) */
+.btn-accent {
+  background-color: var(--accent);  /* Bright Yellow #EAFBAF */
+  color: var(--primary);            /* Deep Green text */
+  border: 1px solid rgba(255,255,255,0.4); /* Inner border for definition */
+  box-shadow: 0 6px 16px rgba(234, 251, 175, 0.35); /* Yellow glow */
+}
+
+.btn-accent:hover {
+  background-color: #dcf585;        /* Slightly darker yellow/green */
+  color: var(--primary);
+  box-shadow: 0 10px 24px rgba(234, 251, 175, 0.5);
   border-color: transparent;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.hero .btn:not(.btn-primary):hover {
-  background: var(--accent);       /* Bright Yellow */
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+
+/* VARIANT D: GHOST BUTTON (Outline)
+   Use for: Secondary actions ("Learn More", "Browse Skills") */
+
+/* Default Ghost (Dark Text) - For Light Backgrounds */
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(15, 53, 45, 0.15); /* Subtle Green Border */
 }
 
-/* 4. Hero Primary (Explore Experiences / Download CV) */
-.btn-primary {
-  background: var(--accent);       /* Bright Yellow */
-  color: var(--primary);           /* Dark Green */
-  border: 1px solid rgba(255,255,255,0.2);
-  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25);
+.btn-ghost:hover {
+  background: rgba(15, 53, 45, 0.05);
+  border-color: var(--primary);
 }
 
-.btn-primary:hover {
-  background: #FFFFFF;             /* Pure White Pop */
+/* Ghost for Dark Backgrounds (Add .light class) */
+.btn-ghost.light {
+  color: var(--accent-light);
+  border: 1px solid rgba(254, 249, 222, 0.2);
+}
+
+.btn-ghost.light:hover {
+  background: rgba(254, 249, 222, 0.1);
+  color: #FFFFFF;
   border-color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
+
+
+/* =========================================
+   3. SPECIFIC OVERRIDES (If absolutely needed)
+   ========================================= */
+
+/* Topbar Navigation Links - Make them clean */
+nav .btn {
+  padding: 8px 16px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  box-shadow: none;
+}
+
+nav .btn:hover {
+  background: rgba(0,0,0,0.04);
+  transform: translateY(0); /* No lift for nav items */
+}
+
 
    
 /* 4. UNIFIED SKILLS CARD */
