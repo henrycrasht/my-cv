@@ -47,6 +47,7 @@ img {
   border-bottom: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  background: var(--topbar-bg, rgba(255, 255, 255, 0.9));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,8 +64,6 @@ img {
   justify-content: space-between;
   position: relative;
 }
-
-/* Brand: avatar + text block */
 
 .brand {
   display: flex;
@@ -104,8 +103,6 @@ img {
   opacity: 0.85;
 }
 
-/* Centered company badge */
-
 .company-badge-center {
   position: absolute;
   left: 50%;
@@ -114,6 +111,7 @@ img {
   height: 40px;
   padding: 0 20px;
   border-radius: 999px;
+  background: var(--surface, #ffffff);
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
@@ -139,8 +137,6 @@ img {
   opacity: 0.75;
 }
 
-/* Nav (right side) */
-
 .nav {
   display: flex;
   align-items: center;
@@ -149,8 +145,6 @@ img {
   position: relative;
   z-index: 2;
 }
-
-/* Mobile / tablet topbar behaviour */
 
 @media (max-width: 900px) {
   .topbar {
@@ -247,6 +241,7 @@ img {
 
 .panel {
   border-radius: 14px;
+  background: var(--card-bg, #ffffff);
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
   overflow: hidden;
@@ -329,6 +324,7 @@ h1 {
   margin: 0 auto;
   padding: 28px;
   border-radius: 14px;
+  background: var(--card-bg, #ffffff);
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
   position: relative;
@@ -369,7 +365,7 @@ h1 {
 }
 
 /* =========================================
-   Timeline / Sections / Misc Layout
+   Timeline (Structure Only)
    ========================================= */
 
 .section {
@@ -398,6 +394,7 @@ h1 {
   padding: 20px;
 }
 
+/* Vertical line structure */
 .timeline::before {
   content: '';
   position: absolute;
@@ -405,27 +402,50 @@ h1 {
   top: 0;
   bottom: 0;
   width: 5px;
-  background: var(--timeline-line, transparent); /* Let company CSS define it */
+  background: var(--timeline-line, #ddd);
   transform: translateX(-50%);
 }
 
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 30px;
-  }
-}
-
 .timeline-item {
-  border-radius: 12px;
-  padding: 16px 18px;
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
 }
 
-.timeline-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: baseline;
+.timeline-content {
+  position: relative;
+  width: 43%;
+  padding: 24px;
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+}
+
+/* Left/right alternating */
+.timeline-item.left .timeline-content {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.timeline-date {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 2;
 }
 
 .timeline-role {
@@ -441,6 +461,22 @@ h1 {
   margin-top: 8px;
   font-size: 0.9rem;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 70px !important;
+    margin-right: 0 !important;
+  }
+
+  .timeline-date {
+    left: 30px;
+  }
 }
 
 /* =========================================
