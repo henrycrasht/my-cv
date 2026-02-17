@@ -488,10 +488,145 @@ h1 {
 }
 
 /* =========================================
-   Responsive
+   Modal Structure (Complete)
    ========================================= */
 
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10000; /* Very high to ensure overlay */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* This is the CRITICAL rule - without it modals won't show */
+.modal[aria-hidden="false"] {
+  display: flex !important;
+}
+
+.modal-box {
+  position: relative;
+  width: min(90%, 900px);
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
+}
+
+.modal-head {
+  position: sticky;
+  top: 0;
+  padding: 24px;
+  padding-right: 60px; /* Space for close button */
+  border-bottom: 1px solid var(--stroke, rgba(0, 0, 0, 0.1));
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  z-index: 2;
+}
+
+.modal-title {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.modal-sub {
+  margin: 0 0 16px;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  z-index: 3;
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 53, 45, 0.2);
+}
+
+.bullet i {
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+
+.bullet p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
 @media (max-width: 768px) {
+  .modal-box {
+    width: min(95%, 900px);
+    max-height: 90vh;
+  }
+
+  .modal-head {
+    padding: 18px;
+    padding-right: 55px;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+   
   .container {
     padding: 18px;
   }
