@@ -1,6 +1,10 @@
 /* 
-   TESSAN THEME - v5.0 (Hero Fix)
+   TESSAN THEME - v6.0 (Typography Update)
 */
+
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/recoleta'); /* Recoleta from CDNFonts */
 
 :root {
   /* Core Palette */
@@ -13,6 +17,39 @@
   --r-lg: 28px;
   --container: 1120px;
 }
+
+ /* TYPOGRAPHY */
+  --font-heading: 'Recoleta', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* APPLY FONTS GLOBALLY */
+body {
+  font-family: var(--font-body) !important;
+}
+
+/* HEADINGS -> Recoleta */
+h1, h2, h3, .brand {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+}
+
+/* SPECIAL ELEMENTS -> Plus Jakarta Sans */
+/* Buttons, pills, kickers, and body text need the clean sans-serif */
+p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
+  font-family: var(--font-body) !important;
+}
+
+/* Specific Recoleta Styling Tweaks */
+/* Recoleta often looks better with slightly tighter letter-spacing */
+h1 {
+  letter-spacing: -0.03em !important;
+}
+
+h2 {
+  letter-spacing: -0.02em !important;
+}
+
 
 /* 1. FORCE PAGE BACKGROUND */
 body {
@@ -142,7 +179,7 @@ body {
 
 /* Primary Hover: Turn to White/Cream for max contrast interaction */
 .hero .btn-primary:hover {
-  background: #FFFFFF !important;             /* Pure White Pop */
+  background: var(--accent-light) !important;             /* Pure White Pop */
   color: var(--primary) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important; /* White glow */
