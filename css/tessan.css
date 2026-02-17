@@ -12,6 +12,7 @@
   --primary: #0F352D;      /* Dark Green */
   --primary-light: #0F352D /* Lighter Green */
   --accent: #FFEE7F;       /* Yellow Accent */
+  --accent-light: rgba(234, 251, 175) /* Pale Lime Accent*/
   --accent-light: #FEF9DE; /* Pale Yellow Cards */
   --stroke: rgba(15, 53, 45, 0.12);
   --r-lg: 28px;
@@ -74,34 +75,23 @@ body {
   background: var(--bg0) !important;
 }
 
-/* 2. TOPBAR (Fixed) */
+
+/* TOPBAR THEME OVERRIDES */
 .topbar {
-  background: rgba(234, 251, 175) !important;
-  backdrop-filter: blur(12px) !important;
-  border-bottom: 1px solid var(--stroke) !important;
+  background: var(--accent-light) !important; /* Pale Lime Glass */
+  border-bottom-color: rgba(15, 53, 45, 0.1) !important;
 }
 
-.topbar-inner {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  max-width: var(--container) !important;
-  margin: 0 auto !important;
-  padding: 14px 24px !important;
+.company-badge-center {
+  border-color: rgba(15, 53, 45, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
 }
 
-.company-badge {
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  background: #FFFFFF !important;
-  padding: 6px 16px !important;
-  border-radius: 999px !important;
-  border: 1px solid var(--stroke) !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-}
+/* Brand Text Colors */
+.brand strong { color: var(--primary) !important; }
+.brand small { color: var(--primary) !important; opacity: 0.7; }
+.at-symbol { color: var(--primary) !important; opacity: 0.5; }
+
 
 /* 3. HERO SECTION (CRITICAL FIXES) */
 .hero {
