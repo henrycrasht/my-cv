@@ -149,45 +149,62 @@ body {
 }
 .hero .pill i { color: var(--accent) !important; }
 
-/* HERO BUTTONS - FIXED & POPPING */
+/* css/tessan.css */
 
-/* 1. SECONDARY BUTTONS (Browse Skills / Get in Touch) */
-/* Targeted explicitly to exclude primary buttons to avoid conflicts */
+/* --- GLOBAL BUTTON SYSTEM --- */
+
+/* 1. Base Shape & Typography (Applies to Topbar & Hero) */
+.btn {
+  padding: 12px 24px;
+  border-radius: 50px; /* Full Pill Shape */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: 0.95rem;
+}
+
+/* 2. Default Buttons (Topbar: Experience, Skills, Contact) */
+/* We give them a clean "Ghost" look that mimics a modern nav */
+.btn {
+  color: var(--primary);      /* Dark Green */
+  background: transparent;    /* Clean look */
+  border: 1px solid rgba(0,0,0,0.05); /* Very subtle border */
+}
+
+.btn:hover {
+  background: rgba(0,0,0,0.03); /* Subtle grey hover */
+  transform: translateY(-1px);
+}
+
+/* --- HERO BUTTONS SPECIFIC --- */
+
+/* 3. Hero Secondary (Browse Skills / Get in Touch) */
+/* We override the default .btn specifically inside .hero */
 .hero .btn:not(.btn-primary) {
-  background: var(--accent-light) !important; /* Pale Cream */
-  color: var(--primary) !important;           /* Dark Green Text */
-  border: 1px solid transparent !important;   
-  font-weight: 700 !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
-  transition: all 0.2s ease !important;
+  background: var(--accent-light); /* Pale Cream */
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* Secondary Hover */
 .hero .btn:not(.btn-primary):hover {
-  background: var(--accent) !important;       /* Bright Yellow */
-  color: var(--primary) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3) !important;
+  background: var(--accent);       /* Bright Yellow */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.12);
 }
 
-/* 2. PRIMARY BUTTONS (Explore Experiences / Download CV) */
-/* Specificity boosted to ensure it wins */
-.hero .btn.btn-primary { 
-  background: var(--accent) !important;       /* Bright Yellow */
-  color: var(--primary) !important;           /* Dark Green Text */
-  border: 1px solid rgba(255,255,255,0.2) !important;
-  font-weight: 700 !important;
-  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25) !important;
-  transition: all 0.2s ease !important;
+/* 4. Hero Primary (Explore Experiences / Download CV) */
+.btn-primary {
+  background: var(--accent);       /* Bright Yellow */
+  color: var(--primary);           /* Dark Green */
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 6px 16px rgba(255, 238, 127, 0.25);
 }
 
-/* Primary Hover */
-.hero .btn.btn-primary:hover {
-  background: #FFFFFF !important;             /* Pure White Pop */
-  color: var(--primary) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3) !important;
-  border-color: #FFFFFF !important;
+.btn-primary:hover {
+  background: #FFFFFF;             /* Pure White Pop */
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
    
