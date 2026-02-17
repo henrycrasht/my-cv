@@ -19,16 +19,6 @@
   --font-heading: 'Recoleta', serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   
-  /* Timeline */
-  --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
-  
-  /* Topbar */
-  --topbar-bg: rgba(234, 251, 175, 0.85);
-  --surface: #FFFFFF;
-  --card-bg: var(--surface);
-}
-
-/* Typography */
 html {
   font-size: 16px !important;
 }
@@ -60,6 +50,16 @@ p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
 small, .text-sm {
   font-size: 0.875rem;
 }
+  
+  /* Timeline */
+  --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
+  
+  /* Topbar */
+  --topbar-bg: rgba(234, 251, 175, 0.85);
+  --surface: #FFFFFF;
+  --card-bg: var(--surface);
+}
+
 
 /* Topbar */
 .topbar {
@@ -233,29 +233,64 @@ small, .text-sm {
 }
 
 /* Modal */
-.modal-head {
-  background: var(--primary) !important;
+
+/* =========================================
+   MODAL THEMING
+   ========================================= */
+
+.modal {
+  background: rgba(15, 53, 45, 0.4) !important;
 }
 
-.modal-title,
-.modal-sub {
+.modal-box {
+  background: var(--bg0) !important;
+  border: 1px solid var(--stroke) !important;
+}
+
+.modal-head {
+  background: var(--primary) !important;
+  backdrop-filter: blur(10px);
+}
+
+.modal-title {
   color: var(--bg0) !important;
 }
 
-.modal-close {
-  background: rgba(255,255,255,0.2) !important;
-  color: white !important;
+.modal-sub {
+  color: var(--bg0) !important;
+  opacity: 0.9;
 }
 
 .chip {
-  background: var(--primary);
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--bg0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: var(--bg0) !important;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
 }
 
 .bullet {
   background: rgba(255, 238, 127, 0.12) !important;
-  border: 1px solid rgba(16, 53, 45, 1) !important;
+  border: 1px solid var(--accent) !important;
 }
+
+.bullet i {
+  color: var(--primary) !important;
+}
+
+.bullet p {
+  color: var(--ink);
+}
+
+
 
 .timeline-toggle {
   border: 2px solid var(--primary);
