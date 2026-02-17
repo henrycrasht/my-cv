@@ -278,11 +278,13 @@ small, .text-sm {
   background: var(--stroke-light) !important;
 }
 
+/* not being used in any html
 .chip {
   background: rgba(255, 255, 255, 0.15);
   color: var(--bg0);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+*/
 
 /* not used by company.css ; defined in base.css
 .bullets {
