@@ -566,7 +566,6 @@ h1 {
   top: 16px;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -574,6 +573,7 @@ h1 {
   transition: all 0.2s ease;
   font-size: 18px;
   z-index: 3;
+  border-radius: 10px;
 }
 
 .modal-close:hover {
@@ -595,8 +595,6 @@ h1 {
   align-items: flex-start;
   gap: 12px;
   padding: 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(15, 53, 45, 0.2);
 }
 
 .bullet i {
