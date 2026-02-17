@@ -220,7 +220,7 @@ small, .text-sm {
 
 /* Skills */
 #skills {
-  background: var(--accent-light) !important;
+  background: var(--accent-superlight) !important;
   border-radius: var(--r-lg) !important;
   padding: 30px !important;
 }
@@ -294,8 +294,14 @@ small, .text-sm {
 
 .timeline-toggle {
   border: 2px solid var(--primary);
-  background: var(--accent-light);
+  background: var(--accent-superlight);
   color: var(--primary);
+  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+}
+.timeline-toggle:hover {
+  border: 2px solid var(--primary);
+  background: var(--primary-light);
+  color: var(--accent-superlight);
   box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
 }
 
