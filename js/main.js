@@ -1,7 +1,12 @@
+console.log('main.js loaded'); // Debug log
+
 // =========================================
 // YEAR IN FOOTER
 // =========================================
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
 
 // =========================================
@@ -10,41 +15,46 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const toggleBtn = document.getElementById('toggleTimeline');
 const toggleText = document.getElementById('toggleText');
 const timelineContainer = document.getElementById('timelineContainer');
-let isReversed = false; // Start with Present → Past (not reversed yet)
 
-// Reverse timeline on page load to show Present → Past by default
-window.addEventListener('DOMContentLoaded', function() {
-  const items = Array.from(timelineContainer.children);
-  items.reverse().forEach(item => {
-    timelineContainer.appendChild(item);
-  });
-  
-  // Update button to show correct state
-  toggleText.textContent = 'Latest → Earliest';
-  toggleBtn.classList.remove('reversed');
-});
+if (toggleBtn && toggleText && timelineContainer) {
+  let isReversed = false; // Start with Present → Past
 
-toggleBtn.addEventListener('click', function() {
-  isReversed = !isReversed;
-  
-  // Get all timeline items and reverse them
-  const items = Array.from(timelineContainer.children);
-  items.reverse().forEach(item => {
-    timelineContainer.appendChild(item);
-  });
-  
-  // Update button text and icon
-  if (isReversed) {
-    toggleText.textContent = 'Earliest → Latest';
-    toggleBtn.classList.add('reversed');
-  } else {
+  // Reverse timeline on page load to show Present → Past by default
+  window.addEventListener('DOMContentLoaded', function() {
+    console.log('Reversing timeline to Present → Past');
+    const items = Array.from(timelineContainer.children);
+    items.reverse().forEach(item => {
+      timelineContainer.appendChild(item);
+    });
+    
+    // Update button to show current state
     toggleText.textContent = 'Latest → Earliest';
     toggleBtn.classList.remove('reversed');
-  }
-  
-  // Smooth scroll to top of timeline
-  timelineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+  });
+
+  toggleBtn.addEventListener('click', function() {
+    console.log('Timeline toggle clicked');
+    isReversed = !isReversed;
+    
+    // Get all timeline items and reverse them
+    const items = Array.from(timelineContainer.children);
+    items.reverse().forEach(item => {
+      timelineContainer.appendChild(item);
+    });
+    
+    // Update button text and icon
+    if (isReversed) {
+      toggleText.textContent = 'Earliest → Latest';
+      toggleBtn.classList.add('reversed');
+    } else {
+      toggleText.textContent = 'Latest → Earliest';
+      toggleBtn.classList.remove('reversed');
+    }
+    
+    // Smooth scroll to top of timeline
+    timelineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 
 
 // =========================================
@@ -75,16 +85,31 @@ if (leadForm) {
 
 
 // =========================================
-// MODAL SYSTEM (OPEN/CLOSE)
+// MODAL SYSTEM (OPEN/CLOSE) - DEBUGGED
 // =========================================
 const clickableItems = document.querySelectorAll('[data-modal]');
 const modals = document.querySelectorAll('.modal');
 
+console.log('Found ' + clickableItems.length + ' modal triggers');
+console.log('Found ' + modals.length + ' modals');
+
 function openModal(modalId) {
+  console.log('Opening modal:', modalId);
   const modal = document.getElementById(modalId);
-  if (!modal) return;
   
+  if (!modal) {
+    console.error('Modal not found:', modalId);
+    return;
+  }
+  
+  console.log('Modal found, setting aria-hidden=false');
   modal.setAttribute('aria-hidden', 'false');
+  
+  // Double-check it's visible
+  setTimeout(() => {
+    const computedDisplay = window.getComputedStyle(modal).display;
+    console.log('Modal display after opening:', computedDisplay);
+  }, 50);
 
   // Save focus and focus close button
   modal.__prevFocus = document.activeElement;
@@ -101,6 +126,7 @@ function openModal(modalId) {
 function closeModal(modal) {
   if (!modal) return;
   
+  console.log('Closing modal');
   modal.setAttribute('aria-hidden', 'true');
 
   // Restore scroll
@@ -116,10 +142,15 @@ function closeModal(modal) {
 // Attach click handlers to all [data-modal] triggers
 clickableItems.forEach(item => {
   const modalId = item.getAttribute('data-modal');
+  console.log('Attaching handler for modal:', modalId);
   
   const handler = () => openModal(modalId);
   
-  item.addEventListener('click', handler);
+  item.addEventListener('click', (e) => {
+    e.preventDefault();
+    handler();
+  });
+  
   item.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -133,7 +164,10 @@ modals.forEach(modal => {
   // Close button
   const closeBtn = modal.querySelector('.modal-close');
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => closeModal(modal));
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeModal(modal);
+    });
   }
 
   // Click outside modal-box to close
@@ -159,32 +193,37 @@ document.addEventListener('keydown', (e) => {
 // TIMELINE SCROLL REVEAL ANIMATION
 // =========================================
 const timelineItems = document.querySelectorAll('.timeline-item');
-const timelineObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      // Add staggered delay for smoother appearance
-      setTimeout(() => {
-        entry.target.classList.add('is-visible');
-      }, index * 100);
-      timelineObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
+if (timelineItems.length > 0) {
+  const timelineObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, index * 100);
+        timelineObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-timelineItems.forEach(item => timelineObserver.observe(item));
+  timelineItems.forEach(item => timelineObserver.observe(item));
+}
 
 
 // =========================================
 // GENERAL SCROLL REVEAL ANIMATION
 // =========================================
 const revealElements = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+if (revealElements.length > 0) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-revealElements.forEach(el => revealObserver.observe(el));
+  revealElements.forEach(el => revealObserver.observe(el));
+}
+
+console.log('main.js fully executed');
