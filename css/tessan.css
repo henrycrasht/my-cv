@@ -11,7 +11,8 @@
   --accent: #FFEE7F;
   --accent-light: #EAFBAF;
   --accent-superlight: #FEF9DE;
-  --stroke: rgba(15, 53, 45, 0.12);
+  --stroke: #0F352D1F;
+  --stroke-light: #FFFFFF4D;
   --r-lg: 28px;
   --container: 1120px;
   
@@ -245,12 +246,12 @@ small, .text-sm {
    ========================================= */
 
 .modal {
-  background: rgba(15, 53, 45, 0.4) !important;
+  background: rgba(15, 53, 45, 0.4) !important; /* this casts the shadow on whole screen behind modal-box*/
 }
 
 .modal-box {
   background: var(--bg0) !important;
-  border: 1px solid var(--stroke) !important;
+ /* border: 1px solid var(--stroke) !important; (removed via comments for now) */
 }
 
 .modal-head {
@@ -267,25 +268,34 @@ small, .text-sm {
   opacity: 0.9;
 }
 
+.modal-close {
+  background: var(--primary) !important;
+  color: var(--bg0) !important;
+  border-color: var(--stroke-light);
+}
+
+.modal-close:hover {
+  background: var(--stroke-light) !important;
+}
+
 .chip {
   background: rgba(255, 255, 255, 0.15);
   color: var(--bg0);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.modal-close {
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: var(--bg0) !important;
-  border-color: rgba(255, 255, 255, 0.3);
+/* not used by company.css ; defined in base.css
+.bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
-
-.modal-close:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
-}
+*/
 
 .bullet {
-  background: rgba(255, 238, 127, 0.12) !important;
-  border: 1px solid var(--accent) !important;
+  background: var(--bg0) !important;
+  border: 1px solid var(--primary-light) !important;
+  border-radius: 12px;
 }
 
 .bullet i {
@@ -293,9 +303,8 @@ small, .text-sm {
 }
 
 .bullet p {
-  color: var(--ink);
+  color: var(--primary);
 }
-
 
 
 .timeline-toggle {
@@ -412,16 +421,6 @@ small, .text-sm {
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15);
 }
 
-/* Modal body */
-.modal-body {
-  padding: 24px;
-}
-
-.bullets {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 
 /* Reveal animation */
 .reveal {
