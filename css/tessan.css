@@ -23,9 +23,17 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
+
 /* APPLY FONTS GLOBALLY */
+
+html {
+  font-size: 16px !important; /* Forces base size to 16px */
+}
+
 body {
   font-family: var(--font-body) !important;
+  font-size: 1rem !important; /* Equals 16px */
+  line-height: 1.6;           /* Better readability for 16px text */
 }
 
 /* HEADINGS -> Recoleta */
@@ -48,6 +56,16 @@ h1 {
 
 h2 {
   letter-spacing: -0.02em !important;
+}
+
+/* Ensure Paragraphs & Lists inherit correctly */
+p, li, span, div {
+  font-size: 1rem;
+}
+
+/* Scale up small text slightly so it's not tiny */
+small, .text-sm {
+  font-size: 0.875rem; /* 14px */
 }
 
 
