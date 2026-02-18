@@ -17,6 +17,7 @@
   --accent-superlight: #FEF9DE;
   --stroke: #0F352D1F;
   --stroke-light: #FFFFFF4D;
+  --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
   --r-lg: 28px;
   --container: 1120px;
   
@@ -285,9 +286,6 @@ small, .text-sm {
 /* =================================================
    TIMELINE Theming 
    ================================================= */
-  .timeline::before {
-   --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
-  }
 
 /* Timeline company name */
 .timeline-company {
