@@ -164,51 +164,46 @@
     </section>
   </template>
 
-  <script>
-    // Load shared CV body
-    fetch('/shared/cv-body.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('app').innerHTML = html;
-        
-        // ============================================
-        // INJECT COMPANY-SPECIFIC SKILL CARDS
-        // ============================================
-       // 1. Get placeholders from sharedcv-body.html
-const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
-const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+<script>
+    // 1. Load shared CV body
+    fetch('sharedcv-body.html')
+        .then(response => response.text())
+        .then(html => {
+            // Inject the main content
+            document.getElementById('app').innerHTML = html;
 
-// 2. Get your specific Tessan templates (Note the IDs match your HTML)
-const card1Template = document.getElementById('skill-card-1');
-const card2Template = document.getElementById('skill-card-2');
-const modal1Template = document.getElementById('modal-skill-card-1');
-const modal2Template = document.getElementById('modal-skill-card-2');
+            // 2. INJECT COMPANY-SPECIFIC SKILL CARDS 
+            // This must happen AFTER the HTML above is injected
+            const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
+            const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
 
-// 3. Inject Skill Cards
-if (placeholder1 && card1Template) {
-    placeholder1.replaceWith(card1Template.content.cloneNode(true));
-}
-if (placeholder2 && card2Template) {
-    placeholder2.replaceWith(card2Template.content.cloneNode(true));
-}
+            const card1Template = document.getElementById('skill-card-1');
+            const card2Template = document.getElementById('skill-card-2');
+            const modal1Template = document.getElementById('modal-skill-card-1');
+            const modal2Template = document.getElementById('modal-skill-card-2');
 
-// 4. Inject Modals into body
-if (modal1Template) {
-    document.body.appendChild(modal1Template.content.cloneNode(true));
-}
-if (modal2Template) {
-    document.body.appendChild(modal2Template.content.cloneNode(true));
-}
+            // Inject cards
+            if (placeholder1 && card1Template) {
+                placeholder1.replaceWith(card1Template.content.cloneNode(true));
+            }
+            if (placeholder2 && card2Template) {
+                placeholder2.replaceWith(card2Template.content.cloneNode(true));
+            }
 
-// 5. Load main.js AFTER injection so it can "see" the new cards/modals
-const script = document.createElement('script');
-script.src = "js/main.js";
-document.body.appendChild(script);
- 
-       
-      .catch(err => {
-        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content. Please refresh.</p>';
-      });
-  </script>
+            // Inject modals into body
+            if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
+            if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+
+            // 3. Load main.js AFTER everything is injected
+            const script = document.createElement('script');
+            script.src = 'js/main.js';
+            document.body.appendChild(script);
+        })
+        .catch(err => {
+            console.error('Fetch error:', err);
+            document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content. Please refresh.</p>';
+        });
+</script>
+
 </body>
 </html>
