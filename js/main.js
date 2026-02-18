@@ -19,8 +19,8 @@ const timelineContainer = document.getElementById('timelineContainer');
 if (toggleBtn && toggleText && timelineContainer) {
   let isReversed = false; // Start with Present → Past
 
-  // Reverse timeline on page load to show Present → Past by default
-  window.addEventListener('DOMContentLoaded', function() {
+  // Function to reverse timeline
+  function reverseTimeline() {
     console.log('Reversing timeline to Present → Past');
     const items = Array.from(timelineContainer.children);
     items.reverse().forEach(item => {
@@ -30,8 +30,13 @@ if (toggleBtn && toggleText && timelineContainer) {
     // Update button to show current state
     toggleText.textContent = 'Latest → Earliest';
     toggleBtn.classList.remove('reversed');
-  });
+  }
 
+  // Reverse timeline immediately when elements are found
+  // (this runs after cv-body.html is loaded)
+  reverseTimeline();
+
+  // Toggle button click handler
   toggleBtn.addEventListener('click', function() {
     console.log('Timeline toggle clicked');
     isReversed = !isReversed;
@@ -85,7 +90,7 @@ if (leadForm) {
 
 
 // =========================================
-// MODAL SYSTEM (OPEN/CLOSE) - DEBUGGED
+// MODAL SYSTEM (OPEN/CLOSE)
 // =========================================
 const clickableItems = document.querySelectorAll('[data-modal]');
 const modals = document.querySelectorAll('.modal');
