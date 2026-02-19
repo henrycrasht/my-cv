@@ -68,14 +68,14 @@ small, .text-sm {
 
 .btn-dark {
   background-color: var(--primary);
-  color: var(--bg0);
+  color: var(--accent-light);
   padding: 12px 16px;
   text-decoration: none;
 }
 
 .btn-dark:hover {
   background-color: #0a251f;
-  color: var(--accent-light);
+  color: var(--bg0);
 }
 
 .btn-light {
@@ -283,14 +283,14 @@ small, .text-sm {
 }
 
 #company-focus {
-    background: rgba(var(--accent-rgb), 0.03); /* Subtle brand tint */
+    background: var(--primary);
     border-radius: 24px;
     padding: 60px 20px;
-    margin-top: -40px; /* Pull it closer to the section above */
+    margin-top: -40px;
 }
 
 #specific-cards-container .info {
-    border: 1px solid var(--accent-color); /* Highlight these cards */
+    border: 1px solid var(--accent-light);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
