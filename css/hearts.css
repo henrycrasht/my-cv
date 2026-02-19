@@ -2,7 +2,6 @@
    HEARTS.CSS - Animation Test Page
    =================================== */
 
-/* CSS Variables - Matching your design system */
 :root {
     --primary: #0F352D;
     --accent: #FFEE7F;
@@ -11,7 +10,6 @@
     --bg-light: #FDFDF9;
     --tessan-color: #0F352D;
     --josselin-color: #1E40AF;
-    --heart-color: #FFEE7F;
 }
 
 * {
@@ -21,7 +19,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
     color: var(--primary);
     min-height: 100vh;
@@ -31,7 +29,6 @@ body {
     padding: 20px;
 }
 
-/* Test Container - Modal-like wrapper */
 .test-container {
     max-width: 900px;
     width: 100%;
@@ -67,7 +64,6 @@ body {
     font-weight: 500;
 }
 
-/* Animation Wrapper */
 .animation-wrapper {
     margin-bottom: 30px;
 }
@@ -77,12 +73,6 @@ body {
     border: 2px solid var(--stroke);
     border-radius: 16px;
     padding: 32px 24px;
-    transition: all 0.3s ease;
-}
-
-.synergy-card:hover {
-    box-shadow: 0 8px 24px rgba(255, 238, 127, 0.3);
-    border-color: var(--accent);
 }
 
 .card-title {
@@ -94,7 +84,6 @@ body {
 }
 
 .card-title i {
-    color: var(--primary);
     margin-right: 8px;
 }
 
@@ -105,12 +94,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
     margin-bottom: 24px;
+    overflow: visible;
 }
 
-/* Circles */
+/* Circles - Initial State */
 .circle {
+    position: absolute;
     width: 180px;
     height: 180px;
     border-radius: 50%;
@@ -119,18 +109,19 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+    z-index: 2;
 }
 
 .circle-tessan {
-    background: linear-gradient(135deg, rgba(15, 53, 45, 0.15), rgba(15, 53, 45, 0.25));
+    left: 50px;
+    background: linear-gradient(135deg, rgba(15, 53, 45, 0.2), rgba(15, 53, 45, 0.1));
     border: 3px solid var(--tessan-color);
     box-shadow: 0 4px 16px rgba(15, 53, 45, 0.2);
 }
 
 .circle-josselin {
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(30, 64, 175, 0.25));
+    right: 50px;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(30, 64, 175, 0.1));
     border: 3px solid var(--josselin-color);
     box-shadow: 0 4px 16px rgba(30, 64, 175, 0.2);
 }
@@ -141,6 +132,7 @@ body {
     align-items: center;
     gap: 8px;
     text-align: center;
+    transition: opacity 0.5s ease;
 }
 
 .circle-label {
@@ -148,7 +140,7 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: var(--primary);
 }
 
@@ -156,13 +148,29 @@ body {
     font-size: 11px;
     padding: 4px 10px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--primary);
     font-weight: 600;
     border: 1px solid var(--stroke);
 }
 
-/* Heart Result (initially hidden) */
+/* Intersection Glow */
+.intersection-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 160px;
+    background: radial-gradient(ellipse, rgba(255, 238, 127, 0.8), rgba(255, 238, 127, 0.3), transparent);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    filter: blur(8px);
+}
+
+/* Heart Result */
 .heart-result {
     position: absolute;
     top: 50%;
@@ -173,7 +181,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
 }
 
 .heart-result i {
@@ -192,7 +200,7 @@ body {
     border: 2px solid var(--primary);
 }
 
-/* Trigger Button */
+/* Buttons */
 .trigger-btn {
     width: 100%;
     padding: 16px;
@@ -211,16 +219,10 @@ body {
 }
 
 .trigger-btn:hover {
-    background: var(--tessan-color);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(15, 53, 45, 0.3);
 }
 
-.trigger-btn:active {
-    transform: translateY(0);
-}
-
-/* Test Controls */
 .test-controls {
     display: flex;
     gap: 12px;
@@ -249,7 +251,6 @@ body {
     background: var(--accent-light);
 }
 
-/* Test Notes */
 .test-notes {
     background: rgba(255, 238, 127, 0.1);
     border: 2px solid var(--stroke);
@@ -260,7 +261,6 @@ body {
 .test-notes h4 {
     font-size: 16px;
     font-weight: 700;
-    color: var(--primary);
     margin-bottom: 12px;
 }
 
@@ -271,152 +271,67 @@ body {
 .test-notes li {
     font-size: 14px;
     line-height: 1.8;
-    color: var(--primary);
     margin-bottom: 8px;
 }
-
-.test-notes strong {
-    font-weight: 700;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .test-container {
-        padding: 24px;
-    }
-
-    .animation-stage {
-        flex-direction: column;
-        gap: 40px;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .circle {
-        width: 160px;
-        height: 160px;
-    }
-
-    .test-controls {
-        flex-direction: column;
-    }
-}
-
 
 /* ===================================
    ANIMATION STATES
    =================================== */
 
-/* Phase 2: Morph circles into half-ovals */
-.circle.morph-to-oval {
+/* Phase 2a: Slide circles together */
+.circle.slide-together {
+    transition: left 1s ease-in-out, right 1s ease-in-out;
+}
+
+.circle-tessan.slide-together {
+    left: calc(50% - 140px);
+}
+
+.circle-josselin.slide-together {
+    right: calc(50% - 140px);
+}
+
+/* Phase 2b: Morph into ovals (WHILE overlapping) */
+.circle.morph-oval {
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-radius 1.2s ease-in-out;
 }
 
-.circle-tessan.morph-to-oval {
-    clip-path: ellipse(45% 50% at 40% 50%);
-}
-
-.circle-josselin.morph-to-oval {
-    clip-path: ellipse(45% 50% at 60% 50%);
-}
-
-/* Venn Intersection Overlay */
-.venn-intersection {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100px;
-    height: 140px;
-    background: radial-gradient(ellipse at center, rgba(255, 238, 127, 0.7), rgba(255, 238, 127, 0.3), transparent);
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.8s ease;
-    pointer-events: none;
-    box-shadow: 0 0 40px rgba(255, 238, 127, 0.6);
-    z-index: 5;
-}
-
-/* Content fade during transformation */
-.circle-content {
-    transition: opacity 0.6s ease;
-}
-
-/* Phase 3: Flip ovals into heart halves */
-.circle.flip-to-heart-left,
-.circle.flip-to-heart-right {
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+/* Phase 3: Flip into heart halves */
+.circle.flip-heart {
     transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.circle.flip-to-heart-left {
-    clip-path: ellipse(50% 50% at 50% 50%);
-    border-top-left-radius: 100%;
-    border-bottom-left-radius: 100%;
+.circle-tessan.flip-heart {
+    transform: translateY(-30px) rotate(-45deg) scale(0.7);
 }
 
-.circle.flip-to-heart-right {
-    clip-path: ellipse(50% 50% at 50% 50%);
-    border-top-right-radius: 100%;
-    border-bottom-right-radius: 100%;
+.circle-josselin.flip-heart {
+    transform: translateY(-30px) rotate(45deg) scale(0.7);
 }
 
-/* Heart Pulse Animation */
-.pulse-animation {
-    animation: heartPulse 0.8s ease-out;
-}
-
+/* Heart Pulse */
 @keyframes heartPulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    30% {
-        transform: translate(-50%, -50%) scale(1.15);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.05);
-    }
-    70% {
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-/* Heart icon animation */
-.heart-result.pulse-animation i {
-    animation: heartBeat 1.2s ease-in-out;
+    0% { transform: translate(-50%, -50%) scale(1); }
+    30% { transform: translate(-50%, -50%) scale(1.15); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    70% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 @keyframes heartBeat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    10%, 30% {
-        transform: scale(1.1);
-    }
-    20%, 40% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.1); }
+    20%, 40% { transform: scale(1.05); }
 }
 
-/* Glow effect on heart */
-.heart-result.pulse-animation .heart-text {
-    animation: textGlow 1s ease-out;
-}
-
-@keyframes textGlow {
-    0% {
-        box-shadow: 0 0 0 rgba(255, 238, 127, 0);
+@media (max-width: 768px) {
+    .test-container {
+        padding: 24px;
     }
-    50% {
-        box-shadow: 0 0 20px rgba(255, 238, 127, 0.8);
-    }
-    100% {
-        box-shadow: 0 0 0 rgba(255, 238, 127, 0);
+    
+    .circle {
+        width: 140px;
+        height: 140px;
     }
 }
-
-
