@@ -5,13 +5,7 @@
 let animationInProgress = false;
 let isSlowMotion = false;
 
-const triggerBtn = document.getElementById('triggerBtn');
-const resetBtn = document.getElementById('resetBtn');
-const slowBtn = document.getElementById('slowBtn');
-const circleTessan = document.getElementById('circleTessan');
-const circleJosselin = document.getElementById('circleJosselin');
-const intersectionGlow = document.getElementById('intersectionGlow');
-const heartResult = document.getElementById('heartResult');
+let triggerBtn, resetBtn, slowBtn, circleTessan, circleJosselin, intersectionGlow, heartResult;
 
 const getSpeed = () => isSlowMotion ? 2 : 1;
 
@@ -148,8 +142,29 @@ function toggleSlowMotion() {
     }
 }
 
-triggerBtn.addEventListener('click', playAnimation);
-resetBtn.addEventListener('click', () => resetAnimation(true));
-slowBtn.addEventListener('click', toggleSlowMotion);
-
-console.log('Hearts animation ready!');
+// INITIALIZE - Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Initializing hearts animation...');
+    
+    // Get all elements
+    triggerBtn = document.getElementById('triggerBtn');
+    resetBtn = document.getElementById('resetBtn');
+    slowBtn = document.getElementById('slowBtn');
+    circleTessan = document.getElementById('circleTessan');
+    circleJosselin = document.getElementById('circleJosselin');
+    intersectionGlow = document.getElementById('intersectionGlow');
+    heartResult = document.getElementById('heartResult');
+    
+    // Check if all elements exist
+    if (!triggerBtn || !resetBtn || !slowBtn || !circleTessan || !circleJosselin || !intersectionGlow || !heartResult) {
+        console.error('Error: Some elements are missing!');
+        return;
+    }
+    
+    // Add event listeners
+    triggerBtn.addEventListener('click', playAnimation);
+    resetBtn.addEventListener('click', () => resetAnimation(true));
+    slowBtn.addEventListener('click', toggleSlowMotion);
+    
+    console.log('Hearts animation ready! Click "Play Animation" to start.');
+});
