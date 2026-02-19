@@ -1,5 +1,5 @@
 /* ===================================
-   HEARTS.JS - Animation Logic
+   HEARTS.JS - Refined Animation Logic
    =================================== */
 
 // Animation state
@@ -37,62 +37,73 @@ function playAnimation() {
     }, 500 * getSpeed());
 }
 
-// Phase 2: Merge into Venn diagram
+// Phase 2: Slide together + morph into half-ovals with intersection
 function startPhase2() {
-    console.log('Phase 2: Merging into Venn diagram...');
+    console.log('Phase 2: Sliding together + morphing to half-ovals...');
     
-    // Add merging class
-    circleTessan.classList.add('merging');
-    circleJosselin.classList.add('merging');
-    
-    // Move circles closer together (overlap)
-    circleTessan.style.transform = 'translateX(40px)';
-    circleJosselin.style.transform = 'translateX(-40px)';
-    
-    // Create intersection highlight effect
+    // Create intersection element FIRST (will show during merge)
     const intersection = document.createElement('div');
     intersection.className = 'venn-intersection';
     animationStage.appendChild(intersection);
     
+    // Start morphing circles into half-ovals
+    circleTessan.classList.add('morph-to-oval');
+    circleJosselin.classList.add('morph-to-oval');
+    
+    // Slide circles toward center to create overlap
     setTimeout(() => {
-        intersection.style.opacity = '1';
+        circleTessan.style.transform = 'translateX(50px)';
+        circleJosselin.style.transform = 'translateX(-50px)';
+        
+        // Show intersection glow
+        setTimeout(() => {
+            intersection.style.opacity = '1';
+        }, 300);
     }, 100);
     
-    // Wait for merge animation, then start Phase 3
+    // Wait for oval morphing to complete, then start Phase 3
     setTimeout(() => {
         startPhase3(intersection);
-    }, 1500 * getSpeed());
+    }, 2000 * getSpeed());
 }
 
-// Phase 3: Transform into heart
+// Phase 3: Flip/rotate half-ovals into heart shape
 function startPhase3(intersection) {
-    console.log('Phase 3: Transforming into heart...');
+    console.log('Phase 3: Flipping half-ovals into heart...');
     
-    // Fade out intersection
+    // Fade out intersection gradually
     if (intersection) {
         intersection.style.opacity = '0';
-        setTimeout(() => intersection.remove(), 600);
     }
     
-    // Add heart transformation classes
-    circleTessan.classList.add('to-heart-left');
-    circleJosselin.classList.add('to-heart-right');
+    // Fade out content inside ovals
+    const contents = document.querySelectorAll('.circle-content');
+    contents.forEach(content => {
+        content.style.opacity = '0';
+    });
     
-    // Scale down and rotate circles to prepare for heart shape
-    circleTessan.style.transform = 'translateX(20px) scale(0.8) rotate(-45deg)';
-    circleJosselin.style.transform = 'translateX(-20px) scale(0.8) rotate(45deg)';
+    // Add heart flip transformation
+    circleTessan.classList.add('flip-to-heart-left');
+    circleJosselin.classList.add('flip-to-heart-right');
     
-    // Wait for transformation, then start Phase 4
+    // Rotate and position ovals to form heart shape
     setTimeout(() => {
+        circleTessan.style.transform = 'translateX(-15px) translateY(-20px) rotate(-45deg) scaleX(0.6)';
+        circleJosselin.style.transform = 'translateX(15px) translateY(-20px) rotate(45deg) scaleX(0.6)';
+    }, 200);
+    
+    // Wait for flip animation, then show final heart
+    setTimeout(() => {
+        if (intersection) intersection.remove();
         startPhase4();
-    }, 1200 * getSpeed());
+    }, 1500 * getSpeed());
 }
 
 // Phase 4: Complete heart + pulse
 function startPhase4() {
     console.log('Phase 4: Heart reveal + pulse...');
     
-    // Hide circles
+    // Hide oval shapes
     circleTessan.style.opacity = '0';
     circleJosselin.style.opacity = '0';
     
@@ -111,7 +122,7 @@ function startPhase4() {
             triggerBtn.innerHTML = '<i class="fa-solid fa-rotate-right"></i> Play Again';
         }, 1000 * getSpeed());
         
-    }, 300);
+    }, 400);
 }
 
 // Reset animation
@@ -119,8 +130,8 @@ function resetAnimation(updateButton = true) {
     console.log('Resetting animation...');
     
     // Remove all animation classes
-    circleTessan.classList.remove('merging', 'to-heart-left');
-    circleJosselin.classList.remove('merging', 'to-heart-right');
+    circleTessan.classList.remove('morph-to-oval', 'flip-to-heart-left');
+    circleJosselin.classList.remove('morph-to-oval', 'flip-to-heart-right');
     heartResult.classList.remove('pulse-animation');
     
     // Reset transforms
@@ -128,6 +139,12 @@ function resetAnimation(updateButton = true) {
     circleJosselin.style.transform = '';
     circleTessan.style.opacity = '1';
     circleJosselin.style.opacity = '1';
+    
+    // Reset content opacity
+    const contents = document.querySelectorAll('.circle-content');
+    contents.forEach(content => {
+        content.style.opacity = '1';
+    });
     
     // Hide heart
     heartResult.style.opacity = '0';
@@ -166,12 +183,5 @@ function toggleSlowMotion() {
 triggerBtn.addEventListener('click', playAnimation);
 resetBtn.addEventListener('click', () => resetAnimation(true));
 slowBtn.addEventListener('click', toggleSlowMotion);
-
-// Optional: Auto-play on page load (remove if you don't want this)
-// window.addEventListener('load', () => {
-//     setTimeout(() => {
-//         playAnimation();
-//     }, 1000);
-// });
 
 console.log('Hearts animation ready! Click "Play Animation" to start.');
