@@ -282,6 +282,19 @@ small, .text-sm {
   color: var(--primary);
 }
 
+#company-focus {
+    background: rgba(var(--accent-rgb), 0.03); /* Subtle brand tint */
+    border-radius: 24px;
+    padding: 60px 20px;
+    margin-top: -40px; /* Pull it closer to the section above */
+}
+
+#specific-cards-container .info {
+    border: 1px solid var(--accent-color); /* Highlight these cards */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+
 
 /* =================================================
    TIMELINE Theming 
