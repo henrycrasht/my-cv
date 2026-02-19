@@ -307,30 +307,59 @@ body {
    ANIMATION STATES
    =================================== */
 
+/* Phase 2: Morph circles into half-ovals */
+.circle.morph-to-oval {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-tessan.morph-to-oval {
+    clip-path: ellipse(45% 50% at 40% 50%);
+}
+
+.circle-josselin.morph-to-oval {
+    clip-path: ellipse(45% 50% at 60% 50%);
+}
+
 /* Venn Intersection Overlay */
 .venn-intersection {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(circle, rgba(255, 238, 127, 0.6), rgba(255, 238, 127, 0.2));
+    width: 100px;
+    height: 140px;
+    background: radial-gradient(ellipse at center, rgba(255, 238, 127, 0.7), rgba(255, 238, 127, 0.3), transparent);
     border-radius: 50%;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s ease;
     pointer-events: none;
-    box-shadow: 0 0 30px rgba(255, 238, 127, 0.8);
-    animation: intersectionPulse 2s ease-in-out infinite;
+    box-shadow: 0 0 40px rgba(255, 238, 127, 0.6);
+    z-index: 5;
 }
 
-@keyframes intersectionPulse {
-    0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.1);
-    }
+/* Content fade during transformation */
+.circle-content {
+    transition: opacity 0.6s ease;
+}
+
+/* Phase 3: Flip ovals into heart halves */
+.circle.flip-to-heart-left,
+.circle.flip-to-heart-right {
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.circle.flip-to-heart-left {
+    clip-path: ellipse(50% 50% at 50% 50%);
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+}
+
+.circle.flip-to-heart-right {
+    clip-path: ellipse(50% 50% at 50% 50%);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
 }
 
 /* Heart Pulse Animation */
@@ -389,3 +418,5 @@ body {
         box-shadow: 0 0 0 rgba(255, 238, 127, 0);
     }
 }
+
+
