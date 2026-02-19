@@ -247,9 +247,9 @@ small, .text-sm {
    SKILLS Card Section
    ========================================= */
 #skills {
-  background: var(--accent-superlight) !important;
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
+  background: var(--accent-superlight);
+  border-radius: var(--r-lg);
+  padding: 30px;
 }
 
 .info {
