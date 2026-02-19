@@ -286,6 +286,15 @@ small, .text-sm {
     background: var(--primary);
     border-radius: 24px;
     padding: 60px 20px;
+    margin-top: 20px;
+}
+
+#company-focus .section-title {
+    color: var(--bg0);
+}
+
+#company-focus .section-subtitle {
+    color: var(--bg0);
 }
 
 #specific-cards-container .info {
