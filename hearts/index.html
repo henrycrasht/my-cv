@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Animation Test - Tessan x Josselin</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/hearts.css">
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1><i class="fa-solid fa-heart"></i> Heart Animation Test</h1>
+            <p class="test-subtitle">Testing "Tessan + Josselin = Perfect Fit" animation</p>
+        </div>
+
+        <div class="animation-wrapper">
+            <div class="synergy-card" id="heartAnimation">
+                <h3 class="card-title">
+                    <i class="fa-solid fa-handshake"></i> 
+                    You + Me = Powerful Synergy
+                </h3>
+                
+                <div class="animation-stage">
+                    <!-- Circle 1: Tessan -->
+                    <div class="circle circle-tessan">
+                        <div class="circle-content">
+                            <div class="circle-label">Tessan</div>
+                            <span class="mini-tag">Scale ops</span>
+                            <span class="mini-tag">Compliance</span>
+                            <span class="mini-tag">EU expansion</span>
+                        </div>
+                    </div>
+
+                    <!-- Circle 2: Josselin -->
+                    <div class="circle circle-josselin">
+                        <div class="circle-content">
+                            <div class="circle-label">Josselin</div>
+                            <span class="mini-tag">Hypergrowth</span>
+                            <span class="mini-tag">ISO 27001</span>
+                            <span class="mini-tag">7 countries</span>
+                        </div>
+                    </div>
+
+                    <!-- Heart Result (hidden initially) -->
+                    <div class="heart-result">
+                        <i class="fa-solid fa-heart"></i>
+                        <div class="heart-text">Perfect Operational Fit</div>
+                    </div>
+                </div>
+
+                <button class="trigger-btn" id="triggerAnimation">
+                    <i class="fa-solid fa-play"></i> Play Animation
+                </button>
+            </div>
+        </div>
+
+        <div class="test-controls">
+            <button class="control-btn" id="resetBtn">
+                <i class="fa-solid fa-rotate-left"></i> Reset
+            </button>
+            <button class="control-btn" id="slowBtn">
+                <i class="fa-solid fa-gauge-simple"></i> Slow Motion
+            </button>
+        </div>
+
+        <div class="test-notes">
+            <h4>Animation Phases:</h4>
+            <ol>
+                <li><strong>Phase 1:</strong> Two independent circles (Tessan + Josselin)</li>
+                <li><strong>Phase 2:</strong> Circles merge into Venn diagram intersection</li>
+                <li><strong>Phase 3:</strong> Venn transforms into heart shape</li>
+                <li><strong>Phase 4:</strong> Heart pulses + "Perfect Fit" text appears</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="../js/hearts.js"></script>
+</body>
+</html>
