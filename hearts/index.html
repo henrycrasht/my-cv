@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Animation Test - Tessan x Josselin</title>
     
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
@@ -19,41 +19,44 @@
         </div>
 
         <div class="animation-wrapper">
-            <div class="synergy-card" id="heartAnimation">
+            <div class="synergy-card">
                 <h3 class="card-title">
                     <i class="fa-solid fa-handshake"></i> 
                     You + Me = Powerful Synergy
                 </h3>
                 
-                <div class="animation-stage">
-                    <!-- Circle 1: Tessan -->
-                    <div class="circle circle-tessan">
+                <div class="animation-stage" id="animationStage">
+                    <!-- Tessan Circle -->
+                    <div class="circle circle-tessan" id="circleTessan">
                         <div class="circle-content">
-                            <div class="circle-label">Tessan</div>
+                            <div class="circle-label">TESSAN</div>
                             <span class="mini-tag">Scale ops</span>
                             <span class="mini-tag">Compliance</span>
                             <span class="mini-tag">EU expansion</span>
                         </div>
                     </div>
 
-                    <!-- Circle 2: Josselin -->
-                    <div class="circle circle-josselin">
+                    <!-- Josselin Circle -->
+                    <div class="circle circle-josselin" id="circleJosselin">
                         <div class="circle-content">
-                            <div class="circle-label">Josselin</div>
+                            <div class="circle-label">JOSSELIN</div>
                             <span class="mini-tag">Hypergrowth</span>
                             <span class="mini-tag">ISO 27001</span>
                             <span class="mini-tag">7 countries</span>
                         </div>
                     </div>
 
-                    <!-- Heart Result (hidden initially) -->
-                    <div class="heart-result">
+                    <!-- Intersection Glow -->
+                    <div class="intersection-glow" id="intersectionGlow"></div>
+
+                    <!-- Final Heart -->
+                    <div class="heart-result" id="heartResult">
                         <i class="fa-solid fa-heart"></i>
                         <div class="heart-text">Perfect Operational Fit</div>
                     </div>
                 </div>
 
-                <button class="trigger-btn" id="triggerAnimation">
+                <button class="trigger-btn" id="triggerBtn">
                     <i class="fa-solid fa-play"></i> Play Animation
                 </button>
             </div>
@@ -71,10 +74,11 @@
         <div class="test-notes">
             <h4>Animation Phases:</h4>
             <ol>
-                <li><strong>Phase 1:</strong> Two independent circles (Tessan + Josselin)</li>
-                <li><strong>Phase 2:</strong> Circles merge into Venn diagram intersection</li>
-                <li><strong>Phase 3:</strong> Venn transforms into heart shape</li>
-                <li><strong>Phase 4:</strong> Heart pulses + "Perfect Fit" text appears</li>
+                <li><strong>Phase 1:</strong> Two independent circles</li>
+                <li><strong>Phase 2a:</strong> Circles slide together → create intersection</li>
+                <li><strong>Phase 2b:</strong> While overlapping, morph into ovals</li>
+                <li><strong>Phase 3:</strong> Ovals flip to form heart</li>
+                <li><strong>Phase 4:</strong> Heart pulses</li>
             </ol>
         </div>
     </div>
