@@ -18,21 +18,30 @@ const deployBtn = document.getElementById('deployExperience');
 const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
+const backToSkillsBtn = document.querySelector('a[href="#skills"]'); // Target the "Back to skills" link
 
-// 2. HIDE SORT BUTTON INITIALLY (via JS to be safe)
-if (toggleBtn) toggleBtn.style.display = 'none';
-
-// 3. DEPLOY LOGIC
+// 2. DEPLOY & REVERSE LOGIC
 if (deployBtn && timelineWrapper) {
     deployBtn.addEventListener('click', function() {
+        // Unhide
         timelineWrapper.classList.remove('collapsed');
-        timelineWrapper.style.display = 'block'; // Force display
+        timelineWrapper.style.display = 'block';
         triggerWrapper.style.display = 'none';
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // Trigger staggered reveal for items
-        const items = timelineWrapper.querySelectorAll('.timeline-item');
-        items.forEach((item, index) => {
+        // REVERSE TO PRESENT -> PAST (Invert the course of time)
+        const container = document.getElementById('timelineContainer');
+        const items = Array.from(container.children);
+        // Sort items so the latest date (Present) is first
+        items.reverse().forEach(item => container.appendChild(item));
+        
+        // Update Toggle Text to reflect current state
+        const txt = document.getElementById('toggleText');
+        if(txt) txt.textContent = 'Latest → Earliest';
+
+        // Staggered reveal
+        const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
             setTimeout(() => {
                 item.classList.add('is-visible');
             }, index * 100);
@@ -42,16 +51,23 @@ if (deployBtn && timelineWrapper) {
     });
 }
 
-// 4. SORTING LOGIC (Keep your existing reverse logic but ensure it works on the container)
-if (toggleBtn) {
-    toggleBtn.addEventListener('click', function() {
-        const container = document.getElementById('timelineContainer');
-        const items = Array.from(container.children);
-        items.reverse().forEach(item => container.appendChild(item));
+// 3. RE-WRAP LOGIC (Back to Skills)
+if (backToSkillsBtn) {
+    backToSkillsBtn.addEventListener('click', function() {
+        // Reset everything to hidden state
+        if (timelineWrapper) {
+            timelineWrapper.classList.add('collapsed');
+            timelineWrapper.style.display = 'none';
+            
+            // Remove visibility from items so they "pop" again next time
+            const items = timelineWrapper.querySelectorAll('.timeline-item');
+            items.forEach(item => item.classList.remove('is-visible'));
+        }
         
-        // Update text
-        const txt = document.getElementById('toggleText');
-        txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
+        if (triggerWrapper) triggerWrapper.style.display = 'block';
+        if (toggleBtn) toggleBtn.style.display = 'none';
+        
+        // Browser will handle the actual scroll to #skills automatically
     });
 }
 
