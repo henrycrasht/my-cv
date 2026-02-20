@@ -19,8 +19,8 @@ const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
 const timelineContainer = document.getElementById('timelineContainer');
-// Target the specific "Back to skills" link in the experience section
-const backToSkillsBtn = document.querySelector('#experience .btn[href="#skills"]');
+// Target ALL "Back to skills" link in the experience section
+const skillLinks = document.querySelectorAll('a[href="#skills"]');
 
 // 2. INITIAL STATE (Ensure sort button is hidden)
 if (toggleBtn) toggleBtn.style.display = 'none';
@@ -61,6 +61,7 @@ if (deployBtn && timelineWrapper) {
 if (toggleBtn) {
     toggleBtn.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation(); // Prevents event bubbling
         const items = Array.from(timelineContainer.children);
         items.reverse().forEach(item => timelineContainer.appendChild(item));
         
@@ -70,25 +71,30 @@ if (toggleBtn) {
 }
 
 // 5. BACK TO SKILLS (RE-WRAP)
-if (backToSkillsBtn) {
-    backToSkillsBtn.addEventListener('click', function(e) {
-        // We don't preventDefault here because we want the scroll to #skills to happen
-        
-        // Hide the timeline again
-        if (timelineWrapper) {
+skillLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        // 1. If we are currently in the expanded timeline, hide it
+        if (timelineWrapper && !timelineWrapper.classList.contains('collapsed')) {
+            console.log("Wrapping timeline..."); // Debug check
+            
+            // Hide the wrapper
             timelineWrapper.classList.add('collapsed');
             timelineWrapper.style.display = 'none';
             
-            // Remove visibility from items so they "pop" again next time
+            // Restore the "Review" button
+            if (triggerWrapper) triggerWrapper.style.display = 'block';
+            
+            // Hide the sorting toggle
+            if (toggleBtn) toggleBtn.style.display = 'none';
+            
+            // Reset items so they animate again next time
             const items = timelineWrapper.querySelectorAll('.timeline-item');
             items.forEach(item => item.classList.remove('is-visible'));
         }
         
-        if (triggerWrapper) triggerWrapper.style.display = 'block';
-        if (toggleBtn) toggleBtn.style.display = 'none';
+        // 2. Allow the default browser behavior (scroll to #skills) to happen
     });
-}
-
+});
 
 
 // =========================================
