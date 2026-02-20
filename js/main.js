@@ -18,43 +18,63 @@ const deployBtn = document.getElementById('deployExperience');
 const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
-const backToSkillsBtn = document.querySelector('a[href="#skills"]'); // Target the "Back to skills" link
+const timelineContainer = document.getElementById('timelineContainer');
+// Target the specific "Back to skills" link in the experience section
+const backToSkillsBtn = document.querySelector('#experience .btn[href="#skills"]');
 
-// 2. DEPLOY & REVERSE LOGIC
+// 2. INITIAL STATE (Ensure sort button is hidden)
+if (toggleBtn) toggleBtn.style.display = 'none';
+
+// 3. DEPLOY & ANIMATE LOGIC
 if (deployBtn && timelineWrapper) {
     deployBtn.addEventListener('click', function() {
-        // Unhide
+        // Show the wrapper
         timelineWrapper.classList.remove('collapsed');
         timelineWrapper.style.display = 'block';
         triggerWrapper.style.display = 'none';
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // REVERSE TO PRESENT -> PAST (Invert the course of time)
-        const container = document.getElementById('timelineContainer');
-        const items = Array.from(container.children);
-        // Sort items so the latest date (Present) is first
-        items.reverse().forEach(item => container.appendChild(item));
+        // REVERSE TO PRESENT -> PAST (Latest first)
+        const items = Array.from(timelineContainer.children);
+        items.reverse().forEach(item => timelineContainer.appendChild(item));
         
-        // Update Toggle Text to reflect current state
-        const txt = document.getElementById('toggleText');
-        if(txt) txt.textContent = 'Latest → Earliest';
+        // Re-initialize the Scroll Animation (IntersectionObserver)
+        // We do this NOW because the items are finally visible to the browser
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
 
-        // Staggered reveal
-        const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.classList.add('is-visible');
-            }, index * 100);
-        });
+        const itemsToObserve = timelineWrapper.querySelectorAll('.timeline-item');
+        itemsToObserve.forEach(item => observer.observe(item));
 
+        // Smooth scroll to the start
         timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 }
 
-// 3. RE-WRAP LOGIC (Back to Skills)
+// 4. MANUAL TOGGLE LOGIC (Latest <-> Earliest)
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const items = Array.from(timelineContainer.children);
+        items.reverse().forEach(item => timelineContainer.appendChild(item));
+        
+        const txt = document.getElementById('toggleText');
+        txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
+    });
+}
+
+// 5. BACK TO SKILLS (RE-WRAP)
 if (backToSkillsBtn) {
-    backToSkillsBtn.addEventListener('click', function() {
-        // Reset everything to hidden state
+    backToSkillsBtn.addEventListener('click', function(e) {
+        // We don't preventDefault here because we want the scroll to #skills to happen
+        
+        // Hide the timeline again
         if (timelineWrapper) {
             timelineWrapper.classList.add('collapsed');
             timelineWrapper.style.display = 'none';
@@ -66,8 +86,6 @@ if (backToSkillsBtn) {
         
         if (triggerWrapper) triggerWrapper.style.display = 'block';
         if (toggleBtn) toggleBtn.style.display = 'none';
-        
-        // Browser will handle the actual scroll to #skills automatically
     });
 }
 
