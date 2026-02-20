@@ -111,28 +111,25 @@
 <!-- ============================================
      TIMELINE SECTION
      ============================================ -->
-<section class="section" id="experience">
+  <section class="section" id="experience">
   <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
     <h2 class="section-title reveal" style="margin: 0;">
       <i class="fa-solid fa-clock-rotate-left"></i> Career timeline
     </h2>
-    <button class="btn btn-accent" id="toggleTimeline">
+    <!-- This starts hidden now -->
+    <button class="btn btn-accent" id="toggleTimeline" style="display:none;">
       <i class="fa-solid fa-arrow-down-up-across-line"></i>
-      <span id="toggleText">Earliest → Latest</span>
+      <span id="toggleText">Latest → Earliest</span>
     </button>
   </div>
-  <p class="section-subtitle">
-    💡 Click on cards for detailed insights.
-  </p>
 
-<!-- NEW: Deployment Trigger -->
-  <div id="experience-trigger-wrapper" style="text-align: center; margin: 40px 0;">
-    <button class="btn btn-dark btn-large" id="deployExperience">
+<div id="experience-trigger-wrapper" style="text-align: center; margin: 40px 0;">
+    <button class="btn btn-dark" id="deployExperience" style="padding: 15px 30px; font-weight: bold;">
       <i class="fa-solid fa-eye"></i> Review my career
     </button>
-  </div>
+</div>
 
-<div class="timeline-wrapper collapsed" id="timelineWrapper">
+<div id="timelineWrapper" class="collapsed" style="display:none;">
   <div class="timeline" id="timelineContainer">
     
     <!-- 1. Bits of Apples (RIGHT) -->
@@ -251,17 +248,16 @@
         <p class="timeline-body">P&L management for new furniture factory | process design & digitization | 20-truck fleet ops.</p>
       </div>
     </div>
-    
   </div>
-  
-  <div class="hero-actions" style="justify-content: center; margin-top: 40px;">
+</div>
+</section>
+
+<div class="hero-actions" style="justify-content: center; margin-top: 40px;">
     <a class="btn btn-dark" href="#skills">
       <i class="fa-solid fa-arrow-up"></i> Back to skills
     </a>
   </div>
-</section>
-
-
+  
 <!-- ============================================
      CONTACT SECTION
      ============================================ -->
