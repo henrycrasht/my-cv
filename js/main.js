@@ -7,6 +7,22 @@ const yearElement = document.getElementById('year');
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+// =========================================
+// FORCE REVEAL ANIMATION
+// =========================================
+const revealElements = document.querySelectorAll('.reveal');
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
 
 
 // =========================================
@@ -64,29 +80,33 @@ if (toggleBtn) {
     });
 }
 
-// 5. BACK TO SKILLS (RE-WRAP)
-skillLinks.forEach(link => {
+// TARGET ALL SKILL LINKS
+const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
+
+allSkillLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-        // 1. If we are currently in the expanded timeline, hide it
-        if (timelineWrapper && !timelineWrapper.classList.contains('collapsed')) {
-            console.log("Wrapping timeline..."); // Debug check
+        // Find the timeline wrapper
+        const wrapper = document.getElementById('timelineWrapper');
+        const trigger = document.getElementById('experience-trigger-wrapper');
+        const sortBtn = document.getElementById('toggleTimeline');
+
+        if (wrapper && !wrapper.classList.contains('collapsed')) {
+            console.log("Resetting timeline view...");
             
-            // Hide the wrapper
-            timelineWrapper.classList.add('collapsed');
-            timelineWrapper.style.display = 'none';
+            // 1. Hide the timeline
+            wrapper.classList.add('collapsed');
+            wrapper.style.display = 'none';
             
-            // Restore the "Review" button
-            if (triggerWrapper) triggerWrapper.style.display = 'block';
+            // 2. Show the "Review" intro again
+            if (trigger) trigger.style.display = 'block';
             
-            // Hide the sorting toggle
-            if (toggleBtn) toggleBtn.style.display = 'none';
-            
-            // Reset items so they animate again next time
-            const items = timelineWrapper.querySelectorAll('.timeline-item');
+            // 3. Hide sorting
+            if (sortBtn) sortBtn.style.display = 'none';
+
+            // 4. Reset item visibility for next time
+            const items = wrapper.querySelectorAll('.timeline-item');
             items.forEach(item => item.classList.remove('is-visible'));
         }
-        
-        // 2. Allow the default browser behavior (scroll to #skills) to happen
     });
 });
 
