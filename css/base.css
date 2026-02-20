@@ -509,14 +509,17 @@ h1 {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Hide the sorting button until the timeline is expanded */
 #toggleTimeline {
-  display: none;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-weight: 600;
+    /* This makes it "float" neatly over the timeline */
 }
 
-.timeline-wrapper.expanded ~ .section-header #toggleTimeline,
-#experience:has(.timeline-wrapper.expanded) #toggleTimeline {
-  display: flex;
+#experience-trigger-wrapper .section-title {
+    font-family: 'Recoleta', serif; /* Or your brand font */
+    font-size: 2.5rem;
+    color: var(--text-dark);
 }
 
 
