@@ -13,55 +13,48 @@ if (yearElement) {
 // TIMELINE FUNCTIONALITIES
 // =========================================
 
-// timeline sorting
+// 1. SELECTORS
+const deployBtn = document.getElementById('deployExperience');
+const timelineWrapper = document.getElementById('timelineWrapper');
+const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
-const toggleText = document.getElementById('toggleText');
-const timelineContainer = document.getElementById('timelineContainer');
 
-if (toggleBtn && toggleText && timelineContainer) {
-  let isReversed = false; // Start with Present → Past
+// 2. HIDE SORT BUTTON INITIALLY (via JS to be safe)
+if (toggleBtn) toggleBtn.style.display = 'none';
 
-  // Function to reverse timeline
-  function reverseTimeline() {
-    console.log('Reversing timeline to Present → Past');
-    const items = Array.from(timelineContainer.children);
-    items.reverse().forEach(item => {
-      timelineContainer.appendChild(item);
+// 3. DEPLOY LOGIC
+if (deployBtn && timelineWrapper) {
+    deployBtn.addEventListener('click', function() {
+        timelineWrapper.classList.remove('collapsed');
+        timelineWrapper.style.display = 'block'; // Force display
+        triggerWrapper.style.display = 'none';
+        if (toggleBtn) toggleBtn.style.display = 'flex';
+
+        // Trigger staggered reveal for items
+        const items = timelineWrapper.querySelectorAll('.timeline-item');
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('is-visible');
+            }, index * 100);
+        });
+
+        timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-    
-    // Update button to show current state
-    toggleText.textContent = 'Latest → Earliest';
-    toggleBtn.classList.remove('reversed');
-  }
-
-  // Reverse timeline immediately when elements are found
-  // (this runs after cv-body.html is loaded)
-  reverseTimeline();
-
-  // Toggle button click handler
-  toggleBtn.addEventListener('click', function() {
-    console.log('Timeline toggle clicked');
-    isReversed = !isReversed;
-    
-    // Get all timeline items and reverse them
-    const items = Array.from(timelineContainer.children);
-    items.reverse().forEach(item => {
-      timelineContainer.appendChild(item);
-    });
-    
-    // Update button text and icon
-    if (isReversed) {
-      toggleText.textContent = 'Earliest → Latest';
-      toggleBtn.classList.add('reversed');
-    } else {
-      toggleText.textContent = 'Latest → Earliest';
-      toggleBtn.classList.remove('reversed');
-    }
-    
-    // Smooth scroll to top of timeline
-    timelineContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
 }
+
+// 4. SORTING LOGIC (Keep your existing reverse logic but ensure it works on the container)
+if (toggleBtn) {
+    toggleBtn.addEventListener('click', function() {
+        const container = document.getElementById('timelineContainer');
+        const items = Array.from(container.children);
+        items.reverse().forEach(item => container.appendChild(item));
+        
+        // Update text
+        const txt = document.getElementById('toggleText');
+        txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
+    });
+}
+
 
 
 // =========================================
@@ -196,24 +189,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 
-// =========================================
-// TIMELINE SCROLL REVEAL ANIMATION
-// =========================================
-const timelineItems = document.querySelectorAll('.timeline-item');
-if (timelineItems.length > 0) {
-  const timelineObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('is-visible');
-        }, index * 100);
-        timelineObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
 
-  timelineItems.forEach(item => timelineObserver.observe(item));
-}
 
 
 // =========================================
@@ -234,37 +210,3 @@ if (revealElements.length > 0) {
 }
 
 console.log('main.js fully executed');
-
-
-// timeline reveal
-const deployBtn = document.getElementById('deployExperience');
-const timelineWrapper = document.getElementById('timelineWrapper');
-const triggerWrapper = document.getElementById('experience-trigger-wrapper');
-const sortBtn = document.getElementById('toggleTimeline');
-
-if (deployBtn && timelineWrapper) {
-    deployBtn.addEventListener('click', function() {
-        // 1. Show the timeline
-        timelineWrapper.classList.remove('collapsed');
-        timelineWrapper.classList.add('expanded');
-        
-        // 2. Hide the "Review my career" button wrapper
-        triggerWrapper.style.display = 'none';
-        
-        // 3. Make sure the sorting button is visible
-        if(sortBtn) sortBtn.style.display = 'flex';
-
-        // 4. Manually trigger the intersection observer logic for the items
-        // since they are now suddenly in view
-        const items = timelineWrapper.querySelectorAll('.timeline-item');
-        items.forEach((item, index) => {
-            setTimeout(() => {
-                item.classList.add('is-visible');
-            }, index * 150); // Staggered entrance
-        });
-
-        // 5. Scroll smoothly to the start of the timeline
-        timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-}
-
