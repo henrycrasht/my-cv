@@ -111,23 +111,25 @@
 <!-- ============================================
      TIMELINE SECTION
      ============================================ -->
-  <section class="section" id="experience">
-  <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
-    <h2 class="section-title reveal" style="margin: 0;">
-      <i class="fa-solid fa-clock-rotate-left"></i> Career timeline
+<section class="section" id="experience" style="padding-top: 0;">
+  
+  <!-- 1. THE MAIN ENTRANCE (Replaces the header) -->
+  <div id="experience-trigger-wrapper" style="text-align: center; padding: 80px 0;">
+    <h2 class="section-title reveal" style="margin-bottom: 30px;">
+      <i class="fa-solid fa-clock-rotate-left"></i> Interested in the journey?
     </h2>
-    <!-- This starts hidden now -->
-    <button class="btn btn-accent" id="toggleTimeline" style="display:none;">
-      <i class="fa-solid fa-arrow-down-up-across-line"></i>
-      <span id="toggleText">Latest → Earliest</span>
+    <button class="btn btn-dark btn-large" id="deployExperience" style="padding: 20px 40px; font-size: 1.2rem; border-radius: 50px;">
+      Review my full career timeline
     </button>
   </div>
 
-<div id="experience-trigger-wrapper" style="text-align: center; margin: 40px 0;">
-    <button class="btn btn-dark" id="deployExperience" style="padding: 15px 30px; font-weight: bold;">
-      <i class="fa-solid fa-eye"></i> Review my career
-    </button>
-</div>
+  <!-- 2. THE STICKY TOGGLE (Hidden until deploy) -->
+  <div id="sticky-control-layer" style="position: sticky; top: 90px; z-index: 900; display: flex; justify-content: flex-end; height: 0; padding-right: 20px;">
+      <button class="btn btn-accent" id="toggleTimeline" style="display:none; transform: translateY(-20px);">
+          <i class="fa-solid fa-arrow-down-up-across-line"></i>
+          <span id="toggleText">Latest → Earliest</span>
+      </button>
+  </div>
 
 <div id="timelineWrapper" class="collapsed" style="display:none;">
   <div class="timeline" id="timelineContainer">
@@ -248,15 +250,14 @@
         <p class="timeline-body">P&L management for new furniture factory | process design & digitization | 20-truck fleet ops.</p>
       </div>
     </div>
-  </div>
-</div>
-</section>
 
-<div class="hero-actions" style="justify-content: center; margin-top: 40px;">
-    <a class="btn btn-dark" href="#skills">
-      <i class="fa-solid fa-arrow-up"></i> Back to skills
-    </a>
+    <div class="hero-actions" style="justify-content: center; margin-top: 60px; padding-bottom: 60px;">
+      <a class="btn btn-light" href="#skills">
+        <i class="fa-solid fa-arrow-up"></i> Back to skills
+      </a>
+    </div>
   </div>
+</section>
   
 <!-- ============================================
      CONTACT SECTION
