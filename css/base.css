@@ -494,6 +494,32 @@ h1 {
   line-height: 1.5;
 }
 
+/* timeline Initial hidden state */
+.timeline-wrapper.collapsed {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* timeline Revealed state */
+.timeline-wrapper.expanded {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hide the sorting button until the timeline is expanded */
+#toggleTimeline {
+  display: none;
+}
+
+.timeline-wrapper.expanded ~ .section-header #toggleTimeline,
+#experience:has(.timeline-wrapper.expanded) #toggleTimeline {
+  display: flex;
+}
+
+
 @media (max-width: 768px) {
   .timeline::before {
     left: 30px;
