@@ -1,4 +1,4 @@
-console.log('main.js loaded'); // Debug log
+console.log('main.js loaded');
 
 // =========================================
 // YEAR IN FOOTER
@@ -7,8 +7,9 @@ const yearElement = document.getElementById('year');
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
 // =========================================
-// FORCE REVEAL ANIMATION
+// GENERAL SCROLL REVEAL ANIMATION
 // =========================================
 const revealElements = document.querySelectorAll('.reveal');
 if (revealElements.length > 0) {
@@ -24,7 +25,6 @@ if (revealElements.length > 0) {
     revealElements.forEach(el => revealObserver.observe(el));
 }
 
-
 // =========================================
 // TIMELINE FUNCTIONALITIES
 // =========================================
@@ -34,23 +34,22 @@ const deployBtn = document.getElementById('deployExperience');
 const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
+const timelineContainer = document.getElementById('timelineContainer');
+const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
 
+// 2. DEPLOY LOGIC
 if (deployBtn && timelineWrapper) {
     deployBtn.addEventListener('click', function() {
-        // Hide the big button and its header
         triggerWrapper.style.display = 'none';
-        
-        // Show the timeline and sorting toggle
         timelineWrapper.style.display = 'block';
         timelineWrapper.classList.remove('collapsed');
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // Auto-reverse to Present -> Past
-        const container = document.getElementById('timelineContainer');
-        const items = Array.from(container.children);
-        items.reverse().forEach(item => container.appendChild(item));
+        // Auto-reverse to Present -> Past on first open
+        const items = Array.from(timelineContainer.children);
+        items.reverse().forEach(item => timelineContainer.appendChild(item));
 
-        // Trigger Reveal Animations
+        // Trigger Reveal Animations for items
         const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
         timelineItems.forEach((item, index) => {
             setTimeout(() => {
@@ -58,58 +57,43 @@ if (deployBtn && timelineWrapper) {
             }, index * 100);
         });
 
-        // Scroll to the top of the NEWLY revealed section
         window.scrollTo({
-            top: timelineWrapper.offsetTop - 100, // Adjust for navbar height
+            top: timelineWrapper.offsetTop - 100,
             behavior: 'smooth'
         });
     });
 }
 
-
-// 4. MANUAL TOGGLE LOGIC (Latest <-> Earliest)
-if (toggleBtn) {
+// 3. MANUAL TOGGLE LOGIC (Latest <-> Earliest)
+if (toggleBtn && timelineContainer) {
     toggleBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation(); // Prevents event bubbling
+        e.stopPropagation();
         const items = Array.from(timelineContainer.children);
         items.reverse().forEach(item => timelineContainer.appendChild(item));
         
         const txt = document.getElementById('toggleText');
-        txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
+        if (txt) {
+            txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
+        }
     });
 }
 
-// TARGET ALL SKILL LINKS
-const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
-
+// 4. BACK TO SKILLS RESET (WRAP UP)
 allSkillLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        // Find the timeline wrapper
-        const wrapper = document.getElementById('timelineWrapper');
-        const trigger = document.getElementById('experience-trigger-wrapper');
-        const sortBtn = document.getElementById('toggleTimeline');
+    link.addEventListener('click', function() {
+        if (timelineWrapper && !timelineWrapper.classList.contains('collapsed')) {
+            timelineWrapper.classList.add('collapsed');
+            timelineWrapper.style.display = 'none';
+            if (triggerWrapper) triggerWrapper.style.display = 'block';
+            if (toggleBtn) toggleBtn.style.display = 'none';
 
-        if (wrapper && !wrapper.classList.contains('collapsed')) {
-            console.log("Resetting timeline view...");
-            
-            // 1. Hide the timeline
-            wrapper.classList.add('collapsed');
-            wrapper.style.display = 'none';
-            
-            // 2. Show the "Review" intro again
-            if (trigger) trigger.style.display = 'block';
-            
-            // 3. Hide sorting
-            if (sortBtn) sortBtn.style.display = 'none';
-
-            // 4. Reset item visibility for next time
-            const items = wrapper.querySelectorAll('.timeline-item');
+            // Reset visibility so animations replay next time
+            const items = timelineWrapper.querySelectorAll('.timeline-item');
             items.forEach(item => item.classList.remove('is-visible'));
         }
     });
 });
-
 
 // =========================================
 // CONTACT FORM (MAILTO)
@@ -118,25 +102,18 @@ const leadForm = document.getElementById('leadForm');
 if (leadForm) {
   leadForm.addEventListener('submit', function(e) {
     e.preventDefault();
-    
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const role = document.getElementById('role').value.trim();
 
     const subject = encodeURIComponent("Executive CV Pack request — " + name);
     const body = encodeURIComponent(
-      "Hi Josselin,\n\n" +
-      "I'd like to receive your Executive CV Pack.\n\n" +
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n" +
-      (role ? ("Context / role:\n" + role + "\n\n") : "\n") +
-      "Best,\n" + name
+      "Hi Josselin,\n\nI'd like to receive your Executive CV Pack.\n\nName: " + name + "\nEmail: " + email + "\n" +
+      (role ? ("Context / role:\n" + role + "\n\n") : "\n") + "Best,\n" + name
     );
-
     window.location.href = "mailto:joss.r.de.st.albin@me.com?subject=" + subject + "&body=" + body;
   });
 }
-
 
 // =========================================
 // MODAL SYSTEM (OPEN/CLOSE)
@@ -144,123 +121,43 @@ if (leadForm) {
 const clickableItems = document.querySelectorAll('[data-modal]');
 const modals = document.querySelectorAll('.modal');
 
-console.log('Found ' + clickableItems.length + ' modal triggers');
-console.log('Found ' + modals.length + ' modals');
-
 function openModal(modalId) {
-  console.log('Opening modal:', modalId);
   const modal = document.getElementById(modalId);
+  if (!modal) return;
   
-  if (!modal) {
-    console.error('Modal not found:', modalId);
-    return;
-  }
-  
-  console.log('Modal found, setting aria-hidden=false');
   modal.setAttribute('aria-hidden', 'false');
-  
-  // Double-check it's visible
-  setTimeout(() => {
-    const computedDisplay = window.getComputedStyle(modal).display;
-    console.log('Modal display after opening:', computedDisplay);
-  }, 50);
-
-  // Save focus and focus close button
   modal.__prevFocus = document.activeElement;
   const closeBtn = modal.querySelector('.modal-close');
-  if (closeBtn) {
-    setTimeout(() => closeBtn.focus(), 100);
-  }
+  if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
 
-  // Prevent background scroll
   document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
 }
 
 function closeModal(modal) {
   if (!modal) return;
-  
-  console.log('Closing modal');
   modal.setAttribute('aria-hidden', 'true');
-
-  // Restore scroll
   document.documentElement.style.overflow = '';
   document.body.style.overflow = '';
-
-  // Restore focus
-  if (modal.__prevFocus && typeof modal.__prevFocus.focus === 'function') {
-    modal.__prevFocus.focus();
-  }
+  if (modal.__prevFocus) modal.__prevFocus.focus();
 }
 
-// Attach click handlers to all [data-modal] triggers
 clickableItems.forEach(item => {
   const modalId = item.getAttribute('data-modal');
-  console.log('Attaching handler for modal:', modalId);
-  
-  const handler = () => openModal(modalId);
-  
-  item.addEventListener('click', (e) => {
-    e.preventDefault();
-    handler();
-  });
-  
-  item.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      handler();
-    }
-  });
+  item.addEventListener('click', (e) => { e.preventDefault(); openModal(modalId); });
 });
 
-// Close button + click outside handlers
 modals.forEach(modal => {
-  // Close button
   const closeBtn = modal.querySelector('.modal-close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeModal(modal);
-    });
-  }
-
-  // Click outside modal-box to close
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal(modal);
-    }
-  });
+  if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
 });
 
-// ESC key closes any open modal
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    const openModal = document.querySelector('.modal[aria-hidden="false"]');
-    if (openModal) {
-      closeModal(openModal);
-    }
+    const openModalEl = document.querySelector('.modal[aria-hidden="false"]');
+    if (openModalEl) closeModal(openModalEl);
   }
 });
-
-
-
-
-
-// =========================================
-// GENERAL SCROLL REVEAL ANIMATION
-// =========================================
-const revealElements = document.querySelectorAll('.reveal');
-if (revealElements.length > 0) {
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  revealElements.forEach(el => revealObserver.observe(el));
-}
 
 console.log('main.js fully executed');
