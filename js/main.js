@@ -18,44 +18,38 @@ const deployBtn = document.getElementById('deployExperience');
 const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const toggleBtn = document.getElementById('toggleTimeline');
-const timelineContainer = document.getElementById('timelineContainer');
-// Target ALL "Back to skills" link in the experience section
-const skillLinks = document.querySelectorAll('a[href="#skills"]');
 
-// 2. INITIAL STATE (Ensure sort button is hidden)
-if (toggleBtn) toggleBtn.style.display = 'none';
-
-// 3. DEPLOY & ANIMATE LOGIC
 if (deployBtn && timelineWrapper) {
     deployBtn.addEventListener('click', function() {
-        // Show the wrapper
-        timelineWrapper.classList.remove('collapsed');
-        timelineWrapper.style.display = 'block';
+        // Hide the big button and its header
         triggerWrapper.style.display = 'none';
+        
+        // Show the timeline and sorting toggle
+        timelineWrapper.style.display = 'block';
+        timelineWrapper.classList.remove('collapsed');
         if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // REVERSE TO PRESENT -> PAST (Latest first)
-        const items = Array.from(timelineContainer.children);
-        items.reverse().forEach(item => timelineContainer.appendChild(item));
-        
-        // Re-initialize the Scroll Animation (IntersectionObserver)
-        // We do this NOW because the items are finally visible to the browser
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+        // Auto-reverse to Present -> Past
+        const container = document.getElementById('timelineContainer');
+        const items = Array.from(container.children);
+        items.reverse().forEach(item => container.appendChild(item));
 
-        const itemsToObserve = timelineWrapper.querySelectorAll('.timeline-item');
-        itemsToObserve.forEach(item => observer.observe(item));
+        // Trigger Reveal Animations
+        const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('is-visible');
+            }, index * 100);
+        });
 
-        // Smooth scroll to the start
-        timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Scroll to the top of the NEWLY revealed section
+        window.scrollTo({
+            top: timelineWrapper.offsetTop - 100, // Adjust for navbar height
+            behavior: 'smooth'
+        });
     });
 }
+
 
 // 4. MANUAL TOGGLE LOGIC (Latest <-> Earliest)
 if (toggleBtn) {
