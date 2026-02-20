@@ -10,8 +10,43 @@ if (yearElement) {
 
 
 // =========================================
-// TIMELINE TOGGLE FUNCTIONALITY
+// TIMELINE FUNCTIONALITIES
 // =========================================
+
+// timeline reveal
+const deployBtn = document.getElementById('deployExperience');
+const timelineWrapper = document.getElementById('timelineWrapper');
+const triggerWrapper = document.getElementById('experience-trigger-wrapper');
+const sortBtn = document.getElementById('toggleTimeline');
+
+if (deployBtn && timelineWrapper) {
+    deployBtn.addEventListener('click', function() {
+        // 1. Show the timeline
+        timelineWrapper.classList.remove('collapsed');
+        timelineWrapper.classList.add('expanded');
+        
+        // 2. Hide the "Review my career" button wrapper
+        triggerWrapper.style.display = 'none';
+        
+        // 3. Make sure the sorting button is visible
+        if(sortBtn) sortBtn.style.display = 'flex';
+
+        // 4. Manually trigger the intersection observer logic for the items
+        // since they are now suddenly in view
+        const items = timelineWrapper.querySelectorAll('.timeline-item');
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('is-visible');
+            }, index * 150); // Staggered entrance
+        });
+
+        // 5. Scroll smoothly to the start of the timeline
+        timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+}
+
+
+// timeline sorting
 const toggleBtn = document.getElementById('toggleTimeline');
 const toggleText = document.getElementById('toggleText');
 const timelineContainer = document.getElementById('timelineContainer');
