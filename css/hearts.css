@@ -1,5 +1,5 @@
 /* ===================================
-   HEARTS.CSS - Animation Test Page
+   SIMPLE CIRCLE INTERSECTION
    =================================== */
 
 :root {
@@ -53,7 +53,7 @@ body {
 }
 
 .test-header h1 i {
-    color: #ff4d6d;
+    color: var(--accent);
     margin-right: 8px;
 }
 
@@ -95,10 +95,9 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    overflow: visible;
 }
 
-/* Circles - Initial State */
+/* Circles */
 .circle {
     position: absolute;
     width: 180px;
@@ -110,20 +109,21 @@ body {
     justify-content: center;
     padding: 20px;
     z-index: 2;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .circle-tessan {
-    left: 50px;
-    background: linear-gradient(135deg, rgba(15, 53, 45, 0.2), rgba(15, 53, 45, 0.1));
+    left: 80px;
+    background: linear-gradient(135deg, rgba(15, 53, 45, 0.25), rgba(15, 53, 45, 0.15));
     border: 3px solid var(--tessan-color);
-    box-shadow: 0 4px 16px rgba(15, 53, 45, 0.2);
+    box-shadow: 0 4px 20px rgba(15, 53, 45, 0.25);
 }
 
 .circle-josselin {
-    right: 50px;
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.2), rgba(30, 64, 175, 0.1));
+    right: 80px;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.25), rgba(30, 64, 175, 0.15));
     border: 3px solid var(--josselin-color);
-    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.2);
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.25);
 }
 
 .circle-content {
@@ -136,68 +136,92 @@ body {
 }
 
 .circle-label {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     margin-bottom: 6px;
     color: var(--primary);
 }
 
 .mini-tag {
     font-size: 11px;
-    padding: 4px 10px;
+    padding: 5px 10px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--primary);
     font-weight: 600;
     border: 1px solid var(--stroke);
+    white-space: nowrap;
 }
 
-/* Intersection Glow */
-.intersection-glow {
+/* Intersection Highlight */
+.intersection-highlight {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120px;
-    height: 160px;
-    background: radial-gradient(ellipse, rgba(255, 238, 127, 0.8), rgba(255, 238, 127, 0.3), transparent);
-    border-radius: 50%;
+    width: 100px;
+    height: 140px;
     opacity: 0;
-    z-index: 1;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
     pointer-events: none;
-    filter: blur(8px);
 }
 
-/* Heart Result */
-.heart-result {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
+.intersection-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    z-index: 10;
+    gap: 8px;
+    background: var(--accent);
+    padding: 16px 20px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 30px rgba(255, 238, 127, 0.8), 0 0 60px rgba(255, 238, 127, 0.4);
 }
 
-.heart-result i {
-    font-size: 80px;
-    color: #ff4d6d;
+.intersection-content i {
+    font-size: 24px;
+    color: var(--primary);
 }
 
-.heart-text {
-    font-size: 18px;
+.intersection-text {
+    font-size: 13px;
     font-weight: 800;
     color: var(--primary);
-    text-align: center;
-    background: var(--accent);
-    padding: 12px 20px;
-    border-radius: 12px;
-    border: 2px solid var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Animation States */
+.circle.merged {
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-tessan.merged {
+    left: calc(50% - 120px);
+}
+
+.circle-josselin.merged {
+    right: calc(50% - 120px);
+}
+
+.intersection-highlight.visible {
+    opacity: 1;
+    animation: intersectionPulse 2s ease-in-out infinite;
+}
+
+@keyframes intersectionPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
 }
 
 /* Buttons */
@@ -221,6 +245,11 @@ body {
 .trigger-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(15, 53, 45, 0.3);
+}
+
+.trigger-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 .test-controls {
@@ -274,64 +303,25 @@ body {
     margin-bottom: 8px;
 }
 
-/* ===================================
-   ANIMATION STATES
-   =================================== */
-
-/* Phase 2a: Slide circles together */
-.circle.slide-together {
-    transition: left 1s ease-in-out, right 1s ease-in-out;
-}
-
-.circle-tessan.slide-together {
-    left: calc(50% - 140px);
-}
-
-.circle-josselin.slide-together {
-    right: calc(50% - 140px);
-}
-
-/* Phase 2b: Morph into ovals (WHILE overlapping) */
-.circle.morph-oval {
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    transition: border-radius 1.2s ease-in-out;
-}
-
-/* Phase 3: Flip into heart halves */
-.circle.flip-heart {
-    transition: all 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.circle-tessan.flip-heart {
-    transform: translateY(-30px) rotate(-45deg) scale(0.7);
-}
-
-.circle-josselin.flip-heart {
-    transform: translateY(-30px) rotate(45deg) scale(0.7);
-}
-
-/* Heart Pulse */
-@keyframes heartPulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    30% { transform: translate(-50%, -50%) scale(1.15); }
-    50% { transform: translate(-50%, -50%) scale(1.05); }
-    70% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-@keyframes heartBeat {
-    0%, 100% { transform: scale(1); }
-    10%, 30% { transform: scale(1.1); }
-    20%, 40% { transform: scale(1.05); }
-}
-
 @media (max-width: 768px) {
     .test-container {
         padding: 24px;
     }
     
+    .animation-stage {
+        height: 350px;
+    }
+    
     .circle {
         width: 140px;
         height: 140px;
+    }
+    
+    .circle-tessan {
+        left: 40px;
+    }
+    
+    .circle-josselin {
+        right: 40px;
     }
 }
