@@ -5,7 +5,7 @@
 <!-- ============================================
      HERO SECTION
      ============================================ -->
-  <section class="hero reveal">
+<section class="hero reveal">
   <div class="panel">
     <div class="kicker">
       <i class="fa-solid fa-circle-check"></i> 
@@ -15,7 +15,6 @@
     <h1 class="headline-grad">
       Dynamic Global Operations Leader<br/>
       scaling teams, processes & P&L.
-      
     </h1>
 
     <p class="subhead">
@@ -31,8 +30,9 @@
     </div>
 
     <div class="hero-actions">
-      <a class="btn btn-accent" href="#skills">
-        <i class="fa-solid fa-arrow-down"></i> Browse skills
+      <!-- RE-TARGETED: Now opens the Personality Modal directly -->
+      <a class="btn btn-accent" href="#" data-modal="m_tessan_personality">
+        <i class="fa-solid fa-user-tie"></i> Personality & Work style
       </a>
       <a class="btn btn-accent" href="#experience">
         <i class="fa-solid fa-arrow-down"></i> Explore experiences
@@ -47,37 +47,21 @@
   </div>
 </section>
 
-
 <!-- ============================================
-     SKILLS SECTION
+     UNIVERSAL SKILLS SECTION
      ============================================ -->
-<!-- PART 1: PERSONALITY / WHO I AM -->
-<section class="section section-alt" id="personality-focus">
-    <div class="section-header">
-        <h2 class="section-title reveal"><i class="fa-solid fa-id-badge"></i> Who I am</h2>
-        <p class="section-subtitle">A glimpse into my leadership style and work personality.</p>
-    </div>
-    <div class="info-grid">
-        <!-- Placeholder for Card 1 (Personality) -->
-        <div data-placeholder="skill-card-1"></div>
-    </div>
-</section>
+<section class="section" id="skills">
+  <div class="section-header">
+    <h2 class="section-title reveal">
+      <i class="fa-solid fa-star"></i> What I bring to <span id="dynamic-company-name">...</span>
+    </h2>
+    <p class="section-subtitle">
+      💡 Click each card to see detailed examples from real experiences.
+    </p>
+  </div>
 
-   <!-- ========================================
-         UNIVERSAL CARDS (Always Present)
-         ======================================== -->
-
- <section class="section" id="skills">
-    <div class="section-header">
-        <h2 class="section-title reveal">
-            <i class="fa-solid fa-star"></i> What I bring to <span id="dynamic-company-name">...</span>
-        </h2>
-        <p class="section-subtitle">Core leadership and technical foundations.</p>
-    </div>
-    
-   
-   <div class="info-grid">
-      
+  <!-- FIX: Cards are now properly inside the info-grid wrapper -->
+  <div class="info-grid">
     <!-- Card 1: Leadership (universal) -->
     <div class="info reveal" data-modal="m_leadership" role="button" tabindex="0">
       <h3><i class="fa-solid fa-trophy"></i> Core leadership strengths</h3>
@@ -99,21 +83,22 @@
         <span class="tag"><i class="fa-solid fa-chart-simple"></i> BI & Data dashboards</span>
         <span class="tag"><i class="fa-solid fa-phone"></i> Vendor management</span>
         <span class="tag"><i class="fa-solid fa-language"></i> Training, Knowledge base</span>
-      </div>   
+      </div>
+    </div>    
   </div>
 </section>
 
 <!-- PART 3: WHY TESSAN + ME = SUCCESS -->
 <section class="section section-alt" id="fit-focus">
     <div class="section-header">
-        <h2 class="section-title reveal"><i class="fa-solid fa-rocket"></i> Why Tessan + Me = Success</h2>
-        <p class="section-subtitle">How my scaling experience matches your specific HealthTech roadmap.</p>
+        <h2 class="section-title reveal"><i class="fa-solid fa-rocket"></i> Why <span class="dynamic-company-inline">...</span> + Me = Success</h2>
+        <p class="section-subtitle">How my scaling experience matches your specific roadmap.</p>
     </div>
-    <div class="info-grid">
-        <!-- Placeholder for Card 2 (Why Tessan) -->
+    <div class="info-grid" id="specific-cards-container">
         <div data-placeholder="skill-card-2"></div>
     </div>
 </section>
+
   
 
 <!-- ============================================
