@@ -30,20 +30,27 @@
     </div>
 
     <div class="hero-actions">
-      <!-- RE-TARGETED: Now opens the Personality Modal directly -->
-      <a class="btn btn-accent" href="#" data-modal="m_tessan_personality">
-        <i class="fa-solid fa-user-tie"></i> Personality & Work style
-      </a>
-      <a class="btn btn-accent" href="#experience">
-        <i class="fa-solid fa-arrow-down"></i> Explore experiences
-      </a>
-      <a class="btn btn-accent" href="#contact">
-        <i class="fa-solid fa-paper-plane"></i> Get in touch
-      </a>
-      <a class="btn btn-accent" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin-cv-2026.pdf" download>
-        <i class="fa-solid fa-download"></i> Download CV (PDF)
-      </a>
-    </div>
+  <!-- 1. Company Specific Pitch (Dynamic Text & Modal) -->
+    <a class="btn btn-accent" id="hero-btn-personality" href="#" data-modal="modal-skill-card-1">
+      <i class="fa-solid fa-user-tie"></i> <span id="hero-text-personality">Loading...</span>
+    </a>
+
+  <!-- 2. Universal Skills Link -->
+    <a class="btn btn-accent" href="#skills">
+      <i class="fa-solid fa-star"></i> What I bring to <span class="dynamic-company-inline">...</span>
+    </a>
+
+  <!-- 3. Experience Deployer (Replaces "Get in touch") -->
+    <a class="btn btn-accent" id="hero-btn-experience" href="#experience">
+      <i class="fa-solid fa-clock-rotate-left"></i> Explore my experiences
+    </a>
+
+  <!-- 4. Final Pitch Link (Replaces "Download CV") -->
+    <a class="btn btn-accent" href="#fit-focus">
+      <i class="fa-solid fa-rocket"></i> <span class="dynamic-company-inline">...</span> + Me
+    </a>
+  </div>
+
   </div>
 </section>
 
