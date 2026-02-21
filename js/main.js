@@ -44,38 +44,42 @@ if (revealElements.length > 0) {
 
 // 1. SELECTORS
 const deployBtn = document.getElementById('deployExperience');
+const heroExpBtn = document.getElementById('hero-btn-experience'); // New Hero button
 const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
-const toggleBtn = document.getElementById('toggleTimeline');
-const timelineContainer = document.getElementById('timelineContainer');
-const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
 
-// 2. DEPLOY LOGIC
-if (deployBtn && timelineWrapper) {
-    deployBtn.addEventListener('click', function() {
-        triggerWrapper.style.display = 'none';
-        timelineWrapper.style.display = 'block';
-        timelineWrapper.classList.remove('collapsed');
-        if (toggleBtn) toggleBtn.style.display = 'flex';
+// 2. SHARED DEPLOY FUNCTION
+function deployTimeline() {
+    if (!timelineWrapper) return;
+    
+    // Hide all trigger wrappers (Hero and Section)
+    if (triggerWrapper) triggerWrapper.style.display = 'none';
+    
+    timelineWrapper.style.display = 'block';
+    timelineWrapper.classList.remove('collapsed');
+    if (toggleBtn) toggleBtn.style.display = 'flex';
 
-        // Auto-reverse to Present -> Past on first open
-        const items = Array.from(timelineContainer.children);
-        items.reverse().forEach(item => timelineContainer.appendChild(item));
+    // Reverse and Animate
+    const container = document.getElementById('timelineContainer');
+    const items = Array.from(container.children);
+    items.reverse().forEach(item => container.appendChild(item));
 
-        // Trigger Reveal Animations for items
-        const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.classList.add('is-visible');
-            }, index * 100);
-        });
-
-        window.scrollTo({
-            top: timelineWrapper.offsetTop - 100,
-            behavior: 'smooth'
-        });
+    const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
+    timelineItems.forEach((item, index) => {
+        setTimeout(() => item.classList.add('is-visible'), index * 100);
     });
+
+    // Scroll to the start of the timeline
+    timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+// 3. ATCH LISTENERS
+if (deployBtn) deployBtn.addEventListener('click', deployTimeline);
+if (heroExpBtn) heroExpBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    deployTimeline();
+});
+
 
 // 3. MANUAL TOGGLE LOGIC (Latest <-> Earliest)
 if (toggleBtn && timelineContainer) {
