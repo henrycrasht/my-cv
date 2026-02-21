@@ -165,55 +165,37 @@
   </template>
 
 <script>
-    // 1. Load the shared CV body from the /shared/ folder at root
-    // Note: using /shared/cv-body.html to match your structure
-    fetch('/shared/cv-body.html') 
-        .then(response => {
-            if (!response.ok) throw new Error('Shared body file not found at /shared/cv-body.html');
-            return response.text();
-        })
-        .then(html => {
-            // Inject the shared content into the app div
-            document.getElementById('app').innerHTML = html;
+  // 1. Load the shared CV body
+fetch('/shared/cv-body.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('app').innerHTML = html;
 
-            // 2. INJECT TESSAN-SPECIFIC SKILL CARDS 
-            // Target the placeholders now that they exist in the DOM
-            const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
-            const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+        // 2. INJECT TESSAN-SPECIFIC CONTENT
+        const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
+        const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+        const card1 = document.getElementById('skill-card-1');
+        const card2 = document.getElementById('skill-card-2');
+        const modal1 = document.getElementById('modal-skill-card-1');
+        const modal2 = document.getElementById('modal-skill-card-2');
 
-            // Use the IDs you defined in your <template> tags
-            const card1Template = document.getElementById('skill-card-1');
-            const card2Template = document.getElementById('skill-card-2');
-            const modal1Template = document.getElementById('modal-skill-card-1');
-            const modal2Template = document.getElementById('modal-skill-card-2');
+        // Swap placeholders for Cards
+        if (placeholder1 && card1) placeholder1.replaceWith(card1.content.cloneNode(true));
+        if (placeholder2 && card2) placeholder2.replaceWith(card2.content.cloneNode(true));
 
-            // Inject the cards into the shared grid
-            if (placeholder1 && card1Template) {
-                placeholder1.replaceWith(card1Template.content.cloneNode(true));
-            }
-            if (placeholder2 && card2Template) {
-                placeholder2.replaceWith(card2Template.content.cloneNode(true));
-            }
-			// INJECT DYNAMIC HERO TEXT
-					const heroPersonalityText = document.getElementById('hero-text-personality');
-					if (heroPersonalityText) {
-					    heroPersonalityText.textContent = "Personality & Work style"; // Specific for Tessan
-					}
-            // Inject the modals into the <body> for proper layering
-            if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
-            if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+        // Append Modals to body (CRITICAL FOR MODAL TRIGGERING)
+        if (modal1) document.body.appendChild(modal1.content.cloneNode(true));
+        if (modal2) document.body.appendChild(modal2.content.cloneNode(true));
 
-            // 3. Load the shared main.js from the /js/ folder at root
-            const script = document.createElement('script');
-            script.src = '/js/main.js'; // Root-relative path
-            document.body.appendChild(script);
-        })
-        .catch(err => {
-            console.error('Initialization Error:', err);
-            document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading CV content. Please check file paths.</p>';
-        });
+        // Inject Hero Button Text
+        const heroPersonalityText = document.getElementById('hero-text-personality');
+        if (heroPersonalityText) heroPersonalityText.textContent = "Personality & Work style";
 
-		
+        // 3. Load main.js AFTER everything is injected
+        const script = document.createElement('script');
+        script.src = '/js/main.js';
+        document.body.appendChild(script);
+    });
 
 </script>
 
