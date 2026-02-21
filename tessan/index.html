@@ -194,7 +194,11 @@
             if (placeholder2 && card2Template) {
                 placeholder2.replaceWith(card2Template.content.cloneNode(true));
             }
-
+			// INJECT DYNAMIC HERO TEXT
+					const heroPersonalityText = document.getElementById('hero-text-personality');
+					if (heroPersonalityText) {
+					    heroPersonalityText.textContent = "Personality & Work style"; // Specific for Tessan
+					}
             // Inject the modals into the <body> for proper layering
             if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
             if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
@@ -208,6 +212,9 @@
             console.error('Initialization Error:', err);
             document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading CV content. Please check file paths.</p>';
         });
+
+		
+
 </script>
 
 
