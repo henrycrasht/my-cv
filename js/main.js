@@ -1,5 +1,18 @@
 console.log('main.js loaded');
 
+// DYNAMIC COMPANY NAME FROM URL
+const path = window.location.pathname; // e.g., "/tessan" or "/tessan/index.html"
+const companyNameElement = document.getElementById('dynamic-company-name');
+
+if (companyNameElement) {
+    // Extract the folder name, remove extension, capitalize first letter
+    const rawName = path.split('/').filter(p => p && !p.includes('.html')).pop() || "you";
+    const formattedName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
+    
+    companyNameElement.textContent = formattedName;
+}
+
+
 // =========================================
 // YEAR IN FOOTER
 // =========================================
