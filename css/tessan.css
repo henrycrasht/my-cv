@@ -193,7 +193,7 @@ small, .text-sm {
   background-color: var(--primary) !important;
   margin: 40px auto !important;
   max-width: var(--container) !important;
-  border-radius: var(--r-lg) !important;
+  border-radius: 8px !important;
   padding: 60px 50px !important;
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
@@ -242,7 +242,7 @@ small, .text-sm {
 
 #personality-focus, #fit-focus {
     background: rgba(var(--accent-rgb), 0.04); /* Subtle brand tint */
-    border-radius: 30px;
+    border-radius: 8px;
     margin-bottom: 40px;
 }
 
@@ -258,13 +258,13 @@ small, .text-sm {
    ========================================= */
 #skills {
   background: var(--accent-superlight);
-  border-radius: var(--r-lg);
+  border-radius: 8px;
   padding: 30px;
 }
 
 .info {
   padding: 24px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: var(--bg0);
   border: 1px solid var(--stroke);
   cursor: pointer;
@@ -335,7 +335,7 @@ small, .text-sm {
 .timeline-content {
   background: var(--accent-superlight) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  border-radius: 14px;
+  border-radius: 8px;
 }
 
 .timeline-content:hover {
@@ -347,7 +347,7 @@ small, .text-sm {
   background: var(--primary);
   color: var(--bg0);
   box-shadow: 0 8px 24px rgba(255, 238, 127, 0.4);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .timeline-badge {
@@ -414,7 +414,7 @@ small, .text-sm {
   background: var(--primary-light);
   color: var(--bg0);
   border: 1px solid var(--stroke-light);
-  border-radius: 8px;
+  border-radius: 4px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 8px;
@@ -430,7 +430,7 @@ small, .text-sm {
 .bullet {
   background: var(--bg0) !important;
   border: 1px solid var(--primary-light) !important;
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .bullet i {
@@ -468,7 +468,7 @@ small, .text-sm {
 .field textarea {
   width: 100%;
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.9);
   font-family: var(--font-body);
