@@ -136,7 +136,8 @@ small, .text-sm {
     border-radius: 8px;
     
     /* Branding & Interactive enhancements */
-    background-color: var(--bg0); /* Uses Tessan brand color */
+    background-color: var(--primary); /* Uses Tessan brand color */
+    color: var(--bg0);
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
