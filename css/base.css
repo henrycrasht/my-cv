@@ -274,7 +274,7 @@ img {
 }
 
 .panel {
-  border-radius: 14px;
+  border-radius: 0px;
   background: var(--card-bg, #ffffff);
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
@@ -592,7 +592,6 @@ h1 {
   width: min(90%, 900px);
   max-height: 85vh;
   overflow-y: auto;
-  border-radius: 14px;
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
   z-index: 10001;
 }
