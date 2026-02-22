@@ -174,7 +174,7 @@ fetch('/shared/cv-body.html')
     .then(html => {
         document.getElementById('app').innerHTML = html;
 
-        // 1. SELECT TEMPLATES (Note the "-template" suffix)
+        // 1. SELECT TEMPLATES
         const card1Template = document.getElementById('skill-card-1-template');
         const card2Template = document.getElementById('skill-card-2-template');
         const modal1Template = document.getElementById('modal-skill-card-1-template');
@@ -192,13 +192,9 @@ fetch('/shared/cv-body.html')
             placeholder2.replaceWith(card2Template.content.cloneNode(true));
         }
 
-        // 4. INJECT MODALS (Appended to body)
-        if (modal1Template) {
-            document.body.appendChild(modal1Template.content.cloneNode(true));
-        }
-        if (modal2Template) {
-            document.body.appendChild(modal2Template.content.cloneNode(true));
-        }
+        // 4. INJECT MODALS TO BODY
+        if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
+        if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
 
         // 5. DYNAMIC HERO TEXT
         const heroPersonalityText = document.getElementById('hero-text-personality');
@@ -210,6 +206,7 @@ fetch('/shared/cv-body.html')
         document.body.appendChild(script);
     });
 </script>
+
 
 
 </body>
