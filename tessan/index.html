@@ -58,7 +58,7 @@
        COMPANY-SPECIFIC SKILL CARDS (Hidden Templates)
        ============================================ -->
   <template id="skill-card-1">
-     <div class="info reveal" data-modal="m_tessan_personality" role="button" tabindex="0">
+     <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
       <h3><i class="fa-solid fa-id-badge"></i> Personality & Work style</h3>
       <div class="tags">
         <span class="tag"><i class="fa-solid fa-globe-africa"></i> Curious</span>
@@ -71,7 +71,7 @@
   </template>
 
   <template id="skill-card-2">
-    <div class="info reveal" data-modal="m_tessan_why" role="button" tabindex="0">
+    <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
       <h3><i class="fa-solid fa-map-sign"></i> Our roadmap to success </h3>
       <div class="tags">
         <span class="tag"><i class="fa-solid fa-heartbeat"></i> Brick & Mortar ♡ SaaS</span>
@@ -87,7 +87,7 @@
        COMPANY-SPECIFIC MODAL (Hidden)
        ============================================ -->
     <!-- Personality Modal -->
-  <template id="modal-skill-card-1">
+  <template id="modal-skill-card-1-template">
 	<section class="modal" id="m_tessan_personality" aria-hidden="true" aria-label="Personality modal" role="dialog">
 	  <div class="modal-box" role="document">
 	    <header class="modal-head">
@@ -126,7 +126,7 @@
   </template>
 
     <!-- why? Modal -->
-   <template id="modal-skill-card-2">
+   <template id="modal-skill-card-2-template">
     <section class="modal" id="m_tessan_why" aria-hidden="true" aria-label="why fit modal" role="dialog">
       <div class="modal-box" role="document">
         <header class="modal-head">
@@ -169,38 +169,46 @@
   </template>
 
 <script>
-  // 1. Load the shared CV body
 fetch('/shared/cv-body.html')
     .then(response => response.text())
     .then(html => {
         document.getElementById('app').innerHTML = html;
 
-        // 2. INJECT TESSAN-SPECIFIC CONTENT
+        // 1. SELECT TEMPLATES (Note the "-template" suffix)
+        const card1Template = document.getElementById('skill-card-1-template');
+        const card2Template = document.getElementById('skill-card-2-template');
+        const modal1Template = document.getElementById('modal-skill-card-1-template');
+        const modal2Template = document.getElementById('modal-skill-card-2-template');
+
+        // 2. SELECT PLACEHOLDERS
         const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
         const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
-        const card1 = document.getElementById('skill-card-1');
-        const card2 = document.getElementById('skill-card-2');
-        const modal1 = document.getElementById('modal-skill-card-1');
-        const modal2 = document.getElementById('modal-skill-card-2');
 
-        // Swap placeholders for Cards
-        if (placeholder1 && card1) placeholder1.replaceWith(card1.content.cloneNode(true));
-        if (placeholder2 && card2) placeholder2.replaceWith(card2.content.cloneNode(true));
+        // 3. INJECT CARDS
+        if (placeholder1 && card1Template) {
+            placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        }
+        if (placeholder2 && card2Template) {
+            placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        }
 
-        // Append Modals to body (CRITICAL FOR MODAL TRIGGERING)
-        if (modal1) document.body.appendChild(modal1.content.cloneNode(true));
-        if (modal2) document.body.appendChild(modal2.content.cloneNode(true));
+        // 4. INJECT MODALS (Appended to body)
+        if (modal1Template) {
+            document.body.appendChild(modal1Template.content.cloneNode(true));
+        }
+        if (modal2Template) {
+            document.body.appendChild(modal2Template.content.cloneNode(true));
+        }
 
-        // Inject Hero Button Text
+        // 5. DYNAMIC HERO TEXT
         const heroPersonalityText = document.getElementById('hero-text-personality');
         if (heroPersonalityText) heroPersonalityText.textContent = "Personality & Work style";
 
-        // 3. Load main.js AFTER everything is injected
+        // 6. LOAD MAIN.JS
         const script = document.createElement('script');
         script.src = '/js/main.js';
         document.body.appendChild(script);
     });
-
 </script>
 
 
