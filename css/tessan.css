@@ -129,6 +129,9 @@ small, .text-sm {
 }
 
 
+.btn-large {
+   border-radius: 8px;
+}
   
 /* =========================================
    TOPBAR Theming
