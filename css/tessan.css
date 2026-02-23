@@ -362,17 +362,14 @@ small, .text-sm {
 }
 
 #fit-focus {
-    /* Maybe a slightly stronger border for the final "pitch" card */
-    border: 2px solid var(--accent-color);
+    background: #ffffff;
+    border-radius: 20px;
 }
 
 
 #fit-focus .panel {
     background: #ffffff;
     border-radius: 20px;
-    padding: 60px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    border: 1px solid rgba(var(--accent-rgb), 0.1);
 }
 
 
