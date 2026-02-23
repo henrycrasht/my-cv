@@ -368,7 +368,7 @@ small, .text-sm {
 
 
 #fit-focus .panel {
-    background: #ffffff;
+    background: transparent;
     border-radius: 20px;
 }
 
