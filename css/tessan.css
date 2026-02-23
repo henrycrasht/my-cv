@@ -247,7 +247,7 @@ small, .text-sm {
   background-color: var(--primary) !important;
   margin: 40px auto !important;
   max-width: var(--container) !important;
-  border-radius: 8px !important;
+  border-radius: 20px !important;
   padding: 60px 50px !important;
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
@@ -294,15 +294,10 @@ small, .text-sm {
   color: var(--accent) !important;
 }
 
-#personality-focus, #fit-focus {
+#personality-focus, {
     background: rgba(var(--accent-rgb), 0.04); /* Subtle brand tint */
     border-radius: 8px;
     margin-bottom: 40px;
-}
-
-#fit-focus {
-    /* Maybe a slightly stronger border for the final "pitch" card */
-    border: 2px solid var(--accent-color);
 }
 
 
@@ -364,6 +359,20 @@ small, .text-sm {
 #specific-cards-container .info {
     border: 1px solid var(--accent-light);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#fit-focus {
+    /* Maybe a slightly stronger border for the final "pitch" card */
+    border: 2px solid var(--accent-color);
+}
+
+
+#fit-focus .panel {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(var(--accent-rgb), 0.1);
 }
 
 
