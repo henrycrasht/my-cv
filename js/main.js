@@ -50,7 +50,7 @@ const timelineWrapper = document.getElementById('timelineWrapper');
 const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const timelineContainer = document.getElementById('timelineContainer');
 const toggleBtn = document.getElementById('toggleTimeline');
-const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
+const stickyBackBtn = document.getElementById('stickyBackToSkills');
 
 // SHARED DEPLOY FUNCTION
 function deployTimeline(e) {
@@ -64,6 +64,8 @@ function deployTimeline(e) {
     timelineWrapper.style.display = 'block';
     timelineWrapper.classList.remove('collapsed');
     if (toggleBtn) toggleBtn.style.display = 'flex';
+    if (stickyBackBtn) stickyBackBtn.style.display = 'flex'; // Show the back button
+}
 
     // Reverse items to Latest -> Earliest
     const items = Array.from(timelineContainer.children);
@@ -104,14 +106,9 @@ if (toggleBtn && timelineContainer) {
 allSkillLinks.forEach(link => {
     link.addEventListener('click', function() {
         if (timelineWrapper && !timelineWrapper.classList.contains('collapsed')) {
-            timelineWrapper.classList.add('collapsed');
-            timelineWrapper.style.display = 'none';
-            if (triggerWrapper) triggerWrapper.style.display = 'block';
+            // ... existing hide logic ...
             if (toggleBtn) toggleBtn.style.display = 'none';
-
-            // Reset visibility for replay
-            const items = timelineWrapper.querySelectorAll('.timeline-item');
-            items.forEach(item => item.classList.remove('is-visible'));
+            if (stickyBackBtn) stickyBackBtn.style.display = 'none'; // Hide the back button
         }
     });
 });
