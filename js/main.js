@@ -57,7 +57,7 @@ const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
 function deployTimeline(e) {
     if (e) e.preventDefault();
     if (!timelineWrapper || !timelineContainer) return;
-    
+
     // 1. UI Visibility Changes
     if (triggerWrapper) triggerWrapper.style.display = 'none';
     timelineWrapper.style.display = 'block';
@@ -92,7 +92,7 @@ if (toggleBtn && timelineContainer) {
         e.stopPropagation();
         const items = Array.from(timelineContainer.children);
         items.reverse().forEach(item => timelineContainer.appendChild(item));
-        
+
         const txt = document.getElementById('toggleText');
         if (txt) {
             txt.textContent = txt.textContent.includes('Latest') ? 'Earliest → Latest' : 'Latest → Earliest';
@@ -141,6 +141,12 @@ if (leadForm) {
 // =========================================
 // 6. MODAL SYSTEM (OPEN/CLOSE)
 // =========================================
+
+// SAFETY INIT: force-hide all modals on load regardless of HTML attribute state
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.setAttribute('aria-hidden', 'true');
+});
+
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -166,11 +172,13 @@ document.addEventListener('click', (e) => {
         e.preventDefault();
         openModal(trigger.getAttribute('data-modal'));
     }
+
     const closeBtn = e.target.closest('.modal-close');
     if (closeBtn) {
         const modal = closeBtn.closest('.modal');
         closeModal(modal);
     }
+
     const modalOverlay = e.target.matches('.modal');
     if (modalOverlay) closeModal(e.target);
 });
