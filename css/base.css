@@ -513,6 +513,7 @@ h1 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     border: 1px solid rgba(255,255,255,0.2);
     font-weight: 600;
+    backdrop-filter: blur(2px);
     /* This makes it "float" neatly over the timeline */
 }
 
