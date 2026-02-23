@@ -269,6 +269,7 @@ img {
 .hero {
   padding: 35px 0 35px;
   margin: 30px auto;
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
 .panel {
@@ -353,6 +354,7 @@ h1 {
 #skills {
   padding: 35px 0 35px;
   margin: 30px auto;
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
 /* Info grid for skills */
@@ -410,22 +412,22 @@ h1 {
   transform: translateY(0);
 }
 
-/* Frames the section like the Hero panel */
+/* =========================================
+   FIT FOCUS Section (Layout Only)
+   ========================================= */
 #fit-focus {
-  padding: 35px 0 35px;
+  padding: 35px 35px;
   margin: 30px auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 
 
 #fit-focus .container {
-    max-width: 1200px; /* Matches Hero width in base.css */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 #fit-focus .panel {
     /* Inherit Hero panel styling from base.css */
-    background: #ffffff;
-    border-radius: 20px; /* Standard Hero rounding */
     padding: 35px 35px;  /* Generous "framed" padding */
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     display: flex;
