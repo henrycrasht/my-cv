@@ -172,6 +172,7 @@
 fetch('/shared/cv-body.html')
     .then(response => response.text())
     .then(html => {
+        // Inject into app
         document.getElementById('app').innerHTML = html;
 
         // 1. SELECT TEMPLATES
@@ -185,16 +186,17 @@ fetch('/shared/cv-body.html')
         const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
 
         // 3. INJECT CARDS
-        if (placeholder1 && card1Template) {
-            placeholder1.replaceWith(card1Template.content.cloneNode(true));
-        }
-        if (placeholder2 && card2Template) {
-            placeholder2.replaceWith(card2Template.content.cloneNode(true));
-        }
+        if (placeholder1 && card1Template) placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        if (placeholder2 && card2Template) placeholder2.replaceWith(card2Template.content.cloneNode(true));
 
-        // 4. INJECT MODALS TO BODY
+        // 4. INJECT TEMPLATE MODALS TO BODY
         if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
         if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+
+        // ✅ FIX: ALSO MOVE all <section class="modal"> from #app to <body>
+        document.querySelectorAll('#app .modal').forEach(modal => {
+            document.body.appendChild(modal);
+        });
 
         // 5. DYNAMIC HERO TEXT
         const heroPersonalityText = document.getElementById('hero-text-personality');
@@ -205,6 +207,7 @@ fetch('/shared/cv-body.html')
         script.src = '/js/main.js';
         document.body.appendChild(script);
     });
+
 </script>
 
 
