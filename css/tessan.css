@@ -245,11 +245,8 @@ small, .text-sm {
    ========================================= */
 .hero {
   background-color: var(--primary) !important;
-  margin: 40px auto !important;
-  max-width: var(--container) !important;
   border-radius: 20px !important;
-  padding: 60px 50px !important;
-  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
+  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
 }
 
 .hero .panel {
@@ -295,7 +292,7 @@ small, .text-sm {
 }
 
 #personality-focus, {
-    background: rgba(var(--accent-rgb), 0.04); /* Subtle brand tint */
+    background: rgba(var(--accent-rgb), 0.04);
     border-radius: 8px;
     margin-bottom: 40px;
 }
@@ -309,6 +306,7 @@ small, .text-sm {
   background: var(--accent-superlight);
   border-radius: 20px;
   padding: 30px;
+  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
 }
 
 .info {
@@ -364,6 +362,7 @@ small, .text-sm {
 #fit-focus {
     background: #ffffff;
     border-radius: 20px;
+    box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
 }
 
 
