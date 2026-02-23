@@ -51,33 +51,31 @@ const triggerWrapper = document.getElementById('experience-trigger-wrapper');
 const timelineContainer = document.getElementById('timelineContainer');
 const toggleBtn = document.getElementById('toggleTimeline');
 const stickyBackBtn = document.getElementById('stickyBackToSkills');
+const allSkillLinks = document.querySelectorAll('a[href="#skills"]');
 
 // SHARED DEPLOY FUNCTION
 function deployTimeline(e) {
     if (e) e.preventDefault();
     if (!timelineWrapper || !timelineContainer) return;
     
-    // Hide trigger section
+    // 1. UI Visibility Changes
     if (triggerWrapper) triggerWrapper.style.display = 'none';
-    
-    // Show timeline
     timelineWrapper.style.display = 'block';
     timelineWrapper.classList.remove('collapsed');
     if (toggleBtn) toggleBtn.style.display = 'flex';
-    if (stickyBackBtn) stickyBackBtn.style.display = 'flex'; // Show the back button
-}
+    if (stickyBackBtn) stickyBackBtn.style.display = 'flex';
 
-    // Reverse items to Latest -> Earliest
+    // 2. Invert Chronology (Latest -> Earliest)
     const items = Array.from(timelineContainer.children);
     items.reverse().forEach(item => timelineContainer.appendChild(item));
 
-    // Staggered Entrance Animation
+    // 3. Trigger Animations
     const timelineItems = timelineWrapper.querySelectorAll('.timeline-item');
     timelineItems.forEach((item, index) => {
         setTimeout(() => item.classList.add('is-visible'), index * 100);
     });
 
-    // Scroll smoothly to timeline
+    // 4. Smooth Scroll to Timeline
     setTimeout(() => {
         timelineWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
@@ -87,7 +85,7 @@ function deployTimeline(e) {
 if (deployBtn) deployBtn.addEventListener('click', deployTimeline);
 if (heroExpBtn) heroExpBtn.addEventListener('click', deployTimeline);
 
-// MANUAL TOGGLE LOGIC (Latest <-> Earliest)
+// MANUAL TOGGLE LOGIC
 if (toggleBtn && timelineContainer) {
     toggleBtn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -106,9 +104,15 @@ if (toggleBtn && timelineContainer) {
 allSkillLinks.forEach(link => {
     link.addEventListener('click', function() {
         if (timelineWrapper && !timelineWrapper.classList.contains('collapsed')) {
-            // ... existing hide logic ...
+            timelineWrapper.classList.add('collapsed');
+            timelineWrapper.style.display = 'none';
+            if (triggerWrapper) triggerWrapper.style.display = 'block';
             if (toggleBtn) toggleBtn.style.display = 'none';
-            if (stickyBackBtn) stickyBackBtn.style.display = 'none'; // Hide the back button
+            if (stickyBackBtn) stickyBackBtn.style.display = 'none';
+
+            // Reset visibility so items "pop" next time
+            const items = timelineWrapper.querySelectorAll('.timeline-item');
+            items.forEach(item => item.classList.remove('is-visible'));
         }
     });
 });
@@ -140,12 +144,10 @@ if (leadForm) {
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
-    
     modal.setAttribute('aria-hidden', 'false');
     modal.__prevFocus = document.activeElement;
     const closeBtn = modal.querySelector('.modal-close');
     if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
-
     document.documentElement.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
 }
@@ -158,24 +160,19 @@ function closeModal(modal) {
     if (modal.__prevFocus) modal.__prevFocus.focus();
 }
 
-// Re-query elements to ensure they are found after injection
 document.addEventListener('click', (e) => {
     const trigger = e.target.closest('[data-modal]');
     if (trigger) {
         e.preventDefault();
         openModal(trigger.getAttribute('data-modal'));
     }
-
     const closeBtn = e.target.closest('.modal-close');
     if (closeBtn) {
         const modal = closeBtn.closest('.modal');
         closeModal(modal);
     }
-
     const modalOverlay = e.target.matches('.modal');
-    if (modalOverlay) {
-        closeModal(e.target);
-    }
+    if (modalOverlay) closeModal(e.target);
 });
 
 document.addEventListener('keydown', (e) => {
