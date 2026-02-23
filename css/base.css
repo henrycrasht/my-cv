@@ -417,6 +417,22 @@ h1 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 
 
+#fit-focus .container {
+    max-width: 1200px; /* Matches Hero width in base.css */
+    margin: 0 auto;
+}
+
+#fit-focus .panel {
+    /* Inherit Hero panel styling from base.css */
+    background: #ffffff;
+    border-radius: 20px; /* Standard Hero rounding */
+    padding: 35px 35px;  /* Generous "framed" padding */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Centering logic for the single card */
 .single-card-container {
     display: flex;
@@ -435,6 +451,7 @@ h1 {
 
 #fit-focus .info:hover {
     transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.1);
 }
 
 #fit-focus .section-header {
