@@ -51,7 +51,7 @@
 
   <!-- 4. Final Pitch Link -->
     <a class="btn btn-accent" href="#fit-focus">
-      <i class="fa-solid fa-rocket"></i> <span class="dynamic-company-inline">...</span> + Me
+      <i class="fa-solid fa-rocket"></i> <span class="dynamic-company-inline">...</span> +  Me
     </a>
   </div>
 
@@ -128,12 +128,20 @@
     </button>
   </div>
 
-  <div id="sticky-control-layer" style="position: sticky; top: 90px; z-index: 900; display: flex; justify-content: flex-end; height: 0; padding-right: 20px;">
-      <button class="btn btn-ghost" id="toggleTimeline" style="display:none; transform: translateY(-20px);">
-          <i class="fa-solid fa-arrow-down-up-across-line"></i>
-          <span id="toggleText">Latest → Earliest</span>
-      </button>
-  </div>
+  <div id="sticky-control-layer" style="position: sticky; top: 90px; z-index: 900; display: flex; justify-content: space-between; height: 0; padding: 0 20px;">
+    
+    <!-- LEFT: Back to Skills (Re-targeted) -->
+    <a class="btn btn-ghost" id="stickyBackToSkills" href="#skills" style="display: none; transform: translateY(-20px);">
+        <i class="fa-solid fa-arrow-up"></i>
+        <span>Back to skills</span>
+    </a>
+
+    <!-- RIGHT: Toggle Timeline -->
+    <button class="btn btn-ghost" id="toggleTimeline" style="display: none; transform: translateY(-20px);">
+        <i class="fa-solid fa-arrow-down-up-across-line"></i>
+        <span id="toggleText">Earliest → Latest</span>
+    </button>
+</div>
 
  <div id="timelineWrapper" class="collapsed" style="display:none;">
     <div class="timeline" id="timelineContainer">
@@ -256,12 +264,6 @@
     </div>
       
     </div>
-
-    <div class="hero-actions" style="justify-content: center; margin-top: 60px; padding-bottom: 60px;">
-      <a class="btn btn-light" href="#skills">
-        <i class="fa-solid fa-arrow-up"></i> Back to skills
-      </a>
-    </div>
   </div>
 </section>
   
@@ -313,7 +315,7 @@
      FOOTER
      ============================================ -->
 <footer>
-©<span id="year"></span> • Josselin & his <strong>A</strong>wesome <strong>I</strong>ntern • Press ESC to close pop-ups
+©<span id="year"></span> • made with ♡ for <span class="dynamic-company-inline">...</span>  by  Josselin  &  his   <strong>A</strong>wesome   <strong>I</strong>ntern • Press ESC to close pop-ups
 </footer>
 
 
