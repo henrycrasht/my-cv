@@ -179,7 +179,7 @@ small, .text-sm {
 .company-badge-center {
   box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--surface, #ffffff);
 
 }
