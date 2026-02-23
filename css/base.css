@@ -1,852 +1,220 @@
 /* =========================================
-   Base
+   CORE VARIABLES & RESET
    ========================================= */
-
-* {
-  box-sizing: border-box;
+:root {
+    --bg-light: #fdfdfd;
+    --text-dark: #1a1a1a;
+    --transition: all 0.3s ease;
 }
 
-html {
-  scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Arial, sans-serif;
-  color: var(--ink, #111);
-  overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
+/* =========================================
+   LAYOUT CONTAINERS
+   ========================================= */
 .container {
-  max-width: var(--container, 1120px);
-  margin: 0 auto;
-  padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-
-/* =========================================
-   Buttons (Structural Reset Only)
-   ========================================= */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  cursor: pointer;
-  font: inherit;
-  line-height: inherit;
-  transition: all 0.2s ease;
-}
-
-.btn:hover,
-.btn:active,
-.btn:focus {
-  outline: none;
-  transform: none;
-  box-shadow: none;
-}
-
-
-
-
-/* =========================================
-   Topbar (Layout Only, No Branding)
-   ========================================= */
-
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 72px;
-  border-bottom: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: var(--topbar-bg, rgba(255, 255, 255, 0.9));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: height 0.25s ease;
-}
-
-.topbar-inner-centered {
-  width: 100%;
-  max-width: var(--container, 1120px);
-  padding: 0 24px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.brand .profile-photo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.brand .profile-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.brand-text-main {
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.brand-text-sub {
-  margin-top: 2px;
-  font-size: 0.8rem;
-  opacity: 0.85;
-}
-
-.company-badge-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 50px;
-  padding: 0 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  white-space: nowrap;
-  max-width: 220px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.company-badge-center img,
-.company-logo-center {
-  height: 24px;
-  width: auto;
-  max-width: 145px;
-  object-fit: contain;
-}
-
-.at-symbol {
-  font-size: 0.85rem;
-  opacity: 0.75;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 900px) {
-  .topbar {
-    height: 52px;
-  }
-
-  .topbar-inner-centered {
-    justify-content: center;
-    gap: 10px;
-    padding: 0 16px;
-  }
-
-  .brand .profile-photo,
-  .nav {
-    display: none;
-  }
-
-  .brand-text {
-    flex-direction: row;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
-  }
-
-  .brand-text-sub {
-    display: none;
-  }
-
-  .company-badge-center {
-    position: static;
-    transform: none;
-    height: 32px;
-    padding: 0 12px;
-    max-width: 170px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .company-badge-center img,
-  .company-logo-center {
-    height: 14px;
-    max-width: 90px;
-  }
-
-  .at-symbol {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .brand-text-main {
-    max-width: 150px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 0.8rem;
-  }
-}
-
-
-
-
-/* =========================================
-   SECTIONS properties
-   ========================================= */
-
 
 .section {
-  padding: 32px 0;
+    padding: 100px 0;
 }
 
-.section-header {
-  margin-bottom: 18px;
-}
-
-.section-title {
-  font-size: 20px;
-  font-weight: 750;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
-
-
-
-
-/* =========================================
-   Hero Panel (Layout / Structure)
-   ========================================= */
-
-.hero {
-  padding: 35px 0 35px;
-  margin: 30px auto;
+.section-alt {
+    /* Background color should be defined in company-specific CSS */
+    padding: 100px 0;
 }
 
 .panel {
-  border-radius: 0px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
-  overflow: hidden;
-  position: relative;
-  padding: 34px 34px 30px;
-}
-
-.panel::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  pointer-events: none;
-}
-
-.panel > * {
-  position: relative;
-}
-
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  margin-top: 1px;
-  margin-bottom: 4px;
-  border-radius: 999px;
-  border: 1px solid var(--kicker-stroke, rgba(0, 0, 0, 0.12));
-  font-weight: 650;
-  width: fit-content;
-}
-
-h1 {
-  margin: 16px 0 10px;
-  font-size: clamp(30px, 3.6vw, 48px);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-}
-
-.subhead {
-  margin: 0 0 18px;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 62ch;
-}
-
-.pill-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 1px;
-  margin-bottom: 8px;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 999px;
-  border: 1px solid var(--pill-stroke, rgba(0, 0, 0, 0.12));
-  font-weight: 600;
-  font-size: 13.5px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-
-
-/* =========================================
-   SKILLS Card Section (Layout Only)
-   ========================================= */
-#skills {
-  padding: 35px 0 35px;
-  margin: 30px auto;
-}
-
-/* Info grid for skills */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 24px;
-}
-
-.info {
-  padding: 24px;
-  border-radius: 14px;
-  background: var(--bg0);
-  border: 1px solid var(--stroke);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.info:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(15, 53, 45, 0.12);
-  border-color: var(--accent);
-}
-
-.info h3 {
-  margin: 0 0 16px;
-  font-size: 18px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 7px;
-  padding-right: 7px;
-}
-
-/* .tags is used in Skill cards body */
-.tag {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-
-/* Reveal animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Frames the section like the Hero panel */
-#fit-focus {
-  padding: 35px 0 35px;
-  margin: 30px auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-
-
-#fit-focus .container {
-    max-width: 1200px; /* Matches Hero width in base.css */
-    margin: 0 auto;
-}
-
-#fit-focus .panel {
-    /* Inherit Hero panel styling from base.css */
-    background: #ffffff;
-    border-radius: 20px; /* Standard Hero rounding */
-    padding: 35px 35px;  /* Generous "framed" padding */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    /* The structural frame used in Hero and Fit-Focus */
+    width: 100%;
+    padding: 60px 40px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-/* Centering logic for the single card */
-.single-card-container {
-    display: flex;
-    justify-content: center;
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* =========================================
+   INFO GRID & CARDS (Structural Core)
+   ========================================= */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
     margin-top: 40px;
 }
 
-/* Ensure the card has a fixed max-width so it doesn't look like a long bar */
-#fit-focus .info {
-    max-width: 500px;
-    width: 100%;
-    margin: 0 auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-#fit-focus .info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(var(--accent-rgb), 0.1);
-}
-
-#fit-focus .section-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-
-/* =================================================
-   TIMELINE (structure only, design in company.css)
-   ================================================= */
-
-.timeline {
-  position: relative;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.timeline-item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-content {
-  position: relative;
-  width: 43%;
-  padding: 24px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 50px;
-}
-
-/* Left/right alternating */
-.timeline-item.left .timeline-content {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.timeline-item.right .timeline-content {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.timeline-date {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  font-weight: 800;
-  font-size: 13px;
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.timeline-role {
-  font-weight: 700;
-}
-
-.timeline-meta {
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.timeline-body {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* timeline Initial hidden state */
-.timeline-wrapper.collapsed {
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* timeline Revealed state */
-.timeline-wrapper.expanded {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Sticky Sorting Button */
-#toggleTimeline {
-    position: sticky;
-    top: 20px; /* Distance from top of window */
-    z-index: 1000; /* Ensure it stays above timeline cards */
-    align-self: flex-start; /* Prevent it from stretching */
-    
-    /* Make it smaller */
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    height: fit-content;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    backdrop-filter: blur(2px);
-}
-
-#stickyBackToSkills {
-    position: sticky;
-    top: 20px; /* Distance from top of window */
-    z-index: 1000; /* Ensure it stays above timeline cards */
-    align-self: flex-start; /* Prevent it from stretching */
-    
-    /* Make it smaller */
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    height: fit-content;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    backdrop-filter: blur(2px);
-}
-
-#experience-trigger-wrapper .section-title {
-    font-family: 'Recoleta', serif; /* Or your brand font */
-    font-size: 2.5rem;
-    color: var(--text-dark);
-}
-
-
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 30px;
-  }
-
-  .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 70px !important;
-    margin-right: 0 !important;
-  }
-
-  .timeline-date {
-    left: 30px;
-  }
-}
-
-
-/* Adjust the section header to handle sticky alignment */
-#experience .section-header {
+/* The card "bones" - No borders/colors here */
+.info {
+    padding: 30px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Align to top */
-    min-height: 80px;
+    flex-direction: column;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
+.info .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto; /* Aligns tags to the bottom of cards */
+}
+
+.info .tag {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
 
 /* =========================================
-   MODALS Structure 
+   INTERACTIVE ELEMENTS (Buttons)
    ========================================= */
-
-.modal {
-  position: fixed;
-  inset: 0;
-  display: none; /* Hidden by default */
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 10000; /* Very high to ensure overlay */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
 }
 
-/* This is the CRITICAL rule - without it modals won't show */
+.btn-large {
+    padding: 18px 36px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   STICKY CONTROLS (Timeline)
+   ========================================= */
+#sticky-control-layer {
+    position: sticky;
+    top: 90px;
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    height: 0;
+    padding: 0 20px;
+}
+
+.btn-ghost {
+    /* Structural base for sticky buttons */
+    backdrop-filter: blur(8px);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+/* =========================================
+   ANIMATIONS (Reveal)
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   MODAL SYSTEM (Structure)
+   ========================================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
 .modal[aria-hidden="false"] {
-  display: flex !important;
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-box {
-  position: relative;
-  width: min(90%, 900px);
-  max-height: 85vh;
-  overflow-y: auto;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
-  z-index: 10001;
-}
-
-.modal-head {
-  position: sticky;
-  top: 0;
-  padding: 24px;
-  padding-right: 60px; /* Space for close button */
-  border-bottom: 1px solid var(--stroke, rgba(0, 0, 0, 0.1));
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-  z-index: 2;
-}
-
-.modal-title {
-  margin: 0 0 8px;
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.modal-sub {
-  margin: 0 0 16px;
-  font-size: 15px;
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.modal-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.modal-close {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 18px;
-  z-index: 3;
-  border-radius: 10px;
-}
-
-.modal-close:hover {
-  transform: scale(1.1);
-}
-
-.modal-body {
-  padding: 24px;
-}
-
-.bullets {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.bullet {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px;
-}
-
-.bullet i {
-  margin-top: 2px;
-  flex-shrink: 0;
-  width: 18px;
-  text-align: center;
-}
-
-.bullet p {
-  margin: 0;
-  line-height: 1.6;
-  font-size: 14.5px;
-}
-
-@media (max-width: 768px) {
-  .modal-box {
-    width: min(95%, 900px);
+    width: 95%;
+    max-width: 800px;
     max-height: 90vh;
-  }
-
-  .modal-head {
-    padding: 18px;
-    padding-right: 55px;
-  }
-
-  .modal-body {
-    padding: 18px;
-  }
-   
-  .container {
-    padding: 18px;
-  }
-
-  .panel {
-    padding: 26px 20px 24px;
-  }
-
-  .contact-card {
-    padding: 22px 18px;
-  }
-}
-
-
-
-/* =========================================
-   CONTACT CARD Section (Layout Only)
-   ========================================= */
-
-.contact-section {
-  margin-top: 40px;
-  padding: 28px 0 0;
-}
-
-.contact-card {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 28px;
-  border-radius: 14px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  pointer-events: none;
-}
-
-.contact-card > * {
-  position: relative;
-}
-
-.lead-title {
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0 0 10px;
-  text-align: center;
-}
-
-.lead-subtitle {
-  margin: 0 0 20px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  text-align: center;
-}
-
-.lead-actions {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px;
 }
 
 /* =========================================
-   FOOTER Section (Layout Only)
+   FOOTER
    ========================================= */
-
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-    /* Reduced size and styling */
-    font-size: 0.75rem; /* Smaller than standard text */
-    padding: 40px 20px; /* Space above and below */
-    color: var(--text-dark);
-    opacity: 0.6; /* Makes it discrete */
-    
-    /* Ensure it spans the full width to allow centering */
+    font-size: 0.75rem;
+    padding: 60px 20px;
     width: 100%;
-}
-
-footer span#year {
-    font-weight: 700; /* Keep the year bold */
-    margin-right: 4px;
 }
