@@ -409,6 +409,37 @@ h1 {
   transform: translateY(0);
 }
 
+/* Frames the section like the Hero panel */
+#fit-focus .panel {
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 60px 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+    max-width: 1000px; /* Optional: keeps the frame focused */
+    margin: 0 auto;    /* Centers the frame on the page */
+}
+
+/* Centering logic for the single card */
+.single-card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Ensure the card has a fixed max-width so it doesn't look like a long bar */
+#fit-focus .info {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#fit-focus .info:hover {
+    transform: translateY(-5px);
+}
+
 
 
 
