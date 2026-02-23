@@ -307,7 +307,7 @@ small, .text-sm {
    ========================================= */
 #skills {
   background: var(--accent-superlight);
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 30px;
 }
 
