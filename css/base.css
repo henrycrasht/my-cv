@@ -483,6 +483,7 @@ h1 {
   bottom: 0;
   width: 5px;
   transform: translateX(-50%);
+  background: var(--timeline-line, linear-gradient(180deg, transparent 1%, #0F352D 20%, #1D5C4D 40%, #FFEE7F 60%, #EAFBAF 95%, transparent));
 }
 
 .timeline-item {
