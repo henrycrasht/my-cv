@@ -769,3 +769,27 @@ h1 {
   flex-wrap: wrap;
 }
 
+/* =========================================
+   FOOTER Section (Layout Only)
+   ========================================= */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Reduced size and styling */
+    font-size: 0.75rem; /* Smaller than standard text */
+    padding: 40px 20px; /* Space above and below */
+    color: var(--text-dark);
+    opacity: 0.6; /* Makes it discrete */
+    
+    /* Ensure it spans the full width to allow centering */
+    width: 100%;
+}
+
+footer span#year {
+    font-weight: 700; /* Keep the year bold */
+    margin-right: 4px;
+}
