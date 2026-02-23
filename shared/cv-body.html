@@ -39,14 +39,14 @@
       <i class="fa-solid fa-user-tie"></i> <span id="hero-text-personality">...</span>
     </a>
 
-  <!-- 2. Universal Skills Link -->
-    <a class="btn btn-accent" href="#skills">
-      <i class="fa-solid fa-star"></i> What I bring to <span class="dynamic-company-inline">...</span>
-    </a>
-
-  <!-- 3. Experience Deployer -->
+  <!-- 2. Experience Deployer -->
     <a class="btn btn-accent" id="hero-btn-experience" href="#experience">
       <i class="fa-solid fa-clock-rotate-left"></i> Explore my experiences
+    </a>
+      
+  <!-- 3. Universal Skills Link -->
+    <a class="btn btn-accent" href="#skills">
+      <i class="fa-solid fa-star"></i> What I bring to <span class="dynamic-company-inline">...</span>
     </a>
 
   <!-- 4. Final Pitch Link -->
@@ -66,9 +66,6 @@
     <h2 class="section-title reveal">
       <i class="fa-solid fa-star"></i> What I bring to <span id="dynamic-company-name">...</span>
     </h2>
-    <p class="section-subtitle">
-      💡 Click each card to see detailed examples from real experiences.
-    </p>
   </div>
 
   <!-- FIX: Cards are now properly inside the info-grid wrapper -->
@@ -103,15 +100,20 @@
      COMPANY SKILLS SECTION
      ============================================ -->
 <section class="section section-alt" id="fit-focus">
+  <!-- The 'panel' class provides the Hero-like framing -->
+  <div class="panel reveal">
     <div class="section-header">
-        <h2 class="section-title reveal"><i class="fa-solid fa-rocket"></i> Why <span class="dynamic-company-inline">...</span> + Me = Success</h2>
+        <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Why <span class="dynamic-company-inline">...</span> + Me = Success</h2>
         <p class="section-subtitle">How my scaling experience matches your specific roadmap.</p>
     </div>
-    <div class="info-grid" id="specific-cards-container">
-        <!-- Placeholder for Card 2 -->
+
+    <!-- Centering wrapper for the single card -->
+    <div class="single-card-container">
         <div data-placeholder="skill-card-2"></div>
     </div>
+  </div>
 </section>
+
 
   
 
