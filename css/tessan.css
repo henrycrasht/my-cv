@@ -389,6 +389,8 @@ small, .text-sm {
 .timeline::before {
   background: var(--timeline-line) !important;
   width: 5px !important;
+  content: '' !important; /* Ensures it exists */
+  z-index: 1;
 }
 
 .timeline-content {
