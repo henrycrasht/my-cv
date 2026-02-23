@@ -509,20 +509,33 @@ h1 {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+/* Sticky Sorting Button */
 #toggleTimeline {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    font-weight: 600;
+    position: sticky;
+    top: 20px; /* Distance from top of window */
+    z-index: 1000; /* Ensure it stays above timeline cards */
+    align-self: flex-start; /* Prevent it from stretching */
+    
+    /* Make it smaller */
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     backdrop-filter: blur(2px);
-    /* This makes it "float" neatly over the timeline */
 }
 
 #stickyBackToSkills {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    font-weight: 600;
+    position: sticky;
+    top: 20px; /* Distance from top of window */
+    z-index: 1000; /* Ensure it stays above timeline cards */
+    align-self: flex-start; /* Prevent it from stretching */
+    
+    /* Make it smaller */
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    height: fit-content;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     backdrop-filter: blur(2px);
-    /* This makes it "float" neatly over the timeline */
 }
 
 #experience-trigger-wrapper .section-title {
@@ -548,19 +561,6 @@ h1 {
   }
 }
 
-/* Sticky Sorting Button */
-#toggleTimeline {
-    position: sticky;
-    top: 20px; /* Distance from top of window */
-    z-index: 1000; /* Ensure it stays above timeline cards */
-    align-self: flex-start; /* Prevent it from stretching */
-    
-    /* Make it smaller */
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    height: fit-content;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
 
 /* Adjust the section header to handle sticky alignment */
 #experience .section-header {
