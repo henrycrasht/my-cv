@@ -267,7 +267,8 @@ img {
    ========================================= */
 
 .hero {
-  padding: 38px 0 18px;
+  padding: 35px 0 35px;
+  margin: 30px auto;
 }
 
 .panel {
@@ -350,8 +351,8 @@ h1 {
    SKILLS Card Section (Layout Only)
    ========================================= */
 #skills {
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
+  padding: 35px 0 35px;
+  margin: 30px auto;
 }
 
 /* Info grid for skills */
@@ -410,10 +411,11 @@ h1 {
 }
 
 /* Frames the section like the Hero panel */
-#fit-focus .panel {
-    padding: 60px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-}
+#fit-focus {
+  padding: 35px 0 35px;
+  margin: 30px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+
 
 /* Centering logic for the single card */
 .single-card-container {
