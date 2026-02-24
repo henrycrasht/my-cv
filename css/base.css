@@ -241,11 +241,12 @@ img {
 
 
 .section {
-  padding: 32px 0;
+  padding: 40px;
+  margin-bottom: 20px;
 }
 
 .section-header {
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .section-title {
@@ -267,7 +268,9 @@ img {
    ========================================= */
 
 .hero {
-  padding: 38px 0 18px;
+  margin: 30px auto;
+  max-width: var(--container) !important;
+  padding: 40px 40px;
 }
 
 .panel {
@@ -294,8 +297,8 @@ img {
 .kicker {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
+  gap: 12px;
+  padding: 8px 12px;
   margin-top: 1px;
   margin-bottom: 4px;
   border-radius: 999px;
@@ -306,13 +309,11 @@ img {
 
 h1 {
   margin: 16px 0 10px;
-  font-size: clamp(30px, 3.6vw, 48px);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
 }
 
 .subhead {
-  margin: 0 0 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 1rem;
   line-height: 1.6;
   max-width: 62ch;
@@ -329,8 +330,8 @@ h1 {
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
+  gap: 10px;
+  padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid var(--pill-stroke, rgba(0, 0, 0, 0.12));
   font-weight: 600;
@@ -342,17 +343,22 @@ h1 {
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 20px;
+  justify-content: stretch;
 }
 
+
+.hero-actions .btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 180px;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+}
 
 
 /* =========================================
    SKILLS Card Section (Layout Only)
    ========================================= */
-#skills {
-  border-radius: var(--r-lg) !important;
-  padding: 30px !important;
-}
+
 
 /* Info grid for skills */
 .info-grid {
@@ -409,158 +415,226 @@ h1 {
   transform: translateY(0);
 }
 
+.section-title--center {
+    text-align: center;
+}
 
+#specific-cards-container {
+  display: flex;  
+  justify-content: center;
+}
+
+#specific-cards-container .info {
+    width: 100%;
+    max-width: 500px;
+}
 
 
 /* =================================================
-   TIMELINE (structure only, design in company.css)
+   TIMELINE — Structure only, design in [company].css
    ================================================= */
 
-.timeline {
-  position: relative;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 20px;
+/* --- Section wrapper --- */
+#experience {
+    padding: 0px 40px 40px;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 60px;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.timeline-item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-content {
-  position: relative;
-  width: 43%;
-  padding: 24px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 50px;
-}
-
-/* Left/right alternating */
-.timeline-item.left .timeline-content {
-  margin-left: 0;
-  margin-right: auto;
-}
-
-.timeline-item.right .timeline-content {
-  margin-left: auto;
-  margin-right: 0;
-}
-
-.timeline-date {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  font-weight: 800;
-  font-size: 13px;
-  white-space: nowrap;
-  z-index: 2;
-}
-
-.timeline-role {
-  font-weight: 700;
-}
-
-.timeline-meta {
-  font-size: 0.85rem;
-  opacity: 0.8;
-}
-
-.timeline-body {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* timeline Initial hidden state */
-.timeline-wrapper.collapsed {
-  display: none;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* timeline Revealed state */
-.timeline-wrapper.expanded {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-#toggleTimeline {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    border: 1px solid rgba(255,255,255,0.2);
-    font-weight: 600;
-    backdrop-filter: blur(2px);
-    /* This makes it "float" neatly over the timeline */
+/* --- Deploy trigger (before timeline is revealed) --- */
+#experience-trigger-wrapper {
+    text-align: center;
+    padding: 0;
 }
 
 #experience-trigger-wrapper .section-title {
-    font-family: 'Recoleta', serif; /* Or your brand font */
+    font-family: 'Recoleta', serif;
     font-size: 2.5rem;
     color: var(--text-dark);
+    margin: 0 0 30px 0;
 }
 
-
-@media (max-width: 768px) {
-  .timeline::before {
-    left: 30px;
-  }
-
-  .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 70px !important;
-    margin-right: 0 !important;
-  }
-
-  .timeline-date {
-    left: 30px;
-  }
-}
-
-/* Sticky Sorting Button */
-#toggleTimeline {
+/* --- Sticky control layer (holds sort + back buttons) --- */
+#sticky-control-layer {
     position: sticky;
-    top: 20px; /* Distance from top of window */
-    z-index: 1000; /* Ensure it stays above timeline cards */
-    align-self: flex-start; /* Prevent it from stretching */
-    
-    /* Make it smaller */
+    top: 90px;
+    z-index: 900;
+    display: flex;
+    justify-content: space-between;
+    height: 0;
+    padding: 0 20px;
+}
+
+/* --- Sticky buttons (shared structure) --- */
+#toggleTimeline,
+#stickyBackToSkills {
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    align-self: flex-start;
     padding: 8px 14px;
     font-size: 0.85rem;
+    font-weight: 600;
     height: fit-content;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
 }
 
-/* Adjust the section header to handle sticky alignment */
+/* --- Section header layout --- */
 #experience .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align to top */
+    align-items: flex-start;
     min-height: 80px;
 }
+
+/* --- Timeline container --- */
+.timeline {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Vertical center line --- */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    transform: translateX(-50%);
+    background: #111;
+}
+
+/* --- Individual timeline items --- */
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Content cards --- */
+.timeline-content {
+    position: relative;
+    width: 43%;
+    padding: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 50px;
+}
+
+/* Left/right alternating layout */
+.timeline-item.left .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.timeline-item.right .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* --- Date badge --- */
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    font-weight: 800;
+    font-size: 13px;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* --- Text elements --- */
+.timeline-role {
+    font-weight: 700;
+}
+
+.timeline-meta {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.timeline-body {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* --- Wrapper visibility states --- */
+.timeline-wrapper.collapsed {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.timeline-wrapper.expanded {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-content {
+        width: calc(100% - 80px);
+        margin-left: 70px !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-date {
+        left: 30px;
+    }
+}
+
+
+/* --- Timeline logo (opposite side of content) --- */
+.timeline-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 43%;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo on RIGHT when item is LEFT */
+.timeline-item.left .timeline-logo {
+    right: 0;
+    justify-content: flex-start;
+    padding-left: 60px;
+}
+
+/* Logo on LEFT when item is RIGHT */
+.timeline-item.right .timeline-logo {
+    left: 0;
+    justify-content: flex-end;
+    padding-right: 60px;
+}
+
+.timeline-logo img {
+    max-width: 120px;
+    max-height: 60px;
+    object-fit: contain;
+    opacity: 0.85;
+}
+
 
 
 
