@@ -245,8 +245,11 @@ small, .text-sm {
    ========================================= */
 .hero {
   background-color: var(--primary) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
+  margin: 40px auto !important;
+  max-width: var(--container) !important;
+  border-radius: 8px !important;
+  padding: 60px 50px !important;
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
 .hero .panel {
@@ -291,10 +294,15 @@ small, .text-sm {
   color: var(--accent) !important;
 }
 
-#personality-focus, {
-    background: rgba(var(--accent-rgb), 0.04);
+#personality-focus, #fit-focus {
+    background: rgba(var(--accent-rgb), 0.04); /* Subtle brand tint */
     border-radius: 8px;
     margin-bottom: 40px;
+}
+
+#fit-focus {
+    /* Maybe a slightly stronger border for the final "pitch" card */
+    border: 2px solid var(--accent-color);
 }
 
 
@@ -304,9 +312,8 @@ small, .text-sm {
    ========================================= */
 #skills {
   background: var(--accent-superlight);
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
 }
 
 .info {
@@ -359,18 +366,6 @@ small, .text-sm {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-#fit-focus {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
-}
-
-
-#fit-focus .panel {
-    background: transparent;
-    border-radius: 20px;
-}
-
 
 
 /* =================================================
@@ -389,8 +384,6 @@ small, .text-sm {
 .timeline::before {
   background: var(--timeline-line) !important;
   width: 5px !important;
-  content: '' !important; /* Ensures it exists */
-  z-index: 1;
 }
 
 .timeline-content {
