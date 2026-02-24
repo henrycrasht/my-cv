@@ -59,7 +59,7 @@
        ============================================ -->
   <template id="skill-card-1">
      <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
-      <h3><i class="fa-solid fa-id-badge"></i> Personality & Work style</h3>
+      <h3><i class="fa-solid fa-id-badge"></i> My work style</h3>
       <div class="tags">
         <span class="tag"><i class="fa-solid fa-globe-africa"></i> Curious</span>
         <span class="tag"><i class="fa-solid fa-lightbulb"></i> Creative</span>
@@ -74,11 +74,11 @@
     <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
       <h3><i class="fa-solid fa-map-sign"></i> Our roadmap to success </h3>
       <div class="tags">
-        <span class="tag"><i class="fa-solid fa-industry"></i> Brick & Mortar ♡ SaaS </span>
+        <span class="tag"><i class="fa-solid fa-industry"></i>Brick & Mortar ♡ SaaS</span>
         <span class="tag"><i class="fa-solid fa-heartbeat"></i> Human by design</span>
 		<span class="tag"><i class="fa-solid fa-chart-line"></i> Scale & Grow</span>
         <span class="tag"><i class="fa-solid fa-coins"></i> P&L conscious</span>
-        <span class="tag"><i class="fa-solid fa-forward"></i> Ops + Data + AI</span>
+        <span class="tag"><i class="fa-solid fa-forward"></i> Ops+Data+AI</span>
       </div>
     </div>
   </template>
@@ -94,7 +94,7 @@
 	      <button class="modal-close" type="button" aria-label="Close">
 	        <i class="fa-solid fa-xmark"></i>
 	      </button>
-	      <h3 class="modal-title"><i class="fa-solid fa-user"></i> Personality & Work Style</h3>
+	      <h3 class="modal-title"><i class="fa-solid fa-user"></i> My personality & work style</h3>
 			 <div class="modal-meta" aria-label="my values">
           <span class="chip"><i class="fa-solid fa-gauge-high"></i> AMBITION</span>
           <span class="chip"><i class="fa-solid fa-star"></i> LOYALTY</span>
@@ -160,7 +160,7 @@
 			</div>
             <div class="bullet">
               <i class="fa-solid fa-eye"></i>
-              <p><strong>Design the future of Health:</strong> I can help Tessan make bold moves in their industry: Ops + Data + IA = <i class="fa fa-rocket"></i></p>
+              <p><strong>Design the future of Health:</strong> I can help Tessan make bold moves in their industry: Ops + Data + IA = <i class="fa fa-rocket" aria-hidden="true"></i></p>
             </div>
           </div>
         </div>
@@ -172,7 +172,6 @@
 fetch('/shared/cv-body.html')
     .then(response => response.text())
     .then(html => {
-        // Inject into app
         document.getElementById('app').innerHTML = html;
 
         // 1. SELECT TEMPLATES
@@ -186,28 +185,32 @@ fetch('/shared/cv-body.html')
         const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
 
         // 3. INJECT CARDS
-        if (placeholder1 && card1Template) placeholder1.replaceWith(card1Template.content.cloneNode(true));
-        if (placeholder2 && card2Template) placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        if (placeholder1 && card1Template) {
+            placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        }
+        if (placeholder2 && card2Template) {
+            placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        }
 
-        // 4. INJECT TEMPLATE MODALS TO BODY
+        // 4. INJECT MODALS TO BODY
         if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
         if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
 
-        // ✅ FIX: ALSO MOVE all <section class="modal"> from #app to <body>
-        document.querySelectorAll('#app .modal').forEach(modal => {
-            document.body.appendChild(modal);
-        });
-
         // 5. DYNAMIC HERO TEXT
         const heroPersonalityText = document.getElementById('hero-text-personality');
-        if (heroPersonalityText) heroPersonalityText.textContent = "Personality & Work style";
+        if (heroPersonalityText && card1Template) {
+        const card1Title = card1Template.content.querySelector('h3');
+        if (card1Title) {
+            // Get text only, stripping the icon
+        heroPersonalityText.textContent = card1Title.textContent.trim();
+        }
+    } 
 
         // 6. LOAD MAIN.JS
         const script = document.createElement('script');
         script.src = '/js/main.js';
         document.body.appendChild(script);
     });
-
 </script>
 
 

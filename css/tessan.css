@@ -10,16 +10,22 @@
 :root {
   /* Core Palette */
   --bg0: #FBFAF5;
+  --bg1: #bde7fb;
   --primary: #0F352D;
   --primary-light: #1D5C4D;
-  --accent: #FFEE7F;
-  --accent-light: #EAFBAF;
+  --accent: #ffee80;
+  --accent-light: #E9FBAF;
   --accent-superlight: #FEF9DE;
+  --accent-btn: #FFF199;
   --stroke: #0F352D1F;
   --stroke-light: #FFFFFF4D;
   --timeline-line: linear-gradient(180deg, transparent 1%, var(--primary) 20%, var(--primary-light) 40%, var(--accent) 60%, var(--accent-light) 95%, transparent);
   --r-lg: 28px;
   --container: 1120px;
+  --bord-r-mini: 4px;
+  --bord-r-small: 8px;
+  --bord-r-large: 14px;
+  --bord-r-max: 20px;
   
   /* Typography */
   --font-heading: 'Recoleta', serif;
@@ -61,7 +67,7 @@ small, .text-sm {
    BUTTONS Theming
    ========================================= */
 .btn {
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
   padding: 12px 16px;
   font-weight: 700;
 }
@@ -99,7 +105,7 @@ small, .text-sm {
 
 .btn-accent:hover {
   background-color: var(--bg0);
-  box-shadow: 0 10px 24px rgba(234, 251, 175, 0.5);
+  box-shadow: 0 10px 24px rgba(var(--accent-rgb), 0.04);
 }
 
 .btn-ghost {
@@ -133,7 +139,7 @@ small, .text-sm {
     /* Your original inline styles */
     padding: 20px 40px;
     font-size: 1.2rem;
-    border-radius: 8px;
+    border-radius: var(--bord-r-small);
     
     /* Branding & Interactive enhancements */
     background-color: var(--primary); /* Uses Tessan brand color */
@@ -149,8 +155,8 @@ small, .text-sm {
 #deployExperience:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background-color: var(--stroke);
-    color: #ffffff;
+    background-color: var(--primary-light);
+ 
 }
 
 #deployExperience i {
@@ -158,7 +164,7 @@ small, .text-sm {
 }
 
 #deployExperience:hover i {
-    transform: rotate(-45deg); /* Subtle icon animation */
+    transform: rotate(-360deg); /* Subtle icon animation */
 }
 
   
@@ -166,8 +172,8 @@ small, .text-sm {
    TOPBAR Theming
    ========================================= */
   
-  --topbar-bg: rgba(234, 251, 175, 0.85);
-  --surface: #FFFFFF;
+  --topbar-bg: #E9FBAF ;
+  --surface: #FFFFFF ;
   --card-bg: var(--surface);
 }
 
@@ -179,7 +185,7 @@ small, .text-sm {
 .company-badge-center {
   box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
   background: var(--surface, #ffffff);
 
 }
@@ -219,22 +225,11 @@ small, .text-sm {
 
 
 .section {
-  padding: 32px 0;
+  border-radius: var(--bord-r-max);
 }
 
 .section-header {
-  margin-bottom: 18px;
-}
-
-.section-title {
-  font-size: 20px;
-  font-weight: 750;
-  letter-spacing: -0.02em;
-}
-
-.section-subtitle {
-  font-size: 0.95rem;
-  opacity: 0.85;
+  color: var(--primary);
 }
 
 
@@ -245,8 +240,8 @@ small, .text-sm {
    ========================================= */
 .hero {
   background-color: var(--primary) !important;
-  border-radius: 20px !important;
-  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
+  border-radius: var(--bord-r-max);
+  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
 }
 
 .hero .panel {
@@ -263,6 +258,9 @@ small, .text-sm {
 .hero h1 {
   color: #FFFFFF !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  font-size: clamp(40px, 3.6vw, 48px);
+  letter-spacing: -0.04em;
+  line-height: 120%;
 }
 
 .hero .headline-grad {
@@ -273,6 +271,8 @@ small, .text-sm {
 
 .hero .subhead {
   color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 18px;
+  line-height: 150%;
 }
 
 .kicker {
@@ -291,11 +291,7 @@ small, .text-sm {
   color: var(--accent) !important;
 }
 
-#personality-focus, {
-    background: rgba(var(--accent-rgb), 0.04);
-    border-radius: 8px;
-    margin-bottom: 40px;
-}
+
 
 
 
@@ -304,14 +300,12 @@ small, .text-sm {
    ========================================= */
 #skills {
   background: var(--accent-superlight);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
+  border-radius: var(--bord-r-max);
 }
 
 .info {
   padding: 24px;
-  border-radius: 8px;
+  border-radius: var(--bord-r-small);
   background: var(--bg0);
   border: 1px solid var(--stroke);
   cursor: pointer;
@@ -328,7 +322,7 @@ small, .text-sm {
   color: var(--primary);
   background: var(--accent-superlight);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
 }
 
 /* .tags is used in Skill cards body */
@@ -359,16 +353,17 @@ small, .text-sm {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-#fit-focus {
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 0px 0px rgba(15, 53, 45, 0.15) !important;
+#personality-focus, #fit-focus {
+    background: var(--bg0);
+    border-radius: var(--bord-r-max);
 }
 
+#fit-focus {
+    border: 2px solid var(--accent-color);
+}
 
-#fit-focus .panel {
-    background: transparent;
-    border-radius: 20px;
+#specific-cards-container .info {
+    background: var(--bg1);
 }
 
 
@@ -389,14 +384,12 @@ small, .text-sm {
 .timeline::before {
   background: var(--timeline-line) !important;
   width: 5px !important;
-  content: '' !important; /* Ensures it exists */
-  z-index: 1;
 }
 
 .timeline-content {
   background: var(--accent-superlight) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  border-radius: 8px;
+  border-radius: var(--bord-r-small);
 }
 
 .timeline-content:hover {
@@ -408,14 +401,14 @@ small, .text-sm {
   background: var(--primary);
   color: var(--bg0);
   box-shadow: 0 8px 24px rgba(255, 238, 127, 0.4);
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
 }
 
 .timeline-badge {
   background: var(--accent);
   border: 1px solid rgba(16, 53, 45, 0.15);
   color: var(--primary);
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 4px;
@@ -436,6 +429,30 @@ small, .text-sm {
   box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
 }
 
+.stickyBackToSkills {
+    border: 2px solid var(--primary);
+  background: var(--accent-superlight);
+  color: var(--primary);
+  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+}
+.stickyBackToSkills:hover {
+    border: 2px solid var(--primary);
+  background: var(--primary-light);
+  color: var(--accent-superlight);
+  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+}
+
+
+/* --- Timeline logo theming --- */
+.timeline-logo img {
+    filter: grayscale(30%);
+    transition: all 0.3s ease;
+}
+
+.timeline-logo img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
 
 
 /* =========================================
@@ -449,7 +466,7 @@ small, .text-sm {
 
 .modal-box {
   background: var(--bg0) !important;
-  border-radius: 8px;
+  border-radius: var(--bord-r-small);
  /* border: 1px solid var(--stroke) !important; (removed via comments for now) */
 }
 
@@ -484,7 +501,7 @@ small, .text-sm {
   background: var(--primary-light);
   color: var(--bg0);
   border: 1px solid var(--stroke-light);
-  border-radius: 4px;
+  border-radius: var(--bord-r-mini);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 8px;
@@ -494,13 +511,13 @@ small, .text-sm {
 
 
 .bullets {
-
+background: none;
 }
 
 .bullet {
   background: var(--bg0) !important;
   border: 1px solid var(--primary-light) !important;
-  border-radius: 8px;
+  border-radius: var(--bord-r-small);
 }
 
 .bullet i {
@@ -538,7 +555,7 @@ small, .text-sm {
 .field textarea {
   width: 100%;
   padding: 12px 16px;
-  border-radius: 8px;
+  border-radius: var(--bord-r-small);
   border: 1px solid var(--stroke);
   background: rgba(255, 255, 255, 0.9);
   font-family: var(--font-body);
