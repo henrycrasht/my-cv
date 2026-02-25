@@ -1,5 +1,6 @@
 console.log('main.js loaded');
 
+
 // =========================================
 // 1. DYNAMIC COMPANY NAME LOGIC
 // =========================================
@@ -7,12 +8,22 @@ const path = window.location.pathname;
 const rawName = path.split('/').filter(p => p && !p.includes('.html')).pop() || "you";
 const formattedName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
 
+// Main dynamic company name (topbar badge + inline mentions)
 const companyNameElement = document.getElementById('dynamic-company-name');
 if (companyNameElement) companyNameElement.textContent = formattedName;
 
 document.querySelectorAll('.dynamic-company-inline').forEach(el => {
     el.textContent = formattedName;
 });
+
+// Mobile topbar text — replaces logo badge on small screens
+const mobileLabel = document.getElementById('mobile-topbar-label');
+if (mobileLabel) {
+    mobileLabel.textContent = `Josselin @ ${formattedName}`;
+}
+
+
+
 
 // =========================================
 // 2. YEAR IN FOOTER

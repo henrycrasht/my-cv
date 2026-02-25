@@ -136,15 +136,10 @@ small, .text-sm {
 
 
 #deployExperience {
-    /* Your original inline styles */
-    padding: 20px 40px;
-    font-size: 1.2rem;
-    border-radius: var(--bord-r-small);
-    
-    /* Branding & Interactive enhancements */
     background-color: var(--primary); /* Uses Tessan brand color */
     color: var(--bg0);
     border: none;
+    border-radius: var(--bord-r-small);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     display: inline-flex;
@@ -159,13 +154,6 @@ small, .text-sm {
  
 }
 
-#deployExperience i {
-    transition: transform 0.5s ease;
-}
-
-#deployExperience:hover i {
-    transform: rotate(-360deg); /* Subtle icon animation */
-}
 
   
 /* =========================================
@@ -190,27 +178,7 @@ small, .text-sm {
 
 }
 
-.company-badge-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  height: 50px;
-  padding: 0 20px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  white-space: nowrap;
-  max-width: 220px;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.brand-text-main,
-.brand-text-sub {
+.company-badge-center .brand-text-main, .brand-text-sub {
   color: var(--primary) !important;
 }
 
@@ -393,7 +361,6 @@ small, .text-sm {
 }
 
 .timeline-content:hover {
-  transform: translateY(-6px);
   box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15);
 }
 
@@ -442,17 +409,6 @@ small, .text-sm {
   box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
 }
 
-
-/* --- Timeline logo theming --- */
-.timeline-logo img {
-    filter: grayscale(30%);
-    transition: all 0.3s ease;
-}
-
-.timeline-logo img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
 
 
 /* =========================================

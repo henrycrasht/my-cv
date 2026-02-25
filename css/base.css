@@ -64,8 +64,6 @@ img {
 }
 
 
-
-
 /* =========================================
    Topbar (Layout Only, No Branding)
    ========================================= */
@@ -142,7 +140,6 @@ img {
   transform: translate(-50%, -50%);
   height: 50px;
   padding: 0 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,6 +163,11 @@ img {
   opacity: 0.75;
 }
 
+/* Hidden on desktop */
+.mobile-topbar-text {
+    display: none;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -175,70 +177,10 @@ img {
   z-index: 2;
 }
 
-@media (max-width: 900px) {
-  .topbar {
-    height: 52px;
-  }
-
-  .topbar-inner-centered {
-    justify-content: center;
-    gap: 10px;
-    padding: 0 16px;
-  }
-
-  .brand .profile-photo,
-  .nav {
-    display: none;
-  }
-
-  .brand-text {
-    flex-direction: row;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.85rem;
-  }
-
-  .brand-text-sub {
-    display: none;
-  }
-
-  .company-badge-center {
-    position: static;
-    transform: none;
-    height: 32px;
-    padding: 0 12px;
-    max-width: 170px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .company-badge-center img,
-  .company-logo-center {
-    height: 14px;
-    max-width: 90px;
-  }
-
-  .at-symbol {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .brand-text-main {
-    max-width: 150px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 0.8rem;
-  }
-}
-
-
-
 
 /* =========================================
    SECTIONS properties
    ========================================= */
-
 
 .section {
   padding: 40px;
@@ -260,7 +202,17 @@ img {
   opacity: 0.85;
 }
 
+.section-title--center {
+  text-align: center;
+}
 
+/* Anchor scroll offset — accounts for sticky topbar height */
+#skills,
+#fit-focus,
+#experience,
+#contact {
+  scroll-margin-top: 85px;
+}
 
 
 /* =========================================
@@ -270,7 +222,7 @@ img {
 .hero {
   margin: 30px auto;
   max-width: var(--container) !important;
-  padding: 40px 40px;
+  padding: 40px;
 }
 
 .panel {
@@ -346,12 +298,11 @@ h1 {
   justify-content: stretch;
 }
 
-
 .hero-actions .btn {
-    flex: 1;
-    justify-content: center;
-    min-width: 180px;
-    font-size: clamp(0.75rem, 1.2vw, 1rem);
+  flex: 1;
+  justify-content: center;
+  min-width: 180px;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 
 
@@ -359,8 +310,6 @@ h1 {
    SKILLS Card Section (Layout Only)
    ========================================= */
 
-
-/* Info grid for skills */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -386,21 +335,14 @@ h1 {
 .info h3 {
   margin: 0 0 16px;
   font-size: 18px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding: 3px 7px;
 }
 
-/* .tags is used in Skill cards body */
 .tag {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 2px 6px;
 }
 
 /* Reveal animation */
@@ -415,18 +357,14 @@ h1 {
   transform: translateY(0);
 }
 
-.section-title--center {
-    text-align: center;
-}
-
 #specific-cards-container {
-  display: flex;  
+  display: flex;
   justify-content: center;
 }
 
 #specific-cards-container .info {
-    width: 100%;
-    max-width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 
@@ -434,227 +372,218 @@ h1 {
    TIMELINE — Structure only, design in [company].css
    ================================================= */
 
-/* --- Section wrapper --- */
 #experience {
-    padding: 0px 40px 40px;
+  padding: 0 40px 40px;
 }
 
-/* --- Deploy trigger (before timeline is revealed) --- */
 #experience-trigger-wrapper {
-    text-align: center;
-    padding: 0;
+  text-align: center;
+  padding: 0;
 }
 
 #experience-trigger-wrapper .section-title {
-    font-family: 'Recoleta', serif;
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin: 0 0 30px 0;
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin: 0 0 30px 0;
 }
 
-/* --- Sticky control layer (holds sort + back buttons) --- */
+
+#deployExperience i {
+  transition: transform 0.5s ease;
+  padding: 5px 30px;
+  font-size: 1.1rem;
+}
+
+#deployExperience:hover i {
+    transform: rotate(-360deg); /* Subtle icon animation */
+}
+
 #sticky-control-layer {
-    position: sticky;
-    top: 90px;
-    z-index: 900;
-    display: flex;
-    justify-content: space-between;
-    height: 0;
-    padding: 0 20px;
+  position: sticky;
+  top: 90px;
+  z-index: 900;
+  display: flex;
+  justify-content: space-between;
+  height: 0;
+  padding: 0 20px;
 }
 
-/* --- Sticky buttons (shared structure) --- */
 #toggleTimeline,
 #stickyBackToSkills {
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
-    align-self: flex-start;
-    padding: 8px 14px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    height: fit-content;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+  align-self: flex-start;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  height: fit-content;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
 }
 
-/* --- Section header layout --- */
 #experience .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 80px;
 }
 
-/* --- Timeline container --- */
 .timeline {
-    position: relative;
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 20px;
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* --- Vertical center line --- */
+/* translateX(-50%) centers the 5px line on the middle axis */
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 5px;
-    transform: translateX(-50%);
-    background: #111;
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  transform: translateX(-50%);
+  background: #111;
 }
 
-/* --- Individual timeline items --- */
+/* translateY(30px) = hidden below, JS animates to translateY(0) on scroll */
 .timeline-item {
-    position: relative;
-    margin-bottom: 60px;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  position: relative;
+  margin-bottom: 60px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .timeline-item.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* --- Content cards --- */
+/* Hover on parent triggers both card and logo simultaneously */
+.timeline-item:hover .timeline-content,
+.timeline-item:hover .timeline-logo {
+  transform: translateY(-7px);
+}
+
+.timeline-item:hover .timeline-content {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
 .timeline-content {
-    position: relative;
-    width: 43%;
-    padding: 24px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 50px;
+  position: relative;
+  width: 43%;
+  padding: 24px;
+  cursor: pointer;
+  margin-top: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Left/right alternating layout */
 .timeline-item.left .timeline-content {
-    margin-left: 0;
-    margin-right: auto;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .timeline-item.right .timeline-content {
-    margin-left: auto;
-    margin-right: 0;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-/* --- Date badge --- */
+/* translateX(-50%) centers date badge on the middle axis */
 .timeline-date {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    padding: 8px 16px;
-    font-weight: 800;
-    font-size: 13px;
-    white-space: nowrap;
-    z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 2;
 }
 
-/* --- Text elements --- */
 .timeline-role {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .timeline-meta {
-    font-size: 0.85rem;
-    opacity: 0.8;
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 .timeline-body {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    line-height: 1.5;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-/* --- Wrapper visibility states --- */
 .timeline-wrapper.collapsed {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
+  display: none;
 }
 
 .timeline-wrapper.expanded {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* --- Mobile --- */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 30px;
-    }
-
-    .timeline-content {
-        width: calc(100% - 80px);
-        margin-left: 70px !important;
-        margin-right: 0 !important;
-    }
-
-    .timeline-date {
-        left: 30px;
-    }
-}
-
-
-/* --- Timeline logo (opposite side of content) --- */
 .timeline-logo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 43%;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 50%;
+  width: 43%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
-/* Logo on RIGHT when item is LEFT */
 .timeline-item.left .timeline-logo {
-    right: 0;
-    justify-content: flex-start;
-    padding-left: 60px;
+  right: 0;
+  justify-content: flex-start;
+  padding-left: 5px;
 }
 
-/* Logo on LEFT when item is RIGHT */
 .timeline-item.right .timeline-logo {
-    left: 0;
-    justify-content: flex-end;
-    padding-right: 60px;
+  left: 0;
+  justify-content: flex-end;
+  padding-right: 5px;
 }
 
 .timeline-logo img {
-    max-width: 120px;
-    max-height: 60px;
-    object-fit: contain;
-    opacity: 0.85;
+  max-width: 180px;
+  max-height: 90px;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.timeline-item:hover .timeline-logo img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 
-
-
 /* =========================================
-   MODALS Structure 
+   MODALS Structure
    ========================================= */
 
 .modal {
   position: fixed;
   inset: 0;
-  display: none; /* Hidden by default */
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  z-index: 10000; /* Very high to ensure overlay */
+  z-index: 10000;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* This is the CRITICAL rule - without it modals won't show */
 .modal[aria-hidden="false"] {
   display: flex !important;
 }
@@ -672,7 +601,7 @@ h1 {
   position: sticky;
   top: 0;
   padding: 24px;
-  padding-right: 60px; /* Space for close button */
+  padding-right: 60px;
   border-bottom: 1px solid var(--stroke, rgba(0, 0, 0, 0.1));
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
@@ -760,35 +689,6 @@ h1 {
   font-size: 14.5px;
 }
 
-@media (max-width: 768px) {
-  .modal-box {
-    width: min(95%, 900px);
-    max-height: 90vh;
-  }
-
-  .modal-head {
-    padding: 18px;
-    padding-right: 55px;
-  }
-
-  .modal-body {
-    padding: 18px;
-  }
-   
-  .container {
-    padding: 18px;
-  }
-
-  .panel {
-    padding: 26px 20px 24px;
-  }
-
-  .contact-card {
-    padding: 22px 18px;
-  }
-}
-
-
 
 /* =========================================
    CONTACT CARD Section (Layout Only)
@@ -844,27 +744,190 @@ h1 {
   flex-wrap: wrap;
 }
 
+
 /* =========================================
-   FOOTER Section (Layout Only)
+   FOOTER (Layout Only)
    ========================================= */
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    
-    /* Reduced size and styling */
-    font-size: 0.75rem; /* Smaller than standard text */
-    padding: 40px 20px; /* Space above and below */
-    color: var(--text-dark);
-    opacity: 0.6; /* Makes it discrete */
-    
-    /* Ensure it spans the full width to allow centering */
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.75rem;
+  padding: 40px 20px;
+  color: var(--text-dark);
+  opacity: 0.6;
+  width: 100%;
 }
 
 footer span#year {
-    font-weight: 700; /* Keep the year bold */
-    margin-right: 4px;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+
+/* =========================================
+   MOBILE — max-width: 900px
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  /* --- Topbar --- */
+  .topbar {
+    height: 52px;
+  }
+
+  .topbar-inner-centered {
+    justify-content: center;
+    gap: 10px;
+    padding: 0 16px;
+  }
+
+  /* Hide profile photo, nav AND entire brand block */
+  .brand,
+  .nav {
+    display: none;
+  }
+
+  /* Hide logo badge — replaced by mobile text */
+  .company-badge-center {
+    display: none;
+  }
+
+  /* Show mobile text label instead */
+  .mobile-topbar-text {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+  }
+
+  /* --- Anchor scroll offset --- */
+  #skills, #fit-focus, #experience, #contact {
+    scroll-margin-top: 70px;
+  }
+
+  /* --- Sections --- */
+  .section {
+    padding: 24px 20px;
+  }
+
+  .container {
+    padding: 18px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    margin: 16px auto;
+    padding: 20px;
+  }
+
+  .panel {
+    padding: 26px 20px 24px;
+  }
+
+  h1 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .pill {
+    font-size: 11.5px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .pill-row {
+    gap: 6px;
+  }
+
+  /* Stack hero buttons vertically */
+  .hero-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hero-actions .btn {
+    min-width: unset;
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  /* --- Skills grid — single column --- */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Timeline --- */
+  #experience {
+    padding: 0 20px 30px;
+  }
+
+  #sticky-control-layer {
+    padding: 0 10px;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 70px !important;
+    margin-right: 0 !important;
+    margin-top: 70px !important;
+  }
+
+  .timeline-date {
+    left: 30px;
+    transform: none;
+    top: -10px;
+  }
+
+  .timeline-logo {
+    display: none;
+  }
+
+  /* --- Modals --- */
+  .modal-box {
+    width: min(95%, 900px);
+    max-height: 90vh;
+  }
+
+  .modal-head {
+    padding: 18px;
+    padding-right: 55px;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+
+  /* --- Contact --- */
+  .contact-card {
+    padding: 22px 18px;
+  }
+}
+
+
+/* =========================================
+   MOBILE — max-width: 400px (small phones)
+   ========================================= */
+
+@media (max-width: 400px) {
+
+  /* Timeline deploy button full width */
+  #deployExperience {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pill {
+    font-size: 10.5px;
+    padding: 5px 8px;
+  }
 }
