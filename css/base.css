@@ -310,15 +310,16 @@ h1 {
 .hero-actions {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;        /* prevent wrapping at all sizes */
   margin-top: 20px;
-  justify-content: stretch;
+  width: 100%;              /* anchor the flex container to full hero width */
 }
 
 .hero-actions .btn {
-  flex: 1;
+  flex: 1 1 0;              /* grow AND shrink equally from 0 base — true even distribution */
   justify-content: center;
-  min-width: 180px;
+  min-width: 0;             /* remove the 180px floor that was forcing wraps */
+  white-space: nowrap;      /* text never breaks to 2 lines */
   font-size: clamp(0.75rem, 1.2vw, 1rem);
 }
 
