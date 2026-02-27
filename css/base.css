@@ -178,6 +178,23 @@ img {
 }
 
 
+/* Job offer link in topbar */
+.job-offer-link {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s ease, text-decoration-style 0.2s ease;
+}
+
+.job-offer-link:hover {
+  color: var(--accent);
+  text-decoration-style: solid;
+}
+
+
+
 /* =========================================
    SECTIONS properties
    ========================================= */
