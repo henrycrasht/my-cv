@@ -881,7 +881,7 @@ footer span#year {
 
   /* --- Timeline --- */
   #experience {
-    padding: 0 20px 30px;
+    padding: 0 10px 20px;
   }
 
   #sticky-control-layer {
@@ -889,12 +889,12 @@ footer span#year {
   }
 
   .timeline::before {
-    left: 30px;
+    left: 10px;
   }
 
   .timeline-content {
-    width: calc(100% - 80px);
-    margin-left: 70px !important;
+    width: calc(100% - 5px);
+    margin-left: 20px !important;
     margin-right: 0 !important;
     margin-top: 70px !important;
   }
