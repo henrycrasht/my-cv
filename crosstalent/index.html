@@ -5,34 +5,220 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Josselin & Crosstalent</title>
   
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+ <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
   
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  
-  <!-- Base + Theme CSS -->
   <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/crosstalent.css">  <!-- Only difference! -->
+  <link rel="stylesheet" href="/css/crosstalent.css">
 </head>
 
 <body>
+<nav class="topbar">
+  <div class="topbar-inner-centered">
+    
+    <!-- 1. Brand (Left) -->
+    <a href="#" class="brand">
+      <div class="profile-photo">
+        <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" alt="Josselin">
+      </div>
+      <div class="brand-text">
+        <div class="brand-text-main">Josselin Raguenet de Saint Albin</div>
+        <div class="brand-text-sub">applying for Director of Professional Services</div>
+      </div>
+    </a>
+
+    <!-- 2. Company Badge (Absolute Center) -->
+    <div class="company-badge-center">
+      <span class="at-symbol">@</span>
+      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/crosstalent-logo.png" alt="Crosstalent" class="company-logo-center">
+    </div>
+    <!-- Mobile only — text fallback -->
+<div class="mobile-topbar-text">
+    <span id="mobile-topbar-label">...</span>
+</div>
+
+
+    <!-- 3. Navigation (Right) -->
+    <div class="nav">
+      <a href="https://www.linkedin.com/in/jossrsa/" target="_blank" rel="noopener noreferrer" class="btn btn-light">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-dark">
+        <i class="fa-solid fa-paper-plane"></i> Contact
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+  <!-- SHARED CONTENT LOADED HERE -->
   <div id="app">Loading...</div>
 
-  <script>
-    fetch('/shared/cv-body.html')
-      .then(response => response.text())
-      .then(html => {
+  <!-- ============================================
+       COMPANY-SPECIFIC SKILL CARDS (Hidden Templates)
+       ============================================ -->
+  <template id="skill-card-1">
+     <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-id-badge"></i> My work style</h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i> Curious</span>
+        <span class="tag"><i class="fa-solid fa-lightbulb"></i> Creative</span>
+        <span class="tag"><i class="fa-solid fa-quote-right"></i> Assertive</span>
+        <span class="tag"><i class="fa-solid fa-handshake"></i> Team player</span>
+        <span class="tag"><i class="fa-solid fa-book"></i> Pedagogical</span>
+      </div>
+    </div>
+  </template>
+
+  <template id="skill-card-2">
+    <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-map-sign"></i> Our roadmap to success </h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-bullseye"></i>saas.group's operator culture</span>
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i> A genuinely global, remote-first setup</span>
+		<span class="tag"><i class="fa-solid fa-chart-line"></i> Scale & Grow</span>
+        <span class="tag"><i class="fa-solid fa-coins"></i> P&L conscious</span>
+        <span class="tag"><i class="fa-solid fa-forward"></i> Ops+Data+AI</span>
+      </div>
+    </div>
+  </template>
+
+  <!-- ============================================
+       COMPANY-SPECIFIC MODAL (Hidden)
+       ============================================ -->
+    <!-- Personality Modal -->
+  <template id="modal-skill-card-1-template">
+	<section class="modal" id="modal-skill-card-1" aria-hidden="true" aria-label="Personality modal" role="dialog">
+	  <div class="modal-box" role="document">
+	    <header class="modal-head">
+	      <button class="modal-close" type="button" aria-label="Close">
+	        <i class="fa-solid fa-xmark"></i>
+	      </button>
+	      <h3 class="modal-title"><i class="fa-solid fa-user"></i> My personality & work style</h3>
+			 <div class="modal-meta" aria-label="my values">
+          <span class="chip"><i class="fa-solid fa-gauge-high"></i> AMBITION</span>
+          <span class="chip"><i class="fa-solid fa-star"></i> LOYALTY</span>
+          <span class="chip"><i class="fa-solid fa-heart"></i> CARE</span>
+        </div>
+	    </header>
+	    <div class="modal-body">
+	      <div class="bullets">
+	        <div class="bullet">
+	          <i class="fa-solid fa-globe-africa"></i>
+	          <p><strong>CURIOUS - International mindset:</strong> Lived and worked across Europe, Africa, and Middle East. Comfortable with cultural diversity and global operations.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-lightbulb"></i>
+	          <p><strong>CREATIVE - Innovative problem-solver:</strong> I thrive on finding unconventional solutions to complex operational challenges.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-quote-right"></i>
+	          <p><strong>ASSERTIVE - Clear decisions, ownership:</strong> I take ownership of outcomes and make tough calls when needed.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-handshake"></i>
+	          <p><strong>TEAM-FIRST - Build strong teams, delegate with trust:</strong> I believe in empowering people and building autonomous, high-performing teams.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-book"></i>
+	          <p><strong>PEDAGOGICAL - Explain the why, grow people:</strong> I invest time in explaining context and strategy, helping team members grow and understand the bigger picture.</p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+  </template>
+
+    <!-- why? Modal -->
+   <template id="modal-skill-card-2-template">
+    <section class="modal" id="modal-skill-card-2" aria-hidden="true" aria-label="why fit modal" role="dialog">
+      <div class="modal-box" role="document">
+        <header class="modal-head">
+          <button class="modal-close" type="button" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="modal-title"><i class="fa-solid fa-heartbeat"></i> Why I'm a Perfect Fit for <span class="dynamic-company-inline">...</span></h3>
+          <div class="modal-sub">My expertise in scaling operations meets your HealthTech needs</div>
+        </header>
+        <div class="modal-body">
+          <div class="bullets">
+            <div class="bullet">
+              <i class="fa-solid fa-bullseye"></i>
+              <p><strong>SaasGroup</strong> portfolio is built on pragmatic, autonomous operators with no tolerance for theater. I've spent my career in high-growth environments where outcomes matter more than titles.</p>
+            </div>
+			<div class="bullet">
+			  <i class="fa-solid fa-heartbeat"></i>
+			  <p><strong>Human by design:</strong> Tessan's mission remains human first, tech second : it matches my values</p>
+			</div>
+            <div class="bullet">
+              <i class="fa-solid fa-line-chart"></i>
+              <p><strong>Scale & Grow:</strong> I know the drill : Invest on Success teams to sanitize P&L</p>
+            </div>
+			<div class="bullet">
+			  <i class="fa-solid fa-coins"></i>
+			  <p><strong>P&L & cost conscious transformations</strong> I have experience in rationalizing cost models that I've scaled: outsource or offshore Tessan support could be next.</p>
+			</div>
+            <div class="bullet">
+              <i class="fa-solid fa-eye"></i>
+              <p><strong>Design the future of Health:</strong> I can help Tessan make bold moves in their industry: Ops + Data + IA = <i class="fa fa-rocket" aria-hidden="true"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+<script>
+fetch('/shared/cv-body.html')
+    .then(response => response.text())
+    .then(html => {
         document.getElementById('app').innerHTML = html;
+
+        // 1. SELECT TEMPLATES
+        const card1Template = document.getElementById('skill-card-1');
+        const card2Template = document.getElementById('skill-card-2');
+        const modal1Template = document.getElementById('modal-skill-card-1-template');
+        const modal2Template = document.getElementById('modal-skill-card-2-template');
+
+        // 2. SELECT PLACEHOLDERS
+        const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
+        const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+
+        // 3. INJECT CARDS
+        if (placeholder1 && card1Template) {
+            placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        }
+        if (placeholder2 && card2Template) {
+            placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        }
+
+        // 4. INJECT MODALS TO BODY
+        if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
+        if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+
+        // 5. DYNAMIC HERO TEXT
+        const heroPersonalityText = document.getElementById('hero-text-personality');
+        if (heroPersonalityText && card1Template) {
+        const card1Title = card1Template.content.querySelector('h3');
+        if (card1Title) {
+            // Get text only, stripping the icon
+        heroPersonalityText.textContent = card1Title.textContent.trim();
+        }
+    } 
+
+        // 6. LOAD MAIN.JS
         const script = document.createElement('script');
         script.src = '/js/main.js';
         document.body.appendChild(script);
-      })
-      .catch(err => {
-        document.getElementById('app').innerHTML = '<p style="text-align:center;padding:100px;">Error loading content. Please refresh.</p>';
-      });
-  </script>
+    });
+</script>
+
+
+
 </body>
 </html>
