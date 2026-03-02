@@ -1,6 +1,6 @@
-/* CROSSTALENT THEME v.0 */
+/* MAÏKA THEME v1.0 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 
 
@@ -8,23 +8,24 @@
    BASE values
    ========================================= */
 :root {
-  /* Core Palette */
-  --bg0:               #F5F8FF;   /* main background, used for main page content */
-  --bg1:               #E6EEFF;   /*  */
-  --primary:           #111;      /*  */
-  --primary-light:     #FFFFFF4D; /*  */
-  --accent:            #FFF;      /*  */
-  --accent-dark:       #FFFFFF4D; /*  */
-  --accent-light:      #FFF;      /*  */
-  --accent-btn:        #FFF;      /*  */
+  /* Core Palette — Maïka: warm coral/terracotta on off-white */
+  --bg0:               #FAFAF8;   /* main background, warm off-white */
+  --bg1:               #FDF0EC;   /* soft coral tint, accent zones */
+  --primary:           #1A1A2E;   /* near-black navy, headings & text */
+  --primary-light:     #1A1A2E99; /* primary with transparency */
+  --accent:            #E8573F;   /* Maïka coral/terracotta CTA */
+  --accent-dark:       #C94330;   /* darker coral for gradients */
+  --accent-light:      #F07A66;   /* lighter coral hover */
+  --accent-btn:        #E8573F;   /* button accent */
+  --accent-superlight: #FDF0EC;   /* very pale coral background */
 
-  /* Button gradient  */
-  --btn-gradient: linear-gradient(270deg, #FF6A13 0%, #FF8D4A 100%);
+  /* Button gradient */
+  --btn-gradient: linear-gradient(270deg, #C94330 0%, #F07A66 100%);
 
-  --stroke: #1A3C6E1F;         /*  */
-  --stroke-light: #FFFFFF4D;   /*  */
+  --stroke: #E8E8EC;           /* light grey divider */
+  --stroke-light: #FFFFFF4D;   /* light stroke on dark bg */
 
-  /* Timeline line: navy → coral, stays on-brand */
+  /* Timeline line: navy → coral */
   --timeline-line: linear-gradient(
     180deg,
     transparent        2%,
@@ -35,23 +36,23 @@
   );
 
   /* max width of main container */
-  --container: 1120px;         
+  --container: 1120px;
 
-  /* Border radii  */
-  --bord-r-mini: 4px;          /* unchanged */
-  --bord-r-small: 8px;         /* unchanged */
-  --bord-r-large: 12px;        /*  */
-  --bord-r-max: 18px;          /*  */
+  /* Border radii */
+  --bord-r-mini: 4px;
+  --bord-r-small: 8px;
+  --bord-r-large: 12px;
+  --bord-r-max: 18px;
 
   /* Topbar */
-  --topb-bg:#FFFFFF;        /*  */
-  --topb-surf: #FFFFFF;     /*  */
-  --topb-card: #1A3C6E1F;   /*  */
+  --topb-bg: #FFFFFF;
+  --topb-surf: #FFFFFF;
+  --topb-card: #E8E8EC;
 
   /* Typography */
- --font-heading: 'Inter', system-ui, sans-serif;  
- --font-body:    'Inter', system-ui, sans-serif;  
-  
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
 }
 
 html {
@@ -85,7 +86,7 @@ p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
 small, .text-sm {
   font-size: 0.895rem;
 }
-  
+
 /* =========================================
    BUTTONS Theming
    ========================================= */
@@ -129,13 +130,13 @@ small, .text-sm {
 
 .btn-accent:hover {
   background: var(--accent-dark);
-  box-shadow: 0 10px 24px rgba(var(--accent-rgb), 0.04);
+  box-shadow: 0 10px 24px rgba(232, 87, 63, 0.25);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--primary);
-  border: 1px solid rgba(15, 53, 45, 0.15);
+  border: 1px solid rgba(26, 26, 46, 0.15);
   padding: 12px 16px;
   text-decoration: none;
 }
@@ -153,14 +154,13 @@ small, .text-sm {
 }
 
 .btn-ghost.light:hover {
-  background: rgba(254, 249, 222, 0.1);
+  background: rgba(232, 87, 63, 0.08);
   color: var(--accent-light);
   border-color: var(--accent);
 }
 
-
 #deployExperience {
-    background-color: var(--primary); 
+    background-color: var(--primary);
     color: var(--bg0);
     border: none;
     border-radius: var(--bord-r-small);
@@ -175,26 +175,23 @@ small, .text-sm {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     background-color: var(--primary-light);
- 
 }
 
 
-  
 /* =========================================
    TOPBAR Theming
    ========================================= */
 
 .topbar {
   background: var(--topb-bg) !important;
-  border-bottom-color: rgba(15, 53, 45, 0.1) !important;
+  border-bottom-color: rgba(26, 26, 46, 0.1) !important;
 }
 
 .company-badge-center {
-  box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(26, 26, 46, 0.08) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   border-radius: var(--bord-r-mini);
   background: var(--topb-surf, #ffffff);
-
 }
 
 .company-badge-center .brand-text-main, .brand-text-sub {
@@ -210,7 +207,6 @@ small, .text-sm {
    SECTIONS properties
    ========================================= */
 
-
 .section {
   border-radius: var(--bord-r-max);
 }
@@ -220,15 +216,13 @@ small, .text-sm {
 }
 
 
-
-
 /* =========================================
    HERO Section, company specifics
    ========================================= */
 .hero {
   background-color: var(--primary) !important;
   border-radius: var(--bord-r-max);
-  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.15) !important;
 }
 
 .hero .panel {
@@ -252,8 +246,8 @@ small, .text-sm {
 
 .hero .headline-grad {
   background: none !important;
-  -webkit-text-fill-color: #FFFFFF !important;
-  color: #FFFFFF !important;
+  -webkit-text-fill-color: #E8573F !important;
+  color: #E8573F !important;
 }
 
 .hero .subhead {
@@ -263,7 +257,7 @@ small, .text-sm {
 }
 
 .kicker {
-  background: #FBFAF5 !important;
+  background: #FDF0EC !important;
   border: none !important;
   color: var(--primary) !important;
 }
@@ -277,10 +271,6 @@ small, .text-sm {
 .hero .pill i {
   color: var(--accent) !important;
 }
-
-
-
-
 
 /* =========================================
    SKILLS Card Section
@@ -301,7 +291,7 @@ small, .text-sm {
 
 .info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(15, 53, 45, 0.12);
+  box-shadow: 0 15px 30px rgba(232, 87, 63, 0.12);
   border-color: var(--accent);
 }
 
@@ -312,11 +302,10 @@ small, .text-sm {
   border-radius: var(--bord-r-mini);
 }
 
-/* .tags is used in Skill cards body */
 .tag {
   background: none;
   border: none;
-  border-radius: 24px;
+  border-radius: 999px;
   color: var(--primary);
 }
 
@@ -346,7 +335,7 @@ small, .text-sm {
 }
 
 #fit-focus {
-    border: 2px solid var(--accent-color);
+    border: 2px solid var(--accent);
 }
 
 #specific-cards-container .info {
@@ -354,12 +343,10 @@ small, .text-sm {
 }
 
 
-
 /* =================================================
-   TIMELINE Theming 
+   TIMELINE Theming
    ================================================= */
 
-/* Timeline company name */
 .timeline-company {
   font-size: 15px;
   font-weight: 600;
@@ -380,54 +367,51 @@ small, .text-sm {
 }
 
 .timeline-content:hover {
-  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15);
+  box-shadow: 0 20px 40px rgba(232, 87, 63, 0.12);
 }
 
 .timeline-date {
   background: var(--primary);
   color: var(--bg0);
-  box-shadow: 0 8px 24px rgba(255, 238, 127, 0.4);
+  box-shadow: 0 8px 24px rgba(232, 87, 63, 0.3);
   border-radius: var(--bord-r-mini);
 }
 
 .timeline-badge {
   background: var(--accent);
-  border: 1px solid rgba(16, 53, 45, 0.15);
-  color: var(--primary);
+  border: 1px solid rgba(232, 87, 63, 0.2);
+  color: #FFFFFF;
   border-radius: var(--bord-r-mini);
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 4px;
-
 }
-
 
 .timeline-toggle {
   border: 2px solid var(--primary);
   background: var(--accent-superlight);
   color: var(--primary);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.15);
 }
 .timeline-toggle:hover {
   border: 2px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.2);
 }
 
 .stickyBackToSkills {
     border: 2px solid var(--primary);
   background: var(--accent-superlight);
   color: var(--primary);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.15);
 }
 .stickyBackToSkills:hover {
     border: 2px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.2);
 }
-
 
 
 /* =========================================
@@ -435,14 +419,12 @@ small, .text-sm {
    ========================================= */
 
 .modal {
-  background: rgba(15, 53, 45, 0.4) !important; /* this casts the shadow on whole screen behind modal-box*/
+  background: rgba(26, 26, 46, 0.4) !important;
 }
-
 
 .modal-box {
   background: var(--bg0) !important;
   border-radius: var(--bord-r-small);
- /* border: 1px solid var(--stroke) !important; (removed via comments for now) */
 }
 
 .modal-head {
@@ -453,7 +435,7 @@ small, .text-sm {
 }
 
 .modal-title {
-  color: var(--accent) !important;
+  color: #FFFFFF !important;
 }
 
 .modal-sub {
@@ -471,11 +453,10 @@ small, .text-sm {
   background: var(--stroke-light) !important;
 }
 
-/* class=chip is used in Experience modals */
 .chip {
   background: var(--accent);
-  color: var(--bg0);
-  border: 1px solid var(--stroke-light);
+  color: #FFFFFF;
+  border: 1px solid rgba(232, 87, 63, 0.3);
   border-radius: var(--bord-r-mini);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -483,26 +464,23 @@ small, .text-sm {
   padding-left: 8px;
 }
 
-
-
 .bullets {
-background: none;
+  background: none;
 }
 
 .bullet {
   background: var(--bg0) !important;
-  border: 1px solid var(--primary-light) !important;
+  border: 1px solid var(--stroke) !important;
   border-radius: var(--bord-r-small);
 }
 
 .bullet i {
-  color: var(--primary) !important;
+  color: var(--accent) !important;
 }
 
 .bullet p {
   color: var(--primary);
 }
-
 
 
 /* =========================================
@@ -542,8 +520,8 @@ background: none;
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 53, 45, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 87, 63, 0.12);
 }
 
 .field textarea {
