@@ -51,11 +51,11 @@
 
     <!-- 3. Navigation Right -->
     <div class="nav">
-      <a href="https://www.linkedin.com/in/jossrsa" target="_blank" rel="noopener noreferrer" class="btn btn-light">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      <a href="https://www.linkedin.com/in/jossrsa" target="_blank" rel="noopener noreferrer" class="btn" id="top-lkd">
+        <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
       </a>
-      <a href="#contact" class="btn btn-dark">
-        <i class="fa-solid fa-paper-plane"></i> Contact
+      <a href="#contact" class="btn" id="top-contact">
+        <i class="fa-solid fa-paper-plane"></i><span>Contact</span>
       </a>
     </div>
 
@@ -69,26 +69,26 @@
 
 <template id="skill-card-1">
   <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
-    <h3><i class="fa-solid fa-compass"></i> My work style</h3>
+    <h3><i class="fa-solid fa-user"></i> My work style</h3>
     <div class="tags">
-      <span class="tag"><i class="fa-solid fa-map-signs"></i> ops builder</span>
-      <span class="tag"><i class="fa-solid fa-users"></i> hands-on leader</span>
-      <span class="tag"><i class="fa-solid fa-globe-africa"></i> multicultural</span>
-      <span class="tag"><i class="fa-solid fa-layer-group"></i> structured</span>
-      <span class="tag"><i class="fa-solid fa-shield-halved"></i> reliable</span>
+      <span class="tag"><i class="fa-solid fa-globe-africa"></i> International mindset</span>
+      <span class="tag"><i class="fa-solid fa-sitemap"></i> Structured thinker</span>
+      <span class="tag"><i class="fa-solid fa-handshake"></i> Team-first leadership</span>
+      <span class="tag"><i class="fa-solid fa-chart-line"></i> KPI obsessed</span>
+      <span class="tag"><i class="fa-solid fa-compass"></i> Steady in peaks</span>
     </div>
   </div>
 </template>
 
 <template id="skill-card-2">
   <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
-    <h3><i class="fa-solid fa-globe-africa"></i> Madagascar + Paris: I Know This Model</h3>
+    <h3><i class="fa-solid fa-location-arrow"></i> Scale Production, Keep Quality</h3>
     <div class="tags">
-      <span class="tag"><i class="fa-solid fa-headset"></i>BPO</span>
-      <span class="tag"><i class="fa-solid fa-plane"></i>offshore ops</span>
-      <span class="tag"><i class="fa-solid fa-handshake"></i>client relations</span>
-      <span class="tag"><i class="fa-solid fa-chart-line"></i>scalability</span>
-      <span class="tag"><i class="fa-solid fa-star"></i>quality</span>
+      <span class="tag"><i class="fa-solid fa-globe"></i> International scope</span>
+      <span class="tag"><i class="fa-solid fa-robot"></i> AI transformation</span>
+      <span class="tag"><i class="fa-solid fa-layer-group"></i> Ops scaling</span>
+      <span class="tag"><i class="fa-solid fa-chart-line"></i> Performance cockpit</span>
+      <span class="tag"><i class="fa-solid fa-users-gear"></i> Manager development</span>
     </div>
   </div>
 </template>
@@ -101,34 +101,34 @@
     <div class="modal-box" role="document">
       <header class="modal-head">
         <button class="modal-close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-        <h3 class="modal-title"><i class="fa-solid fa-compass"></i> Built to Scale, Wired for the Field</h3>
+        <h3 class="modal-title"><i class="fa-solid fa-user"></i> My personality & work style</h3>
         <div class="modal-meta" aria-label="my values">
-          <span class="chip"><i class="fa-solid fa-gauge-high"></i>AUTONOMY</span>
-          <span class="chip"><i class="fa-solid fa-star"></i>ACCOUNTABILITY</span>
-          <span class="chip"><i class="fa-solid fa-heart"></i>ADAPTABILITY</span>
+          <span class="chip"><i class="fa-solid fa-rocket"></i>AMBITION</span>
+          <span class="chip"><i class="fa-solid fa-shield-heart"></i>LOYALTY</span>
+          <span class="chip"><i class="fa-solid fa-heart"></i>CARE</span>
         </div>
       </header>
       <div class="modal-body">
         <div class="bullets">
           <div class="bullet">
-            <i class="fa-solid fa-map-signs"></i>
-            <p><strong>Field-first mindset: </strong>I've built and run teams across 4 continents — I know that great ops require presence, not just dashboards</p>
+            <i class="fa-solid fa-globe-africa"></i>
+            <p><strong>Curious, international by default:</strong> I’ve built and run ops across Europe and Africa; I’m at ease in multicultural teams and I adapt fast on the ground (Paris ↔ Madagascar rhythm).</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-cogs"></i>
-            <p><strong>Process architect: </strong>From blank-page to full operational frameworks — KPIs, QA routines, staffing models — I build systems that hold under pressure</p>
+            <i class="fa-solid fa-sitemap"></i>
+            <p><strong>Structured, scalable thinking:</strong> I turn messy production into clear systems: playbooks, routines, staffing logic, and decision rules that survive growth and new clients.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-users"></i>
-            <p><strong>Natural team builder: </strong>I develop managers, not just manage headcount — my goal is always to make myself replaceable at each level</p>
+            <i class="fa-solid fa-handshake"></i>
+            <p><strong>Team-first, leader-builder:</strong> I grow managers into leaders, delegate with trust, and install a culture of responsibility and transparency — exactly what Maïka wants to scale.</p>
           </div>
           <div class="bullet">
             <i class="fa-solid fa-chart-line"></i>
-            <p><strong>Data-driven: </strong>Looker, Salesforce, custom dashboards — I pilot by numbers and push teams to do the same</p>
+            <p><strong>Analytical, quality-driven:</strong> I love KPIs, dashboards, QA loops, and tight reporting — not for vanity, but to protect quality and client satisfaction.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-lightbulb"></i>
-            <p><strong>Pragmatic innovator: </strong>I introduce tools and methods that stick, not just the trendy ones</p>
+            <i class="fa-solid fa-compass"></i>
+            <p><strong>Calm under pressure:</strong> Peaks, incidents, reorgs: I stay composed, communicate clearly, and keep execution moving while keeping people safe and engaged.</p>
           </div>
         </div>
       </div>
@@ -142,36 +142,38 @@
     <div class="modal-box" role="document">
       <header class="modal-head">
         <button class="modal-close" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-        <h3 class="modal-title"><i class="fa-solid fa-globe-africa"></i> Ops Excellence @ <span class="dynamic-company-inline">...</span></h3>
-        <div class="modal-sub">The bridge between your Paris clients and your Madagascar teams — operational, strategic, and on the ground.</div>
+        <h3 class="modal-title"><i class="fa-solid fa-rocket"></i> how I would impact <span class="dynamic-company-inline">...</span></h3>
+        <div class="modal-sub">Joining to tackle BPO’s AI revolution and international scaling — while delivering my ops expertise.</div>
       </header>
       <div class="modal-body">
         <div class="bullets">
           <div class="bullet">
-            <i class="fa-solid fa-link"></i>
-            <p><strong>Offshore expertise: </strong>Launched and managed outsourced/offshored ops at Meero (Bangalore), cutting costs by 80% while maintaining quality standards — directly transferable to the Madagascar model</p>
+            <i class="fa-solid fa-globe"></i>
+            <p><strong>Drawn to the international scope:</strong> Paris strategy + Madagascar talent pool is my wheelhouse — I’ve led ops across 17 African countries and global hubs, and I love the cross-cultural execution challenge.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-shield-alt"></i>
-            <p><strong>Quality obsession: </strong>Designed QA systems (ticket reviews, scoring, SLA tracking) for multilingual support teams — I speak your CSAT &amp; compliance language</p>
+            <i class="fa-solid fa-robot"></i>
+            <p><strong>Excited by BPO’s AI transformation:</strong> Outsourcing is being rewritten by AI; I want to be inside Maïka’s journey, blending human expertise with smart tools to keep you ahead of the curve.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-handshake"></i>
-            <p><strong>Client-facing ops: </strong>At Malt, I was the operational face for strategic clients across 7 European markets — I know how to manage demanding tech clients</p>
+            <i class="fa-solid fa-layer-group"></i>
+            <p><strong>Scale your production end-to-end:</strong> I’ll structure support, compliance, back-office, and collections into one cohesive, peak-proof machine, inspired by scaling work at Meero, Malt, and Teleperformance.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-sitemap"></i>
-            <p><strong>Scalable org design: </strong>Structured growing teams from 0 to 70+ FTE at Meero, 300 staff across 17 African countries at Teleperformance — Maïka's next phase is familiar territory</p>
+            <i class="fa-solid fa-chart-line"></i>
+            <p><strong>Build a sharp KPI & QA cockpit:</strong> I’ll install dashboards, quality routines, and client reporting that give real-time visibility on performance, costs, and satisfaction — not just numbers, but decisions.</p>
           </div>
           <div class="bullet">
-            <i class="fa-solid fa-seedling"></i>
-            <p><strong>Impact-aligned: </strong>Managing teams in sub-Saharan Africa shaped my conviction that quality jobs + operational excellence go hand in hand — Maïka's social mission is not a tagline for me</p>
+            <i class="fa-solid fa-users-gear"></i>
+            <p><strong>Grow Madagascar leadership:</strong> I’m used to multicultural, multi-country management and on-site cadence; I’ll coach your managers/supervisors into a self-sufficient bench aligned with Maïka’s next growth phase.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+
 
 <script>
   fetch('../shared/cv-body.html')

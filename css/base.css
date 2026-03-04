@@ -41,18 +41,32 @@ img {
 
 .btn {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: none;
+  align-items: center;      /* Mathematical vertical center */
+  justify-content: center;  /* Horizontal center */
+  gap: 8px;                 /* Consistent space between icon and text */
   background: transparent;
   padding: 0;
   margin: 0;
   text-decoration: none;
   cursor: pointer;
   font: inherit;
-  line-height: inherit;
+  line-height: 1;           /* CRITICAL: removes the invisible font leading */
   transition: all 0.2s ease;
+}
+
+/* Ensure the FontAwesome icon is also centered as a flex item */
+.btn i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* THE UNIVERSAL NERD NUDGE */
+/* This targets the <span> inside ANY .btn on the site */
+.btn > span {
+  position: relative;
+  top: 2px;               /* Adjust this (1px to 2px) for your main font's visual center */
 }
 
 .btn:hover,
@@ -62,6 +76,8 @@ img {
   transform: none;
   box-shadow: none;
 }
+
+
 
 
 /* =========================================
@@ -148,6 +164,8 @@ img {
   max-width: 220px;
   overflow: hidden;
   z-index: 1;
+  box-shadow: none;
+  border: 0px solid var(--stroke, rgba(0, 0, 0, 0.08));
 }
 
 .company-badge-center img,
@@ -161,6 +179,8 @@ img {
 .at-symbol {
   font-size: 0.85rem;
   opacity: 0.75;
+  position: relative;
+  top: 3px;
 }
 
 /* Hidden on desktop */
@@ -307,20 +327,39 @@ h1 {
   font-size: 13.5px;
 }
 
+/* 1. The Container: Stretches across the hero width */
 .hero-actions {
   display: flex;
   gap: 12px;
-  flex-wrap: nowrap;        /* prevent wrapping at all sizes */
+  flex-wrap: nowrap;        /* keeps buttons on one line */
   margin-top: 20px;
-  width: 100%;              /* anchor the flex container to full hero width */
+  width: 100%;              /* anchors to full hero width */
 }
 
-.hero-actions .btn {
-  flex: 1 1 0;              /* grow AND shrink equally from 0 base — true even distribution */
-  justify-content: center;
-  min-width: 0;             /* remove the 180px floor that was forcing wraps */
-  white-space: nowrap;      /* text never breaks to 2 lines */
+/* 2. The Button: Stretches equally & centers icon/text horizontally */
+.hero-actions .hero-btn {
+  flex: 1 1 0;              /* your core stretching logic */
+  min-width: 0;             /* allows shrinking below content size */
+  display: inline-flex;     /* added for vertical alignment */
+  align-items: center;      /* mathematical vertical center */
+  justify-content: center;  /* horizontal center */
+  gap: 8px;
+  white-space: nowrap;      /* prevents internal line breaks */
   font-size: clamp(0.75rem, 1.2vw, 1rem);
+  line-height: 1;           /* critical: collapses font padding */
+  text-decoration: none;
+}
+
+/* 3. The Icon: Ensures FontAwesome doesn't float high */
+.hero-actions .hero-btn i {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 4. The 'Nerd Nudge': Vertically aligns text to the icon's center */
+.hero-actions .hero-btn > span {
+  position: relative;
+  top: 1.5px;               /* the optical adjustment */
 }
 
 
@@ -440,6 +479,24 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(2px);
 }
+
+/* 1. Ensure the icon has a transition for smooth movement */
+#footerBackToSkills i {
+    transition: transform 0.3s ease; /* Shared with the button's overall feel */
+    display: inline-flex;
+}
+
+/* 2. Trigger the movement when the BUTTON is hovered */
+#footerBackToSkills:hover i {
+    transform: translateY(-5px); /* Moves the arrow 5px UP */
+}
+
+/* 3. Nerd Detail: Lift the entire button slightly for extra feedback */
+#footerBackToSkills:hover {
+    transform: translateY(-2px); /* Subtle lift of the whole CTA */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Depth increase */
+}
+
 
 #experience .section-header {
   display: flex;
@@ -655,6 +712,11 @@ h1 {
   font-size: 13px;
   font-weight: 700;
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chip > span {
+  position: relative;
+  top: 4px;               /* Adjust this (1px to 2px) for your main font's visual center */
 }
 
 .modal-close {

@@ -90,6 +90,7 @@ small, .text-sm {
    BUTTONS Theming
    ========================================= */
 .btn {
+  border: none;
   border-radius: var(--bord-r-small);
   padding: 12px 16px;
   font-weight: 700;
@@ -179,7 +180,33 @@ small, .text-sm {
 }
 
 
+#top-lkd {
+  background-color: var(--bg1);
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+#top-lkd:hover {
+  background-color: #dbdbf2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#top-contact {
+  background-color: var(--bg1);
+  color: var(--primary);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+#top-contact:hover {
+  background-color: #dbdbf2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
   
+
+
+
 /* =========================================
    TOPBAR Theming
    ========================================= */

@@ -17,7 +17,7 @@
   --accent-dark:       #2214A0;   /* darker chrysler for gradients */
   --accent-light:      #5A4ADB;   /* lighter chrysler for hover states */
   --accent-btn:        #331CC3;   /* button accent */
-  --accent-superlight: #EBE8F9;   /* very pale lavender background */
+  --accent-superlight: #dbdbf2;   /* very pale lavender background */
 
   /* Button gradient */
   --btn-gradient: linear-gradient(270deg, #2214A0 0%, #5A4ADB 100%);
@@ -100,86 +100,6 @@ small, .text-sm {
   border: var(--bord-main) solid var(--accent);
 }
 
-.btn-dark {
-  background-color: var(--primary);
-  color: var(--bg0);
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.btn-dark:hover {
-  background-color: var(--primary-light);
-  color: var(--accent-dark);
-}
-
-.btn-light {
-  background-color: var(--accent-light);
-  color: var(--primary);
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.btn-light:hover {
-  background-color: var(--bg0);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-.btn-accent {
-  background: linear-gradient(270deg, var(--accent-dark) 0%, var(--accent) 100%);
-  color: #fff;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.btn-accent:hover {
-  background: var(--accent-dark);
-  box-shadow: 0 10px 24px rgba(51, 28, 195, 0.25);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--primary);
-  border: 1px solid rgba(50, 55, 89, 0.15);
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.btn-ghost:hover {
-  background: var(--accent-superlight);
-  border-color: var(--primary);
-}
-
-.btn-ghost.light {
-  color: var(--accent-light);
-  border: 1px solid var(--accent-superlight);
-  padding: 12px 16px;
-  text-decoration: none;
-}
-
-.btn-ghost.light:hover {
-  background: rgba(51, 28, 195, 0.08);
-  color: var(--accent-light);
-  border-color: var(--accent);
-}
-
-#deployExperience {
-    background-color: var(--primary);
-    color: var(--bg0);
-    border: none;
-    border-radius: var(--bord-r-small);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-}
-
-#deployExperience:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    background-color: var(--primary-light);
-}
 
 
 /* =========================================
@@ -192,8 +112,8 @@ small, .text-sm {
 }
 
 .company-badge-center {
-  box-shadow: 0 4px 15px rgba(50, 55, 89, 0.08) !important;
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  box-shadow: none;
+  border: 0px solid var(--stroke, rgba(0, 0, 0, 0.08));
   border-radius: var(--bord-r-mini);
   background: var(--topb-surf, #ffffff);
 }
@@ -207,6 +127,33 @@ small, .text-sm {
   opacity: 0.5;
 }
 
+#top-lkd {
+  background-color: transparent;
+  color: var(--accent);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+#top-lkd:hover {
+  background-color: #dbdbf2;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+#top-contact {
+  background-color: var(--accent);
+  color: var(--bg0);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+#top-contact:hover {
+  background-color: var(--primary);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
 /* =========================================
    SECTIONS properties
    ========================================= */
@@ -218,6 +165,9 @@ small, .text-sm {
 .section-header {
   color: var(--primary);
 }
+
+
+
 
 
 /* =========================================
@@ -261,13 +211,13 @@ small, .text-sm {
 }
 
 .kicker {
-  background: #EBE8F9 !important;
+  background: var(--bg0) !important;
   border: none !important;
   color: var(--primary) !important;
 }
 
 .hero .pill {
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: var(--accent-light) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   color: #FFFFFF !important;
 }
@@ -275,6 +225,24 @@ small, .text-sm {
 .hero .pill i {
   color: var(--accent-superlight) !important;
 }
+
+
+
+.hero-btn {
+  background: var(--bg0);
+  color: var(--primary);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  padding: 12px 16px;
+  text-decoration: none;
+}
+
+.hero-btn:hover {
+  background: var(--accent-light);
+  color: var(--bg0);
+  box-shadow: 0 10px 24px rgba(51, 28, 195, 0.25);
+}
+
+
 
 /* =========================================
    SKILLS Card Section
@@ -339,7 +307,7 @@ small, .text-sm {
 }
 
 #fit-focus {
-    border: 2px solid var(--accent);
+    border: 0px solid var(--accent);
 }
 
 #specific-cards-container .info {
@@ -391,31 +359,73 @@ small, .text-sm {
   padding-left: 4px;
 }
 
-.timeline-toggle {
-  border: 2px solid var(--primary);
-  background: var(--accent-superlight);
-  color: var(--primary);
-  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
+#deployExperience {
+  background-color: var(--accent);
+  color: var(--bg0);
+  border: none;
+  border-radius: var(--bord-r-small);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
-.timeline-toggle:hover {
-  border: 2px solid var(--primary);
+
+#deployExperience:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--primary);
+}
+
+
+
+
+#toggleTimeline {
+  border: 0px solid var(--primary);
+  background: transparent blur;
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
+  ;
+}
+#toggleTimeline:hover {
+  border: 0px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
   box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
 
-.stickyBackToSkills {
-    border: 2px solid var(--primary);
-  background: var(--accent-superlight);
-  color: var(--primary);
+#stickyBackToSkills {
+  border: 0px solid var(--primary);
+  background: transparent blur;
+  color: var(--accent);
   box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
 }
-.stickyBackToSkills:hover {
-    border: 2px solid var(--primary);
+#stickyBackToSkills:hover {
+  border: 0px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
   box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
+
+
+#footerBackToSkills {
+  background-color: var(--accent);
+  color: var(--bg0);
+  border: none;
+  border-radius: var(--bord-r-small);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#footerBackToSkills:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: var(--primary);
+}
+
 
 
 /* =========================================
@@ -490,6 +500,15 @@ small, .text-sm {
 /* =========================================
    Section CONTACT CARD
    ========================================= */
+
+.lead-title {
+  color: var(--primary)
+}   
+
+.lead-subtitle {
+  color: var(--primary-light);
+}
+
 .form {
   display: grid;
   gap: 16px;
@@ -537,4 +556,21 @@ small, .text-sm {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--stroke);
+}
+
+#sendform {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 26px 16px;
+  line-height: 100%;
+}
+
+#sendform:hover {
+  border: 1.5px solid var(--primary);
+  background: var(--accent);
+  color: var(--accent-superlight);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
