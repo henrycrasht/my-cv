@@ -33,27 +33,32 @@
     </p>
 
 
-    <div class="hero-actions">
-  <!-- 1. Company Specific Pitch (Dynamic Text & Modal) -->
-    <a class="btn btn-accent" id="hero-btn-personality" href="#" data-modal="modal-skill-card-1">
-      <i class="fa-solid fa-user-tie"></i> <span id="hero-text-personality">...</span>
-    </a>
+   <div class="hero-actions">
+  <!-- 1. Company Specific Pitch -->
+  <a class="btn hero-btn" href="#" data-modal="modal-skill-card-1">
+    <span>{ 1 }    <span id="hero-text-personality">...</span>  </span>
+    <i class="fa-solid fa-user-tie"></i>
+  </a>
 
   <!-- 2. Experience Deployer -->
-    <a class="btn btn-accent" id="hero-btn-experience" href="#experience">
-      <i class="fa-solid fa-clock-rotate-left"></i> My experiences
-    </a>
+  <a class="btn hero-btn" id="hero-btn-experience" href="#experience">
+    <span>{ 2 }    My experiences  </span>
+    <i class="fa-solid fa-clock-rotate-left"></i>
+  </a>
 
   <!-- 3. Universal Skills Link -->
-    <a class="btn btn-accent" href="#skills">
-      <i class="fa-solid fa-star"></i> My skills @<span class="dynamic-company-inline">...</span>
-    </a>
+  <a class="btn hero-btn" href="#skills">
+    <span>{ 3 }    My skills @<span class="dynamic-company-inline">...</span>  </span>
+    <i class="fa-solid fa-star"></i>
+  </a>
 
   <!-- 4. Final Pitch Link -->
-    <a class="btn btn-accent" href="#fit-focus">
-      <i class="fa-solid fa-rocket"></i> <span class="dynamic-company-inline">...</span> +  Me
-    </a>
-  </div>
+  <a class="btn hero-btn" href="#fit-focus">
+    <span>{ 4 }    <span class="dynamic-company-inline">...</span> + Me  </span>
+    <i class="fa-solid fa-rocket"></i>
+  </a>
+</div>
+
 
   </div>
 </section>
@@ -64,7 +69,7 @@
 <section class="section" id="skills">
   <div class="section-header">
     <h2 class="section-title--center reveal is-visible">
-      <i class="fa-solid fa-star"></i> What I bring to <span id="dynamic-company-name">...</span>
+      { 3 }   What I bring to <span id="dynamic-company-name">...</span>   <i class="fa-solid fa-star"></i>
     </h2>
   </div>
 
@@ -101,7 +106,7 @@
      ============================================ -->
 <section class="section section-alt" id="fit-focus">
     <div class="section-header">
-        <h2 class="section-title--center reveal is-visible"> <i class="fa-solid fa-rocket"></i> Why <span class="dynamic-company-inline">...</span>?  &  How I fit?</h2>
+        <h2 class="section-title--center reveal is-visible">{ 4 }   Why <span class="dynamic-company-inline">...</span>?  &  How I fit?   <i class="fa-solid fa-rocket"></i></h2>
     <div class="info-grid" id="specific-cards-container">
         <!-- Placeholder for Card 2 -->
         <div data-placeholder="skill-card-2"></div>
@@ -118,8 +123,8 @@
   <div id="experience-trigger-wrapper">
     <h3 class="section-title reveal">
     </h3>
-    <button class="btn btn-dark btn-large" id="deployExperience">
-      <i class="fa-solid fa-clock-rotate-left"></i> REVIEW MY FULL CAREER TIMELINE
+    <button class="btn" id="deployExperience">
+      <i class="fa-solid fa-clock-rotate-left"></i><span>REVIEW MY FULL CAREER TIMELINE</span>
     </button>
   </div>
 
@@ -127,13 +132,13 @@
 
     
     <!-- LEFT: Back to Skills (Re-targeted) -->
-    <a class="btn btn-ghost" id="stickyBackToSkills" href="#skills" style="display: none; transform: translateY(-20px);">
-        <i class="fa-solid fa-arrow-up"></i>
-        <span>Back to skills</span>
+    <a class="btn" id="stickyBackToSkills" href="#skills" style="display: none; transform: translateY(-20px);">
+        <i class="fa-solid fa-arrow-right"></i>
+        <span>next: "My skills @<span class="dynamic-company-inline">...</span>"</span>
     </a>
 
     <!-- RIGHT: Toggle Timeline -->
-    <button class="btn btn-ghost" id="toggleTimeline" style="display: none; transform: translateY(-20px);">
+    <button class="btn" id="toggleTimeline" style="display: none; transform: translateY(-20px);">
         <i class="fa-solid fa-arrow-down-up-across-line"></i>
         <span id="toggleText">Earliest → Latest</span>
     </button>
@@ -285,8 +290,15 @@
         <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/gadimat-logo.png" alt="Gadimat">
     </div>
     </div>
-      
     </div>
+          <!-- wrapup footer : next to #skills -->
+    <div id="timeline-footer" style="display: flex; justify-content: center; padding: 60px 0 40px;">
+        <a class="btn" id="footerBackToSkills" href="#skills">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>next: "My skills @<span class="dynamic-company-inline">...</span>"</span>
+        </a>
+    </div>
+  </div>
   </div>
 </section>
   
@@ -316,7 +328,7 @@
         <textarea id="role" name="role" placeholder="e.g., Head of Operations — EU expansion, 80-200 FTE"></textarea>
       </div>
 
-      <button class="btn btn-accent" type="submit">
+      <button class="btn" id="sendform" type="submit">
         <i class="fa-solid fa-paper-plane"></i> Send request
       </button>
     </form>
