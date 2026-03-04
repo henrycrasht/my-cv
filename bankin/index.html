@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josselin & Bankin'</title>
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CV CSS -->
+  <link rel="stylesheet" href="/css/bankin.css">
+
+  <!-- Shared content loader -->
+  <script src="/shared-content.js" defer></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     TOPBAR
+════════════════════════════════════════════ -->
+<header class="topbar">
+  <nav class="topbar-inner">
+
+    <div class="brand-text-main">Josselin</div>
+
+    <a href="#" class="company-badge-center">
+      <span class="at-symbol">@</span>
+      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/bankin-logo.png" alt="Bankin'" class="company-logo-center">
+    </a>
+
+    <div class="topbar-links">
+      <a href="https://linkedin.com/in/jossrsa" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:joss.r.de.st.albin@me.com" class="btn btn-dark">
+        <i class="fas fa-envelope"></i> Contact
+      </a>
+    </div>
+
+  </nav>
+
+  <div class="topbar-sub">
+    <div class="brand-text-sub">
+      applying for
+      <a href="https://www.welcometothejungle.com/fr/companies/bankin/jobs/cdi-chief-operating-officer-coo-paris-f-h-x_paris"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="job-offer-link">Chief of Staff – Operations</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="panel">
+      <span class="kicker"><i class="fas fa-bolt"></i> Open to relocation · Paris</span>
+      <h1>I build the engine<br><span class="headline-grad">while driving the car.</span></h1>
+      <p class="subhead">Operations leader with 15 years scaling complex organisations — now bringing that rigour to Bankin's next growth chapter as Chief of Staff.</p>
+
+      <div class="hero-pills">
+        <span class="pill"><i class="fas fa-chart-line"></i> Revenue & Partnerships</span>
+        <span class="pill"><i class="fas fa-tasks"></i> OKR & Performance</span>
+        <span class="pill"><i class="fas fa-user-tie"></i> CEO Right-Hand</span>
+        <span class="pill"><i class="fas fa-coins"></i> P&L Ownership</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#skills" class="btn btn-light">See my fit <i class="fas fa-arrow-down"></i></a>
+        <a href="mailto:joss.r.de.st.albin@me.com" class="btn btn-accent">Get in touch</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SKILLS SECTION
+════════════════════════════════════════════ -->
+<section id="skills" class="section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <h2 class="section-title">Why I fit this role</h2>
+      <p class="section-subtitle">Click each card to explore further.</p>
+    </div>
+
+    <div id="specific-cards-container">
+
+      <div id="personality-focus">
+        <!-- SKILL CARD 1 injected by template below -->
+      </div>
+
+      <div id="fit-focus">
+        <!-- SKILL CARD 2 injected by template below -->
+      </div>
+
+    </div>
+
+    <!-- Shared cards loaded via JS -->
+    <div id="shared-cards-container"></div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SKILL CARD 1 — TEMPLATE
+════════════════════════════════════════════ -->
+<template id="skill-card-1">
+  <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
+    <h3><i class="fas fa-cogs"></i>  How I Work</h3>
+    <div class="tags">
+      <span class="tag"><i class="fas fa-bolt"></i> Execution-first</span>
+      <span class="tag"><i class="fas fa-chess"></i> Strategic + hands-on</span>
+      <span class="tag"><i class="fas fa-layer-group"></i> Systems thinker</span>
+      <span class="tag"><i class="fas fa-compass"></i> Autonomous</span>
+      <span class="tag"><i class="fas fa-people-arrows"></i> Cross-functional</span>
+    </div>
+    <p class="card-cta">Click to explore <i class="fas fa-arrow-right"></i></p>
+  </div>
+</template>
+
+
+<!-- ═══════════════════════════════════════════
+     SKILL CARD 2 — TEMPLATE
+════════════════════════════════════════════ -->
+<template id="skill-card-2">
+  <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
+    <h3><i class="fas fa-handshake"></i> Why Bankin'</h3>
+    <div class="tags">
+      <span class="tag"><i class="fas fa-chart-line"></i> Revenue ops</span>
+      <span class="tag"><i class="fas fa-project-diagram"></i> Partnerships</span>
+      <span class="tag"><i class="fas fa-tasks"></i> OKR & performance</span>
+      <span class="tag"><i class="fas fa-user-tie"></i> CEO support</span>
+      <span class="tag"><i class="fas fa-coins"></i> P&L stewardship</span>
+    </div>
+    <p class="card-cta">Click to explore <i class="fas fa-arrow-right"></i></p>
+  </div>
+</template>
+
+
+<!-- ═══════════════════════════════════════════
+     TIMELINE / EXPERIENCE SECTION
+════════════════════════════════════════════ -->
+<section id="experience" class="section" style="display:none;">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">My journey</h2>
+    </div>
+    <div class="timeline" id="timeline-container">
+      <!-- Loaded by shared-content.js -->
+    </div>
+    <button id="deployExperience" class="btn" style="margin:32px auto; display:flex;">
+      <i class="fas fa-history"></i> Full experience
+    </button>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════ -->
+<section id="contact" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 class="section-title">Let's talk</h2>
+      <p class="section-subtitle">Prefer a quick exchange? I'm available for a call.</p>
+    </div>
+    <div class="contact-info">
+      <a href="mailto:joss.r.de.st.albin@me.com" class="btn btn-dark"><i class="fas fa-envelope"></i> joss.r.de.st.albin@me.com</a>
+      <a href="tel:+33666070548" class="btn btn-ghost"><i class="fas fa-phone"></i> +33 6 66 07 05 48</a>
+      <a href="https://linkedin.com/in/jossrsa" target="_blank" class="btn btn-accent"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     MODAL — SKILL CARD 1
+════════════════════════════════════════════ -->
+<section class="modal" id="modal-skill-card-1" aria-hidden="true">
+  <div class="modal-box">
+
+    <div class="modal-head">
+      <h3 class="modal-title"><i class="fas fa-cogs"></i> I build the engine while driving the car.</h3>
+      <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-meta" aria-label="my values">
+        <span class="chip"><i class="fas fa-gauge-high"></i> DISCIPLINE</span>
+        <span class="chip"><i class="fas fa-star"></i> CLARITY</span>
+        <span class="chip"><i class="fas fa-heart"></i> OWNERSHIP</span>
+      </div>
+
+      <div class="bullets">
+        <div class="bullet">
+          <i class="fas fa-bolt"></i>
+          <p><strong>Bias for action: </strong>I move fast on ambiguous briefs and don't wait for perfect conditions to execute.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-layer-group"></i>
+          <p><strong>Systems over heroics: </strong>I build processes that scale so the team doesn't have to rely on me permanently.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-chess"></i>
+          <p><strong>Strategic altitude: </strong>I zoom in and out fluently — from financial modelling to fixing a broken workflow the same afternoon.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-people-arrows"></i>
+          <p><strong>Alignment driver: </strong>I translate leadership intent into team clarity, so everyone pulls in the same direction.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-compass"></i>
+          <p><strong>Self-directed: </strong>Give me a north star and I'll find the route — and flag the detours before they become problems.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     MODAL — SKILL CARD 2
+════════════════════════════════════════════ -->
+<section class="modal" id="modal-skill-card-2" aria-hidden="true">
+  <div class="modal-box">
+
+    <div class="modal-head">
+      <h3 class="modal-title"><i class="fas fa-handshake"></i> The right operator for <span class="dynamic-company-inline">...</span>'s growth phase.</h3>
+      <div class="modal-sub">Bridging CEO vision and operational reality — from partnerships to performance systems.</div>
+      <button class="modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="modal-body">
+      <div class="bullets">
+        <div class="bullet">
+          <i class="fas fa-chart-line"></i>
+          <p><strong>Revenue & partnership ownership: </strong>At Malt, I owned global acquisition and retention operations for 400K+ freelancers — the same blend of revenue pipeline + operational execution Bankin' needs for its partnership roadmap.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-tasks"></i>
+          <p><strong>OKR & reporting architecture: </strong>I built Salesforce + Looker dashboards from scratch at Malt to track performance across 7 European countries — I can do the same for Bankin's internal planning cadence.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-user-tie"></i>
+          <p><strong>CEO adjacency: </strong>As Deputy CEO at Gadimat, I ran P&L, production, logistics, and business development in direct tandem with the founder — CEO partnership is my natural operating mode.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-project-diagram"></i>
+          <p><strong>Cross-functional project leadership: </strong>From launching 15 new country operations at Teleperformance to redesigning support at Meero, I deliver complex, multi-stakeholder projects end-to-end.</p>
+        </div>
+        <div class="bullet">
+          <i class="fas fa-coins"></i>
+          <p><strong>Financial discipline: </strong>I've managed €7M+ OPEX, cut costs 11% YoY, and handled bank and accounting relationships — budget stewardship without being an accountant.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     STICKY BACK BUTTON
+════════════════════════════════════════════ -->
+<button class="stickyBackToSkills" id="stickyBackToSkills" style="display:none;">
+  <i class="fas fa-arrow-up"></i> Back to skills
+</button>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
+<script>
+  // Inject skill cards into their containers
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const card1 = document.getElementById('skill-card-1');
+    const card2 = document.getElementById('skill-card-2');
+
+    if (card1) {
+      document.getElementById('personality-focus').appendChild(card1.content.cloneNode(true));
+    }
+    if (card2) {
+      document.getElementById('fit-focus').appendChild(card2.content.cloneNode(true));
+    }
+
+    // dynamic-company-inline: set company name
+    document.querySelectorAll('.dynamic-company-inline').forEach(el => {
+      el.textContent = "Bankin'";
+    });
+
+    // Modal open/close
+    document.querySelectorAll('[data-modal]').forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const modal = document.getElementById(trigger.dataset.modal);
+        if (modal) {
+          modal.setAttribute('aria-hidden', 'false');
+          modal.classList.add('active');
+        }
+      });
+      trigger.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') trigger.click();
+      });
+    });
+
+    document.querySelectorAll('.modal-close').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').setAttribute('aria-hidden', 'true');
+        btn.closest('.modal').classList.remove('active');
+      });
+    });
+
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) {
+          modal.setAttribute('aria-hidden', 'true');
+          modal.classList.remove('active');
+        }
+      });
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Sticky back to skills
+    const sticky = document.getElementById('stickyBackToSkills');
+    if (sticky) {
+      window.addEventListener('scroll', () => {
+        sticky.style.display = window.scrollY > 600 ? 'flex' : 'none';
+      });
+      sticky.addEventListener('click', () => {
+        document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+  });
+</script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 /* MAÏKA THEME v1.0 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Epilogue:wght@300;400;500;600;700;800&display=swap');
 
 
 
@@ -8,24 +8,24 @@
    BASE values
    ========================================= */
 :root {
-  /* Core Palette — Maïka: warm coral/terracotta on off-white */
-  --bg0:               #FAFAF8;   /* main background, warm off-white */
-  --bg1:               #FDF0EC;   /* soft coral tint, accent zones */
-  --primary:           #1A1A2E;   /* near-black navy, headings & text */
-  --primary-light:     #1A1A2E99; /* primary with transparency */
-  --accent:            #E8573F;   /* Maïka coral/terracotta CTA */
-  --accent-dark:       #C94330;   /* darker coral for gradients */
-  --accent-light:      #F07A66;   /* lighter coral hover */
-  --accent-btn:        #E8573F;   /* button accent */
-  --accent-superlight: #FDF0EC;   /* very pale coral background */
+  /* Core Palette — extracted from maika-outsourcing.com Webflow CSS */
+  --bg0:               #F3F6FC;   /* lavender-light: main background */
+  --bg1:               #EBE8F9;   /* pale lavender: card zones, accent areas */
+  --primary:           #323759;   /* delft-blue: headings, text, footer */
+  --primary-light:     #32375999; /* delft-blue at ~60% opacity */
+  --accent:            #331CC3;   /* chrysler-blue: CTA, links, highlights */
+  --accent-dark:       #2214A0;   /* darker chrysler for gradients */
+  --accent-light:      #5A4ADB;   /* lighter chrysler for hover states */
+  --accent-btn:        #331CC3;   /* button accent */
+  --accent-superlight: #EBE8F9;   /* very pale lavender background */
 
   /* Button gradient */
-  --btn-gradient: linear-gradient(270deg, #C94330 0%, #F07A66 100%);
+  --btn-gradient: linear-gradient(270deg, #2214A0 0%, #5A4ADB 100%);
 
-  --stroke: #E8E8EC;           /* light grey divider */
-  --stroke-light: #FFFFFF4D;   /* light stroke on dark bg */
+  --stroke: #3237591A;         /* delft-blue at 10% opacity */
+  --stroke-light: #FFFFFF4D;   /* white at 30% opacity */
 
-  /* Timeline line: navy → coral */
+  /* Timeline line: delft-blue → chrysler-blue */
   --timeline-line: linear-gradient(
     180deg,
     transparent        2%,
@@ -38,20 +38,23 @@
   /* max width of main container */
   --container: 1120px;
 
-  /* Border radii */
+  /* Borders & radii — Maika uses generous rounded corners */
   --bord-r-mini: 4px;
-  --bord-r-small: 8px;
-  --bord-r-large: 12px;
-  --bord-r-max: 18px;
+  --bord-r-small: 12px;
+  --bord-r-large: 30px;
+  --bord-r-max: 50px;
+  --bord-main: 1.5px;
+  --bord-thick: 2.5px;
+
 
   /* Topbar */
-  --topb-bg: #FFFFFF;
+  --topb-bg:   #FFFFFF;
   --topb-surf: #FFFFFF;
-  --topb-card: #E8E8EC;
+  --topb-card: ##331cc30d;
 
-  /* Typography */
-  --font-heading: 'Poppins', system-ui, sans-serif;
-  --font-body:    'Inter', system-ui, sans-serif;
+  /* Typography — Bricolage Grotesque headings + Epilogue body */
+  --font-heading: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:    'Epilogue', system-ui, sans-serif;
 
 }
 
@@ -91,9 +94,10 @@ small, .text-sm {
    BUTTONS Theming
    ========================================= */
 .btn {
-  border-radius: var(--bord-r-small);
+  border-radius: var(--bord-r-max);
   padding: 12px 16px;
   font-weight: 700;
+  border: var(--bord-main) solid var(--accent);
 }
 
 .btn-dark {
@@ -130,13 +134,13 @@ small, .text-sm {
 
 .btn-accent:hover {
   background: var(--accent-dark);
-  box-shadow: 0 10px 24px rgba(232, 87, 63, 0.25);
+  box-shadow: 0 10px 24px rgba(51, 28, 195, 0.25);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--primary);
-  border: 1px solid rgba(26, 26, 46, 0.15);
+  border: 1px solid rgba(50, 55, 89, 0.15);
   padding: 12px 16px;
   text-decoration: none;
 }
@@ -154,7 +158,7 @@ small, .text-sm {
 }
 
 .btn-ghost.light:hover {
-  background: rgba(232, 87, 63, 0.08);
+  background: rgba(51, 28, 195, 0.08);
   color: var(--accent-light);
   border-color: var(--accent);
 }
@@ -184,11 +188,11 @@ small, .text-sm {
 
 .topbar {
   background: var(--topb-bg) !important;
-  border-bottom-color: rgba(26, 26, 46, 0.1) !important;
+  border-bottom-color: rgba(50, 55, 89, 0.1) !important;
 }
 
 .company-badge-center {
-  box-shadow: 0 4px 15px rgba(26, 26, 46, 0.08) !important;
+  box-shadow: 0 4px 15px rgba(50, 55, 89, 0.08) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   border-radius: var(--bord-r-mini);
   background: var(--topb-surf, #ffffff);
@@ -222,7 +226,7 @@ small, .text-sm {
 .hero {
   background-color: var(--primary) !important;
   border-radius: var(--bord-r-max);
-  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(50, 55, 89, 0.15) !important;
 }
 
 .hero .panel {
@@ -246,8 +250,8 @@ small, .text-sm {
 
 .hero .headline-grad {
   background: none !important;
-  -webkit-text-fill-color: #E8573F !important;
-  color: #E8573F !important;
+  -webkit-text-fill-color: #EBE8F9 !important;
+  color: #EBE8F9 !important;
 }
 
 .hero .subhead {
@@ -257,7 +261,7 @@ small, .text-sm {
 }
 
 .kicker {
-  background: #FDF0EC !important;
+  background: #EBE8F9 !important;
   border: none !important;
   color: var(--primary) !important;
 }
@@ -269,7 +273,7 @@ small, .text-sm {
 }
 
 .hero .pill i {
-  color: var(--accent) !important;
+  color: var(--accent-superlight) !important;
 }
 
 /* =========================================
@@ -291,7 +295,7 @@ small, .text-sm {
 
 .info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(232, 87, 63, 0.12);
+  box-shadow: 0 15px 30px rgba(51, 28, 195, 0.12);
   border-color: var(--accent);
 }
 
@@ -367,19 +371,19 @@ small, .text-sm {
 }
 
 .timeline-content:hover {
-  box-shadow: 0 20px 40px rgba(232, 87, 63, 0.12);
+  box-shadow: 0 20px 40px rgba(51, 28, 195, 0.10);
 }
 
 .timeline-date {
   background: var(--primary);
   color: var(--bg0);
-  box-shadow: 0 8px 24px rgba(232, 87, 63, 0.3);
+  box-shadow: 0 8px 24px rgba(51, 28, 195, 0.2);
   border-radius: var(--bord-r-mini);
 }
 
 .timeline-badge {
   background: var(--accent);
-  border: 1px solid rgba(232, 87, 63, 0.2);
+  border: 1px solid rgba(51, 28, 195, 0.2);
   color: #FFFFFF;
   border-radius: var(--bord-r-mini);
   padding-top: 1px;
@@ -391,26 +395,26 @@ small, .text-sm {
   border: 2px solid var(--primary);
   background: var(--accent-superlight);
   color: var(--primary);
-  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.15);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
 }
 .timeline-toggle:hover {
   border: 2px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.2);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
 
 .stickyBackToSkills {
     border: 2px solid var(--primary);
   background: var(--accent-superlight);
   color: var(--primary);
-  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.15);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
 }
 .stickyBackToSkills:hover {
     border: 2px solid var(--primary);
   background: var(--primary-light);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(232, 87, 63, 0.2);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
 
 
@@ -419,19 +423,19 @@ small, .text-sm {
    ========================================= */
 
 .modal {
-  background: rgba(26, 26, 46, 0.4) !important;
+  background: rgba(50, 55, 89, 0.4) !important;
 }
 
 .modal-box {
   background: var(--bg0) !important;
-  border-radius: var(--bord-r-small);
+  border-radius: var(--bord-r-large);
 }
 
 .modal-head {
   background: var(--primary) !important;
   backdrop-filter: blur(10px);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: var(--bord-r-large);
+  border-top-right-radius: var(--bord-r-large);
 }
 
 .modal-title {
@@ -456,7 +460,7 @@ small, .text-sm {
 .chip {
   background: var(--accent);
   color: #FFFFFF;
-  border: 1px solid rgba(232, 87, 63, 0.3);
+  border: var(--bord-main) solid var(--accent-dark);
   border-radius: var(--bord-r-mini);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -521,7 +525,7 @@ small, .text-sm {
 .field textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(232, 87, 63, 0.12);
+  box-shadow: 0 0 0 3px rgba(51, 28, 195, 0.12);
 }
 
 .field textarea {
