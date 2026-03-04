@@ -209,7 +209,7 @@ img {
 }
 
 .job-offer-link:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
   text-decoration-style: solid;
 }
 
