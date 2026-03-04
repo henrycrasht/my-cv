@@ -714,10 +714,6 @@ h1 {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.chip > span {
-  position: relative;
-  top: 4px;               /* Adjust this (1px to 2px) for your main font's visual center */
-}
 
 .modal-close {
   position: absolute;
