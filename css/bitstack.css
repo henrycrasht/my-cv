@@ -9,20 +9,20 @@
    ========================================= */
 :root {
   /* Core Palette */
-  --bg0:               #F5F8FF;   /* main background, used for main page content */
-  --bg1:               #E6EEFF;   /*  */
-  --primary:           #111;      /*  */
-  --primary-light:     #FFFFFF4D; /*  */
-  --accent:            #FFF;      /*  */
-  --accent-dark:       #FFFFFF4D; /*  */
-  --accent-light:      #FFF;      /*  */
-  --accent-btn:        #FFF;      /*  */
+  --bg0: #F5F8FF;              /* very light blue-white — matches their clean SaaS white bg */
+  --bg1: #E6EEFF;              /* soft periwinkle — subtle gradient terminus, stays on-brand */
+  --primary:           #0D47A4;   /* ← corrected, exact Elementor global primary blue */
+  --primary-light:     #1A50A5;   /* nav link hover color from inspector */
+  --accent:            #FF8D4A;   /* gradient light end (0%) */
+  --accent-dark:       #FF6A13;   /* gradient dark end (100%) = hover solid color */
+  --accent-superlight: #FFF0E8;   /* pale orange tint — derived */
+  --accent-btn:        #FF6A13;   /* solid hover state */
 
-  /* Button gradient  */
+  /* Button gradient — exact from #d-b inspector */
   --btn-gradient: linear-gradient(270deg, #FF6A13 0%, #FF8D4A 100%);
 
-  --stroke: #1A3C6E1F;         /*  */
-  --stroke-light: #FFFFFF4D;   /*  */
+  --stroke: #1A3C6E1F;         /* navy at 12% opacity — border/divider color */
+  --stroke-light: #FFFFFF4D;   /* unchanged — works universally */
 
   /* Timeline line: navy → coral, stays on-brand */
   --timeline-line: linear-gradient(
@@ -34,19 +34,19 @@
     transparent        100%
   );
 
-  /* max width of main container */
-  --container: 1120px;         
 
-  /* Border radii  */
+  /* Border radii — Crosstalent uses moderate rounding, not pill shapes */
+  --r-lg: 16px;                /* reduced from 28px — their cards/panels are less rounded */
+  --container: 1120px;         /* unchanged */
   --bord-r-mini: 4px;          /* unchanged */
   --bord-r-small: 8px;         /* unchanged */
-  --bord-r-large: 12px;        /*  */
-  --bord-r-max: 18px;          /*  */
+  --bord-r-large: 12px;        /* slightly tighter than base */
+  --bord-r-max: 18px;          /* slightly tighter than base */
 
   /* Topbar */
-  --topb-bg:#FFFFFF;        /*  */
-  --topb-surf: #FFFFFF;     /*  */
-  --topb-card: #1A3C6E1F;   /*  */
+  --topbar-bg:#FFFFFF;        /* solid navy topbar — matches their dark nav */
+  --surface: #FFFFFF;          /* unchanged */
+  --card-bg: var(--surface);   /* unchanged */
 
   /* Typography */
  --font-heading: 'Inter', system-ui, sans-serif;  
@@ -185,7 +185,7 @@ small, .text-sm {
    ========================================= */
 
 .topbar {
-  background: var(--topb-bg) !important;
+  background: var(--topbar-bg) !important;
   border-bottom-color: rgba(15, 53, 45, 0.1) !important;
 }
 
@@ -193,7 +193,7 @@ small, .text-sm {
   box-shadow: 0 4px 15px rgba(15, 53, 45, 0.08) !important;
   border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
   border-radius: var(--bord-r-mini);
-  background: var(--topb-surf, #ffffff);
+  background: var(--surface, #ffffff);
 
 }
 

@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Josselin & Bitstack</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png">
+
+ <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/crosstalent.css">
+</head>
+
+<body>
+<nav class="topbar">
+  <div class="topbar-inner-centered">
+
+    <!-- 1. Brand (Left) — no longer a link -->
+    <div class="brand">
+      <div class="profile-photo">
+        <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" alt="Josselin">
+      </div>
+      <div class="brand-text">
+        <div class="brand-text-main">Josselin Raguenet de Saint Albin</div>
+        <div class="brand-text-sub">
+          applying for
+          <a href="https://job-boards.eu.greenhouse.io/saasgroup/jobs/4761239101"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="job-offer-link">Director of Professional Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Company Badge (Absolute Center) — href=# -->
+    <a href="#" class="company-badge-center">
+      <span class="at-symbol">@</span>
+      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/crosstalent-logo.png" alt="Crosstalent" class="company-logo-center">
+    </a>
+    <!-- Mobile only — text fallback -->
+    <div class="mobile-topbar-text">
+      <span id="mobile-topbar-label">...</span>
+    </div>
+
+    <!-- 3. Navigation (Right) -->
+    <div class="nav">
+      <a href="https://www.linkedin.com/in/jossrsa/" target="_blank" rel="noopener noreferrer" class="btn btn-light">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-dark">
+        <i class="fa-solid fa-paper-plane"></i> Contact
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <!-- SHARED CONTENT LOADED HERE -->
+  <div id="app">Loading...</div>
+
+  <!-- ============================================
+       COMPANY-SPECIFIC SKILL CARDS (Hidden Templates)
+       ============================================ -->
+  <template id="skill-card-1">
+     <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-id-badge"></i> My work style</h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i> Curious</span>
+        <span class="tag"><i class="fa-solid fa-lightbulb"></i> Creative</span>
+        <span class="tag"><i class="fa-solid fa-quote-right"></i> Assertive</span>
+        <span class="tag"><i class="fa-solid fa-handshake"></i> Team player</span>
+        <span class="tag"><i class="fa-solid fa-book"></i> Pedagogical</span>
+      </div>
+    </div>
+  </template>
+
+  <template id="skill-card-2">
+    <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-map-sign"></i> Our roadmap to success </h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-bullseye"></i>saas.group's operator culture</span>
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i> A genuinely global, remote-first setup</span>
+		<span class="tag"><i class="fa-solid fa-chart-line"></i> Excellence in Service Delivery Management</span>
+        <span class="tag"><i class="fa-solid fa-coins"></i> P&L conscious Sales collaboration</span>
+        <span class="tag"><i class="fa-solid fa-eye"></i> Customer Focused</span>
+      </div>
+    </div>
+  </template>
+
+  <!-- ============================================
+       COMPANY-SPECIFIC MODAL (Hidden)
+       ============================================ -->
+    <!-- Personality Modal -->
+  <template id="modal-skill-card-1-template">
+	<section class="modal" id="modal-skill-card-1" aria-hidden="true" aria-label="Personality modal" role="dialog">
+	  <div class="modal-box" role="document">
+	    <header class="modal-head">
+	      <button class="modal-close" type="button" aria-label="Close">
+	        <i class="fa-solid fa-xmark"></i>
+	      </button>
+	      <h3 class="modal-title"><i class="fa-solid fa-user"></i> My personality & work style</h3>
+			 <div class="modal-meta" aria-label="my values">
+          <span class="chip"><i class="fa-solid fa-gauge-high"></i> AMBITION</span>
+          <span class="chip"><i class="fa-solid fa-star"></i> LOYALTY</span>
+          <span class="chip"><i class="fa-solid fa-heart"></i> CARE</span>
+        </div>
+	    </header>
+	    <div class="modal-body">
+	      <div class="bullets">
+	        <div class="bullet">
+	          <i class="fa-solid fa-globe-africa"></i>
+	          <p><strong>CURIOUS - International mindset:</strong> Lived and worked across Europe, Africa, and Middle East. Comfortable with cultural diversity and global operations.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-lightbulb"></i>
+	          <p><strong>CREATIVE - Innovative problem-solver:</strong> I thrive on finding unconventional solutions to complex operational challenges.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-quote-right"></i>
+	          <p><strong>ASSERTIVE - Clear decisions, ownership:</strong> I take ownership of outcomes and make tough calls when needed.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-handshake"></i>
+	          <p><strong>TEAM-FIRST - Build strong teams, delegate with trust:</strong> I believe in empowering people and building autonomous, high-performing teams.</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-book"></i>
+	          <p><strong>PEDAGOGICAL - Explain the why, grow people:</strong> I invest time in explaining context and strategy, helping team members grow and understand the bigger picture.</p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+  </template>
+
+    <!-- why? Modal -->
+   <template id="modal-skill-card-2-template">
+    <section class="modal" id="modal-skill-card-2" aria-hidden="true" aria-label="why fit modal" role="dialog">
+      <div class="modal-box" role="document">
+        <header class="modal-head">
+          <button class="modal-close" type="button" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="modal-title"><i class="fa-solid fa-spinner"></i> How I want to build the success of <span class="dynamic-company-inline">...</span></h3>
+          <div class="modal-sub">Scaling Professional Services to outpace Sales growth and improve profitability</div>
+        </header>
+        <div class="modal-body">
+          <div class="bullets">
+            <div class="bullet">
+              <i class="fa-solid fa-bullseye"></i>
+              <p><strong>SaasGroup</strong> portfolio is built on pragmatic, autonomous operators with no tolerance for theater. I've spent my career in high-growth environments where outcomes matter more than titles. Being a geek-amateur myself, I love outstanding software and thrive in tech driven atmospheres</p>
+            </div>
+			<div class="bullet">
+			  <i class="fa-solid fa-globe-africa"></i>
+			  <p><strong>Global & Remote:</strong> Having led distributed teams across Europe, Africa, and Asia, I navigate easily these environments. I know how to build asynchronous work processes to build ubiquity for the success of my teams.</p>
+			</div>
+            <div class="bullet">
+              <i class="fa-solid fa-line-chart"></i>
+              <p><strong>Excellence in Service Delivery:</strong> I know how to give PMs the visibility they need to stay on track and how to protect billable time from being eaten by poor planning. In each job I've built delivery infrastructure from scratch multiple times: dashboards, backlog tracking, escalation workflows, performance metrics.</p>
+            </div>
+			<div class="bullet">
+			  <i class="fa-solid fa-coins"></i>
+			  <p><strong>P&L conscious Sales collaboration</strong> Scaling up and down with contractors is something I've done under real pressure. Capacity planning and make-or-buy decisions are a core part of my operational toolkit. I understand that Professioanel Services is a revenue function, not just a delivery one — and I engage with sales teams accordingly.</p>
+			</div>
+            <div class="bullet">
+              <i class="fa-solid fa-eye"></i>
+              <p><strong>Customer Focused:</strong> Care is where my career started and where I have the deepest expertise, building these teams from the ground up. And as a long-time client of HRIS platforms at Teleperformance, Meero, and Malt, I understand precisely what Crosstalent's clients expect — and what frustrates them when it's missing. To me support is not a cost, it is the first place for upsell & revenue generation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+<script>
+fetch('/shared/cv-body.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('app').innerHTML = html;
+
+        // 1. SELECT TEMPLATES
+        const card1Template = document.getElementById('skill-card-1');
+        const card2Template = document.getElementById('skill-card-2');
+        const modal1Template = document.getElementById('modal-skill-card-1-template');
+        const modal2Template = document.getElementById('modal-skill-card-2-template');
+
+        // 2. SELECT PLACEHOLDERS
+        const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
+        const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+
+        // 3. INJECT CARDS
+        if (placeholder1 && card1Template) {
+            placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        }
+        if (placeholder2 && card2Template) {
+            placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        }
+
+        // 4. INJECT MODALS TO BODY
+        if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
+        if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+
+        // 5. DYNAMIC HERO TEXT
+        const heroPersonalityText = document.getElementById('hero-text-personality');
+        if (heroPersonalityText && card1Template) {
+        const card1Title = card1Template.content.querySelector('h3');
+        if (card1Title) {
+            // Get text only, stripping the icon
+        heroPersonalityText.textContent = card1Title.textContent.trim();
+        }
+    } 
+
+        // 6. LOAD MAIN.JS
+        const script = document.createElement('script');
+        script.src = '/js/main.js';
+        document.body.appendChild(script);
+    });
+</script>
+
+
+
+</body>
+</html>

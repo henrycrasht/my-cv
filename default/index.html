@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Josselin & Target</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png">
+
+ <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/default.css">
+</head>
+
+<body>
+<nav class="topbar">
+  <div class="topbar-inner-centered">
+
+    <!-- 1. Brand (Left) — no longer a link -->
+    <div class="brand">
+      <div class="profile-photo">
+        <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/josselin.png" alt="Josselin">
+      </div>
+      <div class="brand-text">
+        <div class="brand-text-main">Josselin Raguenet de Saint Albin</div>
+        <div class="brand-text-sub">
+          applying for
+          <a href="https://joblink.link"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="job-offer-link">Target Job</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Company Badge (Absolute Center) — href=# -->
+    <a href="#" class="company-badge-center">
+      <span class="at-symbol">@</span>
+      <img src="https://raw.githubusercontent.com/henrycrasht/my-cv/main/logos/target-logo.png" alt="Target" class="company-logo-center">
+    </a>
+    <!-- Mobile only — text fallback -->
+    <div class="mobile-topbar-text">
+      <span id="mobile-topbar-label">...</span>
+    </div>
+
+    <!-- 3. Navigation (Right) -->
+    <div class="nav">
+      <a href="https://www.linkedin.com/in/jossrsa/" target="_blank" rel="noopener noreferrer" class="btn btn-light">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="#contact" class="btn btn-dark">
+        <i class="fa-solid fa-paper-plane"></i> Contact
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+
+
+  <!-- SHARED CONTENT LOADED HERE -->
+  <div id="app">Loading...</div>
+
+  <!-- ============================================
+       COMPANY-SPECIFIC SKILL CARDS (Hidden Templates)
+       ============================================ -->
+  <template id="skill-card-1">
+     <div class="info reveal" data-modal="modal-skill-card-1" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-id-badge"></i> Skill Card 1 Title</h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i> tag1</span>
+        <span class="tag"><i class="fa-solid fa-lightbulb"></i> tag2</span>
+        <span class="tag"><i class="fa-solid fa-quote-right"></i> tag3</span>
+        <span class="tag"><i class="fa-solid fa-handshake"></i> tag4</span>
+        <span class="tag"><i class="fa-solid fa-book"></i> tag5</span>
+      </div>
+    </div>
+  </template>
+
+  <template id="skill-card-2">
+    <div class="info reveal" data-modal="modal-skill-card-2" role="button" tabindex="0">
+      <h3><i class="fa-solid fa-map-sign"></i>  Skill Card 2 Title</h3>
+      <div class="tags">
+        <span class="tag"><i class="fa-solid fa-bullseye"></i>tag1</span>
+        <span class="tag"><i class="fa-solid fa-globe-africa"></i>tag2</span>
+		    <span class="tag"><i class="fa-solid fa-chart-line"></i>tag3</span>
+        <span class="tag"><i class="fa-solid fa-coins"></i>tag4</span>
+        <span class="tag"><i class="fa-solid fa-eye"></i>tag5</span>
+      </div>
+    </div>
+  </template>
+
+  <!-- ============================================
+       COMPANY-SPECIFIC MODAL (Hidden)
+       ============================================ -->
+    <!-- Personality Modal -->
+  <template id="modal-skill-card-1-template">
+	<section class="modal" id="modal-skill-card-1" aria-hidden="true" aria-label="Personality modal" role="dialog">
+	  <div class="modal-box" role="document">
+	    <header class="modal-head">
+	      <button class="modal-close" type="button" aria-label="Close">
+	        <i class="fa-solid fa-xmark"></i>
+	      </button>
+	      <h3 class="modal-title"><i class="fa-solid fa-user"></i>modal skill card 1 title</h3>
+			 <div class="modal-meta" aria-label="my values">
+          <span class="chip"><i class="fa-solid fa-gauge-high"></i>chip1</span>
+          <span class="chip"><i class="fa-solid fa-star"></i>chip2</span>
+          <span class="chip"><i class="fa-solid fa-heart"></i>chip3</span>
+        </div>
+	    </header>
+	    <div class="modal-body">
+	      <div class="bullets">
+	        <div class="bullet">
+	          <i class="fa-solid fa-globe-africa"></i>
+	          <p><strong>bullet1 title</strong>bullet1 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-lightbulb"></i>
+	          <p><strong>bullet2 title</strong>bullet2 body</p>
+	        <div class="bullet">
+	          <i class="fa-solid fa-quote-right"></i>
+	          <p><strong>bullet3 title</strong>bullet3 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-handshake"></i>
+	          <p><strong>bullet4 title</strong>bullet4 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-book"></i>
+	          <p><strong>bullet5 title</strong>bullet5 body</p>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>
+  </template>
+
+    <!-- why? Modal -->
+   <template id="modal-skill-card-2-template">
+    <section class="modal" id="modal-skill-card-2" aria-hidden="true" aria-label="why fit modal" role="dialog">
+      <div class="modal-box" role="document">
+        <header class="modal-head">
+          <button class="modal-close" type="button" aria-label="Close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="modal-title"><i class="fa-solid fa-spinner"></i> modal skill card 2 title<span class="dynamic-company-inline">...</span></h3>
+          <div class="modal-sub">modal skill card 2 subtitle</div>
+        </header>
+        <div class="modal-body">
+          <div class="bullets">
+            <div class="bullet">
+	          <i class="fa-solid fa-globe-africa"></i>
+	          <p><strong>bullet1 title</strong>bullet1 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-lightbulb"></i>
+	          <p><strong>bullet2 title</strong>bullet2 body</p>
+	        <div class="bullet">
+	          <i class="fa-solid fa-quote-right"></i>
+	          <p><strong>bullet3 title</strong>bullet3 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-handshake"></i>
+	          <p><strong>bullet4 title</strong>bullet4 body</p>
+	        </div>
+	        <div class="bullet">
+	          <i class="fa-solid fa-book"></i>
+	          <p><strong>bullet5 title</strong>bullet5 body</p>
+	        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+<script>
+fetch('/shared/cv-body.html')
+    .then(response => response.text())
+    .then(html => {
+        document.getElementById('app').innerHTML = html;
+
+        // 1. SELECT TEMPLATES
+        const card1Template = document.getElementById('skill-card-1');
+        const card2Template = document.getElementById('skill-card-2');
+        const modal1Template = document.getElementById('modal-skill-card-1-template');
+        const modal2Template = document.getElementById('modal-skill-card-2-template');
+
+        // 2. SELECT PLACEHOLDERS
+        const placeholder1 = document.querySelector('[data-placeholder="skill-card-1"]');
+        const placeholder2 = document.querySelector('[data-placeholder="skill-card-2"]');
+
+        // 3. INJECT CARDS
+        if (placeholder1 && card1Template) {
+            placeholder1.replaceWith(card1Template.content.cloneNode(true));
+        }
+        if (placeholder2 && card2Template) {
+            placeholder2.replaceWith(card2Template.content.cloneNode(true));
+        }
+
+        // 4. INJECT MODALS TO BODY
+        if (modal1Template) document.body.appendChild(modal1Template.content.cloneNode(true));
+        if (modal2Template) document.body.appendChild(modal2Template.content.cloneNode(true));
+
+        // 5. DYNAMIC HERO TEXT
+        const heroPersonalityText = document.getElementById('hero-text-personality');
+        if (heroPersonalityText && card1Template) {
+        const card1Title = card1Template.content.querySelector('h3');
+        if (card1Title) {
+            // Get text only, stripping the icon
+        heroPersonalityText.textContent = card1Title.textContent.trim();
+        }
+    } 
+
+        // 6. LOAD MAIN.JS
+        const script = document.createElement('script');
+        script.src = '/js/main.js';
+        document.body.appendChild(script);
+    });
+</script>
+
+
+
+</body>
+</html>
