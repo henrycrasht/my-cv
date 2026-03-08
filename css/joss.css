@@ -8,55 +8,65 @@
    BASE values
    ========================================= */
 :root {
-  /* Core Palette */
-  --bg0:               #F3F6FC;   /* lavender-light: main background */
-  --bg1:               #EBE8F9;   /* pale lavender: card zones, accent areas */
-  --primary:           #323759;   /* delft-blue: headings, text, footer */
-  --primary-light:     #32375999; /* delft-blue at ~60% opacity */
-  --accent:            #331CC3;   /* chrysler-blue: CTA, links, highlights */
-  --accent-dark:       #2214A0;   /* darker chrysler for gradients */
-  --accent-light:      #5A4ADB;   /* lighter chrysler for hover states */
-  --accent-btn:        #331CC3;   /* button accent */
-  --accent-superlight: #dbdbf2;   /* very pale lavender background */
+  /* Core Palette — Henry / Personal CV (Green & Neutrals) */
 
-  /* Button gradient */
-  --btn-gradient: linear-gradient(270deg, #2214A0 0%, #5A4ADB 100%);
+  /* Backgrounds */
+  --bg0:               #F4F6F5;   /* soft neutral grey-green, main background */
+  --bg1:               #DEE7E2;   /* pale sage, cards / sections */
 
-  --stroke: #3237591A;         /* delft-blue at 10% opacity */
-  --stroke-light: #FFFFFF4D;   /* white at 30% opacity */
+  /* Primary text & structural color (calm, senior) */
+  --primary:           #296459;   /* deep muted teal-green */
+  --primary-light:     #4C8075;   /* softer teal for hovers, secondary text */
 
-  /* Timeline line:  */
+  /* Accent for CTAs, links, highlights (warmer green) */
+  --accent:            #3F5E7A;  /* desaturated blue-grey */
+  --accent-dark:       #2B4256;
+  --accent-light:      #647C93;
+  --accent-superlight: #9eaec2;
+
+
+  /* Button-specific accent (can be same as accent) */
+  --accent-btn:        #89c5b2f0;
+
+  /* Very light accent background (chips, soft zones) */
+  --accent-superlight: #E4F0E7;   /* very pale green wash */
+
+  /* Button gradient — subtle green, not neon */
+  --btn-gradient: linear-gradient(270deg, #1F4C28 0%, #4F8F58 100%);
+
+  /* Strokes & radii */
+  --stroke:            #16363A1A; /* low-contrast teal/grey border */
+  --stroke-light:      #FFFFFF4D;
+
   --timeline-line: linear-gradient(
     180deg,
-    transparent        2%,
-    var(--primary)     15%,
+    transparent 2%,
+    var(--primary) 15%,
     var(--primary-light) 40%,
     var(--accent-dark) 70%,
-    transparent        100%
+    transparent 100%
   );
 
-  /* max width of main container */
-  --container: 1120px;
+  --container:         1120px;
 
-  /* Borders & radii  */
-  --bord-r-mini: 4px;
-  --bord-r-small: 8px;
-  --bord-r-large: 14px;
-  --bord-r-max: 20px;
-  --bord-main: 1.5px;
-  --bord-thick: 2.5px;
+  --bord-r-mini:       4px;
+  --bord-r-small:      8px;
+  --bord-r-large:      14px;
+  --bord-r-max:        22px;
+  --bord-main:         1.5px;
+  --bord-thick:        2.5px;
 
+  /* Topbar + surfaces */
+  --topb-bg:           #FFFFFF;
+  --topb-surf:         #FFFFFF;
+  --topb-card:         #D4E1DA;
 
-  /* Topbar */
-  --topb-bg:   #FFFFFF;
-  --topb-surf: #FFFFFF;
-  --topb-card: ##331cc30d;
-
-  /* Typography  */
-  --font-heading: 'Bricolage Grotesque', system-ui, sans-serif;
-  --font-body:    'Epilogue', system-ui, sans-serif;
-
+  /* Typography (keep your existing stack if you like it) */
+  --font-heading:      'Bricolage Grotesque', system-ui, sans-serif;
+  --font-body:         'Epilogue', system-ui, sans-serif;
 }
+
+
 
 html {
   font-size: 16px !important;
@@ -94,7 +104,7 @@ small, .text-sm {
    BUTTONS Theming
    ========================================= */
 .btn {
-  border-radius: var(--bord-r-max);
+  border-radius: var(--bord-r-small);
   padding: 12px 16px;
   font-weight: 700;
   border: var(--bord-main) solid var(--accent);
@@ -118,13 +128,38 @@ small, .text-sm {
   background: var(--topb-surf, #ffffff);
 }
 
-.company-badge-center .brand-text-main, .brand-text-sub {
-  color: var(--accent) !important;
+.company-badge-center {
+ color: var(--primary);
+}
+
+.brand-text-main {
+  color: var(--accent);
+}
+
+.brand-text-sub {
+  color: var(--accent);
+}
+
+/* Job offer link in topbar */
+.job-offer-link {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  transition: color 0.2s ease, text-decoration-style 0.2s ease;
+}
+
+.job-offer-link:hover {
+  color: var(--accent-dark);
+  text-decoration-style: solid;
 }
 
 .at-symbol {
   color: var(--primary) !important;
-  opacity: 0.5;
+  opacity: 1;
+  font-size: large;
+  font-weight: 800;
 }
 
 #top-lkd {
@@ -135,7 +170,8 @@ small, .text-sm {
 }
 
 #top-lkd:hover {
-  background-color: #dbdbf2;
+  background-color: var(--accent);
+  color: var(--accent-superlight);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -148,6 +184,7 @@ small, .text-sm {
 
 #top-contact:hover {
   background-color: var(--primary);
+  color: var(--accent-superlight);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -174,7 +211,7 @@ small, .text-sm {
    HERO Section, company specifics
    ========================================= */
 .hero {
-  background-color: var(--primary) !important;
+  background-color: var(--primary-light) !important;
   border-radius: var(--bord-r-max);
   box-shadow: 0 20px 40px rgba(50, 55, 89, 0.15) !important;
 }
@@ -205,7 +242,7 @@ small, .text-sm {
 }
 
 .hero .subhead {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--bg0) !important;
   font-size: 18px;
   line-height: 150%;
 }
@@ -268,7 +305,7 @@ small, .text-sm {
 }
 
 .info h3 {
-  color: var(--primary);
+  color: var(--accent-dark);
   background: var(--accent-superlight);
   border: none;
   border-radius: var(--bord-r-mini);
@@ -297,9 +334,9 @@ small, .text-sm {
 }
 
 #specific-cards-container .info {
-    border: 1px solid var(--accent-light);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background-color: var(--bg0);
 }
+
 
 #personality-focus, #fit-focus {
     background: var(--bg0);
@@ -310,9 +347,7 @@ small, .text-sm {
     border: 0px solid var(--accent);
 }
 
-#specific-cards-container .info {
-    background: var(--bg1);
-}
+
 
 
 /* =================================================
@@ -375,6 +410,7 @@ small, .text-sm {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: var(--primary);
+  color: var(--accent-superlight);
 }
 
 
@@ -423,6 +459,7 @@ small, .text-sm {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   background-color: var(--primary);
+  color: var(--accent-superlight);
 }
 
 
@@ -471,10 +508,6 @@ small, .text-sm {
   color: #FFFFFF;
   border: var(--bord-main) solid var(--accent-dark);
   border-radius: var(--bord-r-mini);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 8px;
-  padding-left: 8px;
 }
 
 .bullets {
@@ -499,6 +532,12 @@ small, .text-sm {
 /* =========================================
    Section CONTACT CARD
    ========================================= */
+
+.contact-card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
+}
 
 .lead-title {
   color: var(--primary)
@@ -555,14 +594,16 @@ small, .text-sm {
   margin-top: 24px;
   padding-top: 24px;
   border-top: 1px solid var(--stroke);
+  text-align: center;
 }
 
 /* Contact form "send request" button */
 
 #sendform {
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
-  border-radius: 50px;
+  background: var(--accent);
+  border: 0px solid var(--accent);
+  color: var(--bg0);
+  border-radius: var(--bord-r-small);
   justify-content: center;
   align-items: center;
   padding: 19px 26px 16px;
@@ -570,8 +611,9 @@ small, .text-sm {
 }
 
 #sendform:hover {
-  border: 1.5px solid var(--primary);
-  background: var(--accent);
+  border: Opx solid var(--accent-btn);
+  background: var(--primary);
   color: var(--accent-superlight);
   box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
+

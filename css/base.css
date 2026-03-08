@@ -1,5 +1,5 @@
 /* =========================================
-   Base
+   Base CSS -- v2.1
    ========================================= */
 
 * {
@@ -195,22 +195,6 @@ img {
   gap: 12px;
   position: relative;
   z-index: 2;
-}
-
-
-/* Job offer link in topbar */
-.job-offer-link {
-  color: var(--accent-dark);
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-underline-offset: 3px;
-  font-weight: 600;
-  transition: color 0.2s ease, text-decoration-style 0.2s ease;
-}
-
-.job-offer-link:hover {
-  color: var(--accent-dark);
-  text-decoration-style: solid;
 }
 
 
@@ -424,6 +408,12 @@ h1 {
   max-width: 500px;
 }
 
+/* hiding PERSO card section */
+#personality-card-section {
+  display: none;
+}
+
+
 
 /* =================================================
    TIMELINE — Structure only, design in [company].css
@@ -609,7 +599,7 @@ h1 {
 
 .timeline-logo {
   position: absolute;
-  top: 50%;
+  top: 40%;
   width: 43%;
   display: flex;
   align-items: center;
@@ -704,14 +694,28 @@ h1 {
   align-items: center;
 }
 
+/* CHIP: base layout & alignment */
+
 .chip {
   display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
+  align-items: center;          /* vertical centering */
+  justify-content: center;
+  gap: 10px;                     /* space between icon and text */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
   font-size: 13px;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1;               /* CRITICAL: no extra font leading */
+  box-sizing: border-box;
+}
+
+/* Icon inside chip */
+.chip i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 
@@ -780,9 +784,6 @@ h1 {
   margin: 0 auto;
   padding: 28px;
   border-radius: 14px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
   position: relative;
   overflow: hidden;
 }

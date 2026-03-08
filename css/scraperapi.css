@@ -1,30 +1,30 @@
-/* CROSSTALENT THEME v.0 */
+/* SCRAPERAPI THEME v1.0 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Droid+Sans:wght@400;700&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* =========================================
    BASE values
    ========================================= */
 :root {
-  /* Core Palette */
-  --bg0: #F5F8FF;              /* very light blue-white — matches their clean SaaS white bg */
-  --bg1: #E6EEFF;              /* soft periwinkle — subtle gradient terminus, stays on-brand */
-  --primary:           #0D47A4;   /* ← corrected, exact Elementor global primary blue */
-  --primary-light:     #1A50A5;   /* nav link hover color from inspector */
-  --accent:            #FF8D4A;   /* gradient light end (0%) */
-  --accent-dark:       #FF6A13;   /* gradient dark end (100%) = hover solid color */
-  --accent-superlight: #FFF0E8;   /* pale orange tint — derived */
-  --accent-btn:        #FF6A13;   /* solid hover state */
+  /* Core Palette — extracted from maika-outsourcing.com Webflow CSS */
+  --bg0:               #FFFFFF;   /* lavender-light: main background */
+  --bg1:               #EEF7FF;   /* pale lavender: card zones, accent areas */
+  --primary:           #1A22E4;   /* delft-blue: headings, text, footer */
+  --primary-light:     #32375999; /* delft-blue at ~60% opacity */
+  --accent:            #1A22E4;   /* chrysler-blue: CTA, links, highlights */
+  --accent-dark:       #090A3A;   /* darker chrysler for gradients */
+  --accent-light:      #5A4ADB;   /* lighter chrysler for hover states */
+  --accent-btn:        #1A22E4;   /* button accent */
+  --accent-superlight: #dbdbf2;   /* very pale lavender background */
 
-  /* Button gradient — exact from #d-b inspector */
-  --btn-gradient: linear-gradient(270deg, #FF6A13 0%, #FF8D4A 100%);
+  /* Button gradient */
+  --btn-gradient: linear-gradient(270deg, #2214A0 0%, #5A4ADB 100%);
 
-  --stroke: #1A3C6E1F;         /* navy at 12% opacity — border/divider color */
-  --stroke-light: #FFFFFF4D;   /* unchanged — works universally */
+  --stroke: #090A3A;         /* deep coave */
+  --stroke-light: #465C6F;   /* white at 30% opacity */
+  --stroke-superlight: #E2E8EE;
 
-  /* Timeline line: navy → coral, stays on-brand */
+  /* Timeline line: delft-blue → chrysler-blue */
   --timeline-line: linear-gradient(
     180deg,
     transparent        2%,
@@ -34,25 +34,34 @@
     transparent        100%
   );
 
+  /* max width of main container */
+  --container: 1120px;
 
-  /* Border radii — Crosstalent uses moderate rounding, not pill shapes */
-  --r-lg: 16px;                /* reduced from 28px — their cards/panels are less rounded */
-  --container: 1120px;         /* unchanged */
-  --bord-r-mini: 4px;          /* unchanged */
-  --bord-r-small: 8px;         /* unchanged */
-  --bord-r-large: 12px;        /* slightly tighter than base */
-  --bord-r-max: 18px;          /* slightly tighter than base */
+  /* Borders & radii — Maika uses generous rounded corners */
+  --bord-r-mini: 0px;
+  --bord-r-small: 0px;
+  --bord-r-large: 0px;
+  --bord-r-max: 0px;
+  --bord-main: 1px;
+  --bord-thick: 0.5px;
+
 
   /* Topbar */
-  --topbar-bg:#FFFFFF;        /* solid navy topbar — matches their dark nav */
-  --surface: #FFFFFF;          /* unchanged */
-  --card-bg: var(--surface);   /* unchanged */
+  --topb-bg:   var(--bg0);
+  --topb-surf: #FFFFFF;
+  --topb-card: ##331cc30d;
 
   /* Typography */
- --font-heading: 'Inter', system-ui, sans-serif;  
- --font-body:    'Inter', system-ui, sans-serif;  
+  --font-heading: 'Work Sans', system-ui, sans-serif;
+  --font-body:    'Work Sans', system-ui, sans-serif;
+  --font-menu:    'Droid Sans', system-ui, sans-serif; /* Optional: if you have specific menu styling */
+  --font-clr: #090A3A;
+  --font-w: 400;
   
 }
+
+
+
 
 html {
   font-size: 16px !important;
@@ -63,11 +72,13 @@ body {
   font-size: 1rem !important;
   line-height: 1.6;
   background: var(--bg0) !important;
+  color: var(--stroke-light);
 }
 
 h1, h2, h3, .brand {
   font-family: var(--font-heading) !important;
   font-weight: 700 !important;
+  color: var(--font-clr);
 }
 
 h1 {
@@ -78,33 +89,33 @@ h2 {
   letter-spacing: -0.02em !important;
 }
 
-p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
-  font-family: var(--font-body) !important;
+p, .btn, .pill, .kicker, .timeline-date, .tag, small {
+  font-family: var(--font-body);
 }
 
 small, .text-sm {
   font-size: 0.895rem;
 }
-  
+
 /* =========================================
    BUTTONS Theming
    ========================================= */
 .btn {
-  border-radius: var(--bord-r-small);
+  border-radius: var(--bord-r-max);
   padding: 12px 16px;
-  font-weight: 700;
+  font-weight: var(--font-w);
+  border-width: var(--bord-main) solid var(--accent);
 }
 
 
 
-  
 /* =========================================
    TOPBAR Theming
    ========================================= */
 
 .topbar {
-  background: var(--topbar-bg) !important;
-  border-bottom-color: rgba(15, 53, 45, 0.1) !important;
+  background: var(--topb-bg) !important;
+  border-bottom: none !important;
 }
 
 .company-badge-center {
@@ -112,16 +123,15 @@ small, .text-sm {
   border: 0px solid var(--stroke, rgba(0, 0, 0, 0.08));
   border-radius: var(--bord-r-mini);
   background: var(--topb-surf, #ffffff);
-
 }
 
-.company-badge-center .brand-text-main, .brand-text-sub {
+.brand .company-badge-center .brand-text-main, .brand-text-sub {
   color: var(--accent) !important;
 }
 
 /* Job offer link in topbar */
 .job-offer-link {
-  color: var(--accent-dark);
+  color: var(--);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 3px;
@@ -134,38 +144,42 @@ small, .text-sm {
   text-decoration-style: solid;
 }
 
-
 .at-symbol {
   color: var(--primary) !important;
   opacity: 0.5;
 }
 
-
 #top-lkd {
   background-color: transparent;
-  color: var(--primary);
+  color: var(--stroke);
   padding: 12px 16px;
   text-decoration: none;
+  border: 1px solid var(--stroke);
+  font-family: var(--font-menu);
 }
 
 #top-lkd:hover {
-  background-color: var(--primary);
-  color: var(--bg0);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background-color: var(--stroke);
+  color: #FFFFFF;
+  box-shadow: none;
 }
 
 #top-contact {
   background-color: var(--accent);
-  color: var(--bg0);
+  color:   #FFFFFF;
   padding: 12px 16px;
   text-decoration: none;
+  border-color: var(--accent);
+  font-family: var(--font-menu);
 }
 
 #top-contact:hover {
   background-color: var(--primary);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
+  color: #FFFFFF;
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
 }
-
 
 
 
@@ -173,7 +187,6 @@ small, .text-sm {
 /* =========================================
    SECTIONS properties
    ========================================= */
-
 
 .section {
   border-radius: var(--bord-r-max);
@@ -186,13 +199,16 @@ small, .text-sm {
 
 
 
+
 /* =========================================
    HERO Section, company specifics
    ========================================= */
 .hero {
-  background-color: var(--primary) !important;
-  border-radius: var(--bord-r-max);
-  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15) !important;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #EEF7FF00 0%, #EEF7FF 100%);
+  border-radius: var(--bord-r-mini);
+  box-shadow: none !important;
+  max-width: none !important;
 }
 
 .hero .panel {
@@ -207,7 +223,7 @@ small, .text-sm {
 }
 
 .hero h1 {
-  color: #FFFFFF !important;
+  color: var(--accent-dark) !important;
   text-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
   font-size: clamp(40px, 3.6vw, 48px);
   letter-spacing: -0.04em;
@@ -216,53 +232,58 @@ small, .text-sm {
 
 .hero .headline-grad {
   background: none !important;
-  -webkit-text-fill-color: #FFFFFF !important;
-  color: #FFFFFF !important;
+  color: var(--stroke) !important;
+  font-family: var(--font-menu) !important;
+  font-weight: 1;
 }
 
 .hero .subhead {
-  color: rgba(255, 255, 255, 0.9) !important;
+   color: var(--stroke) !important;
   font-size: 18px;
   line-height: 150%;
 }
 
 .kicker {
-  background: #FBFAF5 !important;
+  background: var(--bg0) !important;
   border: none !important;
   color: var(--primary) !important;
 }
 
 .hero .pill {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  background: var(--accent-dark) !important;
+  border: 1px solid var(--stroke-light) !important;
+  border-radius: 4px !important;
   color: #FFFFFF !important;
+  font-family: var(--font-menu) !important;
 }
 
 .hero .pill i {
-  color: var(--accent) !important;
+  color: var(--accent-superlight) !important;
 }
 
 
+
 .hero-btn {
-  background: var(--btn-gradient);
-  color: var(--bg0);
+  background: var(--accent);
+  color: #FFFFFF;
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   padding: 12px 16px;
   text-decoration: none;
 }
 
 .hero-btn:hover {
-  background: var(--accent-btn);
-  color: var(--primary-light);
+  background: var(--accent-dark);
+  color: #FFFFFF;
   box-shadow: 0 10px 24px rgba(51, 28, 195, 0.25);
 }
+
 
 
 /* =========================================
    SKILLS Card Section
    ========================================= */
 #skills {
-  background: var(--accent-superlight);
+  background: var(--bg0);
   border-radius: var(--bord-r-max);
 }
 
@@ -270,15 +291,16 @@ small, .text-sm {
   padding: 24px;
   border-radius: var(--bord-r-small);
   background: var(--bg0);
-  border: 1px solid var(--stroke);
+  border: 0.5px solid var(--stroke-superlight);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(15, 53, 45, 0.12);
-  border-color: var(--accent);
+  background-color: #F1F2F3 !important;
+  box-shadow: 0 15px 30px rgba(51, 28, 195, 0.12);
+  border: 1px solid var(--stroke-superlight);
 }
 
 .info h3 {
@@ -288,12 +310,11 @@ small, .text-sm {
   border-radius: var(--bord-r-mini);
 }
 
-/* .tags is used in Skill cards body */
 .tag {
   background: none;
   border: none;
-  border-radius: 24px;
-  color: var(--primary);
+  border-radius: 999px;
+  color: var(--stroke-light);
 }
 
 #company-focus {
@@ -312,8 +333,9 @@ small, .text-sm {
 }
 
 #specific-cards-container .info {
-    border: 1px solid var(--accent-light);
+    border: 1px solid var(--accent);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background: none;
 }
 
 #personality-focus, #fit-focus {
@@ -322,20 +344,16 @@ small, .text-sm {
 }
 
 #fit-focus {
-    border: 2px solid var(--accent-color);
+    border: 0px solid var(--accent);
 }
 
-#specific-cards-container .info {
-    background: var(--bg1);
-}
 
 
 
 /* =================================================
-   TIMELINE Theming 
+   TIMELINE Theming
    ================================================= */
 
-/* Timeline company name */
 .timeline-company {
   font-size: 15px;
   font-weight: 600;
@@ -350,35 +368,41 @@ small, .text-sm {
 }
 
 .timeline-content {
-  background: var(--accent-superlight) !important;
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  background: none !important;
+  border: 0.5px solid var(--stroke-superlight);
   border-radius: var(--bord-r-small);
 }
 
 .timeline-content:hover {
-  box-shadow: 0 20px 40px rgba(15, 53, 45, 0.15);
+  box-shadow: 0 20px 40px rgba(51, 28, 195, 0.10);
+  background-color: #F1F2F3;
+  border: 1px solid var(--stroke-superlight);
 }
 
 .timeline-date {
-  background: var(--primary);
+  background: var(--accent-dark);
   color: var(--bg0);
-  box-shadow: 0 8px 24px rgba(255, 238, 127, 0.4);
+  box-shadow: 0 8px 24px rgba(51, 28, 195, 0.2);
   border-radius: var(--bord-r-mini);
+  font-weight: 500 !important;
 }
 
 .timeline-badge {
   background: var(--accent);
-  border: 1px solid rgba(16, 53, 45, 0.15);
-  color: var(--primary);
+  border: 1px solid rgba(51, 28, 195, 0.2);
+  color: #FFFFFF;
   border-radius: var(--bord-r-mini);
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 4px;
+}
 
+.timeline-role {
+    font-weight: 500 !important;
 }
 
 #deployExperience {
-  background-color: var(--primary); 
+  background-color: var(--accent);
   color: var(--bg0);
   border: none;
   border-radius: var(--bord-r-small);
@@ -391,40 +415,41 @@ small, .text-sm {
 
 #deployExperience:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: none;
   background-color: var(--accent-dark);
- 
 }
 
 
 #toggleTimeline {
   border: 0px solid var(--primary);
-  background: transparent blur;;
-  color: var(--primary);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  background: transparent blur;
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
+  ;
 }
 #toggleTimeline:hover {
   border: 0px solid var(--primary);
-  background: var(--primary-light);
+  background: var(--accent-dark);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
 
 #stickyBackToSkills {
   border: 0px solid var(--primary);
-  background: transparent blur;;
-  color: var(--primary);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  background: transparent blur;
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.12);
 }
 #stickyBackToSkills:hover {
   border: 0px solid var(--primary);
-  background: var(--primary-light);
+  background: var(--accent-dark);
   color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(255, 238, 127, 0.3);
+  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
 }
 
+
 #footerBackToSkills {
-  background-color: var(--primary);
+  background-color: var(--accent);
   color: var(--bg0);
   border: none;
   border-radius: var(--bord-r-small);
@@ -448,25 +473,23 @@ small, .text-sm {
    ========================================= */
 
 .modal {
-  background: rgba(15, 53, 45, 0.4) !important; /* this casts the shadow on whole screen behind modal-box*/
+  background: rgba(50, 55, 89, 0.4) !important;
 }
-
 
 .modal-box {
   background: var(--bg0) !important;
-  border-radius: var(--bord-r-small);
- /* border: 1px solid var(--stroke) !important; (removed via comments for now) */
+  border-radius: var(--bord-r-large);
 }
 
 .modal-head {
   background: var(--primary) !important;
   backdrop-filter: blur(10px);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-top-left-radius: var(--bord-r-large);
+  border-top-right-radius: var(--bord-r-large);
 }
 
 .modal-title {
-  color: var(--accent) !important;
+  color: #FFFFFF !important;
 }
 
 .modal-sub {
@@ -477,18 +500,18 @@ small, .text-sm {
 .modal-close {
   background: var(--primary) !important;
   color: var(--bg0) !important;
-  border-color: var(--stroke-light);
+  border-color: var(--stroke-light) !important;
+  border-radius: 0px !important;
 }
 
 .modal-close:hover {
-  background: var(--stroke-light) !important;
+  background: var(--accent-dark) !important;
 }
 
-
 .chip {
-  background: var(--accent);
-  color: var(--bg0);
-  border: 1px solid var(--stroke-light);
+  background: var(--bg0);
+  color: var(--accent-dark);
+  border: var(--bord-main) solid var(--accent-dark);
   border-radius: var(--bord-r-mini);
   padding-top: 5px;
   padding-bottom: 5px;
@@ -497,33 +520,34 @@ small, .text-sm {
 }
 
 .bullets {
-background: none;
+  background: none;
 }
 
 .bullet {
   background: var(--bg0) !important;
-  border: 1px solid var(--primary-light) !important;
+  border: 1px solid var(--stroke-superlight) !important;
   border-radius: var(--bord-r-small);
 }
 
 .bullet i {
-  color: var(--primary) !important;
+  color: var(--stroke-light) !important;
 }
 
 .bullet p {
-  color: var(--primary);
+  color: var(--stroke-light);
 }
-
 
 
 /* =========================================
    Section CONTACT CARD
    ========================================= */
 
-   .contact-card {
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
-  box-shadow: var(--shadow, 0 18px 40px rgba(0, 0, 0, 0.06));
+.contact-card {
+  max-width: 700px;
+  border-radius: 0px;
+  background: var(--bg0);
+  border: 0px solid var(--stroke, rgba(0, 0, 0, 0.08));
+
 }
 
 .lead-title {
@@ -531,11 +555,11 @@ background: none;
 }   
 
 .lead-subtitle {
-  color: var(--primary-light);
+  color: var(--stroke);
+  font-weight: 600;
 }
 
-
-   .form {
+.form {
   display: grid;
   gap: 16px;
   margin-top: 24px;
@@ -549,7 +573,7 @@ background: none;
 
 .field label {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--font-w);
   color: var(--primary);
 }
 
@@ -558,7 +582,7 @@ background: none;
   width: 100%;
   padding: 12px 16px;
   border-radius: var(--bord-r-small);
-  border: 1px solid var(--stroke);
+  border: 1px solid var(--stroke-superlight);
   background: rgba(255, 255, 255, 0.9);
   font-family: var(--font-body);
   font-size: 15px;
@@ -569,8 +593,8 @@ background: none;
 .field input:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 53, 45, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(51, 28, 195, 0.12);
 }
 
 .field textarea {
@@ -583,22 +607,23 @@ background: none;
   padding-top: 24px;
   border-top: 1px solid var(--stroke);
 }
+
 /* Contact form "send request" button */
 
 #sendform {
-  background: var(--accent);
-  border: 1.5px solid var(--accent);
-  color: var(--bg1);
-  border-radius: var(--bord-r-large);
+  border: 0px solid var(--accent);
+  color: var(--accent-superlight);
+  border-radius: 0px;
   justify-content: center;
   align-items: center;
   padding: 19px 26px 16px;
   line-height: 100%;
+  background-color: var(--accent);
 }
 
 #sendform:hover {
-  border: 1.5px solid var(--primary);
-  background: var(--primary-light);
-  color: var(--accent-superlight);
-  box-shadow: 0 8px 20px rgba(51, 28, 195, 0.2);
+  border: 0px solid var(--primary);
+  background: var(--accent-dark);
+  color: var(--bg0);
+  box-shadow: none;
 }
