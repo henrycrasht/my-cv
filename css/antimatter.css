@@ -395,7 +395,7 @@ small, .text-sm {
 }
 
 .timeline-date {
-  background: var(--accent-dark);
+  background: var(--accent-light);
   color: var(--bg0);
   box-shadow: 0 8px 24px rgba(51, 28, 195, 0.2);
   border-radius: var(--bord-r-mini);
