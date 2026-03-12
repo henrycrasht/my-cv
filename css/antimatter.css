@@ -7,35 +7,35 @@
    ========================================= */
 :root {
   /* Core Palette — extracted from maika-outsourcing.com Webflow CSS */
-  --bg0:               #FFFFFF;   /* lavender-light: main background */
-  --bg1:               #EEF7FF;   /* pale lavender: card zones, accent areas */
-  --primary:           #1A22E4;   /* delft-blue: headings, text, footer */
-  --primary-light:     #32375999; /* delft-blue at ~60% opacity */
-  --accent:            #1A22E4;   /* chrysler-blue: CTA, links, highlights */
-  --accent-dark:       #090A3A;   /* darker chrysler for gradients */
-  --accent-light:      #5A4ADB;   /* lighter chrysler for hover states */
-  --accent-btn:        #1A22E4;   /* button accent */
-  --accent-superlight: #dbdbf2;   /* very pale lavender background */
+  --bg0:               #FFFFFF;   /*  */
+  --bg1:               #EEF7FF;   /*  */
+  --primary:           #151515;   /*  */
+  --primary-light:     #272525;   /*  */
+  --accent:            #272525;   /*  */
+  --accent-dark:       #202024;   /*  */
+  --accent-light:      #3D3D3D;   /*  */
+  --accent-btn:        #272525;   /* button accent */
+  --accent-superlight: #c6c6c6;   /*  */
 
   /* Button gradient */
   --btn-gradient: linear-gradient(270deg, #2214A0 0%, #5A4ADB 100%);
 
-  --stroke: #090A3A;         /* deep coave */
-  --stroke-light: #465C6F;   /* white at 30% opacity */
-  --stroke-superlight: #E2E8EE;
+  --stroke: #272525;         /*  */
+  --stroke-light: #465C6F;   /*  */
+  --stroke-superlight: #E0E0E0;
 
   /* Timeline line: delft-blue → chrysler-blue */
   --timeline-line: linear-gradient(
     180deg,
     transparent        2%,
-    var(--primary)     15%,
+    var(--accent)     15%,
     var(--primary-light) 40%,
-    var(--accent-dark) 70%,
+    var(--stroke-light) 70%,
     transparent        100%
   );
 
   /* max width of main container */
-  --container: 1120px;
+  --container: 1220px;
 
   /* Borders & radii — Maika uses generous rounded corners */
   --bord-r-mini: 0px;
@@ -47,7 +47,7 @@
 
 
   /* Topbar */
-  --topb-bg:   var(--bg0);
+  --topb-bg:   var(--primary-light);
   --topb-surf: #FFFFFF;
   --topb-card: ##331cc30d;
 
@@ -55,7 +55,7 @@
   --font-heading: 'Work Sans', system-ui, sans-serif;
   --font-body:    'Work Sans', system-ui, sans-serif;
   --font-menu:    'Droid Sans', system-ui, sans-serif; /* Optional: if you have specific menu styling */
-  --font-clr: #090A3A;
+  --font-clr: #151515;
   --font-w: 400;
   
 }
@@ -75,7 +75,7 @@ body {
   color: var(--stroke-light);
 }
 
-h1, h2, h3, .brand {
+h1, h2, h3 {
   font-family: var(--font-heading) !important;
   font-weight: 700 !important;
   color: var(--font-clr);
@@ -126,12 +126,16 @@ small, .text-sm {
 }
 
 .brand .company-badge-center .brand-text-main, .brand-text-sub {
-  color: var(--accent) !important;
+  color: var(--stroke-superlight) !important;
+}
+
+.brand-text-main {
+    color: var(--stroke-superlight);
 }
 
 /* Job offer link in topbar */
 .job-offer-link {
-  color: var(--);
+  color: var(--accent-superlight);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 3px;
@@ -151,34 +155,33 @@ small, .text-sm {
 
 #top-lkd {
   background-color: transparent;
-  color: var(--stroke);
+  color: var(--stroke-superlight);
   padding: 12px 16px;
   text-decoration: none;
-  border: 1px solid var(--stroke);
+  border: 0.5px solid var(--stroke-superlight);
   font-family: var(--font-menu);
 }
 
 #top-lkd:hover {
-  background-color: var(--stroke);
-  color: #FFFFFF;
+  background-color: var(--stroke-superlight);
+  color: var(--accent);
   box-shadow: none;
 }
 
 #top-contact {
-  background-color: var(--accent);
-  color:   #FFFFFF;
+  background-color: var(--stroke-superlight);
+  color:   var(--accent);
   padding: 12px 16px;
   text-decoration: none;
-  border-color: var(--accent);
+  border: 0px solid var(--stroke);
   font-family: var(--font-menu);
 }
 
 #top-contact:hover {
-  background-color: var(--primary);
+  background-color: var(--topb-bg);
   box-shadow: none;
-  color: #FFFFFF;
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
+  color: var(--stroke-superlight);
+  border: 0.5px solid var(--stroke-superlight);
 }
 
 
@@ -205,7 +208,7 @@ small, .text-sm {
    ========================================= */
 .hero {
   background-color: transparent;
-  background-image: linear-gradient(180deg, #EEF7FF00 0%, #EEF7FF 100%);
+  background-image: linear-gradient(180deg, var(--primary) 0%, var(--accent-superlight) 100%);
   border-radius: var(--bord-r-mini);
   box-shadow: none !important;
   max-width: none !important;
@@ -232,7 +235,7 @@ small, .text-sm {
 
 .hero .headline-grad {
   background: none !important;
-  color: var(--stroke) !important;
+  color: var(--stroke-superlight) !important;
   font-family: var(--font-menu) !important;
   font-weight: 1;
 }
@@ -272,8 +275,8 @@ small, .text-sm {
 }
 
 .hero-btn:hover {
-  background: var(--accent-dark);
-  color: #FFFFFF;
+  background: var(--stroke-superlight);
+  color: var(--accent-dark);
   box-shadow: 0 10px 24px rgba(51, 28, 195, 0.25);
 }
 
@@ -304,8 +307,8 @@ small, .text-sm {
 }
 
 .info h3 {
-  color: var(--primary);
-  background: var(--accent-superlight);
+  color: var(--stroke-superlight);
+  background: var(--accent-light);
   border: none;
   border-radius: var(--bord-r-mini);
 }
