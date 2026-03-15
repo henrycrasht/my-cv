@@ -1,4 +1,4 @@
-/* DEFAULT THEME v1.0 */
+/* JOSS THEME v1.1 */
 
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Epilogue:wght@300;400;500;600;700;800&display=swap');
 
@@ -15,8 +15,8 @@
   --bg1:               #DEE7E2;   /* pale sage, cards / sections */
 
   /* Primary text & structural color (calm, senior) */
-  --primary:           #296459;   /* deep muted teal-green */
-  --primary-light:     #4C8075;   /* softer teal for hovers, secondary text */
+  --primary:           #445c58de;   /* deep muted teal-green */
+  --primary-light:     #588279b4;   /* softer teal for hovers, secondary text */
 
   /* Accent for CTAs, links, highlights (warmer green) */
   --accent:            #3F5E7A;  /* desaturated blue-grey */
