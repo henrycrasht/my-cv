@@ -9,12 +9,12 @@
   /* Core Palette — extracted from maika-outsourcing.com Webflow CSS */
   --bg0:               #FFFFFF;   /*  */
   --bg1:               #EEF7FF;   /*  */
-  --primary:           #151515;   /*  */
+  --primary:           #E9EBF3;   /*  */
   --primary-light:     #272525;   /*  */
   --accent:            #272525;   /*  */
   --accent-dark:       #202024;   /*  */
   --accent-light:      #3D3D3D;   /*  */
-  --accent-btn:        #272525;   /* button accent */
+  --accent-btn:        #0777D8;   /* button accent */
   --accent-superlight: #c6c6c6;   /*  */
 
   /* Button gradient */
