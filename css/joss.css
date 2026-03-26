@@ -8,34 +8,30 @@
    BASE values
    ========================================= */
 :root {
-  /* Core Palette — Henry / Personal CV (Green & Neutrals) */
+  /* Core Palette — Henry / Personal CV (Blue & Neutrals) */
 
   /* Backgrounds */
-  --bg0:               #F4F6F5;   /* soft neutral grey-green, main background */
-  --bg1:               #DEE7E2;   /* pale sage, cards / sections */
+  --bg0:               #F4F6F9;   /* soft cool grey-blue, main background */
+  --bg1:               #E2EBF3;   /* pale blue-grey, cards / sections */
 
   /* Primary text & structural color (calm, senior) */
-  --primary:           #445c58de;   /* deep muted teal-green */
-  --primary-light:     #588279b4;   /* softer teal for hovers, secondary text */
+  --primary:           #245778;   /* muted deep blue-teal for headings */
+  --primary-light:     #5C86A6;   /* softer blue for hovers / secondary text */
 
-  /* Accent for CTAs, links, highlights (warmer green) */
-  --accent:            #3F5E7A;  /* desaturated blue-grey */
-  --accent-dark:       #2B4256;
-  --accent-light:      #647C93;
-  --accent-superlight: #9eaec2;
-
-
-  /* Button-specific accent (can be same as accent) */
-  --accent-btn:        #89c5b2f0;
+  /* Accent for CTAs, links, highlights (base = #49A2E1) */
+  --accent:            #49A2E1;   /* main accent blue (buttons, links) */
+  --accent-dark:       #2F75A8;   /* darker blue for hover / focus */
+  --accent-light:      #7BBBEA;   /* lighter blue for pills / subtle accents */
 
   /* Very light accent background (chips, soft zones) */
-  --accent-superlight: #E4F0E7;   /* very pale green wash */
+  --accent-superlight: #D9EAF8;   /* very pale blue wash */
 
-  /* Button gradient — subtle green, not neon */
-  --btn-gradient: linear-gradient(270deg, #1F4C28 0%, #4F8F58 100%);
+  /* Button-specific accent (solid + gradient) */
+  --accent-btn:        #2F75A8;   /* solid CTA color */
+  --btn-gradient:      linear-gradient(270deg, #2F75A8 0%, #49A2E1 100%);
 
   /* Strokes & radii */
-  --stroke:            #16363A1A; /* low-contrast teal/grey border */
+  --stroke:            #1934471A; /* low-contrast blue-grey border */
   --stroke-light:      #FFFFFF4D;
 
   --timeline-line: linear-gradient(
@@ -59,12 +55,13 @@
   /* Topbar + surfaces */
   --topb-bg:           #FFFFFF;
   --topb-surf:         #FFFFFF;
-  --topb-card:         #D4E1DA;
+  --topb-card:         #D7E3F0;   /* subtle blue-tinted card around logo */
 
-  /* Typography (keep your existing stack if you like it) */
+  /* Typography */
   --font-heading:      'Bricolage Grotesque', system-ui, sans-serif;
   --font-body:         'Epilogue', system-ui, sans-serif;
 }
+
 
 
 
