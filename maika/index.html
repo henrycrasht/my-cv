@@ -212,6 +212,25 @@
       // 6. LOAD MAIN.JS
       const script = document.createElement('script');
       script.src = '../js/main.js';
+
+        script.onload = function () {
+        // 7. LOCAL BRAND OVERRIDE FOR THIS PAGE
+        const proper = "Maïka";
+
+        const idEl = document.getElementById("dynamic-company-name");
+        if (idEl) idEl.textContent = proper;
+
+        document.querySelectorAll(".dynamic-company-inline").forEach(el => {
+          el.textContent = proper;
+        });
+
+        const mobileLabel = document.getElementById("mobile-topbar-label");
+        if (mobileLabel) {
+          mobileLabel.textContent = `Josselin @ ${proper}`;
+        }
+      };
+
+
       document.body.appendChild(script);
     });
 </script>
