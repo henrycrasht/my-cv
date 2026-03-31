@@ -36,7 +36,6 @@ if (rawName === 'joss') {
   }
 }
 
-
 // Main dynamic company name (topbar badge + inline mentions)
 const companyNameElement = document.getElementById('dynamic-company-name');
 if (companyNameElement) companyNameElement.textContent = formattedName;

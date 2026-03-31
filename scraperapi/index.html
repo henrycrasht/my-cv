@@ -209,38 +209,30 @@
         }
       }
 
-      // 6. LOAD MAIN.JS — brand fix runs AFTER main.js finishes
-      const script = document.createElement('script');
-      script.src = '../js/main.js';
+         // 6. LOAD MAIN.JS
+   const script = document.createElement('script');
+   script.src = '../js/main.js';
 
-      // -------------------------------------------------------
-      // 7. BRAND CASING FIX — runs after main.js has loaded
-      //    Add other slugs to brandMap as needed
-      // -------------------------------------------------------
-      const brandMap = {
-        "/scraperapi": "ScraperAPI",
-        "/payfit":     "PayFit",
-        "/qonto":      "Qonto"
-      };
+        script.onload = function () {
+        // 7. LOCAL BRAND OVERRIDE FOR THIS PAGE
+        const proper = "ScraperAPI";
 
-      script.onload = function () {
-        const path = window.location.pathname.toLowerCase();
-        const match = Object.entries(brandMap).find(([slug]) => path.includes(slug));
+        const idEl = document.getElementById("dynamic-company-name");
+        if (idEl) idEl.textContent = proper;
 
-        if (match) {
-          const brandName = match[1];
-          const applyBrandCase = () => {
-            document.querySelectorAll(".dynamic-company-inline").forEach(el => {
-              el.textContent = brandName;
-            });
-          };
-          applyBrandCase();
-          setTimeout(applyBrandCase, 300); // safety net if main.js re-renders async
+        document.querySelectorAll(".dynamic-company-inline").forEach(el => {
+          el.textContent = proper;
+        });
+
+        const mobileLabel = document.getElementById("mobile-topbar-label");
+        if (mobileLabel) {
+          mobileLabel.textContent = `Josselin @ ${proper}`;
         }
       };
-      // -------------------------------------------------------
 
-      document.body.appendChild(script);
+
+
+   document.body.appendChild(script);
     });
 </script>
 
