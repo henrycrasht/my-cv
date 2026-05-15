@@ -1,0 +1,575 @@
+/* ELECTRA THEME v1.0 */
+
+/*
+  CSS IDENTITY NOTES — go-electra.com
+  Primary font: Aeonik (proprietary) + Satoshi (proprietary)
+  → Substitution: 'DM Sans' from Google Fonts (geometric humanist sans-serif,
+    clean and modern, closest available match to Aeonik's proportions)
+  Secondary font: Satoshi (proprietary, used for body medium breakpoints)
+  → Also substituted with 'DM Sans' (unified font stack)
+  
+  Colour system (Tailwind-based, no :root block in source):
+  • Dominant dark:    #0B2936  (slate-60)
+  • CTA/Accent:       #43F5BA  (cyan-60)
+  • Accent mid:       #87F9D3  (cyan-50)
+  • Accent light:     #E7FEFB  (cyan-10)
+  • Page background:  #FFFFFF / #F7F8F9
+  • Secondary bg:     #DBF1F1  (slate-20)
+  • Body text:        #3C5459  (slate-50)
+  • Border/Stroke:    #BBD4D6  (slate-30)
+  
+  Border radius: pill buttons (9999px), cards (32px), sections large (32px)
+  → mapped to bord-r-max: 32px, bord-r-large: 16px, bord-r-small: 8px
+  
+  Hero/CTA sections: dark (#0B2936) background with #43F5BA highlights
+  Topbar: white with backdrop blur on sticky state
+  No button gradient — CTA uses flat #43F5BA fill on dark bg
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+
+
+
+/* =========================================
+   BASE values
+   ========================================= */
+:root {
+  /* Core Palette */
+  --bg0:               #FFFFFF;        /* main background, white */
+  --bg1:               #DBF1F1;        /* secondary bg, slate-20 */
+  --primary:           #0B2936;        /* dominant dark, slate-60 */
+  --primary-light:     rgba(11,41,54,0.4); /* dark at 40% opacity for strokes */
+  --accent:            #43F5BA;        /* CTA cyan-60 */
+  --accent-dark:       #37DDa6;        /* cyan-70, darker accent for hover states */
+  --accent-light:      #E7FEFB;        /* cyan-10, very light tint */
+  --accent-btn:        #43F5BA;        /* CTA button fill */
+
+  /* Button gradient — Electra uses flat CTA, no gradient; using accent solid */
+  --btn-gradient: linear-gradient(270deg, #43F5BA 0%, #87F9D3 100%);
+
+  --stroke: #BBD4D6;                   /* slate-30, border color */
+  --stroke-light: rgba(11,41,54,0.15); /* subtle dark stroke */
+
+  /* Timeline line: dark → cyan, on-brand */
+  --timeline-line: linear-gradient(
+    180deg,
+    transparent        2%,
+    var(--primary)     15%,
+    var(--primary-light) 40%,
+    var(--accent-dark) 70%,
+    transparent        100%
+  );
+
+  /* max width of main container */
+  --container: 1328px;
+
+  /* Border radii */
+  --bord-r-mini:  4px;    /* unchanged */
+  --bord-r-small: 8px;    /* unchanged */
+  --bord-r-large: 16px;   /* card/section radius */
+  --bord-r-max:   32px;   /* pill-like sections, large cards */
+
+  /* Topbar */
+  --topb-bg:   rgba(255,255,255,0.9);  /* semi-transparent white */
+  --topb-surf: #FFFFFF;                /* solid white surface */
+  --topb-card: rgba(11,41,54,0.05);    /* very light dark tint card bg */
+
+  /* Typography */
+  --font-heading: 'DM Sans', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+}
+
+html {
+  font-size: 16px !important;
+}
+
+body {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  line-height: 1.6;
+  background: var(--bg0) !important;
+}
+
+h1, h2, h3, .brand {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+}
+
+h1 {
+  letter-spacing: -0.03em !important;
+}
+
+h2 {
+  letter-spacing: -0.02em !important;
+}
+
+p, .btn, .pill, .kicker, .subhead, .timeline-date, .tag, small {
+  font-family: var(--font-body) !important;
+}
+
+small, .text-sm {
+  font-size: 0.895rem;
+}
+
+/* =========================================
+   BUTTONS Theming
+   ========================================= */
+.btn {
+  border-radius: var(--bord-r-max);
+  padding: 12px 24px;
+  font-weight: 600;
+}
+
+.btn-dark {
+  background-color: var(--primary);
+  color: var(--accent);
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.btn-dark:hover {
+  background-color: #0F3548;
+  color: var(--accent);
+}
+
+.btn-light {
+  background-color: var(--accent-light);
+  color: var(--primary);
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.btn-light:hover {
+  background-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(67, 245, 186, 0.3);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--primary);
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 10px 24px rgba(67, 245, 186, 0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--stroke);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: var(--bord-r-max);
+}
+
+.btn-ghost:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.btn-ghost.light {
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 24px;
+  text-decoration: none;
+}
+
+.btn-ghost.light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  border-color: var(--accent);
+}
+
+
+#deployExperience {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: var(--bord-r-max);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+#deployExperience:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(67, 245, 186, 0.3);
+    background-color: var(--accent-dark);
+}
+
+
+/* =========================================
+   TOPBAR Theming
+   ========================================= */
+
+.topbar {
+  background: var(--topb-bg) !important;
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(11, 41, 54, 0.08) !important;
+}
+
+.company-badge-center {
+  box-shadow: 0 4px 15px rgba(11, 41, 54, 0.08) !important;
+  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  border-radius: var(--bord-r-mini);
+  background: var(--topb-surf, #ffffff);
+}
+
+.company-badge-center .brand-text-main, .brand-text-sub {
+  color: var(--primary) !important;
+}
+
+.at-symbol {
+  color: var(--accent) !important;
+  opacity: 0.8;
+}
+
+/* =========================================
+   SECTIONS properties
+   ========================================= */
+
+.section {
+  border-radius: var(--bord-r-max);
+}
+
+.section-header {
+  color: var(--primary);
+}
+
+
+/* =========================================
+   HERO Section, company specifics
+   ========================================= */
+.hero {
+  background-color: var(--primary) !important;
+  border-radius: var(--bord-r-max);
+  box-shadow: 0 20px 40px rgba(11, 41, 54, 0.2) !important;
+}
+
+.hero .panel {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.hero .panel::before {
+  display: none !important;
+}
+
+.hero h1 {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  font-size: clamp(40px, 3.6vw, 48px);
+  letter-spacing: -0.04em;
+  line-height: 120%;
+}
+
+.hero .headline-grad {
+  background: none !important;
+  -webkit-text-fill-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.hero .subhead {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.hero-btn {
+    color: var(--accent-light);
+    background: var(--accent-btn)
+}
+
+.kicker {
+  background: rgba(67, 245, 186, 0.12) !important;
+  border: 1px solid rgba(67, 245, 186, 0.3) !important;
+  color: var(--accent) !important;
+}
+
+.hero .pill {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #FFFFFF !important;
+}
+
+.hero .pill i {
+  color: var(--accent) !important;
+}
+
+
+/* =========================================
+   SKILLS Card Section
+   ========================================= */
+#skills {
+  background: var(--accent-light);
+  border-radius: var(--bord-r-max);
+}
+
+.info {
+  padding: 24px;
+  border-radius: var(--bord-r-large);
+  background: var(--bg0);
+  border: 1px solid var(--stroke);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(11, 41, 54, 0.12);
+  border-color: var(--accent);
+}
+
+.info h3 {
+  color: var(--primary);
+  background: var(--accent-light);
+  border: none;
+  border-radius: var(--bord-r-mini);
+}
+
+.tag {
+  background: none;
+  border: none;
+  border-radius: 24px;
+  color: var(--primary);
+}
+
+#company-focus {
+    background: var(--primary);
+    border-radius: var(--bord-r-max);
+    padding: 60px 20px;
+    margin-top: 20px;
+}
+
+#company-focus .section-title {
+    color: var(--accent);
+}
+
+#company-focus .section-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#specific-cards-container .info {
+    border: 1px solid var(--stroke);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+#personality-focus, #fit-focus {
+    background: var(--bg0);
+    border-radius: var(--bord-r-max);
+}
+
+#fit-focus {
+    border: 2px solid var(--accent);
+}
+
+#specific-cards-container .info {
+    background: var(--bg1);
+}
+
+
+
+/* =================================================
+   TIMELINE Theming
+   ================================================= */
+
+.timeline-company {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.85;
+  margin: 4px 0 12px;
+}
+
+.timeline::before {
+  background: var(--timeline-line) !important;
+  width: 5px !important;
+}
+
+.timeline-content {
+  background: var(--accent-light) !important;
+  border: 1px solid var(--stroke, rgba(0, 0, 0, 0.08));
+  border-radius: var(--bord-r-large);
+}
+
+.timeline-content:hover {
+  box-shadow: 0 20px 40px rgba(11, 41, 54, 0.15);
+}
+
+.timeline-date {
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(67, 245, 186, 0.25);
+  border-radius: var(--bord-r-mini);
+}
+
+.timeline-badge {
+  background: var(--accent);
+  border: 1px solid rgba(11, 41, 54, 0.15);
+  color: var(--primary);
+  border-radius: var(--bord-r-mini);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+}
+
+.timeline-toggle {
+  border: 2px solid var(--primary);
+  background: var(--accent-light);
+  color: var(--primary);
+  box-shadow: 0 8px 20px rgba(67, 245, 186, 0.2);
+}
+.timeline-toggle:hover {
+  border: 2px solid var(--accent);
+  background: var(--primary);
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(67, 245, 186, 0.3);
+}
+
+.stickyBackToSkills {
+  border: 2px solid var(--primary);
+  background: var(--accent-light);
+  color: var(--primary);
+  box-shadow: 0 8px 20px rgba(67, 245, 186, 0.2);
+}
+.stickyBackToSkills:hover {
+  border: 2px solid var(--accent);
+  background: var(--primary);
+  color: var(--accent);
+  box-shadow: 0 8px 20px rgba(67, 245, 186, 0.3);
+}
+
+
+
+/* =========================================
+   MODAL Theming
+   ========================================= */
+
+.modal {
+  background: rgba(11, 41, 54, 0.5) !important;
+}
+
+.modal-box {
+  background: var(--bg0) !important;
+  border-radius: var(--bord-r-large);
+}
+
+.modal-head {
+  background: var(--primary) !important;
+  backdrop-filter: blur(10px);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-title {
+  color: var(--accent) !important;
+}
+
+.modal-sub {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.modal-close {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.modal-close:hover {
+  background: var(--accent) !important;
+  color: var(--primary) !important;
+}
+
+.chip {
+  background: var(--accent);
+  color: var(--primary);
+  border: 1px solid rgba(11, 41, 54, 0.15);
+  border-radius: var(--bord-r-mini);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.bullets {
+  background: none;
+}
+
+.bullet {
+  background: var(--bg0) !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: var(--bord-r-small);
+}
+
+.bullet i {
+  color: var(--accent) !important;
+}
+
+.bullet p {
+  color: var(--primary);
+}
+
+
+
+/* =========================================
+   Section CONTACT CARD
+   ========================================= */
+.form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--bord-r-small);
+  border: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--primary);
+  transition: all 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(67, 245, 186, 0.2);
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.contact-info {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--stroke);
+}
