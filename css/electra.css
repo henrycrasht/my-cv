@@ -19,7 +19,7 @@
   • Border/Stroke:    #BBD4D6  (slate-30)
   
   Border radius: pill buttons (9999px), cards (32px), sections large (32px)
-  → mapped to bord-r-max: 32px, bord-r-large: 16px, bord-r-small: 8px
+  → mapped to bord-r-max: 32px, bord-r-large: 16px, bord-r-small: 8px ((no usage of "mini" but for the topbar items)
   
   Hero/CTA sections: dark (#0B2936) background with #43F5BA highlights
   Topbar: white with backdrop blur on sticky state
