@@ -180,7 +180,7 @@ img {
   font-size: 0.85rem;
   opacity: 0.75;
   position: relative;
-  top: 3px;
+  top: -1px;
 }
 
 /* Hidden on desktop */
