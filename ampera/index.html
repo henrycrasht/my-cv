@@ -873,38 +873,35 @@
     <!-- ── ACTION 3.1 ── -->
     <div class="card-soft col gap-s">
       <div class="xs" style="font-weight:700; color:var(--mint);">ACTION 3.1</div>
-      <div class="t2 mb-s">Reactivate the stalled AI project</div>
+      <div class="t2 mb-s">Voice AI goes live (M3)</div>
       <div class="col gap-s">
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M3:</b> formal kickoff with Product + Data</div></div>
-        <div class="xs dot-indent">I am Care sponsor from Day 1 — the missing piece that stalled the project 6 months ago</div>
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>Use case #1:</b> Session failure self-service (31% of volume)</div></div>
-        <div class="xs dot-indent">Structured backend data available · target: 40% auto-resolution → −1,240 contacts/month</div>
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>Use case #2:</b> Refund status bot (26% of volume)</div></div>
-        <div class="xs dot-indent">Real-time payment system check → status in seconds · target: 50% deflection → −1,040 contacts/month</div>
-        <div class="row gap-s"><div class="dot"></div><div class="body">Go-live M5–M6 · written channel only</div></div>
-        <div class="xs dot-indent">≥80% correct deflection required before launch — no AI deployed on unvalidated use cases</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>Gate:</b> sandbox passed ≥80% resolution in M2–M3 written tests</div></div>
+        <div class="xs dot-indent">Only then: voice AI deployed on BPO IVR for "charging issue" intent — ElevenLabs / Retell AI</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>Flow:</b> caller authenticated → session data pulled live → resolves or warm-transfers with full context pre-loaded</div></div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M4–M6:</b> iterate weekly on containment rate</div></div>
+        <div class="xs dot-indent">Recontact rate monitored as quality guardrail · target 55% containment by M6 → ~1,040 deflected calls/month</div>
       </div>
       <div style="margin-top:auto; display:flex; flex-direction:column; background:var(--mint-lt); border-radius:5px; border-left:3px solid var(--mint); padding:1.4vh 1.1vw; gap:0.35vh;">
         <div style="font-size:0.62vw; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.1em;">Target</div>
-        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">Deflection 9% → ≥25% · −2,280 contacts/month by M6</div>
+        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">Deflection 9% → ≥27% · BPO AHT 6 min → ~4.5 min on warm transfers</div>
       </div>
     </div>
 
     <!-- ── ACTION 3.2 ── -->
     <div class="card-soft col gap-s">
       <div class="xs" style="font-weight:700; color:var(--mint);">ACTION 3.2</div>
-      <div class="t2 mb-s">First AI agents live</div>
+      <div class="t2 mb-s">Payment agent: full stack (M3–M4)</div>
       <div class="col gap-s">
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M2 — QA Agent (written channel)</b></div></div>
-        <div class="xs dot-indent">Dust Agent deployed on Intercom · fires on every closed ticket · scores against M1 rubric · 100% of written interactions scored automatically</div>
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M2 — Payment notifications (layer 1)</b></div></div>
-        <div class="xs dot-indent">Auto-push on payment events + refund confirmations · webhook only · expected −15 to −20% on "where is my refund?" contacts</div>
-        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M2–M3 — Session failure agent (sandbox)</b></div></div>
-        <div class="xs dot-indent">UC#1 tested on written Intercom contacts first — lower risk than voice, same logic · control environment before M3 voice go-live</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>Layer 1</b> already live at M2</div></div>
+        <div class="xs dot-indent">Proactive notifications on payment events already cut −15–20% of inbound "where is my refund?" contacts</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M3 — Layer 3:</b> reactive status agent</div></div>
+        <div class="xs dot-indent">AI reads payment history · resolves receipt resend, duplicate charge, refund status — no human involved</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body"><b>M4 — Layer 2:</b> decision agent</div></div>
+        <div class="xs dot-indent">Assesses refund / discount eligibility · actions eligible cases directly · escalates disputes and amounts &gt;€50</div>
       </div>
       <div style="margin-top:auto; display:flex; flex-direction:column; background:var(--mint-lt); border-radius:5px; border-left:3px solid var(--mint); padding:1.4vh 1.1vw; gap:0.35vh;">
         <div style="font-size:0.62vw; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.1em;">Target</div>
-        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">AI started in Sprint 1 · ships first production outputs in Sprint 2</div>
+        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">Payment contacts 2,600 → ~2,000/month · FCR on refunds 48% → ≥65%</div>
       </div>
     </div>
 
@@ -913,16 +910,16 @@
       <div class="xs" style="font-weight:700; color:var(--mint);">ACTION 3.3</div>
       <div class="t2 mb-s">Weekend coverage — permanent fix</div>
       <div class="col gap-s">
-        <div class="row gap-s"><div class="dot"></div><div class="body">Bridge solution from M1 was always temporary</div></div>
-        <div class="xs dot-indent">Paid supplement to existing freelancers · no new contract · tracked via M1–M2 volume data</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body">M1–M2 volume data now in — binary decision at M3</div></div>
         <div class="row gap-s"><div class="dot"></div><div class="body"><b>If weekend volume &gt;15% of weekly total:</b></div></div>
-        <div class="xs dot-indent">Dedicated weekend freelancer contract · ~€8–10K/year · decision at M3</div>
+        <div class="xs dot-indent">Dedicated weekend freelancer contract · ~€8–10K/year</div>
         <div class="row gap-s"><div class="dot"></div><div class="body"><b>If &lt;15%:</b> structured async protocol</div></div>
-        <div class="xs dot-indent">Monday morning triage + async prioritisation · AI coverage from M6 resolves permanently</div>
+        <div class="xs dot-indent">Friday EOD triage + Monday SLA · async prioritisation</div>
+        <div class="row gap-s"><div class="dot"></div><div class="body">Either way: AI coverage from M6 closes the gap permanently</div></div>
       </div>
       <div style="margin-top:auto; display:flex; flex-direction:column; background:var(--mint-lt); border-radius:5px; border-left:3px solid var(--mint); padding:1.4vh 1.1vw; gap:0.35vh;">
         <div style="font-size:0.62vw; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.1em;">Target</div>
-        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">Decision data-driven from M1–M2 volume tracking</div>
+        <div style="font-size:1.25vw; font-weight:700; color:var(--dark); line-height:1.3;">Decision data-driven · no structural gap past M6</div>
       </div>
     </div>
 
@@ -1260,7 +1257,7 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">3 AI use cases covering all channels</div>
+      <div class="t1">3 use cases, selected by impact × feasibility</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
       <div class="eyebrow" style="text-align:right;">AXIS 3 — AI & AUTOMATION VISION</div>
@@ -1378,7 +1375,7 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-   <div class="t1">We <span style="text-decoration:line-through;">need</span> feed Product & Data</div>
+      <div class="t1">Yes, we need Product & Data — so we give first</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
       <div class="eyebrow" style="text-align:right;">AXIS 3 — AI EXECUTION</div>
