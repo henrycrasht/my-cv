@@ -107,7 +107,7 @@
     /* Content block of each slide: natural height, centered vertically in remaining space */
     .S > .flex1 { flex: 0 1 auto; margin: auto 0; min-height: 0; }
     /* Overrides for slides where content should fill height, not float centered */
-    #s04 .S > .flex1 { flex: 1; margin: 0; }
+    #s03 .S > .flex1 { flex: 1; margin: 0; }
     #s05 .S > .flex1 { flex: 1; margin: 0; }
     #s06 .S > .flex1 { flex: 1; margin: 0; }
 
@@ -449,7 +449,7 @@
 
 
 <!-- ════════════════════════════════════════════════════════
-     SLIDE 03 · AXIS 1 — DIAGNOSIS
+     SLIDE 03 · AXIS 1 — DIAGNOSIS · BENCHMARK TABLE
      Background: WHITE
 
      EDIT ↓
@@ -457,7 +457,7 @@
 <div class="slide white" id="s03">
 <div class="S">
 
-  <div class="hdr mb-s">
+  <div class="hdr mb-m">
     <div>
       <div class="row gap-s mb-m">
           <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
@@ -467,7 +467,7 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">3 root causes behind all 6 symptoms</div>
+      <div class="t1">7 of 8 KPIs below industry standard</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
       <div class="eyebrow" style="text-align:right;">AXIS 1 — DIAGNOSIS</div>
@@ -475,71 +475,116 @@
     </div>
   </div>
 
-  <!-- ── 6 SYMPTOMS STRIP ── -->
-  <div style="display:flex; align-items:center; gap:0.55vw; margin-bottom:1.1vh; flex-shrink:0; flex-wrap:wrap;">
-    <div style="font-size:0.7vw; font-weight:700; color:var(--gray); letter-spacing:0.1em; text-transform:uppercase; white-space:nowrap; margin-right:0.3vw;">6 symptoms</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">CSAT 3.1/5</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">FCR on refunds −11pts</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">28h avg response time</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">Self-service deflection 9%</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">Country GMs bypassing BPO</div>
-    <div style="font-size:0.78vw; font-weight:600; color:var(--navy); background:var(--mint-lt); border:1px solid var(--mint); border-radius:4px; padding:0.2vh 0.6vw; white-space:nowrap;">Budget flat at volume ×2</div>
+  <!-- Framing line -->
+  <div style="background:rgba(9,33,45,0.04); border-radius:5px; padding:0.65vh 1.1vw; margin-bottom:1.1vh; flex-shrink:0;">
+    <span class="xs" style="color:var(--dark);">Designed for <b>5,000 contacts/month</b>. Now absorbing <b>11,000</b> — same team, same BPO contract written 2 years ago, zero automation.</span>
   </div>
 
-  <div class="g3 flex1">
+  <!-- Table -->
+  <div class="flex1" style="display:flex; flex-direction:column; min-height:0;">
 
-    <!-- ── PROBLEM 1 ── -->
-    <div class="card col gap-s">
-      <div class="row gap-s mb-s">
-        <div class="circle"><span>1</span></div>
-        <div class="t2">Operating model<br>structurally broken</div>
-      </div>
-      <div class="body">4 freelancers. Business hours only. <b>No weekend coverage. No triage or routing logic. No quality framework</b> on the written channel. Not a headcount problem — a structural one.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">→ CSAT 3.1/5 · 28h response time · no lever inside the current model to fix either</div>
-      </div>
+    <!-- Header row -->
+    <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; padding:0.65vh 0.9vw; background:var(--dark); border-radius:6px 6px 0 0; flex-shrink:0;">
+      <span style="font-size:0.60vw; font-weight:700; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em;">KPI</span>
+      <span style="font-size:0.60vw; font-weight:700; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; text-align:center;">Ampera today</span>
+      <span style="font-size:0.60vw; font-weight:700; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em; text-align:center;">Industry std</span>
+      <span style="font-size:0.60vw; font-weight:700; color:var(--mint); text-transform:uppercase; letter-spacing:0.1em; text-align:center;">Best-in-class</span>
+      <span style="font-size:0.60vw; font-weight:700; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em;">Main blocker</span>
     </div>
 
-    <!-- ── PROBLEM 2 ── -->
-    <div class="card col gap-s">
-      <div class="row gap-s mb-s">
-        <div class="circle"><span>2</span></div>
-        <div class="t2">BPO mis-scoped<br>& unmanaged</div>
-      </div>
-      <div class="body">Handles <b>60% of volume</b> but set up to fail on the <b>26%</b> that matters most (refunds, complex escalations). Contract renews in <b>5 months</b>. No evaluation started.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">→ FCR on refunds 48% and declining −11pts since Q3 2025</div>
-      </div>
-    </div>
+    <!-- Body -->
+    <div style="border:1px solid rgba(9,33,45,0.08); border-top:none; border-radius:0 0 6px 6px; overflow:hidden; flex:1; display:flex; flex-direction:column;">
 
-    <!-- ── PROBLEM 3 ── -->
-    <div class="card col gap-s">
-      <div class="row gap-s mb-s">
-        <div class="circle"><span>3</span></div>
-        <div class="t2">Zero automation<br>layer</div>
+      <!-- ROW 1: Overall CSAT -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07);"><span class="xs" style="font-weight:600; color:var(--dark);">Overall CSAT</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,55,55,0.10);"><span class="xs" style="font-weight:700; color:#a03030;">3.5 / 5 (70%)</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">75–80%</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">85–90%</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--gray);">28h response time + low FCR</span></div>
       </div>
-      <div class="body">Deflection at <b>9%</b> vs 30% target. <b>48% of contacts</b> are structurally automatable. AI project stalled <b>6 months</b> — no Care sponsor to own it.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">→ The only lever fixing CSAT + cost + scale is sitting idle</div>
-      </div>
-    </div>
 
+      <!-- ROW 2: Written CSAT -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="font-weight:600; color:var(--dark);">Written CSAT</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,40,40,0.18);"><span class="xs" style="font-weight:700; color:#9a2828;">3.1 / 5 (62%)</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">70–75%</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">80%+</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,40,40,0.05);"><span class="xs" style="color:var(--gray);">Freelancer model · no quality loop</span></div>
+      </div>
+
+      <!-- ROW 3: FCR on refunds -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07);"><span class="xs" style="font-weight:600; color:var(--dark);">FCR on refunds</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,40,40,0.18);"><span class="xs" style="font-weight:700; color:#9a2828;">48% (−11pts)</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">72–75%</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">82%+</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,40,40,0.05);"><span class="xs" style="color:var(--gray);">BPO not scoped for complex cases</span></div>
+      </div>
+
+      <!-- ROW 4: Written response time -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="font-weight:600; color:var(--dark);">Written response time</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,40,40,0.18);"><span class="xs" style="font-weight:700; color:#9a2828;">28h avg</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">≤12h</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">≤4h</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,40,40,0.05);"><span class="xs" style="color:var(--gray);">No SLA · no escalation logic</span></div>
+      </div>
+
+      <!-- ROW 5: Self-service deflection -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07);"><span class="xs" style="font-weight:600; color:var(--dark);">Self-service deflection</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,40,40,0.18);"><span class="xs" style="font-weight:700; color:#9a2828;">9%</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">25–35%</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">40–55%</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,40,40,0.05);"><span class="xs" style="color:var(--gray);">AI stalled 6 months · no Care sponsor</span></div>
+      </div>
+
+      <!-- ROW 6: Phone AHT (good one) -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="font-weight:600; color:var(--dark);">Phone AHT</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(66,245,186,0.18);"><span class="xs" style="font-weight:700; color:#1a7a5e;">4m 50s ✓</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">4–6 min</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">3–4 min</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(66,245,186,0.06);"><span class="xs" style="color:var(--gray);">On par · but 0 impact on CSAT or cost</span></div>
+      </div>
+
+      <!-- ROW 7: Variable cost/contact -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; border-bottom:1px solid rgba(9,33,45,0.07); min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07);"><span class="xs" style="font-weight:600; color:var(--dark);">Variable cost / contact</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,110,0,0.12);"><span class="xs" style="font-weight:700; color:#8a5000;">€6.83</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">€4.50–€5.50</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07);"><span class="xs" style="color:var(--dark);">€2.00–€3.00</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,110,0,0.04);"><span class="xs" style="color:var(--gray);">BPO rate + freelancer overhead, no AI</span></div>
+      </div>
+
+      <!-- ROW 8: Written cost/contact -->
+      <div style="display:grid; grid-template-columns:1.7fr 0.95fr 0.95fr 0.95fr 1.5fr; flex:1; min-height:0; align-items:stretch;">
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-right:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="font-weight:600; color:var(--dark);">Written cost / contact</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; background:rgba(190,110,0,0.12);"><span class="xs" style="font-weight:700; color:#8a5000;">€4.10 ⚠</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">€5.00–€7.00</span></div>
+        <div style="padding:0.6vh 0.5vw; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(9,33,45,0.02);"><span class="xs" style="color:var(--dark);">€1.50–€2.50</span></div>
+        <div style="padding:0.6vh 0.9vw; display:flex; align-items:center; border-left:1px solid rgba(9,33,45,0.07); background:rgba(190,110,0,0.04);"><span class="xs" style="color:var(--gray);">Looks cheap — masks quality deficit</span></div>
+      </div>
+
+    </div>
   </div>
 
-  <!-- EDIT: "not in phase 1" strip -->
-  <div class="strip" style="margin-top:0.9vh;">
-    <div class="xs" style="font-weight:700; color:var(--mint); letter-spacing:0.08em; white-space:nowrap;">NOT IN PHASE 1</div>
-    <div class="strip-sep"></div>
-    <div class="xs" style="color:var(--mint-lt);">No country-level CC leads &nbsp;·&nbsp; No BPO replacement (RFP at M4-5 if needed) &nbsp;·&nbsp; No headcount growth &nbsp;·&nbsp; No voice AI before written channel is stable</div>
+  <!-- Bottom strip -->
+  <div class="strip" style="margin-top:0.9vh; flex-shrink:0;">
+    <span class="xs" style="color:var(--mint-lt);">7 of 8 KPIs below standard.</span>
+    <div style="width:1px; height:1.6vh; background:rgba(255,255,255,0.15); flex-shrink:0;"></div>
+    <span class="xs" style="color:rgba(255,255,255,0.6);">The exception — phone AHT — has zero impact on CSAT or cost.</span>
+    <div style="width:1px; height:1.6vh; background:rgba(255,255,255,0.15); flex-shrink:0;"></div>
+    <span class="xs" style="color:rgba(255,255,255,0.6);">Ampera pays industry-standard BPO rates for below-industry outcomes.</span>
   </div>
-
 
 </div>
 </div>
 
 
 <!-- ════════════════════════════════════════════════════════
-     SLIDE 04 · AXIS 2 — 0-6M PLAN OVERVIEW
+     SLIDE 04 · AXIS 1 — DIAGNOSIS · ROOT CAUSES
      Background: WHITE
 
      EDIT ↓
@@ -557,108 +602,72 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">3 sprints. One through-line.</div>
+      <div class="t1">3 root causes behind all 6 symptoms</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
-      <div class="eyebrow" style="text-align:right;">AXIS 2 — 0–6 MONTH ACTION PLAN</div>
+      <div class="eyebrow" style="text-align:right;">AXIS 1 — DIAGNOSIS</div>
       <img src="ampera-logo.png" alt="Ampera" style="height:2.2vh; width:auto;">
     </div>
   </div>
 
-  <!-- Month axis -->
-  <div style="display:flex; margin-bottom:0.5vh; flex-shrink:0;">
-    <div style="width:13%;"></div>
-    <div style="flex:1; display:flex;">
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M0</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M1</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M2</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M3</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M4</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M5</div>
-      <div style="flex:1; text-align:center; font-size:0.78vw; font-weight:600; color:var(--gray);">M6</div>
-    </div>
-  </div>
-  <div style="height:1px; background:var(--mint-lt); margin-left:13%; margin-bottom:2vh; flex-shrink:0;"></div>
+  <div class="g3 flex1">
 
-  <!-- Swimlanes: label column + shared track -->
-  <div class="flex1" style="display:flex; min-height:0;">
-
-    <!-- Label column -->
-    <div style="width:13%; display:flex; flex-direction:column; justify-content:space-around; padding-right:1.5%; flex-shrink:0;">
-      <div style="font-size:1.25vw; font-weight:700; color:var(--dark);">1. STABILISE</div>
-      <div style="font-size:1.25vw; font-weight:700; color:var(--dark);">2. RESTRUCTURE</div>
-      <div style="font-size:1.25vw; font-weight:700; color:var(--dark);">3. ACCELERATE</div>
+    <!-- ── PROBLEM 1 ── -->
+    <div class="card col gap-s">
+      <div class="row gap-s mb-s">
+        <div class="circle"><span>1</span></div>
+        <div class="t2">Operating model<br>structurally broken</div>
+      </div>
+      <div class="col flex1" style="gap:0.6vh;">
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">4 freelancers · business hours only · no weekend coverage</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">No triage, routing, or quality framework on written channel</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Not a headcount problem — <b>a structural one</b></div></div>
+      </div>
+      <div class="card-mint mt-a">
+        <div class="xs" style="font-weight:600; color:var(--navy);">→ CSAT 3.1/5 · 28h response · no lever inside the current model to fix either</div>
+      </div>
     </div>
 
-    <!-- Track container -->
-    <div style="flex:1; display:flex; flex-direction:column; position:relative;">
-
-      <!-- Vertical grid lines (M1–M5) -->
-      <div style="position:absolute; top:0; bottom:0; left:16.67%; border-left:1px dotted rgba(111,126,135,0.22); pointer-events:none; z-index:0;"></div>
-      <div style="position:absolute; top:0; bottom:0; left:33.33%; border-left:1px dotted rgba(111,126,135,0.22); pointer-events:none; z-index:0;"></div>
-      <div style="position:absolute; top:0; bottom:0; left:50%;   border-left:1px dotted rgba(111,126,135,0.22); pointer-events:none; z-index:0;"></div>
-      <div style="position:absolute; top:0; bottom:0; left:66.67%; border-left:1px dotted rgba(111,126,135,0.22); pointer-events:none; z-index:0;"></div>
-      <div style="position:absolute; top:0; bottom:0; left:83.33%; border-left:1px dotted rgba(111,126,135,0.22); pointer-events:none; z-index:0;"></div>
-
-      <!-- Lane 1: Stabilise M0–M1 -->
-      <div style="flex:1; display:flex; align-items:center; position:relative; z-index:1;">
-        <!-- Band 0%→16.67% with hints inside -->
-        <div style="position:absolute; left:0; width:16.67%; height:78%; background:var(--mint); border-radius:0.4vw; display:flex; flex-direction:column; justify-content:center; padding:0.6vh 0.8vw; gap:0.35vh; overflow:hidden;">
-          <span style="font-size:0.85vw; font-weight:700; color:var(--dark); white-space:nowrap;">M0–M1</span>
-          <span style="font-size:1.1vw; color:rgba(9,33,45,0.7); line-height:1.4; white-space:normal;">triage · access rights · Country GM protocol</span>
-        </div>
-        <!-- Outcome after band -->
-        <div style="position:absolute; left:19%; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:0.7vw;">
-          <div style="width:0.45vw; height:0.45vw; background:var(--mint); border-radius:50%; flex-shrink:0;"></div>
-          <div>
-            <div style="font-size:1.8vw; font-weight:900; color:var(--dark); line-height:1.1;">28h → ≤16h</div>
-            <div style="font-size:1.28vw; color:var(--gray); margin-top:0.15vh;">response time · end M1</div>
-          </div>
-        </div>
+    <!-- ── PROBLEM 2 ── -->
+    <div class="card col gap-s">
+      <div class="row gap-s mb-s">
+        <div class="circle"><span>2</span></div>
+        <div class="t2">BPO mis-scoped<br>& unmanaged</div>
       </div>
-
-      <!-- Separator 1–2 -->
-      <div style="height:2px; background:rgba(111,126,135,0.18); flex-shrink:0; position:relative; z-index:1;"></div>
-
-      <!-- Lane 2: Restructure M1–M3 -->
-      <div style="flex:1; display:flex; align-items:center; position:relative; z-index:1;">
-        <!-- Band 16.67%→50% with hints inside — gray bg -->
-        <div style="position:absolute; left:16.67%; width:33.33%; height:78%; background:var(--gray); border-radius:0.4vw; display:flex; flex-direction:column; justify-content:center; padding:0.6vh 0.8vw; gap:0.35vh; overflow:hidden;">
-          <span style="font-size:0.85vw; font-weight:700; color:var(--white); white-space:nowrap;">M1–M3</span>
-          <span style="font-size:1.2vw; color:rgba(255,255,255,0.78); line-height:1.4; white-space:normal;">QA framework · BPO eval · HQ clarity</span>
-        </div>
-        <!-- Outcome after band -->
-        <div style="position:absolute; left:52%; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:0.7vw;">
-          <div style="width:0.45vw; height:0.45vw; background:var(--gray); border-radius:50%; flex-shrink:0;"></div>
-          <div>
-            <div style="font-size:1.8vw; font-weight:900; color:var(--dark); line-height:1.1;">CSAT 3.1 → 3.5</div>
-            <div style="font-size:1.28vw; color:var(--gray); margin-top:0.15vh;">BPO decision locked · M3</div>
-          </div>
-        </div>
+      <div class="col flex1" style="gap:0.6vh;">
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Handles <b>60% of volume</b> — scoped for simple cases only</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Set up to fail on the <b>26% that matters most</b>: refunds & complex escalations</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Contract renews in <b>5 months</b> · no evaluation started</div></div>
       </div>
-
-      <!-- Separator 2–3 -->
-      <div style="height:2px; background:rgba(111,126,135,0.18); flex-shrink:0; position:relative; z-index:1;"></div>
-
-      <!-- Lane 3: Accelerate M3–M6 — outcome + hints both inside dark band -->
-      <div style="flex:1; display:flex; align-items:center; position:relative; z-index:1;">
-        <div style="position:absolute; left:50%; width:50%; height:78%; background:var(--dark); border-radius:0.4vw; display:flex; align-items:center; padding:0 2vw; gap:3vw; overflow:hidden;">
-          <!-- Label + hints -->
-          <div style="display:flex; flex-direction:column; gap:0.35vh; flex-shrink:0;">
-            <span style="font-size:0.85vw; font-weight:700; color:var(--mint);">M3–M6</span>
-            <span style="font-size:1.2vw; color:rgba(111,126,135,0.85); line-height:1.4;">AI · help centre · coverage fix</span>
-          </div>
-          <!-- Outcome -->
-          <div>
-            <div style="font-size:1.8vw; font-weight:900; color:var(--mint); line-height:1.1;">9% → ≥25%</div>
-            <div style="font-size:1.28vw; color:var(--gray); margin-top:0.15vh;">deflection · CSAT ≥3.8 · M6</div>
-          </div>
-        </div>
+      <div class="card-mint mt-a">
+        <div class="xs" style="font-weight:600; color:var(--navy);">→ FCR on refunds 48% · declining −11pts since Q3 2025</div>
       </div>
-
     </div>
+
+    <!-- ── PROBLEM 3 ── -->
+    <div class="card col gap-s">
+      <div class="row gap-s mb-s">
+        <div class="circle"><span>3</span></div>
+        <div class="t2">Zero automation<br>layer</div>
+      </div>
+      <div class="col flex1" style="gap:0.6vh;">
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Deflection at <b>9%</b> vs 30% target — gap is structural, not operational</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>48% of contacts</b> structurally automatable: session failures + station info</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">AI project stalled <b>6 months</b> — no Care sponsor to own it</div></div>
+      </div>
+      <div class="card-mint mt-a">
+        <div class="xs" style="font-weight:600; color:var(--navy);">→ The only lever fixing CSAT + cost + scale is sitting idle</div>
+      </div>
+    </div>
+
   </div>
 
+  <!-- "not in phase 1" strip -->
+  <div class="strip" style="margin-top:0.9vh;">
+    <div class="xs" style="font-weight:700; color:var(--mint); letter-spacing:0.08em; white-space:nowrap;">NOT IN PHASE 1</div>
+    <div class="strip-sep"></div>
+    <div class="xs" style="color:var(--mint-lt);">No country-level CC leads &nbsp;·&nbsp; No BPO replacement (RFP at M4-5 if needed) &nbsp;·&nbsp; No headcount growth &nbsp;·&nbsp; No voice AI before written channel is stable</div>
+  </div>
 
 </div>
 </div>
@@ -857,7 +866,7 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">Accelerate: deploy the automation layer</div>
+      <div class="t1"><i>Accelerate</i> : deploy the automation layer</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
       <div class="eyebrow" style="text-align:right;">SPRINT 3 — M3 TO M6</div>
@@ -1461,7 +1470,7 @@
 
 
 <!-- ════════════════════════════════════════════════════════
-     SLIDE 11 · AXIS 4 — SCALABILITY MODEL
+     SLIDE 12 · AXIS 4 — SCALABILITY MODEL
      Background: WHITE
 
      EDIT ↓
@@ -1479,7 +1488,7 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">Decouple contact volume from headcount and cost</div>
+      <div class="t1">Volume isn't the problem. Unit cost is.</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
       <div class="eyebrow" style="text-align:right;">AXIS 4 — SCALABILITY MODEL</div>
@@ -1487,9 +1496,8 @@
     </div>
   </div>
 
-  <!-- EDIT: framing line -->
-  <div class="card-mint mb-m">
-    <div class="body" style="color:var(--navy);">Network doubles by end 2027 → contacts grow from 10K to <b>~20K/month</b>. Budget must stay flat at €1.25M. The only path: reduce cost per contact faster than volume grows.</div>
+  <div class="card-mint mb-m" style="padding:0.9vh 1.2vw;">
+    <div class="xs" style="color:var(--navy); line-height:1.6;">The network doubles by end 2027. More stations → more sessions → more contacts. That's not a problem to solve — it's a reality to price correctly. Today each contact costs <b>~€6.83 in variable cost</b>, regardless of type. A driver asking if a station is available costs the same as one disputing a charge. That flat cost structure is the actual problem. Three levers change it.</div>
   </div>
 
   <div class="g3 flex1">
@@ -1497,30 +1505,30 @@
     <!-- ── LEVER 1 ── -->
     <div class="card-soft col gap-s">
       <div class="eyebrow mb-s">LEVER 1 · AI DEFLECTION</div>
-      <div class="t2 mb-s">Absorb volume without adding agents</div>
-      <div class="body flex1">Every 10pt gain in deflection = ~1,000 contacts/month handled at €0.03–0.06 instead of €4–7. The unit economics are transformative at scale.</div>
+      <div class="t2 mb-s">The primary lever — absorbs volume before it reaches the human queue</div>
+      <div class="body flex1">At M18: 38% of contacts — 5,700/month — handled by AI at ~€0.20 each. These never enter the human queue. Agents handle only what requires genuine judgment.</div>
       <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">At 30% deflection: saves €60–180 vs €4,000–7,000 per 1K contacts</div>
+        <div class="xs" style="font-weight:600; color:var(--navy);">Every 10pt gain: ~1,000 contacts shift from €6.83 → €0.20. Target: 9% → 38% by M18.</div>
       </div>
     </div>
 
     <!-- ── LEVER 2 ── -->
     <div class="card-soft col gap-s">
-      <div class="eyebrow mb-s">LEVER 2 · BPO RESTRUCTURING</div>
-      <div class="t2 mb-s">Right-scope the contract, right-price the SLA</div>
-      <div class="body flex1">BPO cost/contact: €7.2 today. FCR improvement + scope tightening target €6.0 or below. At 6K contacts/month that's €7,200 saved every month.</div>
+      <div class="eyebrow mb-s">LEVER 2 · FCR IMPROVEMENT</div>
+      <div class="t2 mb-s">The multiplier — fewer touches per case, same agents, more capacity</div>
+      <div class="body flex1">At 54% FCR today, each case takes <b>1.85</b> human interactions before closure (1÷FCR). At 75% that falls to <b>1.33</b>. A 28% reduction in touches per case effectively absorbs volume growth without adding headcount.</div>
       <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">Every €1 saved per BPO contact = €72K/year at current volume</div>
+        <div class="xs" style="font-weight:600; color:var(--navy);">Also eliminates ~4,600 repeat contacts/month created by today's non-resolution rate.</div>
       </div>
     </div>
 
     <!-- ── LEVER 3 ── -->
     <div class="card-soft col gap-s">
       <div class="eyebrow mb-s">LEVER 3 · CONTACT RATE REDUCTION</div>
-      <div class="t2 mb-s">Fix upstream — reduce demand before it arrives</div>
-      <div class="body flex1">31% of contacts are session failures. Each reliability improvement on the Product side removes contacts before they're ever created. This is the long-term structural play.</div>
+      <div class="t2 mb-s">The upstream lever — reduces absolute inbound demand, but only once the data exists</div>
+      <div class="body flex1">Target: 1 contact per 15 sessions by M18 (from 1:12 today). This lever only activates after 9–12 months of AI-generated contact reason data. Without it, the feedback to Product is anecdote. With it, Care hands Product a ranked list of which failures generate the most contacts — with cost attached.</div>
       <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">Contact rate today: ~8.3%. Industry best-in-class: 3–4%.</div>
+        <div class="xs" style="font-weight:600; color:var(--navy);">Contact rate 1:12 → 1:15 by M18. The only lever that reduces inbound volume structurally.</div>
       </div>
     </div>
 
@@ -1532,7 +1540,7 @@
 
 
 <!-- ════════════════════════════════════════════════════════
-     SLIDE 12 · AXIS 4 — ECONOMIC MODEL
+     SLIDE 13 · AXIS 4 — ORG DESIGN FOR SCALE
      Background: WHITE
 
      EDIT ↓
@@ -1550,64 +1558,160 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">Flat budget. Double network. The numbers.</div>
+      <div class="t1">Scale the network. Keep the team at four.</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
-      <div class="eyebrow" style="text-align:right;">AXIS 4 — THE ECONOMICS</div>
+      <div class="eyebrow" style="text-align:right;">AXIS 4 — ORG DESIGN</div>
       <img src="ampera-logo.png" alt="Ampera" style="height:2.2vh; width:auto;">
     </div>
   </div>
 
   <div class="g2 flex1">
 
-    <!-- ── LEFT: BUDGET REALLOCATION ── -->
-    <div class="col gap-s">
-      <div class="eyebrow mb-s">BUDGET REALLOCATION (ANNUAL)</div>
-      <div class="col gap-s flex1">
-        <div class="card-soft apart"><div class="body" style="font-weight:600; color:var(--dark);">BPO (phone)</div><div class="row gap-s"><span class="xs" style="color:var(--gray);">€520K</span><span class="xs" style="color:var(--mint); font-weight:700;">→ ~€440K</span></div></div>
-        <div class="card-soft apart"><div class="body" style="font-weight:600; color:var(--dark);">Freelancers (written)</div><div class="row gap-s"><span class="xs" style="color:var(--gray);">€170K</span><span class="xs" style="color:var(--mint); font-weight:700;">→ ~€80K</span></div></div>
-        <div class="card-soft apart"><div class="body" style="font-weight:600; color:var(--dark);">Tools & licences</div><div class="row gap-s"><span class="xs" style="color:var(--gray);">€60K</span><span class="xs" style="color:var(--mint); font-weight:700;">→ ~€110K</span></div></div>
-        <div class="card-soft apart"><div class="body" style="font-weight:600; color:var(--dark);">HQ payroll</div><div class="row gap-s"><span class="xs" style="color:var(--gray);">€430K</span><span class="xs" style="color:var(--gray);">stable</span></div></div>
-        <div class="card-soft apart"><div class="body" style="font-weight:600; color:var(--dark);">Miscellaneous</div><div class="row gap-s"><span class="xs" style="color:var(--gray);">€70K</span><span class="xs" style="color:var(--gray);">stable</span></div></div>
-        <div class="card-mint apart">
-          <div class="body" style="font-weight:700; color:var(--dark);">TOTAL</div>
-          <div class="body" style="font-weight:700; color:var(--dark);">€1.25M → €1.25M</div>
-        </div>
-        <div class="xs" style="color:var(--gray);">Savings from BPO + freelancers reinvested in AI tooling</div>
-      </div>
-    </div>
+    <!-- ── LEFT: 2-LAYER ORG ── -->
+    <div class="col" style="gap:0.8vh; min-height:0;">
 
-    <!-- ── RIGHT: COST PER CONTACT ── -->
-    <div class="col gap-s">
-      <div class="eyebrow mb-s">COST PER CONTACT TRAJECTORY</div>
-      <div class="col gap-s flex1">
-        <div class="card-soft">
-          <div class="apart mb-s">
-            <div class="body" style="font-weight:600; color:var(--dark);">Today · 10K contacts</div>
-            <div style="font-size:1.42vw; font-weight:700; color:var(--dark);">€5.75</div>
-          </div>
-          <div class="xs">€1.25M budget · no automation · blended average</div>
+      <!-- LAYER 1 -->
+      <div style="border-radius:7px; overflow:hidden; border:1px solid rgba(9,33,45,0.1);">
+        <div style="background:var(--dark); padding:0.65vh 1vw; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:0.65vw; font-weight:700; color:var(--mint); text-transform:uppercase; letter-spacing:0.1em;">Layer 1 — Central Core</span>
+          <span class="tag t-pri" style="font-size:0.62vw; padding:0.2vh 0.55vw;">3–4 people · never grows</span>
         </div>
-        <div class="card-soft">
-          <div class="apart mb-s">
-            <div class="body" style="font-weight:600; color:var(--dark);">M6 · 30% deflection</div>
-            <div style="font-size:1.42vw; font-weight:700; color:var(--navy);">≈ €4.50</div>
+        <div style="background:var(--white); padding:0.85vh 1vw; display:flex; flex-direction:column; gap:0.55vh;">
+          <div style="border-left:3px solid var(--mint); padding-left:0.75vw;">
+            <div class="xs" style="font-weight:600; color:var(--dark);">AI infrastructure & QA output</div>
+            <div class="xs">Deploys agents, interprets QA AI scores, acts on patterns — doesn't do manual reviews.</div>
           </div>
-          <div class="xs">AI absorbs ~3K contacts at near-zero cost · budget unchanged</div>
-        </div>
-        <div class="card-soft">
-          <div class="apart mb-s">
-            <div class="body" style="font-weight:600; color:var(--dark);">End 2027 · 20K contacts</div>
-            <div style="font-size:1.42vw; font-weight:700; color:var(--mint);">≈ €3.20</div>
+          <div style="border-left:3px solid rgba(66,245,186,0.4); padding-left:0.75vw;">
+            <div class="xs" style="font-weight:600; color:var(--dark);">BPO governance</div>
+            <div class="xs">Sets SLAs, manages the contract. BPO headcount flexes — this team doesn't.</div>
           </div>
-          <div class="xs">Volume doubled · budget flat · AI handles 8K+ contacts</div>
-        </div>
-        <div class="strip">
-          <div class="xs" style="color:var(--mint-lt);">Volume ×2 · cost per contact ÷2 — the scalability model in one line.</div>
+          <div style="border-left:3px solid rgba(66,245,186,0.4); padding-left:0.75vw;">
+            <div class="xs" style="font-weight:600; color:var(--dark);">Product & Data interface</div>
+            <div class="xs">Translates Care signals into Product inputs — the Lever 3 feedback loop.</div>
+          </div>
         </div>
       </div>
+
+      <!-- Threshold bridge -->
+      <div style="display:flex; align-items:center; gap:0.6vw; padding:0 0.3vw;">
+        <div style="flex:1; height:1px; background:rgba(66,245,186,0.3);"></div>
+        <span style="font-size:0.58vw; font-weight:600; color:var(--mint); white-space:nowrap; letter-spacing:0.04em;">↓ cluster crosses ~2,500 contacts/month ↓</span>
+        <div style="flex:1; height:1px; background:rgba(66,245,186,0.3);"></div>
+      </div>
+
+      <!-- LAYER 2 -->
+      <div style="border-radius:7px; overflow:hidden; border:1px solid rgba(9,33,45,0.1); flex:1;">
+        <div style="background:rgba(9,33,45,0.06); padding:0.65vh 1vw; display:flex; align-items:center; justify-content:space-between;">
+          <span style="font-size:0.65vw; font-weight:700; color:var(--dark); text-transform:uppercase; letter-spacing:0.1em;">Layer 2 — Regional Leads</span>
+          <span class="tag t-gho" style="font-size:0.62vw; padding:0.2vh 0.55vw;">1 lead per cluster · not per country</span>
+        </div>
+        <div style="background:var(--white); padding:0.8vh 1vw; display:flex; flex-direction:column; gap:0.5vh;">
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.5vh 0.8vw; background:var(--mint-lt); border-radius:5px; border-left:3px solid var(--mint);">
+            <div><span class="xs" style="font-weight:700; color:var(--dark);">FR · BE · NL</span><span class="xs" style="color:var(--gray); margin-left:0.5vw;">French + Dutch speaking</span></div>
+            <span class="xs" style="color:var(--mint); font-weight:700; flex-shrink:0;">Active now</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.5vh 0.8vw; background:rgba(9,33,45,0.03); border-radius:5px; border-left:3px solid var(--gray);">
+            <div><span class="xs" style="font-weight:700; color:var(--dark);">DE · AT · CH</span><span class="xs" style="color:var(--gray); margin-left:0.5vw;">DACH</span></div>
+            <span class="xs" style="color:var(--gray); flex-shrink:0;">M6–M9</span>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.5vh 0.8vw; background:rgba(9,33,45,0.03); border-radius:5px; border-left:3px solid var(--gray);">
+            <div><span class="xs" style="font-weight:700; color:var(--dark);">IT · ES</span><span class="xs" style="color:var(--gray); margin-left:0.5vw;">Southern Europe</span></div>
+            <span class="xs" style="color:var(--gray); flex-shrink:0;">Follows DACH</span>
+          </div>
+          <div class="xs" style="color:var(--gray); margin-top:0.2vh;">Each lead owns escalation authority, local compliance, GM relationship — not frontline tickets.</div>
+        </div>
+      </div>
+
     </div>
 
+    <!-- ── RIGHT: SCALE MODEL ── -->
+    <div class="card-soft col gap-s">
+      <div class="apart mb-s">
+        <div class="eyebrow">THE MODEL AT FULL SCALE</div>
+        <span class="tag t-gho" style="font-size:0.78vw;">10 countries · 20K contacts/month</span>
+      </div>
+
+      <!-- Table header -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; background:var(--dark); border-radius:5px 5px 0 0;">
+        <span style="font-size:0.62vw; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.08em;"></span>
+        <span style="font-size:0.62vw; font-weight:700; color:var(--gray); text-transform:uppercase; letter-spacing:0.08em;">Today</span>
+        <span style="font-size:0.62vw; font-weight:700; color:var(--mint); text-transform:uppercase; letter-spacing:0.08em;">At scale</span>
+      </div>
+
+      <!-- Table rows -->
+      <div class="col" style="border:1px solid rgba(9,33,45,0.08); border-radius:0 0 5px 5px; overflow:hidden; margin-top:0; flex:1;">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06); background:rgba(9,33,45,0.02);">
+          <span class="xs" style="color:var(--gray);">HQ payroll</span>
+          <span class="xs" style="color:var(--dark);">€430K</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">€430K — stable</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06);">
+          <span class="xs" style="color:var(--gray);">Regional leads</span>
+          <span class="xs" style="color:var(--dark);">—</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">~€240K (3 × €80K)</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06); background:rgba(9,33,45,0.02);">
+          <span class="xs" style="color:var(--gray);">Freelancers</span>
+          <span class="xs" style="color:var(--dark);">€170K</span>
+          <span class="xs" style="color:var(--mint); font-weight:600;">€0 — replaced by AI</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06);">
+          <span class="xs" style="color:var(--gray);">BPO</span>
+          <span class="xs" style="color:var(--dark);">€520K · €7.20/ct</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">~€444K · €5.00/ct</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06); background:rgba(9,33,45,0.02);">
+          <span class="xs" style="color:var(--gray);">AI running costs</span>
+          <span class="xs" style="color:var(--dark);">—</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">~€18K/yr</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06);">
+          <span class="xs" style="color:var(--gray);">Tools & AI licences</span>
+          <span class="xs" style="color:var(--dark);">€60K</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">~€150K</span>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.5vh 0.7vw; border-bottom:1px solid rgba(9,33,45,0.06); background:rgba(9,33,45,0.02);">
+          <span class="xs" style="color:var(--gray);">Misc</span>
+          <span class="xs" style="color:var(--dark);">€70K</span>
+          <span class="xs" style="color:var(--dark); font-weight:600;">€70K</span>
+        </div>
+        <!-- Total row -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.7vh 0.7vw; background:var(--dark);">
+          <span class="xs" style="font-weight:700; color:var(--white);">Total budget</span>
+          <span class="xs" style="font-weight:700; color:var(--gray);">€1.25M</span>
+          <span class="xs" style="font-weight:700; color:var(--mint);">~€1.35M</span>
+        </div>
+        <!-- Cost per contact row -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 0.8vw; padding:0.7vh 0.7vw; background:rgba(66,245,186,0.12); border-top:1px solid rgba(66,245,186,0.3);">
+          <span class="xs" style="font-weight:700; color:var(--dark);">Variable cost/contact</span>
+          <span class="xs" style="font-weight:700; color:var(--dark);">€6.83</span>
+          <span class="xs" style="font-weight:700; color:var(--dark);">~€3.20 <span style="color:var(--mint); font-weight:700;">↓ 53%</span></span>
+        </div>
+      </div>
+
+      <div class="xs" style="color:var(--gray); margin-top:0.2vh;">Budget +8% · volume ×2 · variable cost per contact −53%.</div>
+    </div>
+
+  </div>
+
+  <!-- Formula outcome strip -->
+  <div class="strip" style="margin-top:1.4vh; justify-content:space-between;">
+    <div class="xs" style="color:var(--gray);">Variable cost per session served</div>
+    <div class="strip-sep"></div>
+    <div class="row gap-s">
+      <span class="xs" style="color:var(--gray);">Today</span>
+      <span style="font-size:1.35vw; font-weight:900; color:var(--white);">€0.96</span>
+    </div>
+    <div class="strip-sep"></div>
+    <div style="font-size:1.1vw; color:var(--gray);">→</div>
+    <div class="strip-sep"></div>
+    <div class="row gap-s">
+      <span class="xs" style="color:var(--gray);">M18</span>
+      <span style="font-size:1.35vw; font-weight:900; color:var(--mint);">€0.28</span>
+    </div>
+    <div class="strip-sep"></div>
+    <div class="xs" style="color:var(--mint-lt);">Network doubles. Care cost per session served falls <b style="color:var(--mint);">66%</b>. That is the decoupling model.</div>
   </div>
 
 
@@ -1783,11 +1887,11 @@
   updateCounter();
 
   // Stage map — slide index (0-based) → stage key
-  // intro: s01–s02 · 1=Diagnosis: s03 · 2=0-6M Plan: s04–s08 · 3=AI Vision: s09–s10 · 4=Scalability: s11–s12 · wrap: s13–s15
-  const stageMap = ['intro','intro','1','2','2','2','2','2','3','3','3','4','4','wrap','wrap'];
+  // intro: s01–s02 · 1=Diagnosis: s03–s04 · 2=0-6M Plan: s05–s08 · 3=AI Vision: s09–s10 · 4=Scalability: s11–s12 · wrap: s13–s15
+  const stageMap = ['intro','intro','1','1','2','2','2','2','3','3','3','4','4','wrap','wrap'];
 
   // First slide (0-based index) for each stage — clicking a pill jumps here
-  const stageFirst = { intro: 0, '1': 2, '2': 3, '3': 8, '4': 11, wrap: 13 };
+  const stageFirst = { intro: 0, '1': 2, '2': 4, '3': 8, '4': 11, wrap: 13 };
 
   function updateAxis() {
     const stage = stageMap[cur] || 'none';
