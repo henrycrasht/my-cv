@@ -405,7 +405,7 @@
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Freelancers: <b>€170K/yr</b> → <b>€4.10/contact</b></div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">HQ payroll: <b>€430K</b> · Tools: <b>€60K</b> · Misc: <b>€70K</b></div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Total Care budget: <b>€1.25M/yr</b></div></div>
-        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Blended variable cost per contact: <b>€6.83</b></div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Cost per contact = <b>€6.83</b> (var. OPEX — excluding HQ HR costs — of €820k ÷ 120k contacts/yr = €6.83 per contact)</div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">BPO minute rate: <b>€0.09/min</b> (used in AHT savings model)</div></div>
       </div>
     </div>
@@ -416,11 +416,10 @@
       <div class="hr"></div>
       <div class="col" style="gap:0.5vh;">
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Stalled AI project = <b>the 3 Dust agents </b>(described on blog post) built 6 months ago on Product side, no Care sponsor</div></div>
-        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Dust platform: <b>already licensed</b> — all new agents at €0 incremental</div></div>
+        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Dust platform: <b>already licensed</b> — all new agents at €0 incremental. <b>Ampera MCP</b> available Day 1</div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Written AI chat: <b>15 turns avg</b> → <b>€0.03–€0.06/conversation</b> on current LLM pricing</div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Voice AI: <b>€0.35 / 4-min call</b> — ElevenLabs / Retell AI benchmark</div></div>
         <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Whisper STT for QA: <b>$0.006/min</b> → ~€195/month to transcribe all BPO calls</div></div>
-        <div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body">Go-live quality gate: <b>≥80% resolution rate</b> in sandbox before any production use case</div></div>
       </div>
     </div>
 
@@ -1466,7 +1465,7 @@
 
 
 <!-- ════════════════════════════════════════════════════════
-     SLIDE 12 · AXIS 4 — SCALABILITY MODEL
+     SLIDE 12 · AXIS 4 — COST CASCADE
      Background: WHITE
 
      EDIT ↓
@@ -1484,52 +1483,60 @@
           <span class="tag t-gho axis-tag" data-stage="4">Scalability</span>
           <span class="tag t-gho axis-tag" data-stage="wrap">Wrap Up</span>
         </div>
-      <div class="t1">Volume isn't the problem. Unit cost is.</div>
+      <div class="t1">Cost cascade: how we reach €3.20 / contact</div>
     </div>
     <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
-      <div class="eyebrow" style="text-align:right;">AXIS 4 — SCALABILITY MODEL</div>
+      <div class="eyebrow" style="text-align:right;">AXIS 4 — SCALABILITY ECONOMICS</div>
       <img src="ampera-logo.png" alt="Ampera" style="height:2.2vh; width:auto;">
     </div>
   </div>
 
-  <div class="card-mint mb-m" style="padding:0.9vh 1.2vw;">
-    <div class="xs" style="color:var(--navy); line-height:1.6;">The network doubles by end 2027. More stations → more sessions → more contacts. That's not a problem to solve — it's a reality to price correctly. Today each contact costs <b>~€6.83 in variable cost</b>, regardless of type. A driver asking if a station is available costs the same as one disputing a charge. That flat cost structure is the actual problem. Three levers change it.</div>
-  </div>
+  <div class="flex1 col" style="gap:1.2vh; min-height:0;">
 
-  <div class="g3 flex1">
-
-    <!-- ── LEVER 1 ── -->
-    <div class="card-soft col gap-s">
-      <div class="eyebrow mb-s">LEVER 1 · AI DEFLECTION</div>
-      <div class="t2 mb-s">The primary lever — absorbs volume before it reaches the human queue</div>
-      <div class="body flex1">At M18: 38% of contacts — 5,700/month — handled by AI at ~€0.20 each. These never enter the human queue. Agents handle only what requires genuine judgment.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">Every 10pt gain: ~1,000 contacts shift from €6.83 → €0.20. Target: 9% → 38% by M18.</div>
-      </div>
+    <!-- Waterfall chart -->
+    <div style="position:relative; flex:1; min-height:22vh;">
+      <canvas id="costCascadeChart"></canvas>
     </div>
 
-    <!-- ── LEVER 2 ── -->
-    <div class="card-soft col gap-s">
-      <div class="eyebrow mb-s">LEVER 2 · FCR IMPROVEMENT</div>
-      <div class="t2 mb-s">The multiplier — fewer touches per case, same agents, more capacity</div>
-      <div class="body flex1">At 54% FCR today, each case takes <b>1.85</b> human interactions before closure (1÷FCR). At 75% that falls to <b>1.33</b>. A 28% reduction in touches per case effectively absorbs volume growth without adding headcount.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">Also eliminates ~4,600 repeat contacts/month created by today's non-resolution rate.</div>
-      </div>
-    </div>
+    <!-- 3 lever annotation cards -->
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8vw; flex-shrink:0;">
 
-    <!-- ── LEVER 3 ── -->
-    <div class="card-soft col gap-s">
-      <div class="eyebrow mb-s">LEVER 3 · CONTACT RATE REDUCTION</div>
-      <div class="t2 mb-s">The upstream lever — reduces absolute inbound demand, but only once the data exists</div>
-      <div class="body flex1">Target: 1 contact per 15 sessions by M18 (from 1:12 today). This lever only activates after 9–12 months of AI-generated contact reason data. Without it, the feedback to Product is anecdote. With it, Care hands Product a ranked list of which failures generate the most contacts — with cost attached.</div>
-      <div class="card-mint mt-a">
-        <div class="xs" style="font-weight:600; color:var(--navy);">Contact rate 1:12 → 1:15 by M18. The only lever that reduces inbound volume structurally.</div>
+      <div style="background:rgba(9,33,45,0.03); border-radius:0 5px 5px 0; border-left:3px solid var(--mint); padding:1.1vh 1vw; display:flex; flex-direction:column; gap:0.35vh;">
+        <div class="xs" style="font-weight:700; color:var(--mint); text-transform:uppercase; letter-spacing:0.1em;">Lever 1 · AI Containment</div>
+        <div style="font-size:0.85vw; font-weight:700; color:var(--dark); line-height:1.2;">38% of contacts at €0.20</div>
+        <div class="xs" style="color:var(--gray); line-height:1.45;">Voice AI + payment agent contain 2,560 contacts/month. Each shifts from €6.83 → €0.20 — the dominant lever.</div>
+        <div style="font-size:1.15vw; font-weight:800; color:var(--mint); margin-top:auto; padding-top:0.3vh;">−€2.52 <span class="xs" style="font-weight:400; color:var(--gray);">/ contact (blended)</span></div>
       </div>
+
+      <div style="background:rgba(9,33,45,0.03); border-radius:0 5px 5px 0; border-left:3px solid rgba(66,245,186,0.65); padding:1.1vh 1vw; display:flex; flex-direction:column; gap:0.35vh;">
+        <div class="xs" style="font-weight:700; color:rgba(66,245,186,0.85); text-transform:uppercase; letter-spacing:0.1em;">Lever 2 · BPO renegotiation</div>
+        <div style="font-size:0.85vw; font-weight:700; color:var(--dark); line-height:1.2;">Rate €7.20 → €5.00</div>
+        <div class="xs" style="color:var(--gray); line-height:1.45;">BPO handles 37% of total contacts post-deflection. Rate drops via formal evaluation + RFP threat.</div>
+        <div style="font-size:1.15vw; font-weight:800; color:rgba(66,245,186,0.75); margin-top:auto; padding-top:0.3vh;">−€0.69 <span class="xs" style="font-weight:400; color:var(--gray);">/ contact (blended)</span></div>
+      </div>
+
+      <div style="background:rgba(9,33,45,0.03); border-radius:0 5px 5px 0; border-left:3px solid rgba(66,245,186,0.4); padding:1.1vh 1vw; display:flex; flex-direction:column; gap:0.35vh;">
+        <div class="xs" style="font-weight:700; color:rgba(66,245,186,0.65); text-transform:uppercase; letter-spacing:0.1em;">Lever 3 · Written → AI + FCR</div>
+        <div style="font-size:0.85vw; font-weight:700; color:var(--dark); line-height:1.2;">Freelancers → AI · fewer repeat touches</div>
+        <div class="xs" style="color:var(--gray); line-height:1.45;">FCR 54%→75% removes 4,600 repeat contacts/month. Written AI at €0.05 replaces €4.10 freelancer cost.</div>
+        <div style="font-size:1.15vw; font-weight:800; color:rgba(66,245,186,0.55); margin-top:auto; padding-top:0.3vh;">−€0.42 <span class="xs" style="font-weight:400; color:var(--gray);">/ contact (blended)</span></div>
+      </div>
+
     </div>
 
   </div>
 
+  <div class="strip" style="margin-top:1vh;">
+    <div class="xs" style="color:rgba(255,255,255,0.5);">Total reduction</div>
+    <div class="strip-sep"></div>
+    <div class="xs"><b style="color:var(--mint);">−€3.63</b> <span style="color:rgba(255,255,255,0.45);">per contact</span></div>
+    <div class="strip-sep"></div>
+    <div class="xs"><b style="color:var(--mint);">−53%</b> <span style="color:rgba(255,255,255,0.45);">from €6.83 baseline</span></div>
+    <div class="strip-sep"></div>
+    <div class="xs" style="color:var(--mint-lt);">Budget +8% · volume ×2 · cost per session served <b style="color:var(--mint);">€0.96 → €0.28</b> (−66%)</div>
+    <div class="strip-sep" style="margin-left:auto;"></div>
+    <div class="xs" style="color:var(--mint-lt);">None of this requires new headcount. It requires <b style="color:var(--mint);">sequence</b>.</div>
+  </div>
 
 </div>
 </div>
@@ -1849,6 +1856,144 @@
   <button id="btn-next" onclick="go(1)">→</button>
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function () {
+  var offsets    = [0, 4.31, 3.62, 3.20, 0];
+  var vals       = [6.83, 2.52, 0.69, 0.42, 3.20];
+  var barColors  = ['#09212D', '#42F5BA', 'rgba(66,245,186,0.75)', 'rgba(66,245,186,0.5)', '#42F5BA'];
+  var mainLabels = ['€6.83', '−€2.52', '−€0.69', '−€0.42', '€3.20'];
+  var subLabels  = ['today', '−37%', '−10%', '−6%', 'M18'];
+
+  var labelConnPlugin = {
+    id: 'ccPlugin',
+    afterDraw: function (chart) {
+      var ctx  = chart.ctx;
+      var meta = chart.getDatasetMeta(1);
+      var bars = meta.data;
+
+      bars.forEach(function (bar, i) {
+        var top    = bar.y;
+        var bottom = bar.base;
+        var h      = bottom - top;
+        var cx     = bar.x;
+        var onDark = (i === 0);
+
+        ctx.save();
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+
+        if (h >= 30) {
+          ctx.font      = '700 ' + Math.max(10, Math.round(chart.width * 0.012)) + 'px Poppins,sans-serif';
+          ctx.fillStyle = onDark ? 'rgba(255,255,255,0.92)' : '#09212D';
+          ctx.fillText(mainLabels[i], cx, top + h / 2 - (h >= 46 ? 7 : 0));
+          if (h >= 46) {
+            ctx.font      = '400 ' + Math.max(9, Math.round(chart.width * 0.009)) + 'px Poppins,sans-serif';
+            ctx.fillStyle = onDark ? 'rgba(255,255,255,0.5)' : 'rgba(9,33,45,0.5)';
+            ctx.fillText(subLabels[i], cx, top + h / 2 + 10);
+          }
+        } else {
+          ctx.font         = '700 ' + Math.max(9, Math.round(chart.width * 0.011)) + 'px Poppins,sans-serif';
+          ctx.fillStyle    = '#09212D';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(mainLabels[i], cx, top - 5);
+        }
+        ctx.restore();
+      });
+
+      /* connector lines at running-total levels */
+      ctx.save();
+      ctx.strokeStyle = 'rgba(9,33,45,0.2)';
+      ctx.setLineDash([3, 3]);
+      ctx.lineWidth   = 1;
+      var conns = [
+        { y: bars[0].y,    x1: bars[0].x + bars[0].width / 2, x2: bars[1].x - bars[1].width / 2 },
+        { y: bars[1].base, x1: bars[1].x + bars[1].width / 2, x2: bars[2].x - bars[2].width / 2 },
+        { y: bars[2].base, x1: bars[2].x + bars[2].width / 2, x2: bars[3].x - bars[3].width / 2 },
+        { y: bars[3].base, x1: bars[3].x + bars[3].width / 2, x2: bars[4].x - bars[4].width / 2 }
+      ];
+      conns.forEach(function (c) {
+        ctx.beginPath();
+        ctx.moveTo(c.x1, c.y);
+        ctx.lineTo(c.x2, c.y);
+        ctx.stroke();
+      });
+      ctx.restore();
+    }
+  };
+
+  function initCascadeChart () {
+    var el = document.getElementById('costCascadeChart');
+    if (!el) return;
+    new Chart(el.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'Today',
+          ['AI deflection', '38% at €0.20'],
+          ['BPO renegotiation', '€7.20 → €5.00'],
+          ['Written → AI', 'FCR + mixed'],
+          'M18 target'
+        ],
+        datasets: [
+          { label: 'offset', data: offsets, backgroundColor: 'rgba(0,0,0,0)', stack: 'w', borderWidth: 0 },
+          { label: 'change', data: vals,    backgroundColor: barColors, stack: 'w', borderRadius: 4, borderSkipped: false, borderWidth: 0 }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            filter: function (item) { return item.datasetIndex === 1; },
+            callbacks: {
+              title: function (items) { return items[0].chart.data.labels[items[0].dataIndex]; },
+              label: function (item) {
+                var i = item.dataIndex;
+                if (i === 0) return 'Variable cost today: €6.83 / contact';
+                if (i === 4) return 'M18 target: €3.20 / contact';
+                var s = [2.52, 0.69, 0.42][i - 1];
+                var p = [37, 10, 6][i - 1];
+                return 'Saves €' + s.toFixed(2) + ' / contact (−' + p + '% from baseline)';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            stacked: true,
+            grid: { display: false },
+            border: { display: false },
+            ticks: { color: '#6F7E87', font: { family: 'Poppins', size: 11 }, autoSkip: false, maxRotation: 0 }
+          },
+          y: {
+            stacked: true,
+            min: 0,
+            max: 8,
+            grid: { color: 'rgba(9,33,45,0.06)', lineWidth: 0.5 },
+            border: { display: false },
+            ticks: {
+              color: '#6F7E87',
+              font: { family: 'Poppins', size: 11 },
+              callback: function (v) { return (v % 2 === 0) ? '€' + v : ''; }
+            }
+          }
+        }
+      },
+      plugins: [labelConnPlugin]
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCascadeChart);
+  } else {
+    initCascadeChart();
+  }
+})();
+</script>
 
 <script>
   // Fit s01 eyebrow to exact logo width
