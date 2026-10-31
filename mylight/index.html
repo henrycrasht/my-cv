@@ -312,7 +312,7 @@
     #s01 .S { padding-right: calc(40vw + 3.5vw); z-index: 1; }
     .logo-svg.on-dark { color: var(--white); }
 
-    /* ===== PARTIE 1 · slides 1.1 A et 1.2 A (besoins et écarts, 3 cœurs) ===== */
+    /* ===== EXPÉRIENCE CLIENT · slides 1.1 B (besoins) et 1.2 A (priorités) · 3 mantras ===== */
 /* ====== PARTIE 1 · COMMUN (préfixe ml1-) — À COLLER UNE FOIS dans la feuille de style du deck (balise style) ====== */
 .ml1{--eco:#EAC558;--eco-lt:#FBF4DC;--exp:#305C64;--exp-lt:#E8F2F3;--fia:#DBB19C;--fia-lt:#FBF1EB;--fia-txt:#76472F;--line:rgba(25,30,30,.09);--soft-on-dark:#C2E2E8;color:var(--dark);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .ml1 *,.ml1 *::before,.ml1 *::after{box-sizing:border-box}
@@ -324,7 +324,7 @@
 .ml1-logo{height:clamp(26px,4.4vh,44px);width:auto;display:block}
 .ml1-nw{white-space:nowrap}
 .ml1-ic{width:1em;height:1em;flex-shrink:0}
-/* cœurs : pastilles */
+/* mantras : pastilles */
 .ml1-core{display:inline-flex;align-items:center;gap:.4em;font-weight:600;border-radius:300px;padding:.2em .75em;white-space:nowrap}
 .ml1-c-eco{background:var(--eco);color:var(--dark)}
 .ml1-c-exp{background:var(--exp);color:#fff}
@@ -339,10 +339,9 @@
 .ml1-s-ct{background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy)}
 /* chiffres */
 .ml1-stat{display:flex;align-items:baseline;gap:.45vw;flex-wrap:wrap}
-.ml1-stat b{font-size:clamp(18px,1.5vw,27px);font-weight:500;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums;background:linear-gradient(transparent 62%,var(--terracotta) 62%)}
+.ml1-stat b{font-size:clamp(22px,1.75vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums;color:var(--terracotta)}
 .ml1-stat span{font-size:clamp(11px,.78vw,14px);color:var(--gray);line-height:1.3}
 .ml1-stats{display:flex;flex-wrap:wrap;gap:.3vh 1.1vw}
-.ml1-stat.ml1-pos b{background:linear-gradient(transparent 62%,var(--tint-2) 62%)}
 .ml1-check{width:clamp(15px,1.1vw,19px);height:clamp(15px,1.1vw,19px);flex-shrink:0;margin-top:1px}
 .ml1-tag{display:inline-block;background:var(--terracotta);color:var(--dark);font-weight:600;font-size:clamp(10px,.68vw,12px);letter-spacing:.08em;padding:2px 9px;border-radius:300px;text-transform:uppercase;white-space:nowrap}
 .ml1-shared{display:inline-block;font-size:clamp(9px,.62vw,11px);font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:1px 7px;border-radius:300px;border:1px dashed currentColor;color:var(--gray);white-space:nowrap;vertical-align:middle}
@@ -356,50 +355,53 @@
   .ml1-stat{gap:6px}
 }
 @media screen and (max-width:760px){.ml1-src{font-size:11px}.ml1-tag{white-space:normal;border-radius:10px;line-height:1.4}}
-/* ====== SLIDE 1.1 · PROPOSITION A (préfixe m11a-) — À COLLER dans la feuille de style du deck (balise style) ====== */
+/* ====== SLIDE 1.1 · PROPOSITION B (préfixe m11b-) — À COLLER dans la feuille de style du deck (balise style) ====== */
 
-.m11a-persona{display:flex;align-items:center;gap:.6vw;flex-wrap:wrap;margin-bottom:1.6vh;flex-shrink:0}
-.m11a-persona .m11a-lab{font-size:clamp(11px,.78vw,14px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-right:.4vw}
-.m11a-pi{display:inline-flex;align-items:center;gap:.45vw;font-size:clamp(12px,.9vw,16px);font-weight:500;padding:.45vh .9vw;border-radius:300px;background:var(--card-bg);border:1px solid var(--line);white-space:nowrap}
-.m11a-pi .ml1-ic{color:var(--mint);font-size:1.1em}
-.m11a-basis{margin-left:auto;font-size:clamp(11px,.78vw,14px);color:var(--gray)}
-.m11a-basis b{color:var(--dark);font-weight:600}
-.m11a-cols{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2vw;min-height:0}
-.m11a-col{display:flex;flex-direction:column;border-radius:16px;background:var(--card-bg);border:1px solid var(--line);overflow:hidden;min-height:0}
-.m11a-head{display:flex;align-items:center;gap:1vw;padding:1.7vh 1.3vw;min-height:clamp(96px,14vh,140px)}
-.m11a-head .ml1-ic{font-size:clamp(30px,2.6vw,46px);stroke-width:1.5}
-.m11a-k{font-size:clamp(10px,.7vw,13px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;opacity:.75}
-.m11a-head h2{font-size:clamp(22px,2vw,36px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:.2vh 0 .4vh}
-.m11a-head p{font-size:clamp(12px,.88vw,16px);font-style:italic;line-height:1.3}
-.m11a-eco .m11a-head{background:var(--eco);color:var(--dark)}
-.m11a-exp .m11a-head{background:var(--exp);color:#fff}
-.m11a-fia .m11a-head{background:var(--fia);color:var(--dark)}
-.m11a-body{flex:1;display:flex;flex-direction:column;gap:1.3vh;padding:1.5vh 1.3vw 1.3vh;min-height:0}
-.m11a-sub{font-size:clamp(10px,.7vw,13px);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
-.m11a-need{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.5vh 1vw;display:flex;flex-direction:column;gap:1vh}
-.m11a-need .ml1-stat b{font-size:clamp(20px,1.8vw,32px)}
-.m11a-need h3{font-size:clamp(14px,1.2vw,21px);font-weight:500;letter-spacing:-.01em;line-height:1.25;margin:0}
-.m11a-stats{display:flex;flex-wrap:wrap;gap:.4vh 1.1vw}
-.m11a-x{font-size:clamp(11px,.78vw,14px);color:var(--gray);line-height:1.35}
-.m11a-x b{color:var(--dark);font-weight:600}
-.m11a-works{margin-top:auto;border-radius:12px;padding:1.1vh .9vw;display:flex;flex-direction:column;gap:.8vh}
-.m11a-eco .m11a-works{background:var(--eco-lt)}
-.m11a-exp .m11a-works{background:var(--exp-lt)}
-.m11a-works ul{list-style:none;display:flex;flex-direction:column;gap:.7vh;margin:0;padding:0}
-.m11a-works li{display:flex;gap:.55vw;align-items:flex-start;font-size:clamp(12px,.92vw,16px);font-weight:500;line-height:1.32}
-.m11a-works li em{font-style:normal;font-weight:600;color:var(--mint);white-space:nowrap}
-.m11a-none{margin-top:auto;border:1.5px dashed var(--fia);border-radius:12px;padding:1.3vh .9vw;background:var(--fia-lt)}
-.m11a-none p{font-size:clamp(13px,1vw,18px);font-weight:600;color:var(--fia-txt);margin:.4vh 0 0}
-.m11a-none span{font-size:clamp(11px,.78vw,14px);color:var(--gray)}
+.m11b-main{flex:1;display:grid;grid-template-columns:minmax(0,1fr);gap:0;min-height:0}
+.m11b-grid{display:grid;grid-template-columns:clamp(150px,12vw,230px) minmax(0,1.05fr) minmax(0,1.4fr) minmax(0,1.15fr);grid-template-rows:auto repeat(7,minmax(auto,1fr));column-gap:0;min-height:0;padding-left:2vw;position:relative}
+.m11b-grid::before{content:'';position:absolute;left:.8vw;top:calc(3.6vh + 6%);bottom:9%;width:2px;background:#C9D3D3}
+.m11b-h{font-size:clamp(10px,.74vw,13px);font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--gray);padding:0 1vw 1vh;align-self:end}
+.m11b-h.m11b-ok{color:var(--mint)}
+.m11b-core{grid-column:1;border-radius:14px 0 0 14px;padding:1.4vh 1vw;display:flex;flex-direction:column;justify-content:center;gap:.5vh;position:relative;margin-top:1vh}
+.m11b-core::before{content:'';position:absolute;left:-1.2vw;top:50%;width:1.2vw;height:2px;background:#C9D3D3}
+.m11b-core .ml1-ic{font-size:clamp(24px,2vw,36px);stroke-width:1.5}
+.m11b-core h2{font-size:clamp(19px,1.65vw,30px);font-weight:500;letter-spacing:-.02em;line-height:1.05;margin:0}
+.m11b-core p{font-size:clamp(11px,.78vw,14px);font-style:italic;line-height:1.3;margin:0}
+.m11b-eco{background:var(--eco)} .m11b-exp{background:var(--exp);color:#fff} .m11b-fia{background:var(--fia)}
+.m11b-c{padding:.9vh 1vw;display:flex;flex-direction:column;justify-content:center;gap:.5vh;min-width:0;border-bottom:1px solid var(--line)}
+.m11b-c.m11b-last{border-bottom:0}
+.m11b-band{grid-column:2 / 5;border-radius:0 14px 14px 0;margin-top:1vh}
+.m11b-band.m11b-eco{background:var(--eco-lt)} .m11b-band.m11b-exp{background:var(--exp-lt)} .m11b-band.m11b-fia{background:var(--fia-lt)}
+.m11b-need{font-size:clamp(13px,1.02vw,18px);font-weight:500;line-height:1.28;letter-spacing:-.01em}
+.m11b-x{font-size:clamp(11px,.76vw,14px);color:var(--gray);line-height:1.35}
+.m11b-x b{color:var(--dark);font-weight:600}
+.m11b-wk-eco{background:var(--eco-lt)} .m11b-wk-exp{background:var(--exp-lt)} .m11b-wk-fia{background:var(--fia-lt)}
+.m11b-w{grid-column:4;border-radius:0 14px 14px 0;padding:1vh 1vw;display:flex;flex-direction:column;justify-content:center;gap:.8vh;border-left:1px solid rgba(25,30,30,.08);margin-top:1vh}
+.m11b-wi{display:flex;gap:.5vw;align-items:flex-start;font-size:clamp(12px,.9vw,16px);font-weight:500;line-height:1.3}
+.m11b-wi em{font-style:normal;font-weight:700;color:var(--terracotta);white-space:nowrap}
+.m11b-none{font-size:clamp(13px,.98vw,17px);font-weight:600;color:var(--fia-txt)}
+.m11b-none span{display:block;font-weight:400;font-size:clamp(11px,.76vw,14px);color:var(--gray);margin-top:.3vh}
+.m11b-ml{display:none}
 @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
-  .m11a-basis{margin-left:0;width:100%}
-  .m11a-cols{grid-template-columns:1fr;gap:16px}
-  .m11a-head{padding:16px} .m11a-body{padding:14px 16px 16px;gap:10px}
-  .m11a-need{padding:12px} .m11a-works,.m11a-none{padding:12px;margin-top:6px}
+  .m11b-grid{display:flex;flex-direction:column;padding-left:0;gap:0}
+  .m11b-grid::before,.m11b-h,.m11b-band,.m11b-core::before{display:none}
+  .m11b-core{border-radius:14px 14px 0 0;padding:14px 16px;margin-top:16px;flex-direction:row;align-items:center;justify-content:flex-start;gap:6px 12px;flex-wrap:wrap}
+  .m11b-core p{width:100%}
+  .m11b-c{padding:12px 16px;background:var(--card-bg);margin-top:0 !important}
+  .m11b-w{border-left:0;margin-top:0;padding:12px 16px 14px;border-radius:0 0 14px 14px}
+  .m11b-ml{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mint)}
 }
-@media screen and (max-width:760px){.m11a-pi{font-size:13px;padding:5px 10px}.m11a-persona{gap:6px}}
 
-/* ====== FIN SLIDE 1.1 · PROPOSITION A ====== */
+/* Bandeau persona fin (repris de la proposition A) */
+.m11b-pband{display:flex;align-items:center;gap:.6vw;flex-wrap:wrap;margin-bottom:1.6vh;flex-shrink:0}
+.m11b-pband .m11b-plab{font-size:clamp(11px,.78vw,14px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-right:.4vw}
+.m11b-pi{display:inline-flex;align-items:center;gap:.45vw;font-size:clamp(12px,.9vw,16px);font-weight:500;padding:.45vh .9vw;border-radius:300px;background:var(--card-bg);border:1px solid var(--line);white-space:nowrap}
+.m11b-pi .ml1-ic{color:var(--mint);font-size:1.1em}
+.m11b-basis{margin-left:auto;font-size:clamp(11px,.78vw,14px);color:var(--gray)}
+.m11b-basis b{color:var(--dark);font-weight:600}
+@media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.m11b-basis{margin-left:0;width:100%}}
+@media screen and (max-width:760px){.m11b-pi{font-size:13px;padding:5px 10px}.m11b-pband{gap:6px}}
+/* ====== FIN SLIDE 1.1 · PROPOSITION B ====== */
 /* ====== SLIDE 1.2 · PROPOSITION A (préfixe m12a-) — À COLLER dans la feuille de style du deck (balise style) ====== */
 
 .m12a-bands{flex:1;display:grid;grid-template-rows:minmax(0,2.3fr) minmax(0,1fr) minmax(0,1fr);gap:1.2vh;min-height:0}
@@ -416,7 +418,6 @@
 .m12a-t-bars i.m12a-t-on{background:var(--navy)}
 .m12a-exp .m12a-t-bars i.m12a-t-on{background:#fff}
 .m12a-t-lab{font-size:clamp(10px,.72vw,13px);font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.m12a-why{font-size:clamp(11px,.76vw,14px);opacity:.85;line-height:1.3}
 .m12a-gaps{display:grid;gap:1vw;padding:1.2vh 1vw;min-width:0;min-height:0}
 .m12a-fia .m12a-gaps{grid-template-columns:1.15fr 1fr 1fr}
 .m12a-gap{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.2vh 1vw;display:flex;flex-direction:column;gap:.75vh;min-width:0;min-height:0}
@@ -429,49 +430,39 @@
 .m12a-wide .m12a-sub{font-size:clamp(12px,.95vw,17px);padding:.55vh .85vw}
 .m12a-sl{width:100%;font-size:clamp(10px,.68vw,12px);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fia-txt)}
 .m12a-sub{font-size:clamp(12px,.95vw,17px);font-weight:500;padding:.55vh .8vw;border-radius:300px;background:#fff;border:1px solid rgba(48,92,100,.28);white-space:nowrap}
-/* priorité n°1 */
-.m12a-top{background:var(--navy);border-color:var(--navy);color:#fff}
-.m12a-top .m12a-rk{color:var(--terracotta)}
-.m12a-big{font-size:clamp(28px,2.5vw,46px);font-weight:500;letter-spacing:-.03em;line-height:1;color:var(--terracotta)}
-.m12a-big small{display:block;font-size:clamp(12px,.92vw,16px);letter-spacing:0;font-weight:500;color:var(--soft-on-dark);margin-top:.4vh}
-.m12a-top .ml1-stat span{color:var(--soft-on-dark)}
-.m12a-top .ml1-stat b{background:none;color:#fff}
-.m12a-top .m12a-sub{background:rgba(255,255,255,.08);border-color:rgba(125,172,180,.45);color:#fff}
-.m12a-top .m12a-sl{color:var(--terracotta)}
-.m12a-top .ml1-s-ct{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px var(--accent-on-dark)}
+.m12a-big{font-size:clamp(30px,2.6vw,48px);font-weight:700;letter-spacing:-.03em;line-height:1;color:var(--terracotta)}
+.m12a-big small{display:block;font-size:clamp(12px,.92vw,16px);letter-spacing:0;font-weight:500;color:var(--gray);margin-top:.4vh}
 .ml1-xl{text-transform:none;letter-spacing:0;font-size:clamp(10px,.68vw,12px);color:#7A5A00;border-color:var(--eco);background:var(--eco-lt)}
 @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
   .m12a-bands{display:flex;flex-direction:column;gap:16px}
   .m12a-band{grid-template-columns:1fr}
   .m12a-lab{padding:14px 16px;flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 14px}
-  .m12a-why{width:100%}
-  .m12a-gaps,.m12a-fia .m12a-gaps{grid-template-columns:1fr;padding:12px;gap:12px}
+    .m12a-gaps,.m12a-fia .m12a-gaps{grid-template-columns:1fr;padding:12px;gap:12px}
   .m12a-gap{padding:14px}
   .m12a-wide{grid-template-columns:1fr;row-gap:10px}
 }
 @media screen and (max-width:760px){.m12a-sub{white-space:normal;font-size:13px;padding:4px 10px}}
 
 /* ====== FIN SLIDE 1.2 · PROPOSITION A ====== */
-    /* Deck : hauteur utile = 100vh − 36 px (barre de nav) → resserrage des diapos Partie 1 sur grand écran */
+    /* Deck : hauteur utile = 100vh − 36 px (barre de nav) → resserrage des diapos Expérience Client sur grand écran */
     @media print, (min-width:1024px) and (min-aspect-ratio:4/3){
       .S.ml1{padding:2.2vh 3.5vw 1.6vh}
       .ml1 .ml1-hdr{margin-bottom:1.2vh}
       .ml1 .ml1-note{margin-top:1vh;padding-top:.8vh}
-      .m11a-persona{margin-bottom:1.1vh}
-      .m11a-head{min-height:clamp(80px,11vh,124px);padding:1.3vh 1.3vw}
-      .m11a-body{gap:.9vh;padding:1.1vh 1.1vw 1.1vh}
-      .m11a-need{padding:1.1vh .9vw;gap:.6vh}
-      .m11a-works{padding:.9vh .9vw;gap:.6vh}
-      .m11a-works ul{gap:.5vh}
-      .m11a-none{padding:1vh .9vw}
+      .ml1 .ml1-h1{margin-top:1.3vh}
+      .m11b-pband{margin-bottom:.8vh}
       .m12a-bands{gap:1vh;grid-template-rows:minmax(0,2.45fr) minmax(0,1fr) minmax(0,1fr)}
       .m12a-gaps{padding:1vh .9vw}
       .m12a-gap{padding:1vh .9vw;gap:.55vh}
     }
+    /* Navigateur de sections (pastilles), commun à toutes les diapos */
+    .deck-nav{flex-wrap:wrap;row-gap:.6vh}
+    .deck-nav .tag-off{opacity:.45;cursor:default}
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.deck-nav{gap:6px}.deck-nav .tag{font-size:11px;padding:4px 10px}}
     /* Mobile : laisser défiler la diapo active (empilement ≤ 1023 px) */
     @media screen and (max-width:1023px){.slide.active{overflow-y:auto}}
-    /* Partie 1 : sur mobile/tablette, la diapo prend la hauteur de son contenu (défilement) */
-    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.slide.active{overflow-y:auto}.S.ml1{flex:0 0 auto;min-height:auto}.ml1 .m11a-cols,.ml1 .m12a-bands{flex:none}}
+    /* Expérience Client : sur mobile/tablette, la diapo prend la hauteur de son contenu (défilement) */
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.slide.active{overflow-y:auto}.S.ml1{flex:0 0 auto;min-height:auto}.ml1 .m11b-main,.ml1 .m12a-bands{flex:none}}
   </style>
 </head>
 <body>
@@ -491,14 +482,14 @@
   <span class="tag t-hl" style="position:absolute; bottom:3.2vh; right:3.5vw;">Étude de cas · 2026</span>
 
   <div class="mb-m">
-    <div class="row gap-s">
+    <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
-      <span class="tag t-gho axis-tag" data-stage="partie1">Partie 1</span>
-      <span class="tag t-gho" style="opacity:.55;">Diagnostic</span>
-      <span class="tag t-gho" style="opacity:.55;">Plan d’action</span>
-      <span class="tag t-gho" style="opacity:.55;">Leviers</span>
-      <span class="tag t-gho" style="opacity:.55;">Conclusion</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
     </div>
   </div>
 
@@ -549,14 +540,14 @@
 
   <div class="hdr mb-m">
     <div>
-      <div class="mb-m"><div class="row gap-s">
+      <div class="mb-m"><div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
-      <span class="tag t-gho axis-tag" data-stage="partie1">Partie 1</span>
-      <span class="tag t-gho" style="opacity:.55;">Diagnostic</span>
-      <span class="tag t-gho" style="opacity:.55;">Plan d’action</span>
-      <span class="tag t-gho" style="opacity:.55;">Leviers</span>
-      <span class="tag t-gho" style="opacity:.55;">Conclusion</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
     </div></div>
       <div class="t1">Ce que couvre cette étude</div>
     </div>
@@ -620,65 +611,68 @@
 </div>
 
 
-<!-- ════════════════════════════════════════════════════════
-     DIAPO 03 · PARTIE 1.1 · BESOINS CLIENTS (3 cœurs, proposition A)
-     ════════════════════════════════════════════════════════ -->
-<!-- ═════════ DÉBUT SLIDE 1.1 · PROPOSITION A — bloc à coller dans #deck (remplacer id="s03" par le n° de diapo, retirer « active ») ═════════ -->
+<!-- ══════════════════════════════════════════════════════════
+     DIAPO 03 · EXPÉRIENCE CLIENT 1.1 · BESOINS CLIENTS (3 mantras, proposition B)
+     ══════════════════════════════════════════════════════════ -->
+<!-- ═════════ DÉBUT SLIDE 1.1 · PROPOSITION B — bloc à coller dans #deck (remplacer id="s03" par le n° de diapo, retirer « active ») ═════════ -->
 <div class="slide white" id="s03">
-<div class="S ml1 m11a">
+<div class="S ml1 m11b">
   <div class="ml1-hdr">
     <div>
-      <div class="ml1-eyebrow">1.1 · Expérience client</div>
-      <h1 class="ml1-h1">Pourquoi les clients choisissent mylight150 <span class="ml1-dash">–</span> 3 cœurs, 5 besoins</h1>
+      <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+    </div>
+      <h1 class="ml1-h1">Du foyer <span class="ml1-nw">tout-électrique</span> aux 3 mantras <span class="ml1-dash">–</span> preuves et points d’appui</h1>
     </div>
     <div class="ml1-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150" class="ml1-logo"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
   </div>
-  <div class="m11a-persona"><span class="m11a-lab">Persona cible</span><span class="m11a-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Maison ≥ 150 m²</span><span class="m11a-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>3-5 personnes</span><span class="m11a-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg>PAC / VE</span><span class="m11a-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Tout-électrique</span><span class="m11a-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10.5v3M6 10v4M10 10v4M14 10v4"/></svg>8-15 kWh+</span><span class="m11a-basis">Base : <b>Trustpilot n = 1 460</b> + comparateurs, site, presse</span></div>
-  <div class="m11a-cols">
-    <section class="m11a-col m11a-eco"><div class="m11a-head"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7 10.5h6M7 13.5h6"/></svg><div><div class="m11a-k">Cœur 1</div><h2>Économie</h2><p>« Payer moins, sans surprise »</p></div></div>
-      <div class="m11a-body"><div class="m11a-sub">Besoins opérationnels</div>
-        <article class="m11a-need"><h3>Coût maîtrisé et prévisible de la facture d’usage</h3><div class="m11a-stats"><div class="ml1-stat"><b>~60 %</b><span>des 1★ · hausse</span></div><div class="ml1-stat"><b>31-34 %</b><span>des 1-2★ · enfermement</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></article>
-        <article class="m11a-need"><h3>Factures exactes, lisibles et anticipables</h3><div class="m11a-stats"><div class="ml1-stat"><b>35 %</b><span>des 1★</span></div><div class="ml1-stat"><b>52 %</b><span>des 2★</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></article>
-        <div class="m11a-works"><div class="m11a-sub">Ce qui fonctionne</div><ul><li><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Potentiel d’économies / concept batterie virtuelle</span></li><li><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Offre de bienvenue (kWh = Tarif Bleu 12 mois)</span></li></ul></div>
-      </div></section>
-    <section class="m11a-col m11a-exp"><div class="m11a-head"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><div><div class="m11a-k">Cœur 2</div><h2>Expertise</h2><p>« Être conseillé et suivi par quelqu’un qui connaît mon dossier »</p></div></div>
-      <div class="m11a-body"><div class="m11a-sub">Besoins opérationnels</div>
-        <article class="m11a-need"><h3>Conseil expert + interlocuteur qui porte le dossier</h3><div class="m11a-stats"><div class="ml1-stat"><b>64 %</b><span>des 1★ · joignabilité</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></article>
-        <article class="m11a-need"><h3>Visibilité et pilotage fiable <span class="ml1-shared">Partiel · volet visibilité</span></h3><div class="m11a-x">Volet fiabilité de l’app → <b>Fiabilité</b></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></article>
-        <div class="m11a-works"><div class="m11a-sub">Ce qui fonctionne</div><ul><li><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Qualité du conseil humain quand on joint quelqu’un · <em>~41 % des 5★</em></span></li><li><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Suivi / visualisation quand l’app fonctionne · <em>22-36 % des 4-5★</em></span></li><li><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Écosystème Robin</span></li></ul></div>
-      </div></section>
-    <section class="m11a-col m11a-fia"><div class="m11a-head"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><div class="m11a-k">Cœur 3</div><h2>Fiabilité</h2><p>« Que ça marche, dans les délais annoncés »</p></div></div>
-      <div class="m11a-body"><div class="m11a-sub">Besoins opérationnels</div>
-        <article class="m11a-need"><h3>Mise en service rapide et prévisible</h3><div class="m11a-stats"><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span></article>
-        <article class="m11a-need"><h3>Fiabilité de l’app et du pilotage <span class="ml1-shared">Partagé avec Expertise</span></h3><div class="m11a-stats"><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></article>
-        <article class="m11a-need"><h3>Communication transparente sur les tarifs</h3><div class="m11a-x">Lien <b>Économie</b> : hausse <span class="ml1-nw">~60 % des 1★</span>, enfermement <span class="ml1-nw">31-34 % des 1-2★</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></article>
-        <div class="m11a-none"><div class="m11a-sub">Ce qui fonctionne</div><p>Aucun point fort relevé</p><span>Le seul cœur sans point d’appui aujourd’hui</span></div>
-      </div></section>
+  <div class="m11b-pband"><span class="m11b-plab">Persona cible</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Maison ≥ 150 m²</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>3-5 personnes</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg>PAC / VE</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Tout-électrique</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10.5v3M6 10v4M10 10v4M14 10v4"/></svg>8-15 kWh+</span><span class="m11b-basis">Base : <b>Trustpilot n = 1 460</b> + comparateurs, site, presse</span></div>
+  <div class="m11b-main">
+    <div class="m11b-grid">
+      <div class="m11b-h">Mantra · promesse</div><div class="m11b-h">Besoin opérationnel</div><div class="m11b-h">Preuve · sources</div><div class="m11b-h m11b-ok">Ce qui fonctionne</div>
+<div class="m11b-band m11b-eco" style="grid-row:2 / span 2"></div><div class="m11b-core m11b-eco" style="grid-row:2 / span 2"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7 10.5h6M7 13.5h6"/></svg><h2>Économie</h2><p>« Payer moins, sans surprise »</p></div><div class="m11b-c" style="grid-row:2;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Coût maîtrisé et prévisible de la facture d’usage</div></div><div class="m11b-c" style="grid-row:2;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stats"><div class="ml1-stat"><b>~60 %</b><span>des 1★ · hausse</span></div><div class="ml1-stat"><b>31-34 %</b><span>des 1-2★ · enfermement</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></div><div class="m11b-c m11b-last" style="grid-row:3;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Factures exactes, lisibles et anticipables</div></div><div class="m11b-c m11b-last" style="grid-row:3;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="ml1-stats"><div class="ml1-stat"><b>35 %</b><span>des 1★</span></div><div class="ml1-stat"><b>52 %</b><span>des 2★</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m11b-w m11b-wk-eco" style="grid-row:2 / span 2"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Potentiel d’économies / concept batterie virtuelle</span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Offre de bienvenue (kWh = Tarif Bleu 12 mois)</span></div></div>
+<div class="m11b-band m11b-exp" style="grid-row:4 / span 2"></div><div class="m11b-core m11b-exp" style="grid-row:4 / span 2"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><h2>Expertise</h2><p>« Être conseillé et suivi par quelqu’un qui connaît mon dossier »</p></div><div class="m11b-c" style="grid-row:4;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Conseil expert + interlocuteur qui porte le dossier</div></div><div class="m11b-c" style="grid-row:4;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>64 %</b><span>des 1★ · joignabilité</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m11b-c m11b-last" style="grid-row:5;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Visibilité et pilotage fiable <span class="ml1-shared">Partiel · visibilité</span></div></div><div class="m11b-c m11b-last" style="grid-row:5;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="m11b-x">Volet fiabilité de l’app → <b>Fiabilité</b></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></div><div class="m11b-w m11b-wk-exp" style="grid-row:4 / span 2"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Qualité du conseil humain quand on joint quelqu’un · <em>~41 % des 5★</em></span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Suivi / visualisation quand l’app fonctionne · <em>22-36 % des 4-5★</em></span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Écosystème Robin</span></div></div>
+<div class="m11b-band m11b-fia" style="grid-row:6 / span 3"></div><div class="m11b-core m11b-fia" style="grid-row:6 / span 3"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>Fiabilité</h2><p>« Que ça marche, dans les délais annoncés »</p></div><div class="m11b-c" style="grid-row:6;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Mise en service rapide et prévisible</div></div><div class="m11b-c" style="grid-row:6;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span></div><div class="m11b-c" style="grid-row:7;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Fiabilité de l’app et du pilotage <span class="ml1-shared">Partagé · Expertise</span></div></div><div class="m11b-c" style="grid-row:7;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Communication transparente sur les tarifs</div></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="m11b-x">Lien <b>Économie</b> : hausse ~60 %, enfermement 31-34 %</div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></div><div class="m11b-w m11b-wk-fia" style="grid-row:6 / span 3"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-none">Aucun point fort relevé<span>Le seul mantra sans point d’appui aujourd’hui</span></div></div>
+    </div>
   </div>
   <div class="ml1-note"><b>Sources :</b><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-ct">Site / contrat</span></span><span class="ml1-sep"></span><span>Lecture : % = part des avis Trustpilot de la note indiquée qui citent le thème</span></div>
 </div>
 </div>
-<!-- ═════════ FIN SLIDE 1.1 · PROPOSITION A ═════════ -->
+<!-- ═════════ FIN SLIDE 1.1 · PROPOSITION B ═════════ -->
 
 <!-- ════════════════════════════════════════════════════════
-     DIAPO 04 · PARTIE 1.2 · ÉCARTS À COMBLER (proposition A)
+     DIAPO 04 · EXPÉRIENCE CLIENT 1.2 · PRIORITÉS (3 mantras, proposition A)
      ════════════════════════════════════════════════════════ -->
 <!-- ═════════ DÉBUT SLIDE 1.2 · PROPOSITION A — bloc à coller dans #deck (remplacer id="s04" par le n° de diapo, retirer « active ») ═════════ -->
 <div class="slide white" id="s04">
 <div class="S ml1 m12a">
   <div class="ml1-hdr">
     <div>
-      <div class="ml1-eyebrow">1.2 · Écarts à combler</div>
-      <h1 class="ml1-h1">Là où la promesse décroche <span class="ml1-dash">–</span> la Fiabilité d’abord</h1>
+      <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+    </div>
+      <h1 class="ml1-h1">Là où la promesse décroche <span class="ml1-dash">–</span> 5 priorités, la Fiabilité d’abord</h1>
     </div>
     <div class="ml1-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150" class="ml1-logo"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
   </div>
   <div class="m12a-bands">
-    <section class="m12a-band m12a-fia"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>Fiabilité</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i class="m12a-t-on"></i></span><span class="m12a-t-lab">Tension critique</span></div><div class="m12a-why">3 écarts dont la priorité n°1</div></div><div class="m12a-gaps"><article class="m12a-gap m12a-top"><span class="m12a-rk">Écart 01 · priorité n°1</span><h3>Délais d’activation</h3><div class="m12a-big">2-9 mois<small>vs 40 jours annoncés</small></div><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Process installateurs</span><span class="m12a-sub">Enedis</span><span class="m12a-sub">Suivi proactif</span><span class="m12a-sub">Goulots admin</span><span class="m12a-sub">Communication d’attente</span></div></article><article class="m12a-gap"><span class="m12a-rk">Écart 04</span><h3>Fiabilité de l’app et du pilotage</h3><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Stabilité technique</span><span class="m12a-sub">Synchronisation des données</span><span class="m12a-sub">UX Robin</span><span class="m12a-sub">Déconnexions</span></div></article><article class="m12a-gap"><span class="m12a-rk">Écart 05</span><h3>Communication et transparence tarifaire</h3><div class="ml1-stat"><b>~60 %</b><span>des 1★ · hausse</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Contrat</span></span><span class="ml1-shared ml1-xl">↔ Économie · enfermement 31-34 % des 1-2★</span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Timing / clarté des annonces</span><span class="m12a-sub">Simulation personnalisée</span><span class="m12a-sub">Options d’ajustement</span><span class="m12a-sub">Sentiment d’enfermement</span></div></article></div></section>
-    <section class="m12a-band m12a-exp"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><h2>Expertise</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i></i></span><span class="m12a-t-lab">Tension élevée</span></div><div class="m12a-why">1 écart · priorité n°2</div></div><div class="m12a-gaps"><article class="m12a-gap m12a-wide"><div><span class="m12a-rk">Écart 02</span><h3>Joignabilité et ownership du dossier</h3><div class="ml1-stat"><b>64 %</b><span>des 1★ · joignabilité</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Parcours asynchrone (tickets / chat IA)</span><span class="m12a-sub">Staffing Care</span><span class="m12a-sub">Outils de suivi</span><span class="m12a-sub">Horaires</span><span class="m12a-sub">Escalade</span></div></article></div></section>
-    <section class="m12a-band m12a-eco"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7 10.5h6M7 13.5h6"/></svg><h2>Économie</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i></i></span><span class="m12a-t-lab">Tension élevée</span></div><div class="m12a-why">1 écart · priorité n°3</div></div><div class="m12a-gaps"><article class="m12a-gap m12a-wide"><div><span class="m12a-rk">Écart 03</span><h3>Fiabilité et lisibilité de la facturation</h3><div class="ml1-stats"><div class="ml1-stat"><b>35 %</b><span>des 1★</span></div><div class="ml1-stat"><b>52 %</b><span>des 2★</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Qualité des données</span><span class="m12a-sub">Règles de régularisation</span><span class="m12a-sub">Clarté des factures</span><span class="m12a-sub">Transition pré-activation</span></div></article></div></section>
+    <section class="m12a-band m12a-fia"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>Fiabilité</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i class="m12a-t-on"></i></span><span class="m12a-t-lab">Tension critique</span></div></div><div class="m12a-gaps"><article class="m12a-gap"><span class="m12a-rk">Priorité 01</span><h3>Délais d’activation</h3><div class="m12a-big">2-9 mois<small>vs 40 jours annoncés</small></div><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Process installateurs</span><span class="m12a-sub">Enedis</span><span class="m12a-sub">Suivi proactif</span><span class="m12a-sub">Goulots admin</span><span class="m12a-sub">Communication d’attente</span></div></article><article class="m12a-gap"><span class="m12a-rk">Priorité 04</span><h3>Fiabilité de l’app et du pilotage</h3><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Stabilité technique</span><span class="m12a-sub">Synchronisation des données</span><span class="m12a-sub">UX Robin</span><span class="m12a-sub">Déconnexions</span></div></article><article class="m12a-gap"><span class="m12a-rk">Priorité 05</span><h3>Communication et transparence tarifaire</h3><div class="ml1-stat"><b>~60 %</b><span>des 1★ · hausse</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Contrat</span></span><span class="ml1-shared ml1-xl">↔ Économie · enfermement 31-34 % des 1-2★</span><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Timing / clarté des annonces</span><span class="m12a-sub">Simulation personnalisée</span><span class="m12a-sub">Options d’ajustement</span><span class="m12a-sub">Sentiment d’enfermement</span></div></article></div></section>
+    <section class="m12a-band m12a-exp"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><h2>Expertise</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i></i></span><span class="m12a-t-lab">Tension élevée</span></div></div><div class="m12a-gaps"><article class="m12a-gap m12a-wide"><div><span class="m12a-rk">Priorité 02</span><h3>Joignabilité et ownership du dossier</h3><div class="ml1-stat"><b>64 %</b><span>des 1★ · joignabilité</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Parcours asynchrone (tickets / chat IA)</span><span class="m12a-sub">Staffing Care</span><span class="m12a-sub">Outils de suivi</span><span class="m12a-sub">Horaires</span><span class="m12a-sub">Escalade</span></div></article></div></section>
+    <section class="m12a-band m12a-eco"><div class="m12a-lab"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7 10.5h6M7 13.5h6"/></svg><h2>Économie</h2><div class="m12a-t"><span class="m12a-t-bars"><i class="m12a-t-on"></i><i class="m12a-t-on"></i><i></i></span><span class="m12a-t-lab">Tension élevée</span></div></div><div class="m12a-gaps"><article class="m12a-gap m12a-wide"><div><span class="m12a-rk">Priorité 03</span><h3>Fiabilité et lisibilité de la facturation</h3><div class="ml1-stats"><div class="ml1-stat"><b>35 %</b><span>des 1★</span></div><div class="ml1-stat"><b>52 %</b><span>des 2★</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m12a-subs"><span class="m12a-sl">À investiguer · hypothèses</span><span class="m12a-sub">Qualité des données</span><span class="m12a-sub">Règles de régularisation</span><span class="m12a-sub">Clarté des factures</span><span class="m12a-sub">Transition pré-activation</span></div></article></div></section>
   </div>
-  <div class="ml1-note"><span class="ml1-tag">Hypothèses</span><span>Sous-dimensions = pistes à valider. Tension = lecture qualitative (nombre et rang des écarts), pas un score.</span><span class="ml1-sep"></span><b>Sources :</b><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-ct">Site / contrat</span></span></div>
+  <div class="ml1-note"><span class="ml1-tag">Hypothèses</span><span>Sous-dimensions = pistes à valider. Tension = lecture qualitative (nombre et rang des priorités), pas un score.</span><span class="ml1-sep"></span><b>Sources :</b><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-ct">Site / contrat</span></span></div>
 </div>
 </div>
 <!-- ═════════ FIN SLIDE 1.2 · PROPOSITION A ═════════ -->
@@ -732,17 +726,20 @@
   updateCounter();
 
   // Stage map — slide index (0-based) → stage key
-  // s01 = intro (couverture) · s02 = agenda (sommaire) · s03–s04 = partie1 (1.1 besoins, 1.2 écarts)
-  const stageMap = ['intro','agenda','partie1','partie1'];
+  // s01 = intro (couverture) · s02 = agenda (sommaire) · s03–s04 = experience (1.1 besoins, 1.2 priorités)
+  const stageMap = ['intro','agenda','experience','experience'];
 
   // First slide (0-based index) for each stage — clicking a pill jumps here
-  const stageFirst = { intro: 0, agenda: 1, partie1: 2 };
+  const stageFirst = { intro: 0, agenda: 1, experience: 2 };
 
   function updateAxis() {
-    const stage = stageMap[cur] || 'none';
-    document.querySelectorAll('.axis-tag').forEach(t => {
-      // preserve axis-tag class so querySelectorAll keeps finding them on subsequent calls
-      t.className = 'tag axis-tag ' + (t.dataset.stage === stage ? 't-pri' : 't-gho');
+    // chaque diapo surligne sa propre section (juste aussi à l’impression, où toutes les diapos sont visibles)
+    slides.forEach((s, i) => {
+      const stage = stageMap[i] || 'none';
+      s.querySelectorAll('.axis-tag').forEach(t => {
+        // preserve axis-tag class so querySelectorAll keeps finding them on subsequent calls
+        t.className = 'tag axis-tag ' + (t.dataset.stage === stage ? 't-pri' : 't-gho');
+      });
     });
   }
 
