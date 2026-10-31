@@ -450,7 +450,7 @@ const SCOPES=[['tp','Trustpilot'],['ext','Externes'],['all','Tout']];
 const stPill=t=>`<span class="stp sp-${STK[t]}">${t==='avis Trustpilot'?'Trustpilot':esc(t)}</span>`;
 const AGENT_LIST=Object.keys(AGENTS).sort((a,b)=>AGENTS[b]-AGENTS[a]||a.localeCompare(b));
 const PAGE=25;
-const ST={scope:'tp',stype:new Set(),cite:false,q:'',need:new Set(),sec:false,score:new Set(),tags:new Set(),tm:'or',sent:new Set(),reply:'all',agent:new Set(),prof:new Set(),from:'',to:'',sort:'new',p:1,open:false,preset:''};
+const ST={scope:'all',stype:new Set(),cite:false,q:'',need:new Set(),sec:false,score:new Set(),tags:new Set(),tm:'or',sent:new Set(),reply:'all',agent:new Set(),prof:new Set(),from:'',to:'',sort:'new',p:1,open:false,preset:''};
 
 function addDays(iso,n){const d=new Date(iso+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10);}
 function addMonths(iso,n){const d=new Date(iso+'T12:00:00Z');d.setUTCMonth(d.getUTCMonth()+n);return d.toISOString().slice(0,10);}
@@ -525,7 +525,7 @@ const starStr=n=>'★'.repeat(n);
 function renderFilters(fc){
   $('#f-need').innerHTML=NEEDS.map(n=>`<button class="nchip ${NK[n]}${(fc.need[n]||0)===0?' zero':''}" aria-pressed="${ST.need.has(n)}" data-k="need" data-v="${n}"><span class="dot ${NK[n]}"></span><span>${n}<span class="d">${NDESC[n]}</span></span><span class="n">${nf.format(fc.need[n]||0)}</span></button>`).join('');
   $('#needsec').checked=ST.sec;
-  $('#f-scope').innerHTML=SCOPES.map(([k,l])=>`<button data-sc="${k}" aria-pressed="${ST.scope===k}" title="${k==='tp'?'Avis Trustpilot uniquement (vue par défaut)':k==='ext'?'Extraits de sources externes uniquement':'Avis Trustpilot + extraits externes'}">${l}</button>`).join('');
+  $('#f-scope').innerHTML=SCOPES.map(([k,l])=>`<button data-sc="${k}" aria-pressed="${ST.scope===k}" title="${k==='tp'?'Avis Trustpilot uniquement':k==='ext'?'Extraits de sources externes uniquement':'Avis Trustpilot + extraits externes (vue par défaut)'}">${l}</button>`).join('');
   $('#f-stype').innerHTML=STYPES.map(t=>chip(`<span class="sdot sp-${STK[t]}"></span>${esc(t)}`,fc.stype[t]||0,ST.stype.has(t),`data-k="stype" data-v="${esc(t)}"`)).join('');
   $('#f-cite').innerHTML=chip('Cité sur mylight150.com',fc.cite,ST.cite,'data-k="cite" data-v="1" title="Avis Trustpilot repris parmi les témoignages publiés sur mylight150.com"').replace('class="chip','class="chip cite');
   $('#f-prof').innerHTML=PROFS.map(p=>chip(`<span class="pdot"></span>${esc(p)}`,fc.prof[p]||0,ST.prof.has(p),`data-k="prof" data-v="${esc(p)}"`).replace('class="chip','class="chip prof')).join('');
@@ -666,7 +666,7 @@ function renderList(terms){
   $('#pager').innerHTML=pages>1?h:'';
   // active filters
   const a=[];
-  if(ST.scope!=='tp')a.push(['scope','',ST.scope==='ext'?'Sources externes':'Trustpilot + externes']);
+  if(ST.scope!=='all')a.push(['scope','',ST.scope==='ext'?'Sources externes':'Trustpilot uniquement']);
   ST.stype.forEach(t=>a.push(['stype',t,'Type : '+t]));
   if(ST.cite)a.push(['cite','','Cité sur mylight150.com']);
   ST.prof.forEach(t=>a.push(['prof',t,'Profil : '+t]));
@@ -685,7 +685,7 @@ function renderList(terms){
 // URL hash
 function toHash(){
   const p=new URLSearchParams();
-  if(ST.scope!=='tp')p.set('src',ST.scope==='ext'?'ext':'tout');
+  if(ST.scope!=='all')p.set('src',ST.scope==='ext'?'ext':'tp');
   if(ST.stype.size)p.set('type',[...ST.stype].join(','));
   if(ST.cite)p.set('cite','1');
   if(ST.prof.size)p.set('profil',[...ST.prof].join(','));
@@ -707,7 +707,7 @@ function toHash(){
 }
 function fromHash(){
   const p=new URLSearchParams(location.hash.slice(1));
-  const sc=p.get('src');ST.scope=sc==='ext'?'ext':sc==='tout'?'all':'tp';
+  const sc=p.get('src');ST.scope=sc==='ext'?'ext':sc==='tp'?'tp':'all';
   ST.stype=new Set((p.get('type')||'').split(',').filter(t=>STYPES.includes(t)));
   ST.cite=p.get('cite')==='1';
   ST.prof=new Set((p.get('profil')||'').split(',').filter(t=>PROFS.includes(t)));
@@ -729,7 +729,7 @@ function fromHash(){
 function render(keepPage){
   const {terms,fc}=compute();
   renderFilters(fc);renderSummary();renderList(terms);toHash();
-  const nf_=$('#ftoggle');const k=(ST.scope!=='tp')+ST.stype.size+ST.cite+ST.need.size+ST.score.size+ST.tags.size+ST.sent.size+ST.agent.size+ST.prof.size+(ST.reply!=='all')+(!!(ST.from||ST.to))+(!!ST.q);
+  const nf_=$('#ftoggle');const k=(ST.scope!=='all')+ST.stype.size+ST.cite+ST.need.size+ST.score.size+ST.tags.size+ST.sent.size+ST.agent.size+ST.prof.size+(ST.reply!=='all')+(!!(ST.from||ST.to))+(!!ST.q);
   nf_.textContent=k?`Filtres (${k})`:'Filtres';
 }
 function update(){ST.p=1;render();}
@@ -751,7 +751,7 @@ document.addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
   if(b.dataset.k){handleK(b.dataset.k,b.dataset.v);return;}
   if(b.dataset.rm){const k=b.dataset.rm,v=b.dataset.v;
-    if(k==='q')ST.q='';else if(k==='scope'){ST.scope='tp';ST.stype.clear();}else if(k==='cite')ST.cite=false;else if(k==='date'){ST.from='';ST.to='';}else if(k==='reply')ST.reply='all';
+    if(k==='q')ST.q='';else if(k==='scope'){ST.scope='all';ST.stype.clear();}else if(k==='cite')ST.cite=false;else if(k==='date'){ST.from='';ST.to='';}else if(k==='reply')ST.reply='all';
     else if(k==='score')ST.score.delete(Number(v));else ST[k].delete(v);update();return;}
   if(b.dataset.clear){const k=b.dataset.clear;if(k==='date'){ST.from='';ST.to='';}else ST[k].clear();update();return;}
   if(b.dataset.xn){ST.need=new Set([b.dataset.xn]);ST.tags=new Set([b.dataset.xt]);update();return;}
@@ -761,7 +761,7 @@ document.addEventListener('click',e=>{
   if(b.dataset.act==='toggle'){const c=b.closest('.card');const o=c.classList.toggle('open');const hasR=!!c.querySelector('.reply');b.textContent=o?'Replier':(b.dataset.ext==='r'?'Lire la réponse':b.dataset.ext?'Note d’analyse':(hasR?'Lire l’avis complet et la réponse':'Lire l’avis complet'));return;}
   if(b.dataset.act==='reset'){reset();return;}
 });
-function reset(){Object.assign(ST,{scope:'tp',stype:new Set(),cite:false,q:'',need:new Set(),sec:false,score:new Set(),tags:new Set(),tm:'or',sent:new Set(),reply:'all',agent:new Set(),prof:new Set(),from:'',to:'',p:1});$('#q').value='';update();}
+function reset(){Object.assign(ST,{scope:'all',stype:new Set(),cite:false,q:'',need:new Set(),sec:false,score:new Set(),tags:new Set(),tm:'or',sent:new Set(),reply:'all',agent:new Set(),prof:new Set(),from:'',to:'',p:1});$('#q').value='';update();}
 $('#reset').addEventListener('click',reset);
 $('#needsec').addEventListener('change',e=>{ST.sec=e.target.checked;update();});
 let qt;$('#q').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{ST.q=e.target.value.trim();update();},180);});
