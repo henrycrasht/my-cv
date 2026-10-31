@@ -461,6 +461,186 @@
     @media screen and (max-width:1023px){.slide.active{overflow-y:auto}}
     /* Expérience Client : sur mobile/tablette, la diapo prend la hauteur de son contenu (défilement) */
     @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.slide.active{overflow-y:auto}.S.ml1{flex:0 0 auto;min-height:auto}.ml1 .m11b-main,.ml1 .m12a-bands{flex:none}}
+    /* ====== SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION (préfixe m22-) ====== */
+    .m22{--line:rgba(25,30,30,.09);--bk:#18353A;--nw:#C4876A;--ac:#305C64;--proj:rgba(216,243,247,.32);color:var(--dark);font-family:'Inter',system-ui,sans-serif}
+    .m22 *,.m22 *::before,.m22 *::after{box-sizing:border-box}
+    .m22-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:2vw;margin-bottom:1.3vh;flex-shrink:0}
+    .m22-hl{min-width:0}
+    .m22-nav{display:flex;flex-wrap:wrap;gap:.6vh .75vw;align-items:center}
+    .m22-nav .tag-off{opacity:.45;cursor:default}
+    .m22-h1{font-size:clamp(22px,2.35vw,42px);font-weight:500;letter-spacing:-.02em;line-height:1.12;margin:1.1vh 0 0}
+    .m22-dash{color:var(--gray);font-weight:400}
+    .m22-obj{display:flex;align-items:baseline;gap:.7vw;margin:.7vh 0 0;font-size:clamp(12px,.92vw,17px);line-height:1.4;color:var(--gray)}
+    .m22-tag{flex-shrink:0;display:inline-block;background:var(--mint);color:#fff;font-weight:600;font-size:clamp(10px,.66vw,12px);letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:300px;position:relative;top:-1px}
+    .m22-brand{flex-shrink:0;color:var(--dark)}
+    .m22-logo{height:clamp(26px,4.2vh,44px);width:auto;display:block}
+    .m22-lab{font-size:clamp(10px,.7vw,13px);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}
+    .m22-lab-s{letter-spacing:.02em;text-transform:none;font-weight:400;color:var(--gray);margin-left:.5vw}
+    /* ---------- timeline double axe (v7) ---------- */
+    .m22v6{--bk:#D4A72C;--bk-txt:#9A7712;--cum-txt:#305C64}
+    .m22-tv{flex-shrink:0;border:1px solid var(--line);border-radius:14px;padding:1.2vh 1.2vw 1.1vh;background:#fff}
+    .m22-tv-top{display:flex;flex-wrap:wrap;align-items:center;gap:.4vh 1.5vw;margin-bottom:.4vh}
+    .m22-tv-top .m22-lab{margin-right:1vw}
+    .m22-lg{display:inline-flex;align-items:center;gap:.45vw;font-size:clamp(11px,.76vw,13px);color:var(--gray);white-space:nowrap}
+    .m22-k{display:inline-block;width:18px;height:2.5px;border-radius:2px;flex-shrink:0}
+    .m22-k-nw{background:var(--nw)}.m22-k-ac{background:var(--ac)}.m22-k-bk{background:var(--bk);height:3px}
+    .m22-k-tg{background:repeating-linear-gradient(90deg,var(--bk-txt) 0 4px,transparent 4px 7px)}
+    .m22-tv-g{display:grid;grid-template-columns:3vw minmax(0,1fr) 3.6vw;grid-template-rows:auto auto auto;column-gap:.8vw;position:relative}
+    .m22-ov{grid-column:2;grid-row:1/2;position:relative;pointer-events:none;background:linear-gradient(90deg,transparent 50%,var(--proj) 50%)}
+    .m22-ph{position:absolute;top:4px;font-size:clamp(9px,.6vw,11px);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);opacity:.75}
+    .m22-ph-h{left:8px}.m22-ph-p{left:calc(50% + 56px);color:var(--mint);opacity:.95}
+    .m22-today{position:absolute;left:50%;top:0;bottom:-3.2vh;border-left:2px solid var(--terracotta);z-index:2}
+    .m22-today b{position:absolute;top:2px;left:0;transform:translateX(-50%);background:var(--terracotta);color:var(--dark);font-size:clamp(10px,.66vw,12px);font-weight:700;letter-spacing:.03em;padding:2px 10px;border-radius:300px;white-space:nowrap}
+    .m22-pC{grid-column:2;grid-row:1;position:relative;z-index:1;height:53vh;margin-top:3.2vh;margin-bottom:.3vh}
+    .m22-ov{margin:0}
+    .m22-ya{grid-column:1;grid-row:1;position:relative;height:53vh;margin-top:3.2vh}
+    .m22-ya span,.m22-yb span{position:absolute;right:0;transform:translateY(-50%);font-size:clamp(10px,.66vw,12px);color:var(--bk-txt);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .m22-yb{grid-column:3;grid-row:1;position:relative;height:53vh;margin-top:3.2vh;border-left:1px solid rgba(48,92,100,.3)}
+    .m22-yb span{right:auto;left:6px;color:var(--cum-txt)}
+    .m22-yb .m22-ybt{font-weight:400;font-size:clamp(9px,.58vw,11px);transform:translateY(40%);opacity:.85}
+    .m22-ya{border-right:1px solid rgba(154,119,18,.35)}
+    .m22-ya span{right:6px}
+    .m22-at{position:absolute;top:calc(-3.2vh + 3px);font-style:normal;font-size:clamp(9px,.62vw,11px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+    .m22-ya .m22-at{right:6px;color:var(--bk-txt)}.m22-yb .m22-at{right:0;color:var(--cum-txt)}
+    .m22-lg-sep{font-size:clamp(9px,.6vw,11px);font-style:italic;margin-left:-.8vw;opacity:.8}
+    .m22-an-bk b{color:var(--bk-txt)!important}
+    .m22-pC svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+    .m22 svg path,.m22 svg line{vector-effect:non-scaling-stroke}
+    .m22-ln,.m22-tg,.m22-gl{fill:none}
+    .m22-gl{stroke:rgba(25,30,30,.1);stroke-width:1}
+    .m22-ln{stroke-width:1.8;stroke-linejoin:round}
+    .m22-ln-nw{stroke:var(--nw)}.m22-ln-ac{stroke:var(--ac)}.m22-ln-bk{stroke:var(--bk);stroke-width:2.4}
+    .m22-tg{stroke:var(--bk-txt);stroke-width:1.1;stroke-dasharray:4 4}
+    .m22-dt{fill:none;stroke-linecap:round;stroke-width:5}
+    .m22-dt-nw{stroke:var(--nw)}.m22-dt-ac{stroke:var(--ac)}.m22-dt-bk{stroke:var(--bk)}
+    .m22-dt-key{stroke:var(--bk);stroke-width:9}
+    .m22-an{position:absolute;white-space:nowrap;font-size:clamp(11px,.72vw,13px);color:var(--gray);line-height:1.1}
+    .m22-an b{font-weight:700;color:var(--terracotta);font-size:clamp(13px,.96vw,17px);letter-spacing:-.01em;margin-right:.2em}
+    .m22-gt{position:relative}
+    .m22-mo{grid-column:2;grid-row:2;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));text-align:center;padding:.6vh 0 .2vh;border-top:1px solid rgba(25,30,30,.25);font-size:clamp(10px,.66vw,12px);font-weight:600;color:var(--gray);font-variant-numeric:tabular-nums}
+    .m22-mo-now{color:var(--dark)}
+    .m22-fl{grid-column:1;grid-row:3;align-self:center;text-align:right;font-size:clamp(10px,.66vw,12px);font-weight:600;color:var(--gray);letter-spacing:.08em}
+    .m22-fb{grid-column:2;grid-row:3;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:3px;margin-top:.5vh}
+    .m22-fs{display:flex;align-items:center;justify-content:center;height:clamp(16px,2.1vh,22px);border-radius:5px;font-size:clamp(10px,.68vw,12px);font-weight:700;white-space:nowrap}
+    .m22-fs-6{background:rgba(48,92,100,.12);color:var(--mint)}
+    .m22-fs-buf{background:repeating-linear-gradient(135deg,rgba(48,92,100,.1) 0 4px,rgba(219,177,156,.3) 4px 8px);color:var(--fia-txt,#76472F);font-weight:600;outline:1px dashed var(--terracotta);outline-offset:-1px}
+    .m22-fs-11{background:var(--terracotta);color:var(--dark)}
+    .m22-vl{position:absolute;z-index:3;white-space:nowrap;font-size:clamp(10px,.72vw,11px);font-weight:600;line-height:1;font-variant-numeric:tabular-nums;padding:1px 2px;border-radius:3px;background:rgba(255,255,255,.82)}
+    .m22-vl-bk{color:var(--bk-txt)}.m22-vl-nw{color:var(--nw)}.m22-vl-ac{color:var(--ac)}
+    .m22-vl-key{font-weight:700}
+    .m22-tv-body{display:flex;gap:1vw;align-items:flex-start}
+    .m22-tv-body .m22-tv-scroll{flex:1;min-width:0}
+    .m22-leg{flex:0 0 9.4vw;display:flex;flex-direction:column;gap:.75vh;padding-top:3.2vh}
+    .m22-leg .m22-lg{white-space:normal;align-items:flex-start;line-height:1.25}
+    .m22-leg .m22-k{margin-top:.5em}.m22-leg .m22-kb{margin-top:.2em}
+    .m22-leg-h{font-size:clamp(9px,.58vw,10px);font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);margin-top:.6vh}
+    .m22-leg-h:first-child{margin-top:0}
+    .m22-leg-n{font-size:clamp(10px,.62vw,11px);color:var(--gray);font-style:italic;line-height:1.3}
+    .m22-kb{width:11px;height:11px;border-radius:2px}
+    .m22-kb-ac{background:var(--ac)}.m22-kb-gap{background:var(--nw)}
+    .m22-br-ac{fill:var(--ac);fill-opacity:.82}.m22-br-gap{fill:var(--nw)}
+    .m22-ln-halo{stroke:#fff;stroke-width:5.5;stroke-opacity:.9}
+    .m22-dt-halo{stroke:#fff;stroke-width:8}.m22-dt-halo-key{stroke-width:12}
+    .m22-vl-tot{color:var(--nw);font-weight:700}
+    .m22-vl-in{position:absolute;z-index:2;transform:translate(-50%,calc(-100% - 2px));white-space:nowrap;font-size:clamp(9px,.62vw,10px);font-weight:600;color:#fff;font-variant-numeric:tabular-nums;line-height:1}
+    .m22-vl-bk{background:rgba(255,255,255,.9)}
+    .m22-cols{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);column-gap:1.6vw;margin-top:.2vh}
+    .m22-cols .m22-tv{display:flex;flex-direction:column;min-height:0}
+    .m22-cols .m22-tv-body{flex-direction:column;align-items:stretch;gap:1.2vh;flex:1}
+    .m22-cols .m22-leg{flex:0 0 auto;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.4vh 1.6vw;padding:0}
+    .m22-cols .m22-leg .m22-lg{white-space:nowrap;align-items:center}
+    .m22-cols .m22-leg .m22-k,.m22-cols .m22-leg .m22-kb{margin-top:0}
+    .m22-cols .m22-tw{margin-top:0}
+    .m22-cols .m22-t th:first-child{width:31%}
+    .m22-cols .m22-t th:last-child{width:27%}
+    .m22-cols .m22-t td{padding:.5vh .7vw}
+    .m22-cols .m22-t th{padding:0 .7vw .8vh}
+    .m22-cols .m22-t td.m22-step{padding-left:calc(.7vw + clamp(20px,1.4vw,26px) + .6vw)}
+    .m22-cols .m22-t td.m22-step .m22-n{left:.7vw}
+    .m22-cols .m22-calc{font-size:clamp(11px,.76vw,14px);line-height:1.35}
+    .m22-cols .m22-f{white-space:normal}
+    .m22-cols .m22-res .m22-num{display:block;margin:0}
+    .m22-cols .m22-res .m22-unit{display:block;font-size:clamp(10px,.68vw,12px)}
+    .m22-cols .m22-res .m22-unit:empty{display:none}
+    .m22-cols .m22-ans .m22-res .m22-num{font-size:clamp(16px,1.3vw,22px);white-space:normal;line-height:1.15}
+    .m22-cols .m22-vl-in{font-size:9px;letter-spacing:-.02em}
+    .m22-cols .m22-fs-buf{font-size:clamp(9px,.6vw,10px);letter-spacing:-.02em}
+    /* ---------- tableau (compact) ---------- */
+    .m22-tw{flex:1;min-height:0;display:flex;margin-top:1.6vh}
+    .m22-t{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums;height:100%}
+    .m22-t th{text-align:left;font-size:clamp(10px,.68vw,12px);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);padding:0 1vw .8vh;border-bottom:2px solid var(--mint);height:1px}
+    .m22-t tbody tr:last-child td{border-bottom:2px solid var(--mint)}
+    .m22-t td{padding:.5vh 1vw;border-bottom:1.5px solid rgba(48,92,100,.28);vertical-align:middle}
+    .m22-t th.m22-res,.m22-t td.m22-res{text-align:right}
+    .m22-t th:first-child{width:21%}
+    .m22-t th:last-child{width:25%}
+    .m22-t td.m22-step{position:relative;padding-left:calc(1vw + clamp(20px,1.4vw,26px) + .7vw)}
+    .m22-t td.m22-step .m22-n{position:absolute;left:1vw;top:50%;transform:translateY(-50%);margin:0}
+    .m22-step .m22-n{display:inline-flex;align-items:center;justify-content:center;width:clamp(20px,1.4vw,26px);height:clamp(20px,1.4vw,26px);border-radius:50%;background:rgba(48,92,100,.1);color:var(--mint);font-weight:600;font-size:clamp(10px,.72vw,13px)}
+    .m22-et{text-wrap:balance;font-size:clamp(12px,.9vw,17px);font-weight:600;line-height:1.22;letter-spacing:-.01em}
+    .m22-calc{text-wrap:pretty;font-size:clamp(11px,.8vw,15px);line-height:1.32;color:var(--gray)}
+    .m22-f{color:var(--dark);font-weight:500;white-space:nowrap}
+    .m22-res .m22-num{display:inline;font-size:clamp(16px,1.32vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--dark);white-space:nowrap;margin-right:.45vw}
+    .m22-res .m22-unit{display:inline;font-size:clamp(11px,.74vw,13px);color:var(--gray);line-height:1.3}
+    .m22-res .m22-unit b{color:var(--dark);font-weight:600}
+    .m22-ans td{background:rgba(219,177,156,.16)}
+    .m22-ans td:first-child{box-shadow:inset 3px 0 0 var(--terracotta)}
+    .m22-ans .m22-n{background:var(--terracotta);color:var(--dark)}
+    .m22-ans .m22-et,.m22-ans .m22-calc{color:var(--dark)}
+    .m22-ans .m22-res .m22-num{font-size:clamp(18px,1.5vw,27px);font-weight:800;color:var(--terracotta)}
+    .m22-ans .m22-res .m22-unit{color:var(--dark);font-weight:500}
+    /* ---------- hypothèses ---------- */
+    .m22-hyp{flex-shrink:0;margin-top:1vh;padding:.6vh 1vw .35vh;background:var(--mint-lt);border:1px solid rgba(234,197,88,.35);border-radius:12px;display:flex;align-items:center;gap:1.4vw}
+    .m22-hyp-h{flex-shrink:0;font-size:11px;font-weight:700;color:var(--mint);letter-spacing:.02em}
+    .m22-hyp ul{flex:1;min-width:0}
+    .m22-hyp .m22-lab{font-size:9.5px;letter-spacing:.1em;line-height:1.3}
+    .m22-hyp ul{list-style:none;margin:0;padding:0;columns:3;column-gap:2vw}
+    .m22-hyp li{break-inside:avoid;position:relative;padding-left:1vw;margin-bottom:.25vh;font-size:11px;line-height:1.28;text-wrap:pretty;color:var(--dark)}
+    .m22-hyp li::before{content:'';position:absolute;left:0;top:.5em;width:5px;height:5px;border-radius:50%;background:var(--terracotta)}
+    .m22-hyp li b{color:var(--terracotta);font-weight:700}
+    @media screen and (min-width:1024px) and (min-aspect-ratio:4/3){.m22-hyp ul{columns:auto;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);column-gap:2.4vw;row-gap:.15vh}.m22-hyp li{margin:0;padding-left:.9vw}}
+    /* ---------- empilé (≤ 1023 px ou écran étroit) ---------- */
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
+      .S.m22{flex:0 0 auto;min-height:auto}
+      .m22-hdr{flex-direction:column-reverse;gap:14px;margin-bottom:16px}
+      .m22-h1{margin-top:12px}.m22-obj{margin-top:8px;flex-wrap:wrap;gap:6px 10px}
+      .m22-nav{gap:6px}.m22-nav .tag{font-size:11px;padding:4px 10px}
+      .m22-tv{padding:12px 12px 10px}
+      .m22-tv-top{gap:6px 14px;margin-bottom:10px}.m22-tv-top .m22-lab{flex-basis:100%}
+      .m22-tv-top::after{content:'Faire défiler la timeline vers la droite →';flex-basis:100%;font-size:11px;color:var(--gray);font-style:italic}
+      .m22-cols{display:block}.m22-cols .m22-tw{margin-top:16px}
+      .m22-tv-body{display:block}.m22-leg{flex-direction:row;flex-wrap:wrap;gap:6px 14px;padding:10px 0 0}.m22-leg-h{flex-basis:100%;margin-top:4px}.m22-leg .m22-lg{white-space:nowrap}
+      .m22-tv-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -12px;padding:0 12px}
+      .m22-tv-g{min-width:860px;grid-template-columns:44px minmax(0,1fr) 52px;column-gap:10px}
+      .m22-pC,.m22-ya,.m22-yb{height:220px;margin-top:28px}
+      .m22-at{top:-25px}
+      .m22-today{bottom:-28px}
+      .m22-mo{padding-top:6px}.m22-fb{margin-top:6px}.m22-fs{height:22px}
+      .m22-ya{position:sticky;left:0;z-index:3;background:#fff}
+      .m22-tw{margin-top:16px}
+      .m22-t th{padding:0 10px 8px}.m22-t td{padding:8px 10px}
+      .m22-t th:first-child{width:30%}
+      .m22-hyp-h{display:block;margin-bottom:8px;font-size:12px}
+      .m22-hyp{display:block;margin-top:16px;padding:14px 16px 8px}
+      .m22-hyp ul{columns:1}.m22-hyp li{font-size:12px}.m22-hyp li{padding-left:16px;margin-bottom:8px}
+    }
+    /* mobile : tableau en cartes */
+    @media screen and (max-width:760px){
+      .m22-t,.m22-t tbody,.m22-t tr,.m22-t td{display:block;width:100%;height:auto}
+      .m22-t thead{display:none}
+      .m22-t tr{border:1.5px solid rgba(48,92,100,.28);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fff}
+      .m22-t td{border:0;padding:0}.m22-t tbody tr:last-child td{border-bottom:0}
+      .m22-t td.m22-step{padding:0 0 0 38px;min-height:28px;display:flex;align-items:center}
+      .m22-t td.m22-step .m22-n{left:0;width:28px;height:28px}
+      .m22-t td.m22-calc{margin-top:8px}
+      .m22-t td.m22-res{text-align:left;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+      .m22-res .m22-num{display:block;margin:0 0 2px}
+      .m22-ans{background:rgba(219,177,156,.16)!important;border:1.5px solid var(--terracotta)!important}
+      .m22-ans td{background:transparent;border-top:0;box-shadow:none!important}
+      .m22-ans td.m22-res{border-top:1px solid rgba(219,177,156,.6)}
+      .m22-f{white-space:normal}
+    }
+    /* ====== FIN SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ====== */
   </style>
 </head>
 <body>
@@ -483,7 +663,7 @@
     <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
@@ -539,7 +719,7 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
@@ -573,7 +753,7 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
+      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
@@ -591,6 +771,114 @@
 </div>
 </div>
 <!-- ═════════ FIN SLIDE 1.2 · PROPOSITION A ═════════ -->
+
+<!-- ═════════ DÉBUT SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ═════════ -->
+<div class="slide white" id="s04">
+<div class="S m22 m22v6 m22v7">
+  <div class="m22-hdr">
+    <div class="m22-hl">
+    <div class="m22-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+    </div>
+      <h1 class="m22-h1">Dimensionnement équipe Activation <span class="m22-dash">–</span> 6 prochains mois</h1>
+      <p class="m22-obj"><span class="m22-tag">Objectif</span>Ramener le backlog à ~2 000 contrats tout en absorbant 1 500 nouveaux clients/mois.</p>
+    </div>
+    <div class="m22-brand"><svg class="m22-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
+  </div>
+
+  <div class="m22-cols">
+  <section class="m22-tv m22-tv6" aria-label="Timeline sur 12 mois : backlog et volumes cumulés, 6 mois passés et 6 mois projetés">
+    <div class="m22-tv-top">
+      <span class="m22-lab">Timeline · 12 mois</span>
+    </div>
+    <div class="m22-tv-body">
+    <div class="m22-tv-scroll"><div class="m22-tv-g">
+      <div class="m22-ov" aria-hidden="true">
+        <span class="m22-ph m22-ph-h">Historique</span>
+        <span class="m22-ph m22-ph-p">Projection</span>
+        <span class="m22-today"><b>Aujourd’hui</b></span>
+      </div>
+      <div class="m22-ya" aria-hidden="true"><em class="m22-at">Backlog</em><span style="top:71.43%">2 000</span><span style="top:42.86%">3 000</span><span style="top:14.29%">4 000</span></div>
+      <div class="m22-pC"><svg viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true"><line class="m22-gl" x1="0" x2="1200" y1="100.00" y2="100.00"/><line class="m22-gl" x1="0" x2="1200" y1="71.43" y2="71.43"/><line class="m22-gl" x1="0" x2="1200" y1="42.86" y2="42.86"/><line class="m22-gl" x1="0" x2="1200" y1="14.29" y2="14.29"/><rect class="m22-br-ac" x="17.0" y="94.286" width="66" height="5.714"/><rect class="m22-br-gap" x="17.0" y="93.143" width="66" height="1.143"/><rect class="m22-br-ac" x="117.0" y="88.571" width="66" height="11.429"/><rect class="m22-br-gap" x="117.0" y="86.286" width="66" height="2.286"/><rect class="m22-br-ac" x="217.0" y="82.857" width="66" height="17.143"/><rect class="m22-br-gap" x="217.0" y="79.429" width="66" height="3.429"/><rect class="m22-br-ac" x="317.0" y="77.143" width="66" height="22.857"/><rect class="m22-br-gap" x="317.0" y="72.571" width="66" height="4.571"/><rect class="m22-br-ac" x="417.0" y="71.429" width="66" height="28.571"/><rect class="m22-br-gap" x="417.0" y="65.714" width="66" height="5.714"/><rect class="m22-br-ac" x="517.0" y="65.714" width="66" height="34.286"/><rect class="m22-br-gap" x="517.0" y="58.857" width="66" height="6.857"/><rect class="m22-br-ac" x="617.0" y="60.000" width="66" height="40.000"/><rect class="m22-br-gap" x="617.0" y="50.286" width="66" height="9.714"/><rect class="m22-br-ac" x="717.0" y="49.526" width="66" height="50.474"/><rect class="m22-br-gap" x="717.0" y="41.714" width="66" height="7.811"/><rect class="m22-br-ac" x="817.0" y="39.051" width="66" height="60.949"/><rect class="m22-br-gap" x="817.0" y="33.143" width="66" height="5.909"/><rect class="m22-br-ac" x="917.0" y="28.571" width="66" height="71.429"/><rect class="m22-br-gap" x="917.0" y="24.571" width="66" height="4.000"/><rect class="m22-br-ac" x="1017.0" y="18.097" width="66" height="81.903"/><rect class="m22-br-gap" x="1017.0" y="16.000" width="66" height="2.097"/><rect class="m22-br-ac" x="1117.0" y="7.623" width="66" height="92.377"/><rect class="m22-br-gap" x="1117.0" y="7.429" width="66" height="0.194"/><line class="m22-tg" x1="0" x2="1200" y1="71.43" y2="71.43"/><path class="m22-ln m22-ln-halo" d="M50.0 65.71 L150.0 60.00 L250.0 54.29 L350.0 48.57 L450.0 42.86 L550.0 37.14 L650.0 22.86 L750.0 32.37 L850.0 41.91 L950.0 51.43 L1050.0 60.94 L1150.0 70.49"/><path class="m22-ln m22-ln-bk" d="M50.0 65.71 L150.0 60.00 L250.0 54.29 L350.0 48.57 L450.0 42.86 L550.0 37.14 L650.0 22.86 L750.0 32.37 L850.0 41.91 L950.0 51.43 L1050.0 60.94 L1150.0 70.49"/><path class="m22-dt m22-dt-halo" d="M50.0 65.71h0 M150.0 60.00h0 M250.0 54.29h0 M350.0 48.57h0 M450.0 42.86h0 M550.0 37.14h0 M650.0 22.86h0 M750.0 32.37h0 M850.0 41.91h0 M950.0 51.43h0 M1050.0 60.94h0 M1150.0 70.49h0"/><path class="m22-dt m22-dt-bk" d="M50.0 65.71h0 M150.0 60.00h0 M250.0 54.29h0 M350.0 48.57h0 M450.0 42.86h0 M550.0 37.14h0 M650.0 22.86h0 M750.0 32.37h0 M850.0 41.91h0 M950.0 51.43h0 M1050.0 60.94h0 M1150.0 70.49h0"/><path class="m22-dt m22-dt-halo m22-dt-halo-key" d="M550.0 37.14h0 M650.0 22.86h0 M1150.0 70.49h0"/><path class="m22-dt m22-dt-key" d="M550.0 37.14h0 M650.0 22.86h0 M1150.0 70.49h0"/></svg><span class="m22-vl m22-vl-tot" style="left:4.1667%;top:93.14%;transform:translate(-50%,calc(-100% - 3px))">1 200</span><span class="m22-vl-in" style="left:4.1667%;top:100%">1 000</span><span class="m22-vl m22-vl-tot" style="left:12.5000%;top:86.29%;transform:translate(-50%,calc(-100% - 3px))">2 400</span><span class="m22-vl-in" style="left:12.5000%;top:100%">2 000</span><span class="m22-vl m22-vl-tot" style="left:20.8333%;top:79.43%;transform:translate(-50%,calc(-100% - 3px))">3 600</span><span class="m22-vl-in" style="left:20.8333%;top:100%">3 000</span><span class="m22-vl m22-vl-tot" style="left:29.1667%;top:72.57%;transform:translate(-50%,calc(-100% - 3px))">4 800</span><span class="m22-vl-in" style="left:29.1667%;top:100%">4 000</span><span class="m22-vl m22-vl-tot" style="left:37.5000%;top:65.71%;transform:translate(-50%,calc(-100% - 3px))">6 000</span><span class="m22-vl-in" style="left:37.5000%;top:100%">5 000</span><span class="m22-vl m22-vl-tot" style="left:45.8333%;top:58.86%;transform:translate(-50%,calc(-100% - 3px))">7 200</span><span class="m22-vl-in" style="left:45.8333%;top:100%">6 000</span><span class="m22-vl m22-vl-tot" style="left:54.1667%;top:50.29%;transform:translate(-50%,calc(-100% - 3px))">8 700</span><span class="m22-vl-in" style="left:54.1667%;top:100%">7 000</span><span class="m22-vl m22-vl-tot" style="left:62.5000%;top:41.71%;transform:translate(-50%,calc(-100% - 3px))">10 200</span><span class="m22-vl-in" style="left:62.5000%;top:100%">8 833</span><span class="m22-vl m22-vl-tot" style="left:70.8333%;top:33.14%;transform:translate(-50%,calc(-100% - 3px))">11 700</span><span class="m22-vl-in" style="left:70.8333%;top:100%">10 666</span><span class="m22-vl m22-vl-tot" style="left:79.1667%;top:24.57%;transform:translate(-50%,calc(-100% - 3px))">13 200</span><span class="m22-vl-in" style="left:79.1667%;top:100%">12 500</span><span class="m22-vl m22-vl-tot" style="left:87.5000%;top:16.00%;transform:translate(-50%,calc(-100% - 3px))">14 700</span><span class="m22-vl-in" style="left:87.5000%;top:100%">14 333</span><span class="m22-vl m22-vl-tot" style="left:95.8333%;top:7.43%;transform:translate(-50%,calc(-100% - 3px))">16 200</span><span class="m22-vl-in" style="left:95.8333%;top:100%">16 166</span><span class="m22-vl m22-vl-bk" style="left:4.1667%;top:65.71%;transform:translate(-50%,calc(-100% - 5px))">2 200</span><span class="m22-vl m22-vl-bk" style="left:12.5000%;top:60.00%;transform:translate(-50%,calc(-100% - 5px))">2 400</span><span class="m22-vl m22-vl-bk" style="left:20.8333%;top:54.29%;transform:translate(-50%,calc(-100% - 5px))">2 600</span><span class="m22-vl m22-vl-bk" style="left:29.1667%;top:48.57%;transform:translate(-50%,calc(-100% - 5px))">2 800</span><span class="m22-vl m22-vl-bk" style="left:37.5000%;top:42.86%;transform:translate(-50%,calc(-100% - 5px))">3 000</span><span class="m22-vl m22-vl-bk m22-vl-key" style="left:45.8333%;top:37.14%;transform:translate(-50%,calc(-100% - 5px))">3 200</span><span class="m22-vl m22-vl-bk m22-vl-key" style="left:54.1667%;top:22.86%;transform:translate(-50%,calc(-100% - 5px))">3 700</span><span class="m22-vl m22-vl-bk" style="left:62.5000%;top:32.37%;transform:translate(-50%,calc(-100% - 5px))">3 367</span><span class="m22-vl m22-vl-bk" style="left:70.8333%;top:41.91%;transform:translate(-50%,5px)">3 033</span><span class="m22-vl m22-vl-bk" style="left:79.1667%;top:51.43%;transform:translate(-50%,calc(-100% - 5px))">2 700</span><span class="m22-vl m22-vl-bk" style="left:87.5000%;top:60.94%;transform:translate(-50%,calc(-100% - 5px))">2 367</span><span class="m22-vl m22-vl-bk m22-vl-key" style="left:95.8333%;top:70.49%;transform:translate(-50%,calc(-100% - 5px))">2 033</span></div>
+      <div class="m22-yb" aria-hidden="true"><em class="m22-at">Volumes cumulés</em><span style="top:100.00%">0</span><span style="top:71.43%">5 000</span><span style="top:42.86%">10 000</span><span style="top:14.29%">15 000</span></div>
+      <div class="m22-mo"><span class="">M−5</span><span class="">M−4</span><span class="">M−3</span><span class="">M−2</span><span class="">M−1</span><span class="m22-mo-now">M0</span><span class="">M+1</span><span class="">M+2</span><span class="">M+3</span><span class="">M+4</span><span class="">M+5</span><span class="">M+6</span></div>
+      <div class="m22-fl">FTE</div>
+      <div class="m22-fb" aria-label="FTE : 6 jusqu’à M+1 (buffer), puis 11 de M+2 à M+6">
+        <span class="m22-fs m22-fs-6" style="grid-column:1/7">6 FTE</span>
+        <span class="m22-fs m22-fs-buf" style="grid-column:7/8">6 · buffer</span>
+        <span class="m22-fs m22-fs-11" style="grid-column:8/13">11 FTE</span>
+      </div>
+    </div></div>
+      <div class="m22-leg" aria-label="Légende">
+        <span class="m22-lg"><i class="m22-k m22-k-bk"></i>Backlog (stock)</span>
+        <span class="m22-lg"><i class="m22-k m22-k-tg"></i>Cible 2 000</span>
+        <span class="m22-lg"><i class="m22-k m22-kb m22-kb-gap"></i>Nouveaux clients</span>
+        <span class="m22-lg"><i class="m22-k m22-kb m22-kb-ac"></i>Activations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="m22-tw">
+    <table class="m22-t">
+      <thead><tr><th>Étape</th><th>Donnée / calcul</th><th class="m22-res">Résultat</th></tr></thead>
+      <tbody>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">1</span><span class="m22-et">Capacité actuelle</span></td>
+        <td class="m22-calc"><span class="m22-f">6 FTE</span> réalisent <span class="m22-f">1 000 activations/mois</span></td>
+        <td class="m22-res"><span class="m22-num">166,67</span><span class="m22-unit">activations/FTE/mois</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">2</span><span class="m22-et">Backlog au démarrage</span></td>
+        <td class="m22-calc">Hypothèse : 2 000 au début des 6 mois passés <span class="m22-f">+ 200 × 6</span></td>
+        <td class="m22-res"><span class="m22-num">3 200</span><span class="m22-unit">contrats</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">3</span><span class="m22-et">Nouvelles entrées</span></td>
+        <td class="m22-calc"><span class="m22-f">1 500 clients/mois × 6</span></td>
+        <td class="m22-res"><span class="m22-num">9 000</span><span class="m22-unit">contrats</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">4</span><span class="m22-et">Capacité projetée (avec buffer)</span></td>
+        <td class="m22-calc"><span class="m22-f">M+1 : 6 FTE = 1 000 activations</span><br><span class="m22-f">M+2 à M+6 : 11 FTE × 5 mois ≈ 1 833/mois</span></td>
+        <td class="m22-res"><span class="m22-num">10 167</span><span class="m22-unit">activations sur 6 mois</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">5</span><span class="m22-et">Backlog final</span></td>
+        <td class="m22-calc"><span class="m22-f">3 200 + 9 000 − 10 167</span></td>
+        <td class="m22-res"><span class="m22-num">≈ 2 033</span><span class="m22-unit">contrats</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">6</span><span class="m22-et">Besoin théorique moyen</span></td>
+        <td class="m22-calc">Volume nécessaire pour atteindre exactement 2 000 : <span class="m22-f">9 000 + 1 200 = 10 200</span> → <span class="m22-f">1 700/mois</span></td>
+        <td class="m22-res"><span class="m22-num">10,2 FTE</span><span class="m22-unit">(soit +4,2)</span></td>
+      </tr>
+      <tr class="m22-r m22-ans">
+        <td class="m22-step"><span class="m22-n">7</span><span class="m22-et">Traduction opérationnelle</span></td>
+        <td class="m22-calc"><span class="m22-f">Buffer 1 mois à 6 FTE</span> + <span class="m22-f">5 mois à 11 FTE</span></td>
+        <td class="m22-res"><span class="m22-num">5 recrutements</span><span class="m22-unit"></span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <section class="m22-hyp">
+    <span class="m22-hyp-h">Hypothèses</span>
+    <ul>
+        <li>1 nouveau client = 1 contrat à activer.</li>
+        <li>Aucune sortie du backlog autre que les activations.</li>
+        <li>Productivité constante (aucune amélioration des leviers de transformation).</li>
+        <li>Buffer de 1 mois de recrutement (M+1 à 6 FTE), puis 11 FTE pendant 5 mois (théorique hors ramp-up).</li>
+    </ul>
+  </section>
+</div>
+</div>
+<!-- ═════════ FIN SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ═════════ -->
 
 </div><!-- /deck -->
 
@@ -641,11 +929,11 @@
   updateCounter();
 
   // Stage map — slide index (0-based) → stage key
-  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités)
-  const stageMap = ['intro','experience','experience'];
+  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités) · s04 = diagnostic (2.2 dimensionnement Activation)
+  const stageMap = ['intro','experience','experience','diagnostic'];
 
   // First slide (0-based index) for each stage — clicking a pill jumps here
-  const stageFirst = { intro: 0, experience: 1 };
+  const stageFirst = { intro: 0, experience: 1, diagnostic: 3 };
 
   function updateAxis() {
     // chaque diapo surligne sa propre section (juste aussi à l’impression, où toutes les diapos sont visibles)
