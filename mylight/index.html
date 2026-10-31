@@ -461,7 +461,7 @@
     @media screen and (max-width:1023px){.slide.active{overflow-y:auto}}
     /* Expérience Client : sur mobile/tablette, la diapo prend la hauteur de son contenu (défilement) */
     @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.slide.active{overflow-y:auto}.S.ml1{flex:0 0 auto;min-height:auto}.ml1 .m11b-main,.ml1 .m12a-bands{flex:none}}
-    /* ====== SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION (préfixe m22-) ====== */
+    /* ====== SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION (préfixe m22-) ====== */
     .m22{--line:rgba(25,30,30,.09);--bk:#18353A;--nw:#C4876A;--ac:#305C64;--proj:rgba(216,243,247,.32);color:var(--dark);font-family:'Inter',system-ui,sans-serif}
     .m22 *,.m22 *::before,.m22 *::after{box-sizing:border-box}
     .m22-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:2vw;margin-bottom:1.3vh;flex-shrink:0}
@@ -565,7 +565,12 @@
     .m22-cols .m22-ans .m22-res .m22-num{font-size:clamp(16px,1.3vw,22px);white-space:normal;line-height:1.15}
     .m22-cols .m22-vl-in{font-size:9px;letter-spacing:-.02em}
     .m22-cols .m22-fs-buf{font-size:clamp(9px,.6vw,10px);letter-spacing:-.02em}
-    /* ---------- tableau (compact) ---------- */
+    .m22-cols .m22-t td{padding:.35vh .7vw}
+.m22-cols .m22-ans .m22-res .m22-num{color:var(--dark);font-weight:800;font-size:clamp(16px,1.3vw,22px);display:inline;padding:0 .25em;background:linear-gradient(transparent 52%,rgba(219,177,156,.9) 52%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.m22-cols .m22-ans .m22-et{font-weight:700}
+.m22-cols .m22-lite .m22-res .m22-num{font-weight:500;font-size:clamp(13px,.95vw,17px)}
+@media screen and (max-width:760px){.m22-cols .m22-t td,.m22-cols .m22-t td.m22-step{padding:0}.m22-cols .m22-t td.m22-step{padding-left:38px}.m22-cols .m22-t td.m22-step .m22-n{left:0}.m22-cols .m22-f{white-space:nowrap}}
+/* ---------- tableau (compact) ---------- */
     .m22-tw{flex:1;min-height:0;display:flex;margin-top:1.6vh}
     .m22-t{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;font-variant-numeric:tabular-nums;height:100%}
     .m22-t th{text-align:left;font-size:clamp(10px,.68vw,12px);font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);padding:0 1vw .8vh;border-bottom:2px solid var(--mint);height:1px}
@@ -640,7 +645,7 @@
       .m22-ans td.m22-res{border-top:1px solid rgba(219,177,156,.6)}
       .m22-f{white-space:normal}
     }
-    /* ====== FIN SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ====== */
+    /* ====== FIN SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ====== */
   </style>
 </head>
 <body>
@@ -772,7 +777,7 @@
 </div>
 <!-- ═════════ FIN SLIDE 1.2 · PROPOSITION A ═════════ -->
 
-<!-- ═════════ DÉBUT SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ═════════ -->
+<!-- ═════════ DÉBUT SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
 <div class="slide white" id="s04">
 <div class="S m22 m22v6 m22v7">
   <div class="m22-hdr">
@@ -828,39 +833,44 @@
       <thead><tr><th>Étape</th><th>Donnée / calcul</th><th class="m22-res">Résultat</th></tr></thead>
       <tbody>
       <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">1</span><span class="m22-et">Capacité actuelle</span></td>
-        <td class="m22-calc"><span class="m22-f">6 FTE</span> réalisent <span class="m22-f">1 000 activations/mois</span></td>
-        <td class="m22-res"><span class="m22-num">166,67</span><span class="m22-unit">activations/FTE/mois</span></td>
-      </tr>
-      <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">2</span><span class="m22-et">Backlog au démarrage</span></td>
-        <td class="m22-calc">Hypothèse : 2 000 au début des 6 mois passés <span class="m22-f">+ 200 × 6</span></td>
+        <td class="m22-step"><span class="m22-n">1</span><span class="m22-et">Backlog à M0</span></td>
+        <td class="m22-calc">Point de départ : 2 000 au début des 6 mois passés <span class="m22-f">+ 200 × 6</span></td>
         <td class="m22-res"><span class="m22-num">3 200</span><span class="m22-unit">contrats</span></td>
       </tr>
       <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">3</span><span class="m22-et">Nouvelles entrées</span></td>
-        <td class="m22-calc"><span class="m22-f">1 500 clients/mois × 6</span></td>
-        <td class="m22-res"><span class="m22-num">9 000</span><span class="m22-unit">contrats</span></td>
+        <td class="m22-step"><span class="m22-n">2</span><span class="m22-et">Stock à traiter pour atteindre la cible</span></td>
+        <td class="m22-calc"><span class="m22-f">3 200</span> (backlog M0) + <span class="m22-f">9 000</span> (nouveaux clients) − <span class="m22-f">2 000</span> (cible)</td>
+        <td class="m22-res"><span class="m22-num">10 200</span><span class="m22-unit">activations</span></td>
       </tr>
       <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">4</span><span class="m22-et">Capacité projetée (avec buffer)</span></td>
-        <td class="m22-calc"><span class="m22-f">M+1 : 6 FTE = 1 000 activations</span><br><span class="m22-f">M+2 à M+6 : 11 FTE × 5 mois ≈ 1 833/mois</span></td>
-        <td class="m22-res"><span class="m22-num">10 167</span><span class="m22-unit">activations sur 6 mois</span></td>
+        <td class="m22-step"><span class="m22-n">3</span><span class="m22-et">Productivité actuelle</span></td>
+        <td class="m22-calc"><span class="m22-f">6 FTE</span> réalisent <span class="m22-f">1 000 activations/mois</span></td>
+        <td class="m22-res"><span class="m22-num">166,67</span><span class="m22-unit">activations/FTE/mois</span></td>
       </tr>
       <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">5</span><span class="m22-et">Backlog final</span></td>
-        <td class="m22-calc"><span class="m22-f">3 200 + 9 000 − 10 167</span></td>
-        <td class="m22-res"><span class="m22-num">≈ 2 033</span><span class="m22-unit">contrats</span></td>
-      </tr>
-      <tr class="m22-r">
-        <td class="m22-step"><span class="m22-n">6</span><span class="m22-et">Besoin théorique moyen</span></td>
-        <td class="m22-calc">Volume nécessaire pour atteindre exactement 2 000 : <span class="m22-f">9 000 + 1 200 = 10 200</span> → <span class="m22-f">1 700/mois</span></td>
-        <td class="m22-res"><span class="m22-num">10,2 FTE</span><span class="m22-unit">(soit +4,2)</span></td>
+        <td class="m22-step"><span class="m22-n">4</span><span class="m22-et">Besoin théorique moyen</span></td>
+        <td class="m22-calc"><span class="m22-f">10 200 / 6 mois ÷ 166,67</span></td>
+        <td class="m22-res"><span class="m22-num">10,2 FTE</span><span class="m22-unit">(soit +4,2)</span></td>
       </tr>
       <tr class="m22-r m22-ans">
-        <td class="m22-step"><span class="m22-n">7</span><span class="m22-et">Traduction opérationnelle</span></td>
-        <td class="m22-calc"><span class="m22-f">Buffer 1 mois à 6 FTE</span> + <span class="m22-f">5 mois à 11 FTE</span></td>
-        <td class="m22-res"><span class="m22-num">5 recrutements</span><span class="m22-unit"></span></td>
+        <td class="m22-step"><span class="m22-n">5</span><span class="m22-et">Traduction opérationnelle</span></td>
+        <td class="m22-calc">Arrondi supérieur à <span class="m22-f">11 FTE</span> opérationnels <span style="white-space:nowrap">(6 actuels + 5)</span></td>
+        <td class="m22-res"><span class="m22-num">5 recrutements</span><span class="m22-unit"></span></td>
+      </tr>
+      <tr class="m22-r m22-lite">
+        <td class="m22-step"><span class="m22-n">6</span><span class="m22-et">Buffer de 1 mois</span></td>
+        <td class="m22-calc"><span class="m22-f">M+1</span> reste à 6 FTE, le temps du recrutement et du ramp-up</td>
+        <td class="m22-res"><span class="m22-num">1 000</span><span class="m22-unit">activations (M+1)</span></td>
+      </tr>
+      <tr class="m22-r">
+        <td class="m22-step"><span class="m22-n">7</span><span class="m22-et">Capacité projetée</span></td>
+        <td class="m22-calc"><span class="m22-f">1 000</span> (M+1) + <span class="m22-f">5 mois à 11 FTE × ≈ 1 833/mois</span></td>
+        <td class="m22-res"><span class="m22-num">10 167</span><span class="m22-unit">activations sur 6 mois</span></td>
+      </tr>
+      <tr class="m22-r m22-ans">
+        <td class="m22-step"><span class="m22-n">8</span><span class="m22-et">Backlog final à M+6</span></td>
+        <td class="m22-calc"><span class="m22-f">3 200 + 9 000 − 10 167</span></td>
+        <td class="m22-res"><span class="m22-num">≈ 2 033</span><span class="m22-unit">contrats</span></td>
       </tr>
       </tbody>
     </table>
@@ -878,7 +888,7 @@
   </section>
 </div>
 </div>
-<!-- ═════════ FIN SLIDE 2.2 v11B · DIMENSIONNEMENT ACTIVATION ═════════ -->
+<!-- ═════════ FIN SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
 
 </div><!-- /deck -->
 
