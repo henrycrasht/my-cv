@@ -294,7 +294,6 @@
     @page { size: landscape; margin: 0; }
 
     /* myLight additions */
-    #s02 .S > .flex1 { flex: 1; margin: 1.5vh 0 0; }
     .card-soft { border: 1px solid rgba(25,30,30,0.07); }
     .logo-svg svg { height: 100%; width: auto; display: block; }
     .logo-svg { color: var(--dark); display: block; }
@@ -347,6 +346,9 @@
 .ml1-shared{display:inline-block;font-size:clamp(9px,.62vw,11px);font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:1px 7px;border-radius:300px;border:1px dashed currentColor;color:var(--gray);white-space:nowrap;vertical-align:middle}
 .ml1-note{margin-top:1.4vh;display:flex;align-items:center;flex-wrap:wrap;gap:.6vh .9vw;font-size:clamp(11px,.78vw,14px);color:var(--gray);border-top:1px solid var(--line);padding-top:1.1vh;flex-shrink:0}
 .ml1-note b{color:var(--dark);font-weight:600}
+.ml1-dblink{color:var(--mint);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;cursor:pointer;position:relative;z-index:2}
+.ml1-dblink:hover{color:var(--navy)}
+.ml1-dblink .ml1-arrow{display:inline-block;margin-left:.3em;text-decoration:none;font-weight:700}
 .ml1-sep{width:1px;height:1.6vh;background:var(--line)}
 @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
   .ml1-hdr{flex-direction:column-reverse;gap:14px}
@@ -378,9 +380,8 @@
 .m11b-wk-eco{background:var(--eco-lt)} .m11b-wk-exp{background:var(--exp-lt)} .m11b-wk-fia{background:var(--fia-lt)}
 .m11b-w{grid-column:4;border-radius:0 14px 14px 0;padding:1vh 1vw;display:flex;flex-direction:column;justify-content:center;gap:.8vh;border-left:1px solid rgba(25,30,30,.08);margin-top:1vh}
 .m11b-wi{display:flex;gap:.5vw;align-items:flex-start;font-size:clamp(12px,.9vw,16px);font-weight:500;line-height:1.3}
+.m11b-ev{display:block;margin-top:.35vh;font-size:clamp(10px,.68vw,12.5px);font-weight:400;line-height:1.35;color:var(--gray)}
 .m11b-wi em{font-style:normal;font-weight:700;color:var(--terracotta);white-space:nowrap}
-.m11b-none{font-size:clamp(13px,.98vw,17px);font-weight:600;color:var(--fia-txt)}
-.m11b-none span{display:block;font-weight:400;font-size:clamp(11px,.76vw,14px);color:var(--gray);margin-top:.3vh}
 .m11b-ml{display:none}
 @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
   .m11b-grid{display:flex;flex-direction:column;padding-left:0;gap:0}
@@ -397,9 +398,6 @@
 .m11b-pband .m11b-plab{font-size:clamp(11px,.78vw,14px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--gray);margin-right:.4vw}
 .m11b-pi{display:inline-flex;align-items:center;gap:.45vw;font-size:clamp(12px,.9vw,16px);font-weight:500;padding:.45vh .9vw;border-radius:300px;background:var(--card-bg);border:1px solid var(--line);white-space:nowrap}
 .m11b-pi .ml1-ic{color:var(--mint);font-size:1.1em}
-.m11b-basis{margin-left:auto;font-size:clamp(11px,.78vw,14px);color:var(--gray)}
-.m11b-basis b{color:var(--dark);font-weight:600}
-@media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.m11b-basis{margin-left:0;width:100%}}
 @media screen and (max-width:760px){.m11b-pi{font-size:13px;padding:5px 10px}.m11b-pband{gap:6px}}
 /* ====== FIN SLIDE 1.1 · PROPOSITION B ====== */
 /* ====== SLIDE 1.2 · PROPOSITION A (préfixe m12a-) — À COLLER dans la feuille de style du deck (balise style) ====== */
@@ -484,7 +482,6 @@
   <div class="mb-m">
     <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
-      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
@@ -531,97 +528,16 @@
 </div>
 
 
-<!-- ════════════════════════════════════════════════════════
-     DIAPO 02 · SOMMAIRE
-     Fond : BLANC
-     ════════════════════════════════════════════════════════ -->
-<div class="slide white" id="s02">
-<div class="S">
-
-  <div class="hdr mb-m">
-    <div>
-      <div class="mb-m"><div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
-      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
-      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
-      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
-    </div></div>
-      <div class="t1">Ce que couvre cette étude</div>
-    </div>
-    <div style="display:flex; align-items:center; gap:1vw; flex-shrink:0;">
-      <div class="eyebrow" style="text-align:right;">SOMMAIRE</div>
-      <div class="logo-svg" style="height:4.6vh;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
-    </div>
-  </div>
-
-  <div class="flex1" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1vw;">
-    <div class="card-soft col gap-s">
-      <div class="row gap-s" style="align-items:center;"><div class="circle"><span>1</span></div><div class="eyebrow">DIAGNOSTIC</div></div>
-      <div class="hr"></div>
-      <div class="t2" style="font-weight:500; letter-spacing:-0.01em; margin:0.4vh 0 0.8vh;">Les causes, pas les symptômes.</div>
-      <div class="col" style="gap:0.8vh;"><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Contexte marché</b> — l’autoconsommation solaire en France</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Parcours client</b> — du devis à la batterie virtuelle</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>KPI clés</b> face aux standards du secteur</div></div></div>
-      <div class="mt-a col" style="gap:0.6vh;">
-        <div class="hr"></div>
-        <div class="apart"><span class="hl" style="font-size:2.2vw; font-weight:400; letter-spacing:-0.02em; color:var(--dark);">8 KPI</span><span class="tag t-sec">Diapos 03–04</span></div>
-      </div>
-    </div>
-    <div class="card-soft col gap-s">
-      <div class="row gap-s" style="align-items:center;"><div class="circle"><span>2</span></div><div class="eyebrow">PLAN D’ACTION</div></div>
-      <div class="hr"></div>
-      <div class="t2" style="font-weight:500; letter-spacing:-0.01em; margin:0.4vh 0 0.8vh;">Stabiliser → Restructurer → Accélérer.</div>
-      <div class="col" style="gap:0.8vh;"><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Sprint 1</b> — stabiliser le socle</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Sprint 2</b> — refondre les fondations</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Sprint 3</b> — accélérer</div></div></div>
-      <div class="mt-a col" style="gap:0.6vh;">
-        <div class="hr"></div>
-        <div class="apart"><span class="hl" style="font-size:2.2vw; font-weight:400; letter-spacing:-0.02em; color:var(--dark);">3 sprints</span><span class="tag t-sec">Diapos 05–08</span></div>
-      </div>
-    </div>
-    <div class="card-soft col gap-s">
-      <div class="row gap-s" style="align-items:center;"><div class="circle"><span>3</span></div><div class="eyebrow">LEVIERS DE CROISSANCE</div></div>
-      <div class="hr"></div>
-      <div class="t2" style="font-weight:500; letter-spacing:-0.01em; margin:0.4vh 0 0.8vh;">D’où viendra le prochain kWh de croissance ?</div>
-      <div class="col" style="gap:0.8vh;"><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Offre</b> — panneaux, batterie, stockage virtuel</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Canaux</b> — installateurs et vente directe</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>IA et données</b> — cas d’usage prioritaires</div></div></div>
-      <div class="mt-a col" style="gap:0.6vh;">
-        <div class="hr"></div>
-        <div class="apart"><span class="hl" style="font-size:2.2vw; font-weight:400; letter-spacing:-0.02em; color:var(--dark);">3 leviers</span><span class="tag t-sec">Diapos 09–11</span></div>
-      </div>
-    </div>
-    <div class="card-soft col gap-s">
-      <div class="row gap-s" style="align-items:center;"><div class="circle"><span>4</span></div><div class="eyebrow">PASSAGE À L’ÉCHELLE</div></div>
-      <div class="hr"></div>
-      <div class="t2" style="font-weight:500; letter-spacing:-0.01em; margin:0.4vh 0 0.8vh;">Plus de foyers, même base de coûts.</div>
-      <div class="col" style="gap:0.8vh;"><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Coût par client</b> — trajectoire à 18 mois</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Organisation</b> cible</div></div><div class="row gap-s" style="align-items:flex-start;"><div class="dot" style="margin-top:0.35vh; flex-shrink:0;"></div><div class="body"><b>Risques</b> et dépendances</div></div></div>
-      <div class="mt-a col" style="gap:0.6vh;">
-        <div class="hr"></div>
-        <div class="apart"><span class="hl" style="font-size:2.2vw; font-weight:400; letter-spacing:-0.02em; color:var(--dark);">×2 volume</span><span class="tag t-sec">Diapos 12–14</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="strip" style="margin-top:1.4vh; flex-shrink:0;">
-    <span class="xs" style="font-weight:600; color:var(--terracotta); letter-spacing:0.08em; white-space:nowrap; flex-shrink:0;">APERÇU</span>
-    <div style="width:1px; height:1.6vh; background:rgba(255,255,255,0.15); flex-shrink:0;"></div><span class="xs" style="color:rgba(255,255,255,0.75);">Aperçu graphique — contenu provisoire</span>
-    <div style="width:1px; height:1.6vh; background:rgba(255,255,255,0.15); flex-shrink:0;"></div><span class="xs" style="color:rgba(255,255,255,0.75);">Palette et typographie issues de mylight150.com</span>
-    <div style="width:1px; height:1.6vh; background:rgba(255,255,255,0.15); flex-shrink:0;"></div><span class="xs" style="color:rgba(255,255,255,0.75);">Étude complète : <b style="font-weight:600; color:var(--terracotta);">4 axes · ~15 diapos</b></span>
-  </div>
-
-</div>
-</div>
-
-
 <!-- ══════════════════════════════════════════════════════════
-     DIAPO 03 · EXPÉRIENCE CLIENT 1.1 · BESOINS CLIENTS (3 mantras, proposition B)
+     DIAPO 02 · EXPÉRIENCE CLIENT 1.1 · BESOINS CLIENTS (3 mantras, proposition B)
      ══════════════════════════════════════════════════════════ -->
-<!-- ═════════ DÉBUT SLIDE 1.1 · PROPOSITION B — bloc à coller dans #deck (remplacer id="s03" par le n° de diapo, retirer « active ») ═════════ -->
-<div class="slide white" id="s03">
+<!-- ═════════ DÉBUT SLIDE 1.1 · PROPOSITION B — bloc à coller dans #deck (remplacer id="s02" par le n° de diapo, retirer « active ») ═════════ -->
+<div class="slide white" id="s02">
 <div class="S ml1 m11b">
   <div class="ml1-hdr">
     <div>
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
-      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
@@ -632,31 +548,30 @@
     </div>
     <div class="ml1-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150" class="ml1-logo"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
   </div>
-  <div class="m11b-pband"><span class="m11b-plab">Persona cible</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Maison ≥ 150 m²</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>3-5 personnes</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg>PAC / VE</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Tout-électrique</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10.5v3M6 10v4M10 10v4M14 10v4"/></svg>8-15 kWh+</span><span class="m11b-basis">Base : <b>Trustpilot n = 1 460</b> + comparateurs, site, presse</span></div>
+  <div class="m11b-pband"><span class="m11b-plab">Persona cible</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Maison ≥ 150 m²</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.8.3 5 2.6 5 5.8"/></svg>3-5 personnes</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg>PAC / VE</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Tout-électrique</span><span class="m11b-pi"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 10.5v3M6 10v4M10 10v4M14 10v4"/></svg>8-15 kWh+</span></div>
   <div class="m11b-main">
     <div class="m11b-grid">
       <div class="m11b-h">Mantra · promesse</div><div class="m11b-h">Besoin opérationnel</div><div class="m11b-h">Preuve · sources</div><div class="m11b-h m11b-ok">Ce qui fonctionne</div>
 <div class="m11b-band m11b-eco" style="grid-row:2 / span 2"></div><div class="m11b-core m11b-eco" style="grid-row:2 / span 2"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4.5 4.5 0 1 0 0 7M7 10.5h6M7 13.5h6"/></svg><h2>Économie</h2><p>« Payer moins, sans surprise »</p></div><div class="m11b-c" style="grid-row:2;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Coût maîtrisé et prévisible de la facture d’usage</div></div><div class="m11b-c" style="grid-row:2;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stats"><div class="ml1-stat"><b>~60 %</b><span>des 1★ · hausse</span></div><div class="ml1-stat"><b>31-34 %</b><span>des 1-2★ · enfermement</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></div><div class="m11b-c m11b-last" style="grid-row:3;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Factures exactes, lisibles et anticipables</div></div><div class="m11b-c m11b-last" style="grid-row:3;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="ml1-stats"><div class="ml1-stat"><b>35 %</b><span>des 1★</span></div><div class="ml1-stat"><b>52 %</b><span>des 2★</span></div></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m11b-w m11b-wk-eco" style="grid-row:2 / span 2"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Potentiel d’économies / concept batterie virtuelle</span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Offre de bienvenue (kWh = Tarif Bleu 12 mois)</span></div></div>
 <div class="m11b-band m11b-exp" style="grid-row:4 / span 2"></div><div class="m11b-core m11b-exp" style="grid-row:4 / span 2"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19c0 1.5-2 2.5-5 2.5"/></svg><h2>Expertise</h2><p>« Être conseillé et suivi par quelqu’un qui connaît mon dossier »</p></div><div class="m11b-c" style="grid-row:4;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Conseil expert + interlocuteur qui porte le dossier</div></div><div class="m11b-c" style="grid-row:4;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>64 %</b><span>des 1★ · joignabilité</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span></span></div><div class="m11b-c m11b-last" style="grid-row:5;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Visibilité et pilotage fiable <span class="ml1-shared">Partiel · visibilité</span></div></div><div class="m11b-c m11b-last" style="grid-row:5;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="m11b-x">Volet fiabilité de l’app → <b>Fiabilité</b></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></div><div class="m11b-w m11b-wk-exp" style="grid-row:4 / span 2"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Qualité du conseil humain quand on joint quelqu’un · <em>~41 % des 5★</em></span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Suivi / visualisation quand l’app fonctionne · <em>22-36 % des 4-5★</em></span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Écosystème Robin</span></div></div>
-<div class="m11b-band m11b-fia" style="grid-row:6 / span 3"></div><div class="m11b-core m11b-fia" style="grid-row:6 / span 3"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>Fiabilité</h2><p>« Que ça marche, dans les délais annoncés »</p></div><div class="m11b-c" style="grid-row:6;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Mise en service rapide et prévisible</div></div><div class="m11b-c" style="grid-row:6;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span></div><div class="m11b-c" style="grid-row:7;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Fiabilité de l’app et du pilotage <span class="ml1-shared">Partagé · Expertise</span></div></div><div class="m11b-c" style="grid-row:7;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Communication transparente sur les tarifs</div></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="m11b-x">Lien <b>Économie</b> : hausse ~60 %, enfermement 31-34 %</div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></div><div class="m11b-w m11b-wk-fia" style="grid-row:6 / span 3"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-none">Aucun point fort relevé<span>Le seul mantra sans point d’appui aujourd’hui</span></div></div>
+<div class="m11b-band m11b-fia" style="grid-row:6 / span 3"></div><div class="m11b-core m11b-fia" style="grid-row:6 / span 3"><svg class="ml1-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.3-7.5 9.5-4.3-1.2-7.5-4.9-7.5-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><h2>Fiabilité</h2><p>« Que ça marche, dans les délais annoncés »</p></div><div class="m11b-c" style="grid-row:6;grid-column:2;margin-top:1vh"><span class="m11b-ml">Besoin</span><div class="m11b-need">Mise en service rapide et prévisible</div></div><div class="m11b-c" style="grid-row:6;grid-column:3;margin-top:1vh"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>54-58 %</b><span>des 1-3★ · activation</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-ct">Délais annoncés vs réels</span></span></div><div class="m11b-c" style="grid-row:7;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Fiabilité de l’app et du pilotage <span class="ml1-shared">Partagé · Expertise</span></div></div><div class="m11b-c" style="grid-row:7;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="ml1-stat"><b>40-66 %</b><span>des 2-4★ · bugs</span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-pr">Presse</span></span></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:2;margin-top:0"><span class="m11b-ml">Besoin</span><div class="m11b-need">Communication transparente sur les tarifs</div></div><div class="m11b-c m11b-last" style="grid-row:8;grid-column:3;margin-top:0"><span class="m11b-ml">Preuve</span><div class="m11b-x">Lien <b>Économie</b> : hausse ~60 %, enfermement 31-34 %</div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-ct">Conditions contractuelles</span></span></div><div class="m11b-w m11b-wk-fia" style="grid-row:6 / span 3"><span class="m11b-ml">Ce qui fonctionne</span><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Système fiable une fois activé · autoconsommation stable sur plusieurs années<small class="m11b-ev">Christelle Giraudin, 5★ : « batterie fonctionnelle depuis sept. 2025, totalement satisfait après un an »<br>JPM, 5★ : « 4 ans de services, pleinement satisfaits » (6 kWc + batterie 100 kWh)</small></span></div><div class="m11b-wi"><svg class="ml1-check" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="10" fill="#305C64"/><path d="M5.6 10.4l2.9 2.8 5.9-6.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>SAV humain réactif et efficace quand un conseiller est joint<small class="m11b-ev">Cabrit Michael, 5★ : « Riad, réactivité et professionnalisme, réglé en un temps record »<br>Yoan, 5★ : « prise en charge rapide, explication claire »</small></span></div><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span></span></div>
     </div>
   </div>
-  <div class="ml1-note"><b>Sources :</b><span class="ml1-srcs"><span class="ml1-src ml1-s-tp">Trustpilot</span><span class="ml1-src ml1-s-cmp">Comparateurs</span><span class="ml1-src ml1-s-pr">Presse</span><span class="ml1-src ml1-s-app">App Store</span><span class="ml1-src ml1-s-ct">Site / contrat</span></span><span class="ml1-sep"></span><span>Lecture : % = part des avis Trustpilot de la note indiquée qui citent le thème</span></div>
+  <div class="ml1-note"><a class="ml1-dblink" href="https://istanstok.com/mylight/mylight-reviews_database.html" target="_blank" rel="noopener">Sources consultables dans la base de données interactive<span class="ml1-arrow" aria-hidden="true">↗</span></a><span class="ml1-sep"></span><span>Lecture : % = part des avis Trustpilot de la note indiquée qui citent le thème</span></div>
 </div>
 </div>
 <!-- ═════════ FIN SLIDE 1.1 · PROPOSITION B ═════════ -->
 
 <!-- ════════════════════════════════════════════════════════
-     DIAPO 04 · EXPÉRIENCE CLIENT 1.2 · PRIORITÉS (3 mantras, proposition A)
+     DIAPO 03 · EXPÉRIENCE CLIENT 1.2 · PRIORITÉS (3 mantras, proposition A)
      ════════════════════════════════════════════════════════ -->
-<!-- ═════════ DÉBUT SLIDE 1.2 · PROPOSITION A — bloc à coller dans #deck (remplacer id="s04" par le n° de diapo, retirer « active ») ═════════ -->
-<div class="slide white" id="s04">
+<!-- ═════════ DÉBUT SLIDE 1.2 · PROPOSITION A — bloc à coller dans #deck (remplacer id="s03" par le n° de diapo, retirer « active ») ═════════ -->
+<div class="slide white" id="s03">
 <div class="S ml1 m12a">
   <div class="ml1-hdr">
     <div>
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
-      <span class="tag t-gho axis-tag" data-stage="agenda">Sommaire</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Diagnostic</span>
       <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
@@ -726,11 +641,11 @@
   updateCounter();
 
   // Stage map — slide index (0-based) → stage key
-  // s01 = intro (couverture) · s02 = agenda (sommaire) · s03–s04 = experience (1.1 besoins, 1.2 priorités)
-  const stageMap = ['intro','agenda','experience','experience'];
+  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités)
+  const stageMap = ['intro','experience','experience'];
 
   // First slide (0-based index) for each stage — clicking a pill jumps here
-  const stageFirst = { intro: 0, agenda: 1, experience: 2 };
+  const stageFirst = { intro: 0, experience: 1 };
 
   function updateAxis() {
     // chaque diapo surligne sa propre section (juste aussi à l’impression, où toutes les diapos sont visibles)
