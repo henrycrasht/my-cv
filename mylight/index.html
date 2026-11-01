@@ -1283,6 +1283,15 @@
     .m11b-grid::before,.m11b-core::before{content:none}
     @media print{.S{zoom:1!important}}
     /* ====== FIN T102 ====== */
+    /* ====== T104 · s07/s08 répartition verticale : bloc 1 en haut, blocs 2-3-4 groupés au centre, bloc 5 en bas ====== */
+    @media screen and (min-width:1024px) and (min-aspect-ratio:4/3){
+      .m33c-tl,.m33a-tl{flex:1 1 auto;grid-template-rows:auto minmax(0,1fr) auto auto;margin-bottom:6px}
+      .m33c-tl>.m33c-ph,.m33a-tl>.m33a-ph,.m33c-tl>.m33c-rl,.m33a-tl>.m33a-rl{align-self:start}
+      .m33c-kl,.m33a-kl{margin-top:0}
+      .S.m33c::after,.S.m33a::after{content:'';display:block;flex:1 1 auto;order:1;min-height:0}
+      .m33c-hr,.m33a-hr{order:2;margin-top:6px}
+    }
+    /* ====== FIN T104 ====== */
   </style>
 </head>
 <body>
@@ -1307,7 +1316,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
   </div>
@@ -1363,7 +1372,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="ml1-h1">Les 3 attentes des clients <span class="ml1-dash">–</span> promesses tenues ?</h1>
@@ -1397,7 +1406,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="ml1-h1">Là où la promesse décroche <span class="ml1-dash">–</span> 5 priorités</h1>
@@ -1428,7 +1437,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="m24o-h1" id="titre">Diagnostic des Opérations Customer Energy</h1>
@@ -1467,7 +1476,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="m21-h1">Leviers d’amélioration <span class="m21-dash">–</span> Impact sur les KPI</h1>
@@ -1502,7 +1511,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="m22-h1">Dimensionnement équipe Activation <span class="m22-dash">–</span> 6 prochains mois</h1>
@@ -1615,7 +1624,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="m33c-h1"><span>Roadmap Care <span class="m33c-dash">–</span> 6 mois</span></h1>
@@ -1641,7 +1650,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
       <h1 class="m33a-h1"><span>Roadmap Activation <span class="m33a-dash">–</span> 6 mois</span></h1>
@@ -1670,7 +1679,7 @@
       <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
       <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
-      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Transformation</span>
       <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Roadmap Care">Roadmap Care</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Roadmap Activation">Roadmap Activation</a></span>
     </div>
   </div>
