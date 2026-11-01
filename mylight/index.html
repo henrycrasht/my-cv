@@ -1292,6 +1292,14 @@
       .m33c-hr,.m33a-hr{order:2;margin-top:6px}
     }
     /* ====== FIN T104 ====== */
+    /* ====== T106 · menu : partie active légèrement agrandie, sous-menus gris / vert pâle ====== */
+    .axis-tag{transition:opacity .12s,scale .25s ease,margin .25s ease}
+    .axis-tag.t-pri{scale:1.07;margin-inline:4px}
+    .dn-sp{background:rgba(25,30,30,.09);color:var(--navy);box-shadow:none;transition:background .18s ease,color .18s ease,box-shadow .18s ease,scale .25s ease,margin .25s ease}
+    .dn-sp:hover{background:rgba(25,30,30,.15)}
+    .dn-sp.cur{background:#DCE8EA;color:var(--mint);box-shadow:inset 0 0 0 1px rgba(48,92,100,.28);scale:1.08;margin-inline:3px}
+    @media (prefers-reduced-motion:reduce){.axis-tag,.dn-sp{transition:none}}
+    /* ====== FIN T106 ====== */
   </style>
 </head>
 <body>
