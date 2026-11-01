@@ -739,11 +739,134 @@
       .ml1 .ml1-hdr{margin-bottom:.6vh}
     }
     /* Footer : lien auteur */
-    #nav .nav-author{font-size:9px;color:var(--gray);font-family:'Inter',sans-serif;text-decoration:none;white-space:nowrap}
+    #nav .nav-author{font-size:11px;color:#9AAAAA;font-family:'Inter',sans-serif;text-decoration:none;white-space:nowrap}
     #nav .nav-author:hover{text-decoration:underline}
     #counter{white-space:nowrap}
     /* Petit écran : raccourcis clavier masqués pour laisser tenir le nom et le compteur */
     @media screen and (max-width:760px){#hint{display:none}}
+    /* ====== NAVIGATEUR · sous-menu en pastilles (groupe courant uniquement) ====== */
+    .dn-sub{display:none;align-items:center;gap:4px}
+    .dn-sub.on{display:inline-flex}
+    .dn-sub::before{content:'';width:8px;height:1.5px;border-radius:1px;background:rgba(48,92,100,.45);margin-right:2px}
+    .dn-sp{display:inline-block;font-family:'Inter',sans-serif;font-size:clamp(10px,.72vw,12px);font-weight:600;letter-spacing:.04em;line-height:1.2;padding:.3vh .5vw;border-radius:300px;color:var(--mint);background:rgba(48,92,100,.07);box-shadow:inset 0 0 0 1px rgba(48,92,100,.35);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background .18s ease,color .18s ease,box-shadow .18s ease}
+    .dn-sp:hover{background:rgba(48,92,100,.15)}
+    .dn-sp:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
+    .dn-sp.cur{background:var(--terracotta);color:var(--dark);box-shadow:inset 0 0 0 1px var(--terracotta);cursor:default}
+    .dn-sp.off{opacity:.45;cursor:default;pointer-events:none}
+    .dn-sub.enter .dn-sp,.dn-sub.enter::before{animation:dnIn .28s ease-out both}
+    .dn-sub.enter .dn-sp:nth-child(2){animation-delay:.04s}.dn-sub.enter .dn-sp:nth-child(3){animation-delay:.08s}
+    @keyframes dnIn{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){.dn-sub.enter .dn-sp,.dn-sub.enter::before{animation:none}.dn-sp{transition:none}}
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.dn-sp{font-size:10px;padding:3px 7px}}
+    @media print{.dn-sub.enter .dn-sp{animation:none}}
+    /* ====== SLIDE SNAPSHOT CARE · DIAGNOSTIC OPÉRATIONS CARE (préfixe m24-, depuis diagnostic-care.html) ====== */
+    .m24{--green:#305C64;--orange:#C8AE94;--red:#A65E42;--red-txt:#8A4A30;--orange-txt:#6F5640;color:var(--dark);font-family:'Inter',system-ui,sans-serif}
+    .m24 *,.m24 *::before,.m24 *::after{box-sizing:border-box}
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.S.m24{flex:0 0 auto;min-height:auto}}
+    .m24-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:2vw;margin-bottom:1.8vh}
+    .m24-eyebrow{font-size:clamp(11px,.85vw,15px);font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--mint)}
+    .m24-h1{font-size:clamp(22px,2.35vw,42px);font-weight:500;letter-spacing:-.02em;line-height:1.12;margin-top:1.3vh}
+    .m24-h1 .m24-dash{color:var(--gray);font-weight:400}
+    .m24-brand{display:flex;align-items:center;gap:1vw;flex-shrink:0;color:var(--dark)}
+    .m24-logo{height:clamp(26px,4.4vh,44px);width:auto;display:block}
+    .m24-main{flex:1;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:1.8vh;min-height:0}
+    .m24-flowcard{background:var(--card-bg);border:1px solid rgba(25,30,30,.07);border-radius:14px;padding:1.6vh 1.8vw;display:grid;grid-template-columns:clamp(190px,15vw,280px) minmax(0,1fr);gap:1.5vw;min-height:0}
+    .m24-side{display:flex;flex-direction:column;gap:1.6vh;justify-content:center}
+    .m24-flowcard .m24-eyebrow{color:var(--gray)}
+    .m24-flowbox{min-height:0;position:relative}
+    .m24-flow-svg text,.m24-mnode .m24-big,.m24-mesc span,.m24-tl-svg text{font-variant-numeric:tabular-nums}
+    .m24-flow-svg{position:absolute;inset:0;width:100%;height:100%;font-family:inherit;display:block}
+    .m24-legend{display:flex;flex-direction:column;gap:.9vh;font-size:clamp(11px,.8vw,14px);color:var(--gray)}
+    .m24-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+    .m24-lnote{font-style:italic;margin-top:.4vh}
+    .m24-worst{font-size:clamp(12px,.85vw,15px);color:var(--dark);line-height:1.45;border-top:1px solid rgba(25,30,30,.1);padding-top:1.4vh}
+    .m24-hl{font-weight:600;background:linear-gradient(transparent 58%,var(--terracotta) 58%);}
+    .m24-tlcard{background:#fff;border:1px solid rgba(25,30,30,.09);border-top:4px solid var(--terracotta);border-radius:14px;padding:1.8vh 1.8vw 1.2vh}
+    .m24-tlhead{display:flex;justify-content:space-between;align-items:center;gap:2vw;margin-bottom:.6vh;flex-wrap:wrap}
+    .m24-tlhead .m24-eyebrow{color:var(--mint)}
+    .m24-illus{display:flex;align-items:center;gap:.7vw;font-size:clamp(11px,.8vw,14px);color:var(--gray);font-style:italic}
+    .m24-tag{background:var(--terracotta);color:var(--dark);font-style:normal;font-weight:600;font-size:clamp(10px,.7vw,12px);letter-spacing:.08em;padding:3px 10px;border-radius:300px;text-transform:uppercase;white-space:nowrap}
+    .m24-tl-svg{width:100%;height:auto;display:block;font-family:inherit}
+    .m24-vt{display:none}
+    .m24-note{margin-top:1.8vh;display:flex;align-items:center;gap:.8vw;font-size:clamp(12px,.9vw,15px);color:var(--gray);border-top:1px solid rgba(25,30,30,.1);padding-top:1.2vh}
+    .m24-note b{color:var(--dark);font-weight:600}
+    .m24-note{align-items:flex-start}
+    .m24-hyp{list-style:none;display:flex;flex-direction:column;gap:.2vh}
+    .m24-hyp li{position:relative;padding-left:1em}
+    .m24-hyp li::before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:var(--terracotta)}
+    .m24-note .m24-tag{background:var(--terracotta);color:var(--dark);font-weight:600;font-size:clamp(10px,.75vw,13px);letter-spacing:.08em;padding:3px 10px;border-radius:300px;text-transform:uppercase}
+    .m24-mflow{display:none}
+    .m24-channels{list-style:none;margin-top:6px;font-size:12px;color:#C2E2E8;display:flex;flex-wrap:wrap;gap:2px 12px}
+
+
+    /* Tablet & mobile: stack */
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){
+      .m24-hdr{flex-direction:column-reverse;gap:14px}
+      .m24-main{grid-template-rows:auto;gap:22px}
+      .m24-flowcard{grid-template-columns:1fr;padding:18px 16px;gap:14px}
+      .m24-legend{flex-direction:row;flex-wrap:wrap;gap:8px 18px}
+      .m24-flowbox{aspect-ratio:1200/512}
+      .m24-tlcard{padding:18px 16px}
+      .m24-tl-svg{display:none}
+      .m24-vt{display:block;margin-top:14px}
+    }
+    @media screen and (max-width:760px){
+      .m24-flowbox,.m24-legend{display:none}
+      .m24-side{display:contents} .m24-mflow{order:2} .m24-worst{order:3;border-top:0;padding-top:4px}
+      .m24-illus{flex-direction:column;align-items:flex-start;gap:6px}
+      .m24-mflow{display:flex;flex-direction:column;gap:6px}
+      .m24-mnode{border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;color:#fff;font-size:14px;font-weight:500;min-width:0;overflow-wrap:anywhere;hyphens:auto}
+      .m24-mnode .m24-big{font-size:28px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+      .m24-mnode .m24-pct{font-size:13px;font-weight:600;opacity:.85}
+      .m24-mnode small{font-size:12px;opacity:.85;font-weight:400}
+      .m24-mnode.m24-navy{background:var(--navy)} .m24-mnode.m24-navy .m24-pct{color:var(--accent-on-dark);opacity:1}
+      .m24-mnode.m24-green{background:var(--green)} .m24-mnode.m24-red{background:var(--red)}
+      .m24-mnode.m24-orange{background:var(--orange);color:var(--dark)}
+      .m24-mnode.m24-orange-lt{background:#EBD8C6;color:var(--dark)}
+      .m24-mrow{display:flex;gap:6px}
+      .m24-split{display:flex;gap:3px;height:8px;margin:2px 0}
+      .m24-split div{border-radius:3px}
+      .m24-g{background:var(--green);opacity:.45} .m24-o{background:var(--orange);opacity:.5}
+      .m24-r{background:var(--red)} .m24-r2{background:var(--red);opacity:.7} .m24-r3{background:var(--red);opacity:.45}
+      .m24-split .m24-r{opacity:.55} .m24-split .m24-r2{opacity:.4} .m24-split .m24-r3{opacity:.28}
+      .m24-mesc{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+      .m24-mesc div{display:grid;grid-template-columns:12px 1fr auto;column-gap:10px;align-items:center;background:#fff;border:1px solid rgba(25,30,30,.08);border-radius:8px;padding:9px 12px;font-size:14px}
+      .m24-mesc i{width:12px;height:12px;border-radius:3px;grid-row:span 2}
+      .m24-mesc span{font-weight:600;color:var(--red-txt);grid-row:span 2;font-size:18px}
+      .m24-mesc em{font-style:normal;color:var(--gray);font-size:12px}
+      .m24-note{flex-direction:column;align-items:flex-start;gap:8px}
+    }
+
+
+    .m24-tlfoot{font-size:clamp(10px,.72vw,13px);color:var(--gray);font-style:italic;margin-top:.2vh}
+    .m24-vt .m24-vev,.m24-vt .m24-vwait{display:grid;grid-template-columns:40px 18px 1fr;column-gap:8px;position:relative}
+    .m24-vday{font-weight:600;font-size:14px;padding-top:2px;text-align:right}
+    .m24-vax{position:relative;display:flex;justify-content:center}
+    .m24-vev .m24-vax i{width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--c);margin-top:2px;position:relative;z-index:1}
+    .m24-vev .m24-vax::before{content:'';position:absolute;top:0;bottom:0;width:2px;background:#D8DDDD}
+    .m24-vt > .m24-vev:first-child .m24-vax::before{top:10px}
+    .m24-vev{padding:2px 0 12px}
+    .m24-vtx{display:flex;flex-direction:column;gap:2px;min-width:0}
+    .m24-vtx b{font-size:15px;font-weight:600}
+    .m24-vtx .m24-l1{font-size:14px;font-weight:500;color:var(--red-txt)}
+    .m24-vtx .m24-l2{font-size:13px;color:var(--gray)}
+    .m24-vwait{padding-bottom:10px}
+    .m24-vwait .m24-vax i{width:12px;height:100%;border-radius:4px;background:rgba(166,94,66,.24)}
+    .m24-vwait.m24-w2 .m24-vax i{background:rgba(200,174,148,.32)}
+    .m24-vwait.m24-w3 .m24-vax i{background:rgba(219,177,156,.6)}
+    .m24-vwait .m24-vtx{justify-content:center;gap:8px}
+    .m24-dur{font-size:13px;font-weight:600;color:var(--red-txt)}
+    .m24-w2 .m24-dur{color:var(--orange-txt)} .m24-w3 .m24-dur{color:#76472F}
+    .m24-voice{align-self:flex-start;max-width:100%;background:#FCF9EE;border:1.5px solid var(--terracotta);border-radius:16px;padding:6px 12px;font-size:14px;font-style:italic;font-weight:500;color:#4A2511}
+    .m24-vsil{position:relative;background:rgba(166,94,66,.06);border:1.5px dashed rgba(166,94,66,.45);border-radius:10px;padding:8px 8px 4px 0;margin:0 0 12px}
+    .m24-vsil-lab{margin:0 0 8px 66px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#A65E42}
+    .m24-vend{margin-top:8px;background:var(--terracotta);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:14px;color:var(--dark)}
+    .m24-vend b{font-size:30px;font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+    .m24-vend span{font-size:13px;line-height:1.35}
+    @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){ .m24-tlfoot{margin-top:12px;font-size:12px} }
+    @media screen and (max-width:760px){.m24-tag{white-space:normal;line-height:1.4;border-radius:10px}.m24-tlcard{padding:16px 12px;min-width:0}.m24-voice{font-size:13px;padding:6px 10px}}
+    /* ====== FIN SLIDE SNAPSHOT CARE ====== */
+
   </style>
 </head>
 <body>
@@ -766,10 +889,11 @@
     <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-gho axis-tag" data-stage="leviers">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
     </div>
   </div>
 
@@ -817,10 +941,11 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-gho axis-tag" data-stage="leviers">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
     </div>
       <h1 class="ml1-h1">Les 3 attentes primaires des clients <span class="ml1-dash">–</span> preuves et points d’appui</h1>
     </div>
@@ -851,10 +976,11 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-gho axis-tag" data-stage="leviers">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
     </div>
       <h1 class="ml1-h1">Là où la promesse décroche <span class="ml1-dash">–</span> 5 priorités, la Fiabilité d’abord</h1>
     </div>
@@ -870,18 +996,125 @@
 </div>
 <!-- ═════════ FIN SLIDE 1.2 · PROPOSITION A ═════════ -->
 
-<!-- ═════════ DÉBUT SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
+
+
+
+<!-- ═════════ DÉBUT SLIDE SNAPSHOT CARE · DIAGNOSTIC OPÉRATIONS CARE ═════════ -->
 <div class="slide white" id="s04">
+<div class="S m24" role="region" aria-labelledby="titre">
+  <header class="m24-hdr">
+    <div>
+      <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+    </div>
+      <h1 class="m24-h1" id="titre">Diagnostic Opérations Care <span class="m24-dash">–</span> Snapshot actuel</h1>
+    </div>
+    <div class="m24-brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150" class="m24-logo"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
+  </header>
+
+  <div class="m24-main">
+    <div class="m24-flowcard">
+      <div class="m24-side">
+      <div class="m24-eyebrow">Parcours d’un contact entrant</div>
+      <div class="m24-legend">
+        <span><i style="background:var(--green)"></i>Résolu au premier contact (FCR)</span>
+        <span><i style="background:var(--orange)"></i>Tickets</span>
+        <span><i style="background:var(--red)"></i>Escalades</span>
+        <span class="m24-lnote">Épaisseur des flux proportionnelle aux volumes</span>
+      </div>
+      <p class="m24-worst"><span class="m24-hl">Pire parcours</span> détaillé ci-dessous : ticket → escalade vers une équipe Business</p>
+      </div>
+      <div class="m24-flowbox"><svg class="m24-flow-svg" viewBox="0 -4 1200 512" role="img" aria-label="Flux des 15 000 inbounds Care (70 % appel, 20 % chat IA, 10 % formulaires / mails) : 40 % résolus en FCR, 60 % en tickets, dont 90 % escaladés"><path d="M170,50 C250.0,50 250.0,20 330,20 L330,188.0 C250.0,188.0 250.0,218.0 170,218.0 Z" fill="#305C64" fill-opacity="0.3"/><path d="M170,218.0 C250.0,218.0 250.0,228 330,228 L330,480.0 C250.0,480.0 250.0,470.0 170,470.0 Z" fill="#C8AE94" fill-opacity="0.3"/><path d="M480,228 C560.0,228 560.0,228 640,228 L640,454.8 C560.0,454.8 560.0,454.8 480,454.8 Z" fill="#A65E42" fill-opacity="0.22"/><path d="M480,454.8 C560.0,454.8 560.0,474.8 640,474.8 L640,500.0 C560.0,500.0 560.0,480.0 480,480.0 Z" fill="#C8AE94" fill-opacity="0.45"/><path d="M790,228 C860.0,228 860.0,214 930,214 L930,327.4 C860.0,327.4 860.0,341.4 790,341.4 Z" fill="#A65E42" fill-opacity="0.34"/><path d="M790,341.4 C860.0,341.4 860.0,341.4 930,341.4 L930,409.44 C860.0,409.44 860.0,409.44 790,409.44 Z" fill="#A65E42" fill-opacity="0.26"/><path d="M790,409.44 C860.0,409.44 860.0,423.44 930,423.44 L930,468.8 C860.0,468.8 860.0,454.8 790,454.8 Z" fill="#A65E42" fill-opacity="0.18"/><rect x="0" y="50" width="170" height="420.0" rx="12" fill="#18353A"/><rect x="330" y="20" width="150" height="168.0" rx="10" fill="#305C64"/><rect x="330" y="228" width="150" height="252.0" rx="10" fill="#C8AE94"/><rect x="640" y="228" width="150" height="226.8" rx="10" fill="#A65E42"/><rect x="640" y="474.8" width="150" height="25.2" rx="5" fill="#C8AE94"/><rect x="930" y="214" width="14" height="113.4" rx="3" fill="#A65E42"/><rect x="930" y="341.4" width="14" height="68.0" rx="3" fill="#A65E42" fill-opacity=".8"/><rect x="930" y="423.4" width="14" height="45.4" rx="3" fill="#A65E42" fill-opacity=".6"/><text x="85" y="148.0" font-size="18" font-weight="600" fill="#7DACB4" text-anchor="middle" fill-opacity="1" letter-spacing="1">100 %</text><text x="85" y="195.0" font-size="44" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="1" letter-spacing="-1">15 000</text><text x="85" y="225.0" font-size="17" font-weight="500" fill="#fff" text-anchor="middle" fill-opacity="0.85" letter-spacing="0">Inbounds Care</text><line x1="22" y1="262" x2="148" y2="262" stroke="#fff" stroke-opacity=".22" stroke-width="1.5"/><text x="85" y="300.0" font-size="18" font-weight="600" fill="#7DACB4" text-anchor="middle" fill-opacity="1" letter-spacing="0">70 %</text><text x="85" y="321.0" font-size="15" font-weight="500" fill="#C2E2E8" text-anchor="middle" fill-opacity="1" letter-spacing="0">Appel</text><text x="85" y="354.0" font-size="18" font-weight="600" fill="#7DACB4" text-anchor="middle" fill-opacity="1" letter-spacing="0">20 %</text><text x="85" y="375.0" font-size="15" font-weight="500" fill="#C2E2E8" text-anchor="middle" fill-opacity="1" letter-spacing="0">Chat IA</text><text x="85" y="408.0" font-size="18" font-weight="600" fill="#7DACB4" text-anchor="middle" fill-opacity="1" letter-spacing="0">10 %</text><text x="85" y="429.0" font-size="15" font-weight="500" fill="#C2E2E8" text-anchor="middle" fill-opacity="1" letter-spacing="0">Formulaires / mails</text><text x="405.0" y="92.0" font-size="18" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="0.85" letter-spacing="0">40 %</text><text x="405.0" y="130.0" font-size="36" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="1" letter-spacing="-1">6 000</text><text x="500" y="98.0" font-size="24" font-weight="600" fill="#305C64" text-anchor="start" fill-opacity="1" letter-spacing="0">Résolus en FCR</text><text x="500" y="126.0" font-size="18" font-weight="400" fill="#627070" text-anchor="start" fill-opacity="1" letter-spacing="0">Clôturés sans ticket</text><text x="405.0" y="332.0" font-size="18" font-weight="600" fill="#191E1E" text-anchor="middle" fill-opacity="0.8" letter-spacing="0">60 %</text><text x="405.0" y="370.0" font-size="36" font-weight="600" fill="#191E1E" text-anchor="middle" fill-opacity="1" letter-spacing="-1">9 000</text><text x="405.0" y="396.0" font-size="16" font-weight="600" fill="#191E1E" text-anchor="middle" fill-opacity="0.85" letter-spacing="0">Tickets créés</text><text x="715.0" y="319.4" font-size="18" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="0.85" letter-spacing="0">90 %</text><text x="715.0" y="357.4" font-size="36" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="1" letter-spacing="-1">8 100</text><text x="715.0" y="383.4" font-size="15" font-weight="600" fill="#fff" text-anchor="middle" fill-opacity="0.9" letter-spacing="1.5">ESCALADÉS</text><text x="804" y="494.0" font-size="16" font-weight="400" fill="#191E1E" text-anchor="start" fill-opacity="1" letter-spacing="0"><tspan font-weight="600" fill="#6F5640">TRAITÉS PAR CARE</tspan><tspan fill="#191E1E" font-weight="600" dx="8">900</tspan><tspan fill="#627070" dx="6">· 10 % des tickets</tspan></text><text x="958" y="267.7" font-size="19" font-weight="600" fill="#191E1E" text-anchor="start" fill-opacity="1" letter-spacing="0">Activation <tspan fill="#A65E42" dx="4">4 050</tspan></text><text x="958" y="289.7" font-size="16" font-weight="400" fill="#627070" text-anchor="start" fill-opacity="1" letter-spacing="0">50 % des escalades</text><text x="958" y="372.4" font-size="19" font-weight="600" fill="#191E1E" text-anchor="start" fill-opacity="1" letter-spacing="0">Facturation <tspan fill="#A65E42" dx="4">2 430</tspan></text><text x="958" y="394.4" font-size="16" font-weight="400" fill="#627070" text-anchor="start" fill-opacity="1" letter-spacing="0">30 % des escalades</text><text x="958" y="443.1" font-size="19" font-weight="600" fill="#191E1E" text-anchor="start" fill-opacity="1" letter-spacing="0">Autres <tspan fill="#A65E42" dx="4">1 620</tspan></text><text x="958" y="465.1" font-size="16" font-weight="400" fill="#627070" text-anchor="start" fill-opacity="1" letter-spacing="0">20 % des escalades</text><text x="85" y="18.0" font-size="14" font-weight="600" fill="#627070" text-anchor="middle" fill-opacity="1" letter-spacing="1.5">ENTRÉES</text></svg></div>
+      <div class="m24-mflow">
+  <div class="m24-mnode m24-navy"><span class="m24-pct">100 %</span><span class="m24-big">15 000</span><span>Inbounds Care</span>
+    <ul class="m24-channels" aria-label="Canaux entrants"><li>Appel · 70 %</li><li>Chat IA · 20 %</li><li>Formulaires / mails · 10 %</li></ul></div>
+  <div class="m24-split"><div style="flex:40" class="m24-g"></div><div style="flex:60" class="m24-o"></div></div>
+  <div class="m24-mrow">
+    <div class="m24-mnode m24-green" style="flex:40"><span class="m24-pct">40 %</span><span class="m24-big">6 000</span><span>Résolus en FCR</span><small>Clôturés sans ticket</small></div>
+    <div class="m24-mnode m24-orange" style="flex:60"><span class="m24-pct">60 %</span><span class="m24-big">9 000</span><span>Tickets créés</span></div>
+  </div>
+  <div class="m24-split"><div style="flex:90" class="m24-r"></div><div style="flex:10" class="m24-o"></div></div>
+  <div class="m24-mrow">
+    <div class="m24-mnode m24-red" style="flex:3"><span class="m24-pct">90 %</span><span class="m24-big">8 100</span><span>ESCALADÉS</span></div>
+    <div class="m24-mnode m24-orange-lt" style="flex:2"><span class="m24-pct">10 %</span><span class="m24-big">900</span><span>TRAITÉS PAR CARE</span></div>
+  </div>
+  <div class="m24-split"><div style="flex:50" class="m24-r"></div><div style="flex:30" class="m24-r2"></div><div style="flex:20" class="m24-r3"></div></div>
+  <div class="m24-mesc">
+    <div><i class="m24-r"></i><b>Activation</b><span>4 050</span><em>50 % des escalades</em></div>
+    <div><i class="m24-r2"></i><b>Facturation</b><span>2 430</span><em>30 % des escalades</em></div>
+    <div><i class="m24-r3"></i><b>Autres</b><span>1 620</span><em>20 % des escalades</em></div>
+  </div>
+</div>
+    </div>
+    <section class="m24-tlcard" aria-labelledby="tl-titre">
+      <div class="m24-tlhead">
+        <div><div class="m24-eyebrow" id="tl-titre">Le pire parcours d’un client · frise chronologique</div></div>
+        <div class="m24-illus"><span class="m24-tag">Parcours type d’un ticket escaladé · délais moyens</span></div>
+      </div>
+      <svg class="m24-tl-svg" viewBox="0 0 1500 258" role="img" aria-label="Parcours type d’un ticket escaladé : J0 contact et ticket escaladé, J+7 retour de l’escalade, J+10 première réponse au client, J+15 clôture ; 10 jours de silence pour le client"><line x1="60" y1="140" x2="1020" y2="140" stroke="#D8DDDD" stroke-width="2"/><rect x="60" y="127" width="448" height="26" rx="4" fill="rgba(166,94,66,.22)"/><text x="284.0" y="145" font-size="14" font-weight="600" fill="#8A4A30" text-anchor="middle">7 jours · attente du retour de l’équipe Business</text><rect x="508" y="127" width="192" height="26" rx="4" fill="rgba(200,174,148,.26)"/><text x="604.0" y="145" font-size="14" font-weight="600" fill="#6F5640" text-anchor="middle">3 jours · rédaction Care</text><rect x="700" y="127" width="320" height="26" rx="4" fill="rgba(219,177,156,.45)"/><text x="860.0" y="145" font-size="14" font-weight="600" fill="#76472F" text-anchor="middle">5 jours · allers-retours Care ⇄ client</text><path d="M74,120 V114 H686 V120" fill="none" stroke="#A65E42" stroke-width="2"/><rect x="175" y="99" width="410" height="22" fill="#fff"/><text x="380" y="115" font-size="14" font-weight="700" fill="#A65E42" text-anchor="middle" letter-spacing=".3">10 JOURS DE SILENCE POUR LE CLIENT</text><line x1="60" y1="18" x2="60" y2="126" stroke="#18353A" stroke-width="2"/><text x="72" y="34" font-size="18" font-weight="600" fill="#191E1E">Le client contacte Care</text><text x="72" y="57" font-size="15" font-weight="500" fill="#191E1E">Non résolu en FCR (60 %) → ticket créé</text><text x="72" y="77" font-size="14" fill="#627070">90 % des tickets escaladés vers une équipe Business</text><line x1="700" y1="18" x2="700" y2="126" stroke="#C8AE94" stroke-width="2"/><text x="712" y="34" font-size="18" font-weight="600" fill="#191E1E">1ère réponse au client</text><text x="712" y="57" font-size="15" font-weight="500" fill="#6F5640">Délai 1ère réponse ticket : 10 jours</text><text x="712" y="77" font-size="14" fill="#627070">7 j d’attente Business + 3 j Care</text><line x1="1020" y1="18" x2="1020" y2="126" stroke="#305C64" stroke-width="2"/><text x="1032" y="34" font-size="18" font-weight="600" fill="#191E1E">Ticket clôturé</text><text x="1032" y="57" font-size="15" font-weight="500" fill="#305C64">Délai clôture : 15 jours (moyenne)</text><text x="1032" y="77" font-size="14" fill="#627070">après 5 j d’allers-retours Care ⇄ client</text><line x1="508" y1="154" x2="508" y2="244" stroke="#A65E42" stroke-width="2"/><text x="520" y="196" font-size="17" font-weight="600" fill="#191E1E">Retour de l’escalade</text><text x="520" y="218" font-size="14" font-weight="500" fill="#8A4A30">Réponse BO → Care : 7 jours</text><text x="520" y="238" font-size="13" fill="#627070">Activation, Facturation, Autres…</text><circle cx="60" cy="140" r="8" fill="#fff" stroke="#18353A" stroke-width="4"/><circle cx="508" cy="140" r="8" fill="#fff" stroke="#A65E42" stroke-width="4"/><circle cx="700" cy="140" r="8" fill="#fff" stroke="#C8AE94" stroke-width="4"/><circle cx="1020" cy="140" r="8" fill="#fff" stroke="#305C64" stroke-width="4"/><text x="60" y="176" font-size="15" font-weight="600" fill="#191E1E" text-anchor="middle">J0</text><text x="498" y="176" font-size="15" font-weight="600" fill="#191E1E" text-anchor="end">J+7</text><text x="700" y="176" font-size="15" font-weight="600" fill="#191E1E" text-anchor="middle">J+10</text><text x="1020" y="176" font-size="15" font-weight="600" fill="#191E1E" text-anchor="middle">J+15</text><path d="M256.8,202 L264.8,193 L272.8,202 Z" fill="#FCF9EE" stroke="#DBB19C" stroke-width="1.5"/><rect x="139.8" y="202" width="250" height="36" rx="18" fill="#FCF9EE" stroke="#DBB19C" stroke-width="1.5"/><path d="M257.8,203.2 L271.8,203.2" stroke="#FCF9EE" stroke-width="2.5"/><text x="264.8" y="225" font-size="15" font-style="italic" font-weight="500" fill="#4A2511" text-anchor="middle">« Toujours pas de réponse… »</text><path d="M852.0,202 L860.0,193 L868.0,202 Z" fill="#FCF9EE" stroke="#DBB19C" stroke-width="1.5"/><rect x="729.0" y="202" width="262" height="36" rx="18" fill="#FCF9EE" stroke="#DBB19C" stroke-width="1.5"/><path d="M853.0,203.2 L867.0,203.2" stroke="#FCF9EE" stroke-width="2.5"/><text x="860.0" y="225" font-size="15" font-style="italic" font-weight="500" fill="#4A2511" text-anchor="middle">« Encore des allers-retours… »</text><rect x="1064" y="170" width="400" height="80" rx="12" fill="#DBB19C"/><text x="1082" y="222" font-size="38" font-weight="700" fill="#191E1E" letter-spacing="-1">15 jours</text><text x="1252" y="204" font-size="14" font-weight="600" fill="#191E1E">du premier contact à la clôture</text><text x="1252" y="224" font-size="14" fill="#191E1E">du ticket (moyenne)</text></svg>
+      <div class="m24-vt"><div class="m24-vev" style="--c:#18353A"><div class="m24-vday">J0</div><div class="m24-vax"><i></i></div><div class="m24-vtx"><b>Le client contacte Care</b><span class="m24-l1" style="color:var(--dark)">Non résolu en FCR (60 %) → ticket créé</span><span class="m24-l2">90 % des tickets escaladés vers une équipe Business</span></div></div><div class="m24-vsil"><div class="m24-vsil-lab">10 jours de silence pour le client</div><div class="m24-vwait m24-w1" style="min-height:112px"><div class="m24-vday"></div><div class="m24-vax"><i></i></div><div class="m24-vtx"><span class="m24-dur">7 jours · attente du retour de l’équipe Business</span><span class="m24-voice">« Toujours pas de réponse… »</span></div></div><div class="m24-vev" style="--c:#A65E42"><div class="m24-vday">J+7</div><div class="m24-vax"><i></i></div><div class="m24-vtx"><b>Retour de l’escalade</b><span class="m24-l1" style="">Réponse BO → Care : 7 jours</span><span class="m24-l2">Activation, Facturation, Autres…</span></div></div><div class="m24-vwait m24-w2" style="min-height:48px"><div class="m24-vday"></div><div class="m24-vax"><i></i></div><div class="m24-vtx"><span class="m24-dur">3 jours · rédaction Care</span></div></div></div><div class="m24-vev" style="--c:#C8AE94"><div class="m24-vday">J+10</div><div class="m24-vax"><i></i></div><div class="m24-vtx"><b>1ère réponse au client</b><span class="m24-l1" style="color:var(--orange-txt)">Délai 1ère réponse ticket : 10 jours</span><span class="m24-l2">7 j d’attente Business + 3 j Care</span></div></div><div class="m24-vwait m24-w3" style="min-height:80px"><div class="m24-vday"></div><div class="m24-vax"><i></i></div><div class="m24-vtx"><span class="m24-dur">5 jours · allers-retours Care ⇄ client</span><span class="m24-voice">« Encore des allers-retours… »</span></div></div><div class="m24-vev" style="--c:#305C64"><div class="m24-vday">J+15</div><div class="m24-vax"><i></i></div><div class="m24-vtx"><b>Ticket clôturé</b><span class="m24-l1" style="color:var(--mint)">Délai clôture : 15 jours (moyenne)</span><span class="m24-l2">après 5 j d’allers-retours Care ⇄ client</span></div></div><div class="m24-vend"><b>15 jours</b><span><strong>du premier contact à la clôture</strong><br>du ticket (moyenne)</span></div></div><p class="m24-tlfoot">3 jours (rédaction Care) et 5 jours (allers-retours) déduits des délais moyens : 10 − 7 et 15 − 10.</p>
+    </section>
+  </div>
+
+  <footer class="m24-note"><b>Hypothèses :</b><ul class="m24-hyp"><li>tout contact non résolu en FCR génère un ticket ;</li><li>la répartition des sujets des tickets (50 % activation · 30 % facturation · 20 % autres) est appliquée à l’identique aux escalades, 90 % des tickets étant escaladés.</li></ul></footer>
+</div>
+</div>
+<!-- ═════════ FIN SLIDE SNAPSHOT CARE ═════════ -->
+
+<!-- ═════════ DÉBUT SLIDE 2.1 v3-A · LEVIERS D’AMÉLIORATION ═════════ -->
+<div class="slide white" id="s05">
+<div class="S m21 m21-a">
+  <div class="m21-hdr">
+    <div class="m21-hl">
+    <div class="m21-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+    </div>
+      <h1 class="m21-h1">Leviers d’amélioration <span class="m21-dash">–</span> Impact sur les KPI</h1>
+    </div>
+    <div class="m21-brand"><svg class="m21-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
+  </div>
+  <div class="m21-mx" role="table" aria-label="Leviers et impacts sur les KPI">
+    <div class="m21-head" role="row"><span role="columnheader">Levier</span><span role="columnheader"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>(a) Expérience client</span><span role="columnheader"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>(b) Confort collaborateurs</span><span role="columnheader"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>(c) Coût / Gain opérationnel</span></div>
+    <div class="m21-row" role="row">
+      <div class="m21-lev" role="rowheader"><span class="m21-n">1</span><div><h2>Augmenter le First Contact Resolution (FCR) et réduire les escalades</h2><ul class="m21-ls"><li>knowledge</li><li>data 360°</li><li>Autonomie Care</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">CSAT post-contact</span><span class="m21-k-v">Cible : <b>80 %</b></span></div><div class="m21-k"><span class="m21-k-l">Taux de recontact</span><span class="m21-k-v">Cible : <b>15 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">Taux d’escalade</span><span class="m21-k-v">90 % → <b>30 %</b></span></div><div class="m21-k"><span class="m21-k-l">% tickets résolus par Care seul</span><span class="m21-k-v">~10 % → <b>60 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Volume tickets</span><span class="m21-k-v">9 000 → <b>5 000</b>/mois</span></div><div class="m21-k"><span class="m21-k-l">Cost per ticket</span><span class="m21-k-v">~14 € → <b>~9 €</b></span></div></div>
+    </div>
+    <div class="m21-row" role="row">
+      <div class="m21-lev" role="rowheader"><span class="m21-n">2</span><div><h2>Qualité des dossiers Activation</h2><ul class="m21-ls"><li>Checklists obligatoires</li><li>contrôles automatiques</li><li>formations & feedback installateurs</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">Délai d’activation réel</span><span class="m21-k-v">70 j → <b>45 j</b></span></div><div class="m21-k"><span class="m21-k-l">% dossiers corrects au 1<sup>er</sup> dépôt</span><span class="m21-k-v">30 % → <b>70 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">Taux de rework Activation</span><span class="m21-k-v">Élevé* → <b>25 %</b></span></div><div class="m21-k m21-k-txt"><span class="m21-k-v">Moins de relances installateurs</span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Productivité</span><span class="m21-k-v">167 → <b>218</b> activations/FTE/mois</span></div><div class="m21-k"><span class="m21-k-l">Gain</span><span class="m21-k-v">+31 % par FTE</span></div></div>
+    </div>
+    <div class="m21-row" role="row">
+      <div class="m21-lev" role="rowheader"><span class="m21-n">3</span><div><h2>Industrialiser le ticketing</h2><ul class="m21-ls"><li>Migration hors Dynamics</li><li>automation/IA</li><li>MCP data Robin</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">Délai 1<sup>re</sup> réponse</span><span class="m21-k-v">10 j → <b>2 j</b></span></div><div class="m21-k"><span class="m21-k-l">Délai de clôture</span><span class="m21-k-v">15 j → <b>7 j</b></span></div><div class="m21-k"><span class="m21-k-l">Contacts « où en est mon activation ? »</span><span class="m21-k-v">–<b>30 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">% tickets résolus par Care seul</span><span class="m21-k-v">~10 % → <b>55 %</b></span></div><div class="m21-k"><span class="m21-k-l">Temps perdu en doubles saisies</span><span class="m21-k-v">–<b>40 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Volume tickets</span><span class="m21-k-v">9 000 → <b>5 000</b>/mois</span></div><div class="m21-k"><span class="m21-k-l">Cost per ticket</span><span class="m21-k-v">~14 € → <b>~9 €</b></span></div><div class="m21-k"><span class="m21-k-l">Inbounds évités</span><span class="m21-k-v"><b>–1 000</b>/mois</span></div></div>
+    </div>
+  </div>
+  <div class="m21-foot"><span>Hypothèse de calcul : un dossier non conforme nécessite en moyenne 2 passages (vs 1 pour un dossier conforme). Passage de 30 % à 70 % de dossiers corrects → moyenne de 1,7 à 1,3 passages → +31 % de productivité.</span><span>Les cibles sont des hypothèses basées sur les standards opérationnels.</span><span>Levier 2 partiellement hors périmètre direct (partners).</span><span>Les leviers 1 et 3 agissent en partie sur les mêmes volumes ; les effets ne sont pas strictement additifs.</span><span>Cost To Company : Care ≈ 52 k€ / FTE / an · Activation ≈ 54 k€ / FTE / an</span></div>
+</div>
+</div>
+<!-- ═════════ FIN SLIDE 2.1 · LEVIERS D’AMÉLIORATION ═════════ -->
+
+<!-- ═════════ DÉBUT SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
+<div class="slide white" id="s06">
 <div class="S m22 m22v6 m22v7">
   <div class="m22-hdr">
     <div class="m22-hl">
     <div class="m22-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-gho axis-tag" data-stage="leviers">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
+      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
     </div>
       <h1 class="m22-h1">Dimensionnement équipe Activation <span class="m22-dash">–</span> 6 prochains mois</h1>
       <p class="m22-obj"><span class="m22-tag">Objectif</span>Ramener le backlog à ~2 000 contrats tout en absorbant 1 500 nouveaux clients/mois.</p>
@@ -983,41 +1216,6 @@
 </div>
 <!-- ═════════ FIN SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
 
-
-<!-- ═════════ DÉBUT SLIDE 2.1 v3-A · LEVIERS D’AMÉLIORATION ═════════ -->
-<div class="slide white" id="s05">
-<div class="S m21 m21-a">
-  <div class="m21-hdr">
-    <div class="m21-hl">
-    <div class="m21-nav" role="navigation" aria-label="Sections">
-      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
-      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="tag t-gho axis-tag" data-stage="diagnostic">Diagnostic</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’action</span>
-      <span class="tag t-pri axis-tag" data-stage="leviers">Leviers</span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Conclusion</span>
-    </div>
-      <h1 class="m21-h1">Leviers d’amélioration <span class="m21-dash">–</span> Impact sur les KPI</h1>
-    </div>
-    <div class="m21-brand"><svg class="m21-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 58" fill="currentColor" role="img" aria-label="Logo mylight150"><path d="M97.7864 19.2854H94.7451V16.801H100.57V31.9823H97.7864V19.2854Z" fill="currentColor"></path><path d="M102.559 27.6208H105.414C105.647 28.8521 106.608 29.7095 107.988 29.7095C109.625 29.7095 110.633 28.6404 110.633 26.8074C110.633 25.2051 109.627 24.1141 107.988 24.1141C106.841 24.1141 106.021 24.694 105.6 25.5542L103.121 24.8121L104.174 16.8037H112.223V19.2882H106.326L105.811 22.9763C106.442 22.1628 107.4 21.7451 108.594 21.7451C111.239 21.7451 113.439 23.7183 113.439 26.8046C113.439 30.1245 111.192 32.2819 107.988 32.2819C105.016 32.2846 102.816 30.3581 102.559 27.6208Z" fill="currentColor"></path><path d="M115.217 26.8541V21.932C115.217 18.6368 117.463 16.4987 120.668 16.4987C123.873 16.4987 126.119 18.6341 126.119 21.932V26.8541C126.119 30.1492 123.873 32.2874 120.668 32.2874C117.463 32.2846 115.217 30.1492 115.217 26.8541ZM123.335 26.8541V21.932C123.335 20.1456 122.33 19.0765 120.668 19.0765C119.006 19.0765 118.001 20.1429 118.001 21.932V26.8541C118.001 28.6404 119.006 29.7095 120.668 29.7095C122.33 29.7095 123.335 28.6404 123.335 26.8541Z" fill="currentColor"></path><path d="M90.8813 42.7092V16.818H88.0283V43.913L89.6681 45.5427H111.203V42.7092H90.8813Z" fill="currentColor"></path><path d="M133.019 41.1098V28.6657H130.202V41.1098L128.562 42.734H116.02V45.5289H128.562L130.202 47.1559V59.6H133.019V47.1559L134.658 45.5289H147.2V42.734H134.658L133.019 41.1098Z" fill="currentColor"></path><path d="M110.946 8.1088L103.176 0.399963H89.6681L88.0283 2.02967V11.8876H90.8813V3.23341H102.395L110.943 11.7145L119.505 3.23341H130.221V23.8837H133.077V2.02967L131.437 0.399963H118.726L110.946 8.1088Z" fill="currentColor"></path><path d="M12.8492 20.2018C11.0931 20.2018 9.66667 20.9218 8.8468 22.2685C8.00478 20.9218 6.57832 20.2018 4.84442 20.2018C3.74203 20.2018 2.74489 20.4711 1.94164 21.0208C1.44031 20.5343 0.756161 20.2348 0 20.2348V31.9725H2.78367V25.4179C2.78644 23.5436 3.76695 22.7796 5.12417 22.7796C6.45922 22.7796 7.46466 23.5684 7.46466 25.4262V31.9725H10.2511V25.4262C10.2511 23.5684 11.2344 22.7796 12.5667 22.7796C13.9239 22.7796 14.9072 23.5464 14.9072 25.4262V31.9725H17.6908V25.4262C17.6936 21.8287 15.5858 20.2018 12.8492 20.2018Z" fill="currentColor"></path><path d="M28.6178 26.3331C28.6178 28.4685 27.4018 29.5596 25.6928 29.5596C23.9368 29.5596 22.7679 28.5152 22.7679 26.3331V20.5068H19.9842V26.3331C19.9842 30.4198 22.5103 32.1374 25.1777 32.1374C26.6983 32.1374 27.9142 31.4641 28.6178 30.2109V31.651C28.6178 33.8798 27.5403 34.7867 25.6458 34.7867C24.2415 34.7867 23.3302 34.3003 22.8621 33.2312H20.0784C20.7321 35.9465 22.9563 37.1777 25.6458 37.1777C28.8504 37.1777 31.4014 35.5755 31.4014 31.5823V20.5068H28.6178V26.3331Z" fill="currentColor"></path><path d="M37.2513 15.4913H34.4676V31.9753H37.2513V15.4913Z" fill="currentColor"></path><path d="M43.1233 20.5041H40.3397V31.9725H43.1233V20.5041Z" fill="currentColor"></path><path d="M41.7412 15.3264C40.6637 15.3264 39.8937 16.1151 39.8937 17.1842C39.8937 18.2533 40.6665 19.0173 41.7412 19.0173C42.8186 19.0173 43.5887 18.2505 43.5887 17.1842C43.5914 16.1179 42.8186 15.3264 41.7412 15.3264Z" fill="currentColor"></path><path d="M66.6363 20.2018C65.1628 20.2018 63.969 20.8751 63.1962 22.1063V15.4885H60.4125V31.9725H63.1962V26.0061C63.1962 23.8707 64.4122 22.7796 66.1211 22.7796C67.8772 22.7796 69.0461 23.824 69.0461 26.0061V31.9725H71.8297V26.0061C71.8325 21.9222 69.3037 20.2018 66.6363 20.2018Z" fill="currentColor"></path><path d="M80.7901 27.262V27.5643C80.7901 29.1198 79.9952 29.6997 78.8485 29.6997C77.7018 29.6997 76.9068 29.0951 76.9068 27.5643V23.0132H82.873V20.5068H76.9068V16.4449C75.3696 16.4449 74.1232 17.6816 74.1232 19.2069V27.5643C74.1232 30.7441 76.0426 32.2776 78.8512 32.2776C81.6598 32.2776 83.5765 30.7441 83.5765 27.5643V27.262H80.7901Z" fill="currentColor"></path><path d="M55.4739 21.4083C54.4408 20.636 53.1058 20.2018 51.5685 20.2018C47.9179 20.2018 45.3447 22.7549 45.3447 26.2397C45.3447 30.3016 48.2918 32.1374 51.0533 32.1374C52.7845 32.1374 54.1666 31.4421 54.9615 30.1642V31.1618C54.9615 33.8303 53.6736 34.784 51.6156 34.784C50.142 34.784 49.0175 34.2975 48.5494 33.2285H45.7408C46.4665 35.9437 48.735 37.175 51.6128 37.175C55.0059 37.175 57.7424 35.4573 57.7424 31.0683V20.2375C56.8062 20.2375 55.9781 20.702 55.4739 21.4083ZM51.5685 29.5596C49.5327 29.5596 48.1533 28.2596 48.1533 26.2397C48.1533 24.2197 49.5327 22.7796 51.5685 22.7796C53.5988 22.7796 54.956 24.2142 54.9615 26.2259V26.2507C54.956 28.2651 53.6016 29.5596 51.5685 29.5596Z" fill="currentColor"></path></svg></div>
-  </div>
-  <div class="m21-mx" role="table" aria-label="Leviers et impacts sur les KPI">
-    <div class="m21-head" role="row"><span role="columnheader">Levier</span><span role="columnheader"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>(a) Expérience client</span><span role="columnheader"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>(b) Confort collaborateurs</span><span role="columnheader"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>(c) Coût / Gain opérationnel</span></div>
-    <div class="m21-row" role="row">
-      <div class="m21-lev" role="rowheader"><span class="m21-n">1</span><div><h2>Augmenter le First Contact Resolution (FCR) et réduire les escalades</h2><ul class="m21-ls"><li>knowledge</li><li>data 360°</li><li>Autonomie Care</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">CSAT post-contact</span><span class="m21-k-v">Cible : <b>80 %</b></span></div><div class="m21-k"><span class="m21-k-l">Taux de recontact</span><span class="m21-k-v">Cible : <b>15 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">Taux d’escalade</span><span class="m21-k-v">90 % → <b>30 %</b></span></div><div class="m21-k"><span class="m21-k-l">% tickets résolus par Care seul</span><span class="m21-k-v">~10 % → <b>60 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Volume tickets</span><span class="m21-k-v">9 000 → <b>5 000</b>/mois</span></div><div class="m21-k"><span class="m21-k-l">Cost per ticket</span><span class="m21-k-v">~14 € → <b>~9 €</b></span></div></div>
-    </div>
-    <div class="m21-row" role="row">
-      <div class="m21-lev" role="rowheader"><span class="m21-n">2</span><div><h2>Qualité des dossiers Activation</h2><ul class="m21-ls"><li>Checklists obligatoires</li><li>contrôles automatiques</li><li>formations & feedback installateurs</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">Délai d’activation réel</span><span class="m21-k-v">70 j → <b>45 j</b></span></div><div class="m21-k"><span class="m21-k-l">% dossiers corrects au 1<sup>er</sup> dépôt</span><span class="m21-k-v">30 % → <b>70 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">Taux de rework Activation</span><span class="m21-k-v">Élevé* → <b>25 %</b></span></div><div class="m21-k m21-k-txt"><span class="m21-k-v">Moins de relances installateurs</span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Productivité</span><span class="m21-k-v">167 → <b>218</b> activations/FTE/mois</span></div><div class="m21-k"><span class="m21-k-l">Gain</span><span class="m21-k-v">+31 % par FTE</span></div></div>
-    </div>
-    <div class="m21-row" role="row">
-      <div class="m21-lev" role="rowheader"><span class="m21-n">3</span><div><h2>Industrialiser le ticketing</h2><ul class="m21-ls"><li>Migration hors Dynamics</li><li>automation/IA</li><li>MCP data Robin</li></ul></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-cx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9A5.2 5.2 0 0 1 12 6.3 5.2 5.2 0 0 1 21.3 12C19 16.6 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></i>Expérience client</span><div class="m21-k"><span class="m21-k-l">Délai 1<sup>re</sup> réponse</span><span class="m21-k-v">10 j → <b>2 j</b></span></div><div class="m21-k"><span class="m21-k-l">Délai de clôture</span><span class="m21-k-v">15 j → <b>7 j</b></span></div><div class="m21-k"><span class="m21-k-l">Contacts « où en est mon activation ? »</span><span class="m21-k-v">–<b>30 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-co"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M15.5 5.2a3 3 0 0 1 0 5.6M17.5 14.3c2 .6 3.2 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></i>Confort collaborateurs</span><div class="m21-k"><span class="m21-k-l">% tickets résolus par Care seul</span><span class="m21-k-v">~10 % → <b>55 %</b></span></div><div class="m21-k"><span class="m21-k-l">Temps perdu en doubles saisies</span><span class="m21-k-v">–<b>40 %</b></span></div></div><div class="m21-c" role="cell"><span class="m21-ml"><i class="m21-ic m21-ic-ct"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17l5-5 4 3 7-8M15 7h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></i>Coût / Gain opérationnel</span><div class="m21-k"><span class="m21-k-l">Volume tickets</span><span class="m21-k-v">9 000 → <b>5 000</b>/mois</span></div><div class="m21-k"><span class="m21-k-l">Cost per ticket</span><span class="m21-k-v">~14 € → <b>~9 €</b></span></div><div class="m21-k"><span class="m21-k-l">Inbounds évités</span><span class="m21-k-v"><b>–1 000</b>/mois</span></div></div>
-    </div>
-  </div>
-  <div class="m21-foot"><span>Hypothèse de calcul : un dossier non conforme nécessite en moyenne 2 passages (vs 1 pour un dossier conforme). Passage de 30 % à 70 % de dossiers corrects → moyenne de 1,7 à 1,3 passages → +31 % de productivité.</span><span>Les cibles sont des hypothèses basées sur les standards opérationnels.</span><span>Levier 2 partiellement hors périmètre direct (partners).</span><span>Les leviers 1 et 3 agissent en partie sur les mêmes volumes ; les effets ne sont pas strictement additifs.</span><span>Cost To Company : Care ≈ 52 k€ / FTE / an · Activation ≈ 54 k€ / FTE / an</span></div>
-</div>
-</div>
-<!-- ═════════ FIN SLIDE 2.1 · LEVIERS D’AMÉLIORATION ═════════ -->
-
 </div><!-- /deck -->
 
 
@@ -1067,11 +1265,11 @@
   updateCounter();
 
   // Stage map – slide index (0-based) → stage key
-  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités) · s04 = diagnostic (2.2 dimensionnement Activation) · s05 = leviers (2.1 leviers d’amélioration)
-  const stageMap = ['intro','experience','experience','diagnostic','leviers'];
+  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités) · s04–s06 = excellence (Snapshot Care, Leviers, Dimensionnement Activation) · s07–s08 = plan d’action (à venir)
+  const stageMap = ['intro','experience','experience','excellence','excellence','excellence'];
 
   // First slide (0-based index) for each stage – clicking a pill jumps here
-  const stageFirst = { intro: 0, experience: 1, diagnostic: 3, leviers: 4 };
+  const stageFirst = { intro: 0, experience: 1, excellence: 3 };
 
   function updateAxis() {
     // chaque diapo surligne sa propre section (juste aussi à l’impression, où toutes les diapos sont visibles)
@@ -1081,10 +1279,20 @@
         // preserve axis-tag class so querySelectorAll keeps finding them on subsequent calls
         t.className = 'tag axis-tag ' + (t.dataset.stage === stage ? 't-pri' : 't-gho');
       });
+      // sous-menu : seules les pastilles du groupe courant sont visibles ; la diapo courante est en terracotta
+      s.querySelectorAll('.dn-sub').forEach(g => {
+        g.classList.toggle('on', g.dataset.group === stage);
+        g.querySelectorAll('a.dn-sp').forEach(a => {
+          const isCur = +a.dataset.slide === i + 1;
+          a.classList.toggle('cur', isCur);
+          if (isCur) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+        });
+      });
     });
   }
 
   function show(n) {
+    const prevStage = stageMap[cur];
     slides[cur].classList.remove('active');
     cur = Math.max(0, Math.min(n, total - 1));
     slides[cur].classList.add('active');
@@ -1093,6 +1301,9 @@
     history.replaceState(null, '', '#s' + String(cur + 1).padStart(2, '0'));
     updateAxis();
     updateCounter();
+    // apparition douce des pastilles quand on entre dans un nouveau groupe
+    const sub = slides[cur].querySelector('.dn-sub.on');
+    if (sub) { sub.classList.remove('enter'); if (prevStage !== stageMap[cur]) { void sub.offsetWidth; sub.classList.add('enter'); } }
   }
 
   function go(dir) { show(cur + dir); }
