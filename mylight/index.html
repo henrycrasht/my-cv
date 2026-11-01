@@ -753,12 +753,12 @@
     .dn-sp:focus-visible{outline:2px solid var(--mint);outline-offset:2px}
     .dn-sp.cur{background:var(--terracotta);color:var(--dark);box-shadow:inset 0 0 0 1px var(--terracotta);cursor:default}
     .dn-sp.off{opacity:.45;cursor:default;pointer-events:none}
-    .dn-sub.enter .dn-sp,.dn-sub.enter::before{animation:dnIn .28s ease-out both}
-    .dn-sub.enter .dn-sp:nth-child(2){animation-delay:.04s}.dn-sub.enter .dn-sp:nth-child(3){animation-delay:.08s}
-    @keyframes dnIn{from{opacity:0;transform:translateX(-4px)}to{opacity:1;transform:none}}
-    @media (prefers-reduced-motion:reduce){.dn-sub.enter .dn-sp,.dn-sub.enter::before{animation:none}.dn-sp{transition:none}}
+    .dn-sub{overflow:visible}
+    .dn-sub.dn-anim{overflow:hidden;white-space:nowrap}
+    .dn-sub.dn-leave{display:inline-flex;pointer-events:none}
+    @media (prefers-reduced-motion:reduce){.dn-sp{transition:none}}
     @media screen and (max-width:1023px),screen and (max-aspect-ratio:4/3){.dn-sp{font-size:10px;padding:3px 7px}}
-    @media print{.dn-sub.enter .dn-sp{animation:none}}
+    @media print{.dn-sub.dn-leave{display:none}}
     /* ====== SLIDE SNAPSHOT CARE · DIAGNOSTIC OPÉRATIONS CARE (préfixe m24-, depuis diagnostic-care.html) ====== */
     .m24{--green:#305C64;--orange:#C8AE94;--red:#A65E42;--red-txt:#8A4A30;--orange-txt:#6F5640;color:var(--dark);font-family:'Inter',system-ui,sans-serif}
     .m24 *,.m24 *::before,.m24 *::after{box-sizing:border-box}
@@ -889,11 +889,11 @@
     <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
   </div>
 
@@ -941,11 +941,11 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
       <h1 class="ml1-h1">Les 3 attentes primaires des clients <span class="ml1-dash">–</span> preuves et points d’appui</h1>
     </div>
@@ -976,11 +976,11 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
       <h1 class="ml1-h1">Là où la promesse décroche <span class="ml1-dash">–</span> 5 priorités, la Fiabilité d’abord</h1>
     </div>
@@ -1007,11 +1007,11 @@
       <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
       <h1 class="m24-h1" id="titre">Diagnostic Opérations Care <span class="m24-dash">–</span> Snapshot actuel</h1>
     </div>
@@ -1075,11 +1075,11 @@
     <div class="m21-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
       <h1 class="m21-h1">Leviers d’amélioration <span class="m21-dash">–</span> Impact sur les KPI</h1>
     </div>
@@ -1110,11 +1110,11 @@
     <div class="m22-nav" role="navigation" aria-label="Sections">
       <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
       <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
-      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02">S02</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03">S03</a></span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
       <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
-      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04">S04</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05">S05</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06">S06</a></span>
-      <span class="tag t-gho tag-off" aria-disabled="true">Plan d’Action</span>
-      <span class="dn-sub" data-group="plan"><span class="dn-sp off" aria-disabled="true">S07</span><span class="dn-sp off" aria-disabled="true">S08</span></span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
     </div>
       <h1 class="m22-h1">Dimensionnement équipe Activation <span class="m22-dash">–</span> 6 prochains mois</h1>
       <p class="m22-obj"><span class="m22-tag">Objectif</span>Ramener le backlog à ~2 000 contrats tout en absorbant 1 500 nouveaux clients/mois.</p>
@@ -1216,6 +1216,46 @@
 </div>
 <!-- ═════════ FIN SLIDE 2.2 v12 · DIMENSIONNEMENT ACTIVATION ═════════ -->
 
+<!-- ═════════ DÉBUT SLIDE S07 · PLAN D’ACTION · TIMELINE (emplacement, contenu à venir) ═════════ -->
+<div class="slide white" id="s07">
+<div class="S ml1 mph">
+  <div class="ml1-hdr">
+    <div>
+      <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- ═════════ FIN SLIDE S07 · PLAN D’ACTION · TIMELINE ═════════ -->
+
+<!-- ═════════ DÉBUT SLIDE S08 · PLAN D’ACTION · RISQUES (emplacement, contenu à venir) ═════════ -->
+<div class="slide white" id="s08">
+<div class="S ml1 mph">
+  <div class="ml1-hdr">
+    <div>
+      <div class="row gap-s deck-nav" role="navigation" aria-label="Sections">
+      <span class="tag t-gho axis-tag" data-stage="intro">Intro</span>
+      <span class="tag t-gho axis-tag" data-stage="experience">Expérience Client</span>
+      <span class="dn-sub" data-group="experience"><a class="dn-sp" href="#s02" data-slide="2" aria-label="Aller à la diapo 02 · Attentes">Attentes</a><a class="dn-sp" href="#s03" data-slide="3" aria-label="Aller à la diapo 03 · Priorités">Priorités</a></span>
+      <span class="tag t-gho axis-tag" data-stage="excellence">Excellence Opérationnelle</span>
+      <span class="dn-sub" data-group="excellence"><a class="dn-sp" href="#s04" data-slide="4" aria-label="Aller à la diapo 04 · Audit">Audit</a><a class="dn-sp" href="#s05" data-slide="5" aria-label="Aller à la diapo 05 · Leviers">Leviers</a><a class="dn-sp" href="#s06" data-slide="6" aria-label="Aller à la diapo 06 · Staffing Activation">Staffing Activation</a></span>
+      <span class="tag t-gho axis-tag" data-stage="plan">Plan d’Action</span>
+      <span class="dn-sub" data-group="plan"><a class="dn-sp" href="#s07" data-slide="7" aria-label="Aller à la diapo 07 · Timeline">Timeline</a><a class="dn-sp" href="#s08" data-slide="8" aria-label="Aller à la diapo 08 · Risques">Risques</a></span>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- ═════════ FIN SLIDE S08 · PLAN D’ACTION · RISQUES ═════════ -->
+
 </div><!-- /deck -->
 
 
@@ -1265,11 +1305,11 @@
   updateCounter();
 
   // Stage map – slide index (0-based) → stage key
-  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités) · s04–s06 = excellence (Snapshot Care, Leviers, Dimensionnement Activation) · s07–s08 = plan d’action (à venir)
-  const stageMap = ['intro','experience','experience','excellence','excellence','excellence'];
+  // s01 = intro (couverture) · s02–s03 = experience (1.1 besoins, 1.2 priorités) · s04–s06 = excellence (Snapshot Care, Leviers, Dimensionnement Activation) · s07–s08 = plan d’action (Timeline, Risques)
+  const stageMap = ['intro','experience','experience','excellence','excellence','excellence','plan','plan'];
 
   // First slide (0-based index) for each stage – clicking a pill jumps here
-  const stageFirst = { intro: 0, experience: 1, excellence: 3 };
+  const stageFirst = { intro: 0, experience: 1, excellence: 3, plan: 6 };
 
   function updateAxis() {
     // chaque diapo surligne sa propre section (juste aussi à l’impression, où toutes les diapos sont visibles)
@@ -1292,7 +1332,9 @@
   }
 
   function show(n) {
-    const prevStage = stageMap[cur];
+    const prevStage = stageMap[cur], prevIdx = cur;
+    // purge d’une animation de sous-menu encore en cours (navigation rapide)
+    document.querySelectorAll('.dn-sub.dn-anim, .dn-sub.dn-leave').forEach(g => { g.getAnimations({ subtree: true }).forEach(x => x.cancel()); g.classList.remove('dn-anim', 'dn-leave'); });
     slides[cur].classList.remove('active');
     cur = Math.max(0, Math.min(n, total - 1));
     slides[cur].classList.add('active');
@@ -1301,9 +1343,43 @@
     history.replaceState(null, '', '#s' + String(cur + 1).padStart(2, '0'));
     updateAxis();
     updateCounter();
-    // apparition douce des pastilles quand on entre dans un nouveau groupe
-    const sub = slides[cur].querySelector('.dn-sub.on');
-    if (sub) { sub.classList.remove('enter'); if (prevStage !== stageMap[cur]) { void sub.offsetWidth; sub.classList.add('enter'); } }
+    // changement de groupe : les pastilles sortent de leur rubrique (slide from left) et poussent les rubriques suivantes
+    if (prevStage !== stageMap[cur]) animateSub(slides[cur], prevStage, prevIdx);
+  }
+
+  // Animation du sous-menu (Web Animations API, rien ne reste après l’animation)
+  const DN_DUR = 330, DN_EASE = 'cubic-bezier(.22,.61,.36,1)';
+  const dnReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const dnNarrow = window.matchMedia('screen and (max-width:1023px), screen and (max-aspect-ratio:4/3)');
+  function animateSub(slide, prevStage, prevIdx) {
+    if (!slide.animate || dnReduce.matches || dnNarrow.matches) return; // mobile : retour à la ligne possible, pas d’animation de largeur
+    const enter = slide.querySelector('.dn-sub.on');
+    const leave = prevStage ? slide.querySelector('.dn-sub[data-group="' + prevStage + '"]') : null;
+    const parts = [];
+    if (enter) parts.push([enter, true]);
+    if (leave && leave !== enter) {
+      // l’ancien groupe se replie sur la nouvelle diapo, avec sa pastille active d’origine
+      leave.classList.add('dn-leave');
+      leave.querySelectorAll('a.dn-sp').forEach(a => a.classList.toggle('cur', +a.dataset.slide === prevIdx + 1));
+      parts.push([leave, false]);
+    }
+    parts.forEach(([g, isIn]) => {
+      const w = g.getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(g.parentElement).columnGap) || 0;
+      const shut = { maxWidth: '0px', marginRight: (-gap) + 'px' }, open = { maxWidth: w + 'px', marginRight: '0px' };
+      g.classList.add('dn-anim');
+      const a = g.animate(isIn ? [shut, open] : [open, shut], { duration: DN_DUR, easing: DN_EASE, fill: isIn ? 'none' : 'forwards' });
+      g.querySelectorAll('.dn-sp').forEach((p, k) => {
+        const off = { opacity: 0, transform: 'translateX(-14px)' }, on = { opacity: 1, transform: 'none' };
+        p.animate(isIn ? [off, on] : [on, off], { duration: DN_DUR, easing: DN_EASE, delay: isIn ? k * 30 : 0, fill: 'both' });
+      });
+      const done = () => {
+        g.classList.remove('dn-anim');
+        if (!isIn) { g.classList.remove('dn-leave'); a.cancel(); g.querySelectorAll('a.dn-sp').forEach(x => x.classList.remove('cur')); }
+        g.getAnimations({ subtree: true }).forEach(x => x.cancel());
+      };
+      a.onfinish = done; a.oncancel = () => g.classList.remove('dn-anim', 'dn-leave');
+    });
   }
 
   function go(dir) { show(cur + dir); }
