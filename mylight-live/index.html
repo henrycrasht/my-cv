@@ -1903,7 +1903,7 @@
   /* ── Paramètres de mouvement ── */
   const B_DUR = 380, B_OUT = 180, B_OFF = '-16px 0', B_EASE = 'cubic-bezier(.22,.61,.36,1)'; // même courbe que le sous-menu
   const B_STAG = 60, B_STAG_MAX = 300;   // décalage entre éléments d’un même bloc (plafonné)
-  const F_DUR = 450, F_STAG = 90;        // fondu d’entrée simple (couverture, clôture)
+  const F_DUR = 450;                     // fondu simple (blocs « fade »)
 
   /* ── Plan de construction par diapo ──
      Chaque diapo = liste d’étapes ; étape = liste d’entrées.
@@ -1918,62 +1918,116 @@
     return out;
   };
   const F4 = 'svg.m24o-desk';
+  /* s06 · éléments du graphe pour une liste de mois (0 = M−5 … 5 = M0, 6 = M+1 … 11 = M+6) */
+  const months = (...ks) => s => {
+    const out = [];
+    s.querySelectorAll('.m22-pC svg rect').forEach(r => { if (ks.includes(Math.round((parseFloat(r.getAttribute('x')) - 17) / 100))) out.push(r); });
+    s.querySelectorAll('.m22-pC .m22-vl, .m22-pC .m22-vl-in').forEach(v => { if (ks.includes(Math.round((parseFloat(v.style.left) - 4.1667) / 8.3333))) out.push(v); });
+    return out;
+  };
+  /* s07 / s08 · une colonne de phase complète (Phases · Actions · Impact CX · Trajectoire KPI) */
+  const phaseCol = (p, c) => s => {
+    const out = [];
+    s.querySelectorAll('.' + p + '-tl > *, .' + p + '-kl > *').forEach(el => {
+      if (el.matches('.' + p + '-ln, .' + p + '-rl, .' + p + '-ax')) return;
+      if (String(el.style.gridColumnStart) === String(c)) out.push(el);
+    });
+    return out;
+  };
   const roadmap = p => [
-    [['.' + p + '-rl[style*="grid-row:3"]'], '.' + p + '-ac'],   // 1 · Actions par phase (gauche → droite)
-    [['.' + p + '-rl[style*="grid-row:4"]'], '.' + p + '-ki'],   // 2 · Impact expérience client
-    [['.' + p + '-kl']],                                           // 3 · Trajectoire KPI
-    ['.' + p + '-hb']                                              // 4 · Hypothèses · Risques · Contre-métrique
+    [phaseCol(p, 2)],                                              // 1 · Phase 1 Fondations (colonne complète)
+    [phaseCol(p, 3)],                                              // 2 · Phase 2 Déploiement
+    [phaseCol(p, 4)],                                              // 3 · Phase 3 Consolidation
+    [phaseCol(p, 5)],                                              // 4 · Phase 4 Stabilisation
+    [['.' + p + '-hb-r', '.' + p + '-hb-c']]                       // 5 · Risques + Contre-métrique ensemble
   ];
+  const row02 = (cls, ...rows) => [['.m11b-band.' + cls, '.m11b-core.' + cls].concat(rows.map(r => '.m11b-c[style*="grid-row:' + r + ';"]'))];
   const PLAN = {
     s02: [
-      [['.m11b-h:nth-child(2)'], '.m11b-c[style*="grid-column:2"]'],          // Besoin opérationnel
-      [['.m11b-h:nth-child(3)'], '.m11b-c[style*="grid-column:3"]'],          // Preuves · sources
-      [['.m11b-ok', '.m11b-focus'], '.m11b-w', ['.ml1-note']]                 // Promesse tenue + lien base d’avis
+      row02('m11b-eco', 2, 3),                                                 // Économies : attente + besoins + preuves
+      row02('m11b-exp', 4, 5),                                                 // Expertise
+      row02('m11b-fia', 6, 7, 8),                                              // Fiabilité
+      [['.m11b-ok', '.m11b-focus'], '.m11b-w', ['.ml1-note']]                 // « Ce qui fonctionne » + lien base d’avis
     ],
     s03: [
-      ['.m12a-fia .m12a-gap'],                                                 // Fiabilité · tension critique
-      ['.m12a-exp .m12a-gap'],                                                 // Expertise
-      ['.m12a-eco .m12a-gap', ['.ml1-note']]                                   // Économies + lien base d’avis
+      [['.m12a-fia']],                                                         // Fiabilité + Priorité 01
+      [['.m12a-exp']],                                                         // Expertise (Priorité 02)
+      [['.m12a-eco']],                                                         // Économies (Priorité 03)
+      { stag: 150, e: ['.m12a-fia .m12a-gap:nth-child(2)', '.m12a-fia .m12a-gap:nth-child(3)', ['.ml1-note']] } // Priorités 04 puis 05
     ],
     s04: [
       [svgKids(F4, [13, 25])],                                                 // Clients → Care : 43 % · 15 000 inbounds
       [svgKids(F4, [26, 29]), svgKids(F4, [30, 34]), svgKids(F4, [35, 38])],  // 9 000 tickets / 6 000 FCR
       [svgKids(F4, 39, [46, 51])],                                             // 8 100 escaladés · 90 %
       [svgKids(F4, [40, 45], [52, 61]), svgKids(F4, [75, 78])],               // Back-office + 1 200 nouveaux clients direct
-      [svgKids(F4, [62, 74]), ['.mhx-s04']]                                    // Boucle des délais + hypothèses
+      [svgKids(F4, [62, 74])]                                                  // Boucle des délais
     ],
     s05: [
       [{ fade: '.m21-row:nth-child(2)' }, '.m21-row:nth-child(2) > *'],      // Levier 1 → impacts (a)(b)(c)
       [{ fade: '.m21-row:nth-child(3)' }, '.m21-row:nth-child(3) > *'],      // Levier 2
-      [{ fade: '.m21-row:nth-child(4)' }, '.m21-row:nth-child(4) > *'],      // Levier 3
-      [['.mhx-s05']]                                                           // Hypothèses
+      [{ fade: '.m21-row:nth-child(4)' }, '.m21-row:nth-child(4) > *']       // Levier 3
     ],
     s06: [
-      ['.m22-t thead, .m22-t tbody tr:nth-child(-n+2)'],                       // Étapes 1–2 : stock à traiter
-      ['.m22-t tbody tr:nth-child(n+3):nth-child(-n+5)'],                      // Étapes 3–5 : besoin → 5 recrutements
-      ['.m22-t tbody tr:nth-child(n+6)', ['.m22-hyp']]                         // Étapes 6–8 : backlog final + hypothèses
+      [{ fade: months(0, 1, 2, 3, 4, 5) }, ['.m22-t tbody tr:nth-child(1)']],                 // graphe M−5→M0 + étape 1
+      { stag: 120, e: ['.m22-t tbody tr:nth-child(n+2):nth-child(-n+5)'] },                   // étapes 2 → 5
+      [{ fade: months(6) }, { fade: '.m22-fs-buf' }, ['.m22-t tbody tr:nth-child(6)']],        // M+1 + « 6 · buffer » + étape 6
+      [{ fade: months(7, 8, 9, 10, 11) }, { fade: '.m22-fs-11' }, '.m22-t tbody tr:nth-child(n+7)'] // M+2→M+6 + 11 FTE + étapes 7–8
     ],
     s07: roadmap('m33c'),
     s08: roadmap('m33a')
   };
-  const FADE = {                                                               // couverture / clôture : simple fondu à l’arrivée
-    s01: [['#s01 .S > .mb-m[style*="margin-top"]'], '#s01 .s01-parts > .col', ['#s01 .s01-persona']],
-    s09: [['#s09 .s09-merci']]
+  /* Enchaînements automatiques à l’arrivée (en avançant uniquement ; retour / saut = diapo complète) */
+  const AUTO = {
+    s01: { stag: 180, e: [{ fade: '#s01 .S > .mb-m[style*="margin-top"]' }, '#s01 .s01-parts > .col', { fade: '#s01 .s01-persona' }] },
+    s04: { stag: 130, e: [svgKids(F4, 2, [10, 12]), svgKids(F4, 0, [3, 5]), svgKids(F4, 1, [6, 9]), ['.mhx-s04']] }, // Client · Front · Back · Hypothèses
+    s09: { stag: 0, e: [{ fade: '#s09 .s09-merci' }] }
   };
+  /* s06 · ligne jaune du backlog : révélée de gauche à droite (clipPath en unités du graphe) */
+  const LINE_R = [0, 550, 550, 650, 1300], DOT_R = [0, 600, 600, 700, 1300];
+  const HOOK = { s06: setupS06 };
+  function setupS06(s) {
+    const svg = s.querySelector('.m22-pC svg'); if (!svg) return null;
+    const NS = 'http://www.w3.org/2000/svg';
+    const mk = id => { const c = document.createElementNS(NS, 'clipPath'); c.setAttribute('id', id); c.setAttribute('clipPathUnits', 'userSpaceOnUse');
+      const r = document.createElementNS(NS, 'rect'); r.setAttribute('x', '-100'); r.setAttribute('y', '-1000'); r.setAttribute('height', '3000'); r.setAttribute('width', '1400'); c.appendChild(r); return [c, r]; };
+    const defs = document.createElementNS(NS, 'defs'); const [c1, r1] = mk('bld-s06-ln'), [c2, r2] = mk('bld-s06-dt');
+    defs.append(c1, c2); svg.insertBefore(defs, svg.firstChild);
+    const lines = [...svg.querySelectorAll('.m22-ln')], dots = [...svg.querySelectorAll('.m22-dt')];
+    let raf = 0, cur = [1300, 1300];
+    const put = (a, b) => {
+      cur = [a, b]; r1.setAttribute('width', a + 100); r2.setAttribute('width', b + 100);
+      const full = a >= 1300 && b >= 1300;
+      lines.forEach(el => full ? el.removeAttribute('clip-path') : el.setAttribute('clip-path', 'url(#bld-s06-ln)'));
+      dots.forEach(el => full ? el.removeAttribute('clip-path') : el.setAttribute('clip-path', 'url(#bld-s06-dt)'));
+    };
+    return function (n, animate) {
+      cancelAnimationFrame(raf);
+      const to = [LINE_R[n], DOT_R[n]], from = cur.slice();
+      if (!animate || (to[0] === from[0] && to[1] === from[1])) { put(to[0], to[1]); return; }
+      const back = to[0] < from[0], dur = back ? B_OUT : B_DUR * 1.15, t0 = performance.now();
+      const ease = t => 1 - Math.pow(1 - t, 3);
+      const tick = now => { const t = Math.min(1, (now - t0) / dur), e = ease(t);
+        if (t < 1) { put(from[0] + (Math.min(to[0], 1150) - from[0]) * e, from[1] + (Math.min(to[1], 1200) - from[1]) * e); raf = requestAnimationFrame(tick); }
+        else put(to[0], to[1]); };
+      // (de M0 à M+1, la ligne part du point M0 : début du tracé au même moment que le fondu des barres)
+      raf = requestAnimationFrame(tick);
+    };
+  }
 
   const SL = Array.from(slides);
   const resolve = (s, entries) => {
     const groups = [];   // un groupe {fade} ne compte pas dans la cascade
     entries.forEach(e => {
       if (typeof e === 'function') groups.push(e(s));
-      else if (e && e.fade) { const g = Array.from(s.querySelectorAll(e.fade)); g.forEach(el => { el._bldFade = true; }); g.fade = true; groups.push(g); }
+      else if (e && e.fade) { const g = typeof e.fade === 'function' ? e.fade(s) : Array.from(s.querySelectorAll(e.fade)); g.forEach(el => { el._bldFade = true; }); g.fade = true; groups.push(g); }
       else if (Array.isArray(e)) groups.push(e.flatMap(q => Array.from(s.querySelectorAll(q))));
       else s.querySelectorAll(e).forEach(el => groups.push([el]));
     });
     return groups.filter(g => g.length);
   };
-  const plan = SL.map(s => (PLAN[s.id] || []).map(step => resolve(s, step)));
-  const fade = SL.map(s => FADE[s.id] ? resolve(s, FADE[s.id]) : null);
+  const plan = SL.map(s => (PLAN[s.id] || []).map(step => { const g = resolve(s, Array.isArray(step) ? step : step.e); g.stag = step.stag; return g; }));
+  const auto = SL.map(s => { const A = AUTO[s.id]; if (!A) return null; const g = resolve(s, A.e); g.stag = A.stag; return g; });
+  const hook = SL.map(s => HOOK[s.id] ? HOOK[s.id](s) : null);
   plan.forEach(P => P.forEach((step, k) => step.forEach(g => g.forEach(el => { el._bld = k + 1; }))));
   const state = plan.map(P => P.length);   // par défaut : tout est construit
 
@@ -1993,7 +2047,7 @@
     const prev = state[i]; state[i] = n;
     P.forEach((step, k) => {
       const sn = k + 1, pos = []; let c = 0; step.forEach((g, gi) => { pos[gi] = g.fade ? 0 : c++; });
-      const stag = c > 1 ? Math.min(B_STAG, B_STAG_MAX / (c - 1)) : 0;
+      const stag = c > 1 ? (step.stag != null ? step.stag : Math.min(B_STAG, B_STAG_MAX / (c - 1))) : 0;
       step.forEach((g, gi) => g.forEach(el => {
         if (sn <= n) {                                   // doit être visible
           const wasHidden = el.classList.contains('bld-off') || el._bldOut;
@@ -2012,16 +2066,18 @@
         }
       }));
     });
+    if (hook[i]) hook[i](n, animate);
   }
-  function fadeIn(i) {
-    const G = fade[i]; if (!G) return;
+  function fadeIn(i) {                    // enchaînement automatique à l’arrivée
+    const G = auto[i]; if (!G) return;
     G.forEach((g, gi) => g.forEach(el => {
       stop(el);
-      const a = el._bldA = el.animate([{ opacity: 0, offset: 0 }], { duration: F_DUR, easing: 'ease-out', delay: gi * F_STAG, fill: 'backwards' });
+      const kf = g.fade ? [{ opacity: 0, offset: 0 }] : [{ opacity: 0, translate: B_OFF, offset: 0 }];
+      const a = el._bldA = el.animate(kf, { duration: g.fade ? F_DUR : B_DUR, easing: g.fade ? 'ease-out' : B_EASE, delay: gi * G.stag, fill: 'backwards' });
       a.onfinish = () => { if (el._bldA === a) el._bldA = null; };
     }));
   }
-  function stopFade(i) { const G = fade[i]; if (G) G.forEach(g => g.forEach(stop)); }
+  function stopFade(i) { const G = auto[i]; if (G) G.forEach(g => g.forEach(stop)); }
   function buildAll() { SL.forEach((s, i) => { setStep(i, plan[i].length, false); stopFade(i); }); }
 
   /* ── Intégration à la navigation existante (show / go restent la référence) ── */
